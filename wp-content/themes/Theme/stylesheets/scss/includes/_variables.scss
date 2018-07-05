@@ -1,0 +1,107 @@
+/* Variables
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+
+/*
+
+	THESE ARE JUST DEFAULTS and should be changed to suit the needs of your project.
+
+	Note:
+		+ Mixin names should describe what things ARE, not what they look like.
+		+ As much as it kills me, colour is spelled the American way to be consistant
+		  with colour declarations in css.
+
+	For example, the following are good variable names:
+	$font-base, $font-header, $color-brand, $color-accent, $breakpoint-midsize, $breakpoint-small
+
+	These are bad variable names:
+	$blue, $orange, $helvetica, $ipad, $iphone
+
+	On naming conventions, a good convention is to use underscores for spaces, and dashes to indicate
+	a subsidiary relationship. All punctuation is meaningful, and this allows you to easily group
+	variables by type.
+
+	The following are good examples of variable groups named with a dash to indicate descendency:
+
+	$font-x
+	$font-weight-x
+	$color-x
+	$icon-x
+	$breakpoint-x
+
+*/
+
+
+/* The following variables are needed by some of our mixins and can be adjust to meet
+   the needs of the site.
+*/
+
+// Fonts
+$font-default_stack-serif: "Times New Roman", Times, serif;
+$font-default_stack-sans_serif: "Helvetica Neue", Arial, sans-serif;
+$font-icon: 'FontAwesome' !default;
+$font-base: 'Muli', $font-default_stack-sans_serif;
+$font-accent: 'Crimson Text', $font-default_stack-serif;
+
+// Font sizes
+$font-size-body: 18;
+$font-line-height: 28;
+
+// Colours
+// These are just defaults. You're going to want to go ahead and change them.
+$color-base: #363636; // the colour of most body text
+$color-base-alt: #fff; // the main brand colour, probably the main logo colour
+$color-base-highlight: #2760B6;
+$color-base-sub: #7B7B7B;
+$color-brand: #2760B6; // the brand accent colour might also be used in the logo, or generally as an accent
+$color-brand-accent: #fff; // the brand accent colour might also be used in the logo, or generally as an accent
+$color-canvas: #fff; // this is probably the background colour of the body element
+$color-canvas-alt: #2760B6; // an alternate canvas colour. If needed define a $color-base-alt for copy ont this
+$color-keyline: #fff; // line dividers
+$nav-color: #fff;
+
+// Colours for states
+$color-state-error: #ae0c14;
+$color-state-success: #4c7c47;
+$color-state-warning: #DE9425;
+
+// Breakpoints
+// Deprecated because everything should be manually stated
+$breakpoint-large: 900px;
+$breakpoint-small: 768px;
+$breakpoint-extra-small: 480px;
+$breakpoint-nav: 640px; // When it's time for the nav
+$breakpoint-nav-min: 641px;
+$breakpoint-admin-bar: 782px; // When admin bar gets thicker
+
+// Adjusting the position of a fixed header if an admin bar is present
+$metrics-admin-bar-height: 32;
+$metrics-admin-bar-height-mobile: 46; // @782
+
+// Container Size
+$container-size: 1200px;
+$column-padding: 0px 15px;
+
+// Social icons
+$social_sites: (
+	facebook: $icon-facebook,
+	twitter: $icon-twitter,
+	google_plus: $icon-google-plus,
+	linkedin: $icon-linkedin,
+	pinterest: $icon-pinterest,
+	flickr: $icon-flickr,
+	instagram: $icon-instagram,
+	youtube: $icon-youtube,
+	vimeo: $icon-vimeo-square,
+);
+
+$social_sites-square: (
+	facebook: $icon-facebook-square,
+	twitter: $icon-twitter-square,
+	google_plus: $icon-google-plus-square,
+	linkedin: $icon-linkedin-square,
+	pinterest: $icon-pinterest-square,
+	flickr: $icon-flickr,
+	instagram: $icon-instagram,
+	youtube: $icon-youtube-square,
+	vimeo: $icon-vimeo-square,
+);

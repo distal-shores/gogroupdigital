@@ -1,0 +1,41 @@
+.location-intro {
+	position: relative;
+	padding: 100px 0px 20px 0px;
+	text-align: center;
+	@include clearfix;
+	&__title {
+		font-family: $font-accent;
+		font-size: 72px;
+		font-weight: 400;
+		line-height: 82px;
+		color: $color-base-highlight;
+		margin: 0px auto 50px auto;
+		padding: $column-padding;
+		@media (max-width: 1060px) {
+			font-size: 48px;
+			line-height: 58px;
+			margin-bottom: 20px;
+		}
+		@media (max-width: 620px) {
+			font-size: 40px;
+			line-height: 50px;
+		}
+		@media (max-width: 400px) {
+			font-size: 30px;
+			line-height: 36px;
+		}
+	}
+	&__content {
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 28px;
+		color: $color-base;
+		margin: 20px auto 80px auto;
+		padding: $column-padding;
+		max-width: 960px;
+		@media (max-width: 400px) {
+			font-size: 16px;
+			line-height: 28px;
+		}
+	}
+}

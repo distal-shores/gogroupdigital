@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="20px" viewBox="0 0 11 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-brand_blue</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.0567969874 0.0157865169 10.9787269 0.0157865169 10.9787269 19.9792697 0.0567969874 19.9792697"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Top-Nav" transform="translate(-108.000000, -49.000000)">
+            <g id="Group">
+                <g id="logo" transform="translate(55.000000, 48.000000)">
+                    <g id="icon-brand_blue" transform="translate(53.000000, 1.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-8"></g>
+                        <polygon id="Fill-7" fill="#2760B6" mask="url(#mask-2)" points="5.12476103 9.99724719 0.0567969874 2.61747191 4.03241506 0.0157865169 10.9791235 9.99724719 4.03241506 19.9792697 0.0567969874 17.3770225"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

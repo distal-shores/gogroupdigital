@@ -1,0 +1,102 @@
+.home .helix {
+	z-index: 1;
+}
+
+.hero {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	width: 100vw;
+	height: 100vh;
+	min-height: 700px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	@media (max-width: 500px) {
+		min-height: 560px;
+	}
+
+	&__content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		max-width: 1040px;
+		margin: 0px auto;
+		padding: 0px 30px;
+		@include transform(translate(-50%, -50%));
+		& h1 {
+			font-family: $font-accent;
+			color: $color-base-alt;
+			margin: 0px auto;
+			text-align: center;
+			font-size: 72px;
+			line-height: 82px;
+			font-weight: 400;
+			@media (max-width: 930px) {
+				font-size: 60px;
+				line-height: 70px;
+			}
+			@media (max-width: 670px) {
+				font-size: 50px;
+				line-height: 55px;
+			}
+			@media (max-width: 500px) {
+				font-size: 40px;
+				line-height: 42px;
+			}
+			@media (max-width: 400px) {
+				font-size: 30px;
+				line-height: 32px;
+			}
+		}
+		& h2 {
+			color: $color-base-alt;
+			margin: 0px auto;
+			text-align: center;
+			font-size: 26px;
+			line-height: 43px;
+			font-weight: 100;
+			margin-top: 40px;
+			@media (max-width: 930px) {
+				font-size: 24px;
+				line-height: 32px;
+			}
+			@media (max-width: 670px) {
+				font-size: 20px;
+				line-height: 30px;
+				margin-top: 20px;
+			}
+			@media (max-width: 500px) {
+				font-size: 18px;
+				line-height: 26px;
+			}
+			@media (max-width: 400px) {
+				font-size: 16px;
+				line-height: 26px;
+			}
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		cursor: pointer;
+		bottom: 30px;
+		left: 50%;
+		@include transform(translate(0%, -50%));
+		@include sprite-background('icon-arrow');
+	}
+
+	&__ghost {
+		height: 100vh;
+		min-height: 700px;
+		opacity: 0;
+		pointer-events: none;
+		@include clearfix;
+		@media (max-width: 500px) {
+			min-height: 560px;
+		}
+	}
+}

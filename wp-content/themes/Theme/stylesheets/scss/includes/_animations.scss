@@ -1,0 +1,42 @@
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+@mixin animation ($stuff) {
+    -webkit-animation: $stuff;
+    -moz-animation: $stuff;
+    -ms-animation: $stuff;
+    animation: $stuff;
+}
+
+@include keyframes(reveal) {
+	0% {
+		@include transform(translateY(40%));
+		@include transform(translateY(calc(40% + 20px)));
+	}
+	100% {
+		opacity: 1;
+		@include transform(translateY(0px));
+	}
+}
+@include keyframes(reveal-fixed) {
+	0% {
+		opacity: 0;
+		@include transform(translate(-50%, 40px));
+	}
+	100% {
+		opacity: 1;
+		@include transform(translate(-50%, 0px));
+	}
+}

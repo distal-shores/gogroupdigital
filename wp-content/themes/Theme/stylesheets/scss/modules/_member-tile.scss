@@ -1,0 +1,114 @@
+.member-tiles {
+	padding-bottom: 85px;
+	@include clearfix;
+}
+
+.members {
+	padding-left: 0px;
+	margin-left: auto;
+}
+
+.member-tile {
+	width: 33.33%;
+	display: inline-block;
+	float: left;
+	padding: $column-padding;
+	margin-bottom: 30px;
+	visibility: hidden;
+	&:nth-child(3n + 1) {
+		clear: left;
+	}
+	@media (max-width: 770px) {
+		width: 50%;
+		&:nth-child(3n + 1) {
+			clear: none;
+		}
+		&:nth-child(2n + 1) {
+			clear: left;
+		}
+	}
+	@media (max-width: 570px) {
+		width: 100%;
+		display: block;
+		float: none;
+		max-width: 380px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__bio {
+		background: $color-canvas;
+		padding: 30px 30px 45px 30px;
+		text-align: left;
+		border-bottom: 5px solid $color-base-highlight;
+		@media (max-width: 900px) {
+			padding: 25px 20px 35px 20px;
+		}
+
+		&__name {
+			font-family: $font-accent;
+			color: $color-base-highlight;
+			font-size: 29px;
+			line-height: 32px;
+			margin: 0px;
+			@media (max-width: 1060px) {
+				font-size: 24px;
+				line-height: 20px;
+			}
+			@media (max-width: 930px) {
+				font-size: 20px;
+				line-height: 22px;
+			}
+			&:after {
+				content: '';
+				width: 200px;
+				max-width: 75%;
+				height: 3px;
+				display: block;
+				margin: 10px 0px;
+				background: $color-base-highlight;
+			}
+		}
+		&__industry {
+			font-family: $font-accent;
+			color: $color-base-highlight;
+			font-size: 29px;
+			line-height: 32px;
+			margin: 0px;
+			@media (max-width: 1060px) {
+				font-size: 24px;
+				line-height: 20px;
+			}
+			&:after {
+				content: '';
+				width: 200px;
+				max-width: 75%;
+				height: 3px;
+				display: block;
+				margin: 10px 0px;
+				background: $color-base-highlight;
+			}
+		}
+
+		&__description {
+			margin: 0px;
+			font-size: 16px;
+			line-height: 28px;
+			letter-spacing: 0.5px;
+			@media (max-width: 930px) {
+				font-size: 14px;
+				line-height: 22px;
+			}
+			& * {
+				margin: 10px 0px 0px 0px;
+				font-size: 16px;
+				line-height: 28px;
+				letter-spacing: 0.5px;
+				@media (max-width: 930px) {
+					font-size: 14px;
+					line-height: 22px;
+				}
+			}
+		}
+	}
+}

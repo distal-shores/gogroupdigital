@@ -1,0 +1,13 @@
+/*
+	Layout goes in this file.
+	Layout classes should be prefixed `.l-`
+*/
+.l-container { 
+	position: relative;
+	margin: 0px auto; 
+	padding: $column-padding;
+	max-width: $container-size;
+	width: 100%;
+	@include box-sizing(border-box);
+	@include clearfix;
+} // .l-container

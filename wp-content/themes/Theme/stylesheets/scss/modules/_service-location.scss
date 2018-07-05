@@ -1,0 +1,70 @@
+.service-location {
+	padding: 120px 0px 120px 0px;
+	@include clearfix;
+	@media (max-width: 760px) {
+		padding-top: 60px;
+		padding-bottom: 80px;
+	}
+
+	&__title {
+		font-family: $font-accent;
+		font-size: 72px;
+		color: $color-base-highlight;
+		line-height: 82px;
+		margin: 20px 0px 20px 0px;
+		padding: $column-padding;
+		@media (max-width: 1060px) {
+			font-size: 48px;
+			line-height: 58px;
+		}
+		@media (max-width: 620px) {
+			font-size: 40px;
+			line-height: 50px;
+		}
+		@media (max-width: 400px) {
+			font-size: 30px;
+			line-height: 36px;
+		}
+	}
+	&__content {
+		font-size: 18px;
+		line-height: 28px;
+		color: $color-base;
+		margin: 50px auto 0px auto;
+		max-width: 920px;
+		padding: $column-padding;
+		@media (max-width: 1060px) {
+			margin-top: 20px;
+		}
+		@media (max-width: 480px) {
+			font-size: 18px;
+			line-height: 28px;
+		}
+		@media (max-width: 400px) {
+			font-size: 16px;
+			line-height: 28px;
+		}
+	}
+
+	&__outro {
+		margin-top: 40px;
+		font-family: $font-accent;
+		font-size: 36px;
+		font-weight: 400;
+		line-height: 55px;
+		color: $color-base;
+		padding: $column-padding;
+		@media (max-width: 1060px) {
+			font-size: 28px;
+			line-height: 40px;
+		}
+		@media (max-width: 620px) {
+			font-size: 22px;
+			line-height: 30px;
+		}
+		@media (max-width: 480px) {
+			font-size: 18px;
+			line-height: 28px;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+.lazyload {
+	opacity: 0;
+	background: transparent url('../../images/loader.gif') repeat;
+	@include transition(all 0.6s ease-in-out);
+	&.lazypreload {
+		opacity: 1;
+	}
+}
+.lazyloading {
+	opacity: 0;
+	background: transparent url('../../images/loader.gif') repeat;
+	&.lazypreload {
+		opacity: 1;
+	}
+}
+html .lazyloaded {
+	opacity: 1;
+	@include transition(all 0.6s ease-in-out);
+}

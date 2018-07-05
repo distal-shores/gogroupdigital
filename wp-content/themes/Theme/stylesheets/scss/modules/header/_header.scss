@@ -1,0 +1,139 @@
+.header {
+	text-align: left;
+	padding: 50px 0px 10px 0px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 10;
+	@include transition(all .3s ease-in-out);
+	@include clearfix;
+		&.active {
+			background: $color-canvas;
+			padding: 20px 0px;
+			@include transition(all .3s ease-in-out);
+			& .header__logo {
+				@include sprite-background('logo');
+				display: inline-block;
+				@include transition(all 0s ease-in-out);
+			}
+			& .header__contact {
+				color: $color-base-highlight;
+				border-color: $color-base-highlight;
+				&:hover {
+					color: $color-base-alt;
+					background: $color-base-highlight;
+				}
+			}
+			& .header__nav-button {
+				color: $color-base-highlight;
+			}
+		}
+	&__logo {
+		@include sprite-background('logo-white');
+		display: inline-block;
+		padding: $column-padding;
+		text-indent: -9000px;
+		margin-left: 15px;
+		margin-top: 7px;
+		@include transition(all 0s ease-in-out);
+	}
+
+	&__contact {
+		font-size: 15px;
+		letter-spacing: 2.72px;
+		margin: 0px;
+		float: right;
+		text-transform: uppercase;
+		color: $color-base-alt;
+		border: 1px solid #fff;
+		padding: 6px 15px 8px 15px;
+		&:hover {
+			color: $color-base;
+			background: #fff;
+		}
+		@media (max-width: 600px) {
+			display: none;
+		}
+	}
+
+	&__nav-button {
+		display: inline-block;
+		float: right;
+		margin: 0px 15px 0px 60px;
+		font-size: 20px;
+		line-height: 30px;
+		cursor: pointer;
+		color: $color-base-alt;
+		text-decoration: underline;
+	}
+
+	&__menu {
+		pointer-events: none;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		background: $color-canvas;
+		opacity: 0;
+		@include transition(all .3s ease-in-out);
+		&.active {
+			opacity: 1;
+			pointer-events: visible;
+			@include transition(all .3s ease-in-out);
+		}
+		&__close {
+			@include sprite-background('icon-close');
+			position: fixed;
+			top: 30px;
+			right: 30px;
+			z-index: 4;
+			cursor: pointer;
+			text-indent: -9000px;
+		}
+	}
+}
+
+.primary-nav {
+	position: absolute;
+	width: 100%;
+	padding: 0px 20px;
+	top: 50%;
+	left: 50%;
+	@include transform(translate(-50%, -50%));
+	&__items {
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+		text-align: center;
+	}
+	&__item {
+		font-size: 52px;
+		line-height: 73px;
+		color: $color-brand;
+		@media (max-width: 800px) {
+			font-size: 42px;
+			line-height: 65px;
+		}
+		@media (max-width: 650px) {
+			font-size: 30px;
+			line-height: 50px;
+		}
+		@media (max-width: 650px) {
+			font-size: 30px;
+			line-height: 35px;
+			color: #2760B6;
+			margin-bottom: 25px;
+		}
+		& a {
+			color: $color-brand;
+			font-family: $font-accent;
+			&:hover {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}	
+	}
+}

@@ -1,0 +1,42 @@
+.social {
+	$block: &;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	li {
+		@include inline-block;
+	}
+	&__item {
+		display: block;
+		font-size: 1px;
+		font-size: 0px;
+		margin: 0px 10px 0px 0px;
+		color: $color-base;
+		background: transparent;
+		position: relative;
+
+		&:hover,
+		&:focus {
+			color: lighten($color-base, 20%);
+		}
+		&:after {
+			@include icon;
+			font-size: 18px;
+			color: $color-base;
+		}
+
+		@each $site, $icon in $social_sites {
+			&--#{$site}:after {
+				content: $icon;
+			}
+		} 
+
+		#{$block}--square & {
+			@each $site, $icon in $social_sites-square {
+				&--#{$site}:after {
+					content: $icon;
+				}
+			}
+		}
+	}
+}

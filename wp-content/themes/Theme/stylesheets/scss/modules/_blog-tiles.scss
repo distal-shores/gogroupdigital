@@ -1,0 +1,220 @@
+.blog-tiles {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	@include clearfix;
+}
+
+.blog-tile {
+	position: relative;
+	display: inline-block;
+	float: left;
+	width: 33.33%;
+	padding: $column-padding;
+	margin-bottom: 30px;
+	visibility: hidden;
+	@media (max-width: 770px) {
+		width: 50%;
+	}
+	@media (max-width: 560px) {
+		width: 100%;
+		float: none;
+		display: block;
+	}
+	&__content {
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		z-index: 2;
+		text-align: left;
+		padding: 15px;
+		&__category {
+			color: $color-base-alt;
+			font-size: 18px;
+			line-height: 26px;
+			text-transform: uppercase;
+			letter-spacing: 1.1px;
+			margin: 0px;
+			font-weight: 700;
+		}
+		&__subtitle {
+			color: $color-base-alt;
+			font-size: 14px;
+			line-height: 20px;
+			margin: 5px 0px 15px 0px;
+		}
+		&__title {
+			font-family: $font-accent;
+			color: $color-base-alt;
+			font-size: 24px;
+			line-height: 29px;
+			margin: 0px;
+		}
+	}
+	& a {
+		position: relative;
+		display: block;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		height: 300px;
+		overflow: hidden;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	&--featured {
+		float: none;
+		width: 100%;
+		display: block;
+		clear: both;
+		padding-top: 30px;
+		& a {
+			height: auto;
+			& .blog-tile__thumbnail {
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+				height: 575px;
+				overflow: hidden;
+				& img {
+					opacity: 0;
+				}
+			}
+		}
+		& .blog-tile__content {
+			position: relative;
+			top: 0px;
+			left: 0px;
+			display: block;
+			background: #F2F5F8;
+			padding: 70px 15px 80px 15px;
+			@include clearfix;
+			@media (max-width: 700px) {
+				padding: 40px 15px 60px 15px;
+			}
+			& .l-container {
+				max-width: 920px;
+			}
+			&__meta {
+				font-family: $font-accent;
+				color: $color-base;
+				font-size: 48px;
+				line-height: 58px;
+				text-align: left;
+				display: inline-block;
+				float: left;
+				width: 30%;
+				width: calc(300px);
+				max-width: 300px;
+				margin: 0px;
+				@media (max-width: 700px) {
+					clear: both;
+					float: none;
+					width: 100%;
+					max-width: none;
+					font-size: 34px;
+					line-height: 40px;
+					margin-bottom: 30px;
+					&:after {
+						display: none !important;
+					}
+				}
+				&:after {
+					content: '';
+					@include sprite-background('icon-arrow_blue');
+					display: inline-block;
+					margin-left: 10px;
+				}
+			}
+			&__details {
+				margin-top: 8px;
+				font-family: $font-accent;
+				display: inline-block;
+				float: right;
+				width: 70%;
+				width: calc(100% - 300px);
+				padding-left: 10%;
+				@media (max-width: 800px) {
+					padding-left: 20px;
+				}
+				@media (max-width: 700px) {
+					width: 100%;
+					display: block;
+					float: none;
+					padding: 0px;
+				}
+				&__title {
+					text-align: left;
+					font-size: 24px;
+					line-height: 29px;
+					color: $color-base;
+					margin: 0px;
+				}
+				&__description {
+					font-size: 14px;
+					line-height: 24px;
+					text-align: left;
+					color: $color-base-sub;
+					margin: 15px 0px 0px 0px;
+				}
+			}
+		}
+	}
+
+	&--long {
+		width: 66.66%;
+		@media (max-width: 770px) {
+			width: 50%;
+		}
+		@media (max-width: 560px) {
+			width: 100%;
+			float: none;
+			display: block;
+		}
+	}
+
+	&--postits {
+		&.no-thumbnail {
+			& a {
+				background: #F2F5F8;
+			}
+			& .blog-tile__content__category {
+				color: $color-base;
+			}
+			& .blog-tile__content__subtitle {
+				color: $color-base;
+			}
+			& .blog-tile__content__title {
+				color: $color-base-highlight;
+			}
+		}
+	}
+	&--vantages {
+		&.no-thumbnail {
+			& a {
+				background: $color-base;
+			}
+		}
+	}
+	&--epic-outcome {
+		&.no-thumbnail {
+			&.blog-tile--normal {
+				& a {
+					background-image: url('../../images/placeholder-blog_one--normal.jpg');
+				}
+			}
+			&.blog-tile--long {
+				& a {
+					background-image: url('../../images/placeholder-blog_one--long.jpg');
+				}
+			}
+			&.blog-tile--featured {
+				& a {
+					background-image: url('../../images/placeholder-blog_one--featured.jpg');
+				}
+			}
+		}
+	}
+}

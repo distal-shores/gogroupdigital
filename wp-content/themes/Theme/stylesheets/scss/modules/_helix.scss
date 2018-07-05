@@ -1,0 +1,73 @@
+.helix {
+	position: absolute;
+	z-index: -1;
+	max-width: 100%;
+	pointer-events: none;
+	&--one {
+		bottom: -150px;
+		right: -20px;
+		background-image: url('../../images/background-helix_one.png');
+		background-size: 431px 441px;
+		background-repeat: no-repeat;
+		width: 431px;
+		height: 441px;
+		@media (max-width: 1380px) {
+			bottom: -240px;
+			right: 0px;
+		}
+		@media (max-width: 1060px) {
+			bottom: -280px;
+			right: 0px;
+		}
+	}
+	&--two {
+		z-index: 3;
+		top: -440px;
+		left: -10px;
+		background-image: url('../../images/background-helix_two.png');
+		background-size: 510px 728px;
+		background-repeat: no-repeat;
+		width: 510px;
+		height: 728px;
+		@media (max-width: 1280px) {
+			top: -530px;
+		}
+	}
+	&--three {
+		bottom: 0px;
+		right: -10px;
+		background-image: url('../../images/background-helix_three.png');
+		background-size: 713px 314px;
+		background-repeat: no-repeat;
+		width: 713px;
+		height: 314px;
+		@media (max-width: 1380px) {
+			right: 0px;
+		}
+	}
+	&--four { 
+		top: 55%;
+		right: 0px;
+		width: 100%;
+		@media (max-width: 1060px) {
+			top: 65%;
+		}
+		@media (max-width: 1060px) {
+			top: auto;
+			bottom: 0px;
+		}
+	}
+	&--five {
+		width: 100%;
+		bottom: -5%;
+		right: -15%;
+	}
+	&--six {
+		top: 50%;
+		right: 0px;
+		width: 100%;
+		& img {
+			width: 100%;
+		}
+	}
+}

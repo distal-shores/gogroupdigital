@@ -1,0 +1,223 @@
+.banner {
+	position: relative;
+	min-height: 667px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	&.banner--first.banner--home {
+		@media (max-width: 480px) {
+			min-height: 400px;
+		}
+		@media (max-width: 400px) {
+			min-height: 200px;
+		}
+	}
+	&.banner--second.banner--home {
+		z-index: 4;
+		@media (max-width: 800px) {
+			padding-bottom: 60px;
+		}
+		& .l-container {
+			max-width: 1060px;
+		}
+	}
+
+	&__content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		max-width: $container-size;
+		margin: 0px auto;
+		padding: 0px 30px;
+		@include transform(translate(-50%, -50%));
+		@include clearfix;
+		&--first {
+			font-family: $font-accent;
+			font-size: 72px;
+			line-height: 82px;
+			color: $color-base-alt;
+			font-weight: 400;
+			margin: 0px auto;
+			@media (max-width: 930px) {
+				font-size: 60px;
+				line-height: 70px;
+			}
+			@media (max-width: 670px) {
+				font-size: 50px;
+				line-height: 55px;
+			}
+			@media (max-width: 500px) {
+				font-size: 40px;
+				line-height: 42px;
+			}
+			@media (max-width: 400px) {
+				font-size: 30px;
+				line-height: 32px;
+			}
+		}
+		&--second {
+			font-size: 18px;
+			line-height: 28px;
+			color: $color-base-alt;
+			max-width: 620px;
+			margin: 45px auto 0px auto;
+			@media (max-width: 400px) {
+				font-size: 16px;
+				line-height: 26px;
+				margin-top: 10px;
+			}
+		}
+		// Home first banner
+		.banner--first.banner--home & {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			max-width: 980px;
+			margin: 0px auto;
+			padding: 0px 30px;
+			@include transform(translate(-50%, -50%));
+			& * {
+				margin: 0px;
+				color: $color-base-alt;
+			}
+			& .banner__content--first {
+				font-size: 124px;
+				line-height: 93px;
+				max-width: none;
+				font-family: $font-accent;
+				@media (max-width: 930px) {
+					font-size: 90px;
+					line-height: 80px;
+				}
+				@media (max-width: 700px) {
+					font-size: 65px;
+					line-height: 70px;
+				}
+				@media (max-width: 480px) {
+					font-size: 45px;
+					line-height: 50px;
+				}
+				@media (max-width: 400px) {
+					font-size: 38px;
+					line-height: 40px;
+				}
+			}
+			& .banner__content--second {
+				font-size: 55px;
+				line-height: 65px;
+				margin-top: 20px;
+				max-width: none;
+				font-family: $font-accent;
+				@media (max-width: 700px) {
+					font-size: 35px;
+					line-height: 40px;
+				}
+				@media (max-width: 480px) {
+					font-size: 25px;
+					line-height: 25px;
+					margin-top: 10px;
+				}
+				@media (max-width: 400px) {
+					font-size: 30px;
+					line-height: 36px;
+				}
+			}
+		}
+		// Home second banner
+		.banner--second.banner--home & {
+			position: relative;
+			top: auto;
+			left: auto;
+			max-width: none;
+			display: inline-block;
+			width: 50%;
+			float: left;
+			text-align: left;
+			padding-top: 120px;
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-bottom: 80px;
+			@include transform(translate(0%, 0%));
+			@media (max-width: 800px) {
+				width: 100%;
+				float: none;
+				display: block;
+				padding-top: 60px;
+				padding-bottom: 40px;
+			}
+			& * {
+				margin: 0px;
+				color: $color-base-alt;
+			}
+			& .banner__content--first {
+				font-family: $font-accent;
+				font-size: 72px;
+				line-height: 82px;
+				color: $color-base-alt;
+				padding-bottom: 50px;
+				margin: 0px;
+				max-width: none;
+				@media (max-width: 900px) {
+					font-size: 60px;
+					line-height: 70px;
+				}
+				@media (max-width: 620px) {
+					font-size: 40px;
+					line-height: 50px;
+					padding-bottom: 25px;
+				}
+				@media (max-width: 400px) {
+					font-size: 30px;
+					line-height: 36px;
+				}
+			}
+			& .banner__content--second {
+				font-size: 18px;
+				line-height: 33px;
+				color: $color-base-alt;
+				padding-top: 30px;
+				margin: 0px;
+				border-top: 1px solid #fff;
+				max-width: 480px;
+				@media (max-width: 800px) {
+					max-width: 650px;
+				}
+				@media (max-width: 400px) {
+					font-size: 16px;
+					line-height: 28px;
+				}
+			}
+		}
+	}
+
+	&__cta {
+		display: inline-block;
+		width: 50%;
+		float: right;
+		@media (max-width: 800px) {
+			float: none;
+			display: block;
+			width: 100%;
+			padding: $column-padding;
+			@include clearfix;
+		}
+		& .cta--first {
+			margin-top: 70px;
+			margin-right: 15px;
+			@media (max-width: 800px) {
+				margin: 0px auto 30px auto;
+				max-width: 440px;
+			}
+		}
+		& .cta--second {
+			margin-bottom: -100px;
+			margin-right: 15px;
+			@media (max-width: 800px) {
+				margin: 0px auto;
+				max-width: 440px;
+			}
+		}
+	}
+}

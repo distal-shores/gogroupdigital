@@ -1,0 +1,74 @@
+.blog {
+	background-color: $color-canvas;
+	position: relative;
+	padding: 75px 0px 215px 0px;
+	@include clearfix;
+	@media (max-width: 1030px) {
+		padding-top: 30px;
+	}
+
+	&__title {
+		font-family: $font-accent;
+		font-size: 72px;
+		line-height: 74px;
+		color: $color-base-highlight;
+		text-align: left;
+		display: inline-block;
+		width: 50%;
+		float: left;
+		margin-bottom: 20px;
+		margin-top: 0px;
+		padding: $column-padding;
+		@media (max-width: 1030px) {
+			width: 100%;
+			float: none;
+			display: block;
+			max-width: 600px;
+		}
+		@media (max-width: 620px) {
+			font-size: 40px;
+			line-height: 50px;
+			padding-bottom: 25px;
+		}
+	}
+	&__description {
+		display: inline-block;
+		width: 50%;
+		float: right;
+		text-align: left;
+		color: $color-base-sub;
+		font-size: 18px;
+		line-height: 33px;
+		margin-top: 80px;
+		margin-bottom: 20px;
+		padding: $column-padding;
+		@media (max-width: 1030px) {
+			width: 100%;
+			float: none;
+			display: block;
+			margin-top: 0px;
+			max-width: 600px;
+		}
+		@media (max-width: 400px) {
+			font-size: 16px;
+			line-height: 28px;
+		}
+	}
+	&__button {
+		text-align: center;
+		color: $color-base-alt;
+		background: $color-brand;
+		padding: 20px 50px;
+		min-width: 230px;
+		font-size: 18px;
+		font-weight: 700;
+		letter-spacing: 1.8px;
+		border-radius: 50px;
+		margin: 10px auto 50px auto;
+		display: inline-block;
+		text-transform: uppercase;
+		&:hover {
+			background: darken($color-brand, 15%);
+		}
+	}
+}

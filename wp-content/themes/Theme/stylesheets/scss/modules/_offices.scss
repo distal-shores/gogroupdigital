@@ -1,0 +1,31 @@
+.offices {
+	padding-bottom: 100px;
+	padding-top: 60px;
+	@include clearfix;
+	@media (max-width: 1060px) {
+		padding-bottom: 60px;
+	}
+	&__title {
+		font-family: $font-accent;
+		font-size: 72px;
+		line-height: 82px;
+		color: $color-base-highlight;
+		text-align: center;
+		margin: 0px;
+		padding: 0px 15px 60px 15px;
+		clear: both;
+		@media (max-width: 1060px) {
+			font-size: 48px;
+			line-height: 58px;
+			margin-bottom: 20px;
+		}
+		@media (max-width: 620px) {
+			font-size: 40px;
+			line-height: 50px;
+		}
+		@media (max-width: 400px) {
+			font-size: 28px;
+			line-height: 36px;
+		}
+	}
+}

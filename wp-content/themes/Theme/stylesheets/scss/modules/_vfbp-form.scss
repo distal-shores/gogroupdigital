@@ -1,0 +1,115 @@
+.vfbp-form {
+	background-color: $color-brand-accent;
+	padding: 0px 15px;
+	@media (max-width: 580px) {
+		padding: 0px;
+	}
+	&#vfbp-form-1 {
+		max-width: 1000px;
+		margin: 0px auto;
+	}
+	& * {
+		color: white;
+		text-align: left;
+		padding: 0px;
+	}
+	& .vfb-fieldType-text {
+		display: inline-block;
+		float: left;
+		width: 50%;
+		padding: $column-padding;
+		margin: 0px auto 25px auto;
+		@media (max-width: 580px) {
+			display: block;
+			float: none;
+			width: 100%;
+			padding: 0px;
+		}
+		& input {
+			background: #EFEFEF;
+			text-transform: uppercase;
+			color: $color-base;
+			font-size: 12px;
+			letter-spacing: 1.2px;
+			border: 1px solid #EFEFEF;
+			border-radius: 0px;
+			padding: 25px 12px 26px 20px;
+			@include box-shadow(0px 0px 0px 0px rgba(0, 0, 0, 0));
+
+		}
+	}
+	& .vfb-fieldType-textarea {
+		padding: $column-padding;
+		margin: 0px auto 25px auto;
+		@media (max-width: 580px) {
+			padding: 0px;
+		}
+		& textarea {
+			background: #EFEFEF;
+			text-transform: uppercase;
+			color: $color-base;
+			font-size: 12px;
+			letter-spacing: 1.2px;
+			border: 1px solid #EFEFEF;
+			border-radius: 0px;
+			padding: 15px 12px 26px 20px;
+			@include box-shadow(0px 0px 0px 0px rgba(0, 0, 0, 0));
+		}
+	}
+	& .vfb-fieldType-submit {
+		text-align: center;
+		& button {
+			text-align: center;
+			color: $color-base-alt;
+			background: $color-brand;
+			padding: 15px 50px;
+			min-width: 300px;
+			font-size: 18px;
+			font-weight: 700;
+			letter-spacing: 1.8px;
+			border-radius: 50px;
+			margin: 10px auto 0px auto;
+			display: inline-block;
+			text-transform: uppercase;
+			@include transition(all .3s ease-in-out);
+			&:hover {
+				background: darken($color-brand, 15%);
+				@include transition(all .3s ease-in-out);
+			}
+		}
+	}
+	& .vfb-form-group {
+		margin: 0px;
+	}
+	& .vfb-clearfix {
+		display: none;
+	}
+	& .vfb-help-block {
+		display: none;
+	}
+
+	& .vfb-fieldType-instructions {
+		max-width: 350px;
+	}
+	& .vfb-control-label {
+		display: none;
+	}
+	& .vfb-form-control {
+		font-size: inherit;
+		line-height: inherit;
+		padding: 8px 12px 6px 12px;
+		height: 38px;
+		color: $color-base;
+	}
+	& .parsley-required {
+		display: none;
+	}
+
+	& .vfb-has-error .vfb-form-control {
+		border-color: #ffd0d0;
+		background-color: #EFEFEF;
+		&:focus {
+			border-color: #EFEFEF;
+		}
+	}
+}
