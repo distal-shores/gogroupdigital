@@ -148,20 +148,39 @@
 			margin-right: auto;
 		}
 		& blockquote {
-			background: $color-brand;
-			padding: 70px 0px 80px 0px;
-			text-align: center;
+			background: white;
+			border-left: 5px solid $color-brand;
+			padding: 50px 0px 50px 4vw;
+			text-align: left;
+			max-width: 740px;
 			& * {
-				color: white !important;
+				color: $color-base;
 				font-size: 18px;
 				line-height: 28px;
 				margin: 0px auto;
-				padding: 0px 30px !important;
+				padding: 0;
 				&:first-child {
-					font-size: 30px;
-					line-height: 35px;
+					font-size: 50px;
+					line-height: 1;
 					margin: 0px auto 20px auto;
 					font-family: $font-accent;
+				}
+			}
+			p:first-of-type {
+				position: relative;
+				&:before {
+					content: '\201C';
+					position: absolute;
+					left: -15px;
+				}
+				&:after {
+					content: '\201D';
+				}
+				@media screen and (max-width: 580px) {
+					&:before {
+						position: relative;
+						left: initial;
+					}
 				}
 			}
 		}
@@ -175,7 +194,6 @@
 			margin-left: auto;
 			margin-right: auto;
 			&:before {
-				content: ' ';
 				background-color: #DEE4E5;
 				display: block;
 				position: absolute;
