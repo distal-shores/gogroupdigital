@@ -12,6 +12,13 @@
 		$content = get_field('content'); 
 	?>
 
+
+		<?php if($featured_image): ?>
+			<div class="blog-post__image">
+				<img src="<?php echo $featured_image['sizes']['blog_large']; ?>" />
+			</div>
+		<?php endif; ?>
+		
 		<div class="blog-post__header">
 			<h1 class="blog-post__header__title"><?php the_title(); ?></h1>
 			<p class="blog-post__header__categories">
@@ -24,14 +31,8 @@
 			</p>
 		</div>
 
-		<?php if($featured_image): ?>
-			<div class="blog-post__image">
-				<img src="<?php echo $featured_image['sizes']['blog_large']; ?>" />
-			</div>
-		<?php endif; ?>
-
 		<div class="page-content">
-			<div class="l-container">
+			<div class="l-container blog-content">
 				<?php if($subtitle): ?>
 					<h2 class="blog-post__subtitle">
 						<?php echo $subtitle; ?>

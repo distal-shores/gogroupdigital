@@ -25,7 +25,11 @@
 .blog-post {
 	padding-top: 40px;
 	&__header {
+		background-color: white;
+		margin: -200px auto 0;
+		max-width: 1200px;
 		padding: 120px 30px 70px 30px;
+		position: relative;
 
 		&__title {
 			max-width: 720px;
@@ -74,8 +78,14 @@
 	}
 
 	&__image {
-		max-width: 1140px;
+		// max-width: 1140px;
 		margin: 0px auto;
+		img {
+			max-height: 50vh;
+			max-width: none;
+			object-fit: cover;
+			width: 100%;
+		}
 	}
 
 	& .page-content {
