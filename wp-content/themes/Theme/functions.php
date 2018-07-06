@@ -12,7 +12,6 @@ include_once 'includes/admin_favicon.php'; // adds favicon to the admin backend
 include_once 'includes/admin_styling.php'; // Custom styles in admin
 include_once 'includes/body_class.php'; // Expand body classes
 include_once 'includes/clean_up.php'; // Remove all commented code from showing
-include_once 'includes/conceal_settings.php'; // Conceal Settings
 include_once 'includes/cpt_archives.php'; // Add custom post types to wp_get_archives
 include_once 'includes/custom_editor_styles.php'; // Add stylesheet to apply styles to editor
 include_once 'includes/edit_class.php'; // Expand edit link classes
