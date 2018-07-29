@@ -12,6 +12,7 @@
 		$content = get_field('content');
 		$author_name = get_field('author_name');
 		$author_photo = get_field('author_photo');
+		$go_content = get_field('go_content_switch');
 		$user = wp_get_current_user();
 		$privileged_users = array('administrator', 'go_member');
 	?>
@@ -39,16 +40,25 @@
 			<div class="l-container blog-content">
 				<?php if($subtitle): ?>
 					<h2 class="blog-post__subtitle">
-						<?= $subtitle; ?>
+						<?php echo $subtitle; ?>
 					</h2>
 				<?php endif; ?>
+
 				<?php the_content(); ?>
 
-				<?php 
-					if ( in_array_any($privileged_users, (array) $user->roles) ) {
-    					if( get_field('content') ) {
-    						echo filter_ptags_on_images_acf($content);
-    					}
+				<?php
+					if($go_content) {
+						if ( in_array_any($privileged_users, (array) $user->roles) ) {
+	    					if( get_field('content') ) {
+	    						echo filter_ptags_on_images_acf($content);
+	    					}
+						} else {
+							echo '<div>This content is reserved for GO Managing and Strategic partners. Please contact <a href="mailto:info@gogroupdigital.com">info@gogroupdigital.com</a> to learn about exclusive access.</div>'; 
+						}
+					} else {
+						if( get_field('content') ) {
+	    					echo filter_ptags_on_images_acf($content);
+	    				}
 					}
 				?>
 
