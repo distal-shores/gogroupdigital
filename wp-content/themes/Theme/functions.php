@@ -28,3 +28,31 @@ include_once 'includes/scripts.php'; // Enqued Scripts
 include_once 'includes/sidebars.php'; // core sidebar registration
 include_once 'includes/sub_menu.php'; // Expand sub menu functionality
 include_once 'includes/theme_setup.php'; // stylesheet_uri, after_setup_theme, cleanup head
+
+// Allow for the USC plugin to work for custom posts of the type Blog Posts
+add_filter('USC_allowed_post_types','usc_filter_post_types');
+function usc_filter_post_types($types){
+    $types[] = 'blog_post';
+    return $types;
+}
+
+// Simple function to return a user's role
+function get_user_role( $user_id = 0 ) {
+    $user = ( $user_id ) ? get_userdata( $user_id ) : wp_get_current_user();
+    return current( $user->roles );
+}
+
+// Prevent 'Go Members' from accessing the WP dashboard
+add_action( 'init', 'blockusers_init');
+
+function blockusers_init() {
+    if ( is_admin() && get_user_role() == 'go_member' && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+        wp_redirect( home_url() );
+        exit;
+    }
+}
+
+// Simple function for checking multiple user role types at once
+function in_array_any($needles, $haystack) {
+    return !!array_intersect($needles, $haystack);
+}
