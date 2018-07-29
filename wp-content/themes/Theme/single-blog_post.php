@@ -9,7 +9,11 @@
 	<?php 
 		$featured_image = get_field('featured_image'); 
 		$subtitle = get_field('subtitle'); 
-		$content = get_field('content'); 
+		$content = get_field('content');
+		$author_name = get_field('author_name');
+		$author_photo = get_field('author_photo');
+		$user = wp_get_current_user();
+		$privileged_users = array('administrator', 'go_member');
 	?>
 
 
@@ -35,15 +39,19 @@
 			<div class="l-container blog-content">
 				<?php if($subtitle): ?>
 					<h2 class="blog-post__subtitle">
-						<?php echo $subtitle; ?>
+						<?= $subtitle; ?>
 					</h2>
 				<?php endif; ?>
-
 				<?php the_content(); ?>
 
-				<?php if( get_field('content') ): ?>
-					<?php echo filter_ptags_on_images_acf($content); ?>
-				<?php endif; ?>
+				<?php 
+					if ( in_array_any($privileged_users, (array) $user->roles) ) {
+    					if( get_field('content') ) {
+    						echo filter_ptags_on_images_acf($content);
+    					}
+					}
+				?>
+
 			</div>
 		</div>
 
