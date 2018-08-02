@@ -87,3 +87,10 @@
   height: auto;
   overflow: visible;
 }
+
+@mixin background-logo($image) {
+  background-image: url('../../images/#{$image}');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
