@@ -13,7 +13,10 @@
 			padding: 20px 0px;
 			@include transition(all .3s ease-in-out);
 			& .header__logo {
-				@include sprite-background('logo-white');
+				background-image: url('../../images/logo.svg');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
 				display: inline-block;
 				@include transition(all 0s ease-in-out);
 			}
