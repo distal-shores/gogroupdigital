@@ -2,9 +2,14 @@
 	text-indent: -9000px;
 	position: relative;
 	&--blue {
-		@include sprite-background('logo-blue_content');
+		@include background-logo('logo-blue_content.svg');
+		background-size: 100%;
 		display: inline-block;
-		top: 23px;
+		width: 125px;
+		height: 45px;
+		left: 250px;
+		bottom: 11px;
+		position: absolute;
 	}
 	&--white {
 		@include sprite-background('logo-white_content');

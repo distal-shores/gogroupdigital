@@ -84,9 +84,17 @@
 		position: absolute;
 		cursor: pointer;
 		bottom: 30px;
+		height: 40px;
 		left: 50%;
-		@include transform(translate(0%, -50%));
-		@include sprite-background('icon-arrow');
+		background-color: white;
+		-webkit-mask-image: url('../../images/icon-brand_blue.svg');
+    	mask-image: url('../../images/icon-brand_blue.svg');
+    	-webkit-mask-repeat: no-repeat;
+    	-webkit-mask-size: 100% 100%;
+    	mask-repeat: no-repeat;
+    	mask-size: 100% 100%;
+		transform: translate(0%, -50%) rotate(90deg);
+		width: 20px;
 	}
 
 	&__ghost {

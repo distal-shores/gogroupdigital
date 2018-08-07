@@ -13,7 +13,7 @@
 			padding: 20px 0px;
 			@include transition(all .3s ease-in-out);
 			& .header__logo {
-				@include sprite-background('logo');
+				@include background-logo('logo.svg');
 				display: inline-block;
 				@include transition(all 0s ease-in-out);
 			}
@@ -30,7 +30,7 @@
 			}
 		}
 	&__logo {
-		@include sprite-background('logo-white');
+		@include sprite-background('logo');
 		display: inline-block;
 		padding: $column-padding;
 		text-indent: -9000px;

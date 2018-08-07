@@ -52,7 +52,7 @@ add_action('init', function(){
 		'publicly_queryable' => true,
 		'show_ui' => true,
 		'query_var' => true,
-		'rewrite' => $rewrite,
+		'rewrite' => false,
 		'show_in_rest' => true,
 		'rest_base' => str_replace(" ", "_", strtolower($plural)),
 		'capability_type' => 'page',
@@ -60,7 +60,7 @@ add_action('init', function(){
 		'taxonomies' => array(''), // Uses the custom taxonomy created in this template
 		'has_archive' => true,
 		'hierarchical' => false,
-		'supports' => array('title', 'editor')
+		'supports' => array('title', 'editor', 'custom-fields')
 	  );
 
 	$slug = str_replace(" ", "_", strtolower($singular));
