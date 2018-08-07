@@ -9,7 +9,10 @@
 	<?php 
 		$featured_image = get_field('featured_image'); 
 		$subtitle = get_field('subtitle'); 
-		$content = get_field('content'); 
+		$content = get_field('content');
+		$author = get_field('author');
+		$author = $author[0];
+		// $author_portrait = get_field('author_portrait');
 	?>
 
 
@@ -40,10 +43,19 @@
 				<?php endif; ?>
 
 				<?php the_content(); ?>
-
+				
 				<?php if( get_field('content') ): ?>
 					<?php echo filter_ptags_on_images_acf($content); ?>
 				<?php endif; ?>
+				<div class="blog-post__author">
+					<?php if($author): ?>
+						<h2><?php echo $author->post_title; ?></h2>
+						<div class="blog-post__author__title"><?php echo get_field('title', $author->ID); ?></div>
+						<div class="blog-post__author__company"><?php echo get_field('company', $author->ID); ?></div>
+						<div class="blog-post__author__portrait"><img src="<?php echo get_field('profile_image', $author->ID)['url']; ?>" /></div>
+					<?php endif ?>
+				</div> <!-- /.blog-post__author -->
+
 			</div>
 		</div>
 

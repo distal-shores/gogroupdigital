@@ -24,6 +24,10 @@
 
 .blog-post {
 	padding-top: 40px;
+	&__author {
+		display: grid;
+		grid-template-columns: 80% 20%;
+	}
 	&__header {
 		background-color: white;
 		margin: -200px auto 0;
