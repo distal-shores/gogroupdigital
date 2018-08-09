@@ -52,7 +52,7 @@ add_action('init', function(){
 		'publicly_queryable' => true,
 		'show_ui' => true,
 		'query_var' => true,
-		'rewrite' => false,
+		'rewrite' => array( 'slug' => 'blog-posts' ),
 		'show_in_rest' => true,
 		'rest_base' => str_replace(" ", "_", strtolower($plural)),
 		'capability_type' => 'page',
@@ -69,5 +69,6 @@ add_action('init', function(){
 	$args = apply_filters( $plugin_slug . '/post-type/args', $args, $singular );
 
 	register_post_type($slug, $args);
+	flush_rewrite_rules();
 
 }, 0);
