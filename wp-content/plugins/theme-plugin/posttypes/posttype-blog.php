@@ -52,7 +52,7 @@ add_action('init', function(){
 		'publicly_queryable' => true,
 		'show_ui' => true,
 		'query_var' => true,
-		'rewrite' => array( 'slug' => 'blog-posts' ),
+		'rewrite' => array( 'slug' => 'our-insights' ),
 		'show_in_rest' => true,
 		'rest_base' => str_replace(" ", "_", strtolower($plural)),
 		'capability_type' => 'page',
