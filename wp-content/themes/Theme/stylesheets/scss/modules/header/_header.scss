@@ -17,7 +17,8 @@
 				display: inline-block;
 				@include transition(all 0s ease-in-out);
 			}
-			& .header__contact {
+			& .header__contact,
+			& .header__login {
 				color: $color-base-highlight;
 				border-color: $color-base-highlight;
 				&:hover {
