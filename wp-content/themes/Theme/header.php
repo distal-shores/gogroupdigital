@@ -51,6 +51,7 @@
 
 		<!-- Contact Button -->
 		<a href="#contact" class="header__contact contact-button">Get In Touch</a>
+		<a href="<?php echo wp_login_url() ?>" class="header__login login-button">Partner Login</a>
 
 	</div>
 </header>

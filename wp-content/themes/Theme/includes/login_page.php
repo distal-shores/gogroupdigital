@@ -52,10 +52,8 @@ function theme_custom_login_logo() {
 			body.login {
 				background-color: #fff;
 			}
-
-			body.login #nav a,
-			body.login #backtoblog a {
-				color: white;
+			#nav,#backtoblog,#notapartner {
+				text-align: center;
 			}
 		</style>
 

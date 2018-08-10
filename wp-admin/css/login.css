@@ -168,7 +168,8 @@ p {
 }
 
 .login #nav,
-.login #backtoblog {
+.login #backtoblog,
+.login #notapartner {
 	font-size: 13px;
 	padding: 0 24px 0;
 }
@@ -177,24 +178,28 @@ p {
 	margin: 24px 0 0 0;
 }
 
-#backtoblog {
+#backtoblog,
+#notapartner {
 	margin: 16px 0;
 }
 
 .login #nav a,
-.login #backtoblog a {
+.login #backtoblog a,
+.login #notapartner a {
 	text-decoration: none;
 	color: #555d66;
 }
 
 .login #nav a:hover,
 .login #backtoblog a:hover,
+.login #notapartner a:hover,
 .login h1 a:hover {
 	color: #00a0d2;
 }
 
 .login #nav a:focus,
 .login #backtoblog a:focus,
+.login #notapartner a:focus,
 .login h1 a:focus {
 	color: #124964;
 }

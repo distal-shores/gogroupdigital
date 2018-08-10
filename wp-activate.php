@@ -103,7 +103,7 @@ get_header( 'wp-activate' );
 					printf(
 						/* translators: 1: login URL, 2: username, 3: user email, 4: lost password URL */
 						__( 'Your account has been activated. You may now <a href="%1$s">log in</a> to the site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href="%4$s">reset your password</a>.' ),
-						network_site_url( 'wp-login.php', 'login' ),
+						network_site_url( 'login.php', 'login' ),
 						$signup->user_login,
 						$signup->user_email,
 						wp_lostpassword_url()
@@ -148,7 +148,7 @@ get_header( 'wp-activate' );
 			<?php else: ?>
 				<p class="view"><?php
 					/* translators: 1: login URL, 2: network home URL */
-					printf( __( 'Your account is now activated. <a href="%1$s">Log in</a> or go back to the <a href="%2$s">homepage</a>.' ), network_site_url( 'wp-login.php', 'login' ), network_home_url() );
+					printf( __( 'Your account is now activated. <a href="%1$s">Log in</a> or go back to the <a href="%2$s">homepage</a>.' ), network_site_url( 'login.php', 'login' ), network_home_url() );
 				?></p>
 			<?php endif;
 		}

@@ -65,7 +65,7 @@ Yes, but the [Multisite Tools addon](https://deliciousbrains.com/wp-migrate-db-p
 
 No, it only operates on the database. The pro version's [Media Files addon](https://deliciousbrains.com/wp-migrate-db-pro/doc/media-files-addon/?utm_campaign=addons%2Binstall&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=faqs) allows you to migrate media files.
 
-= Why do I end up with a wp-login.php download instead of the exported SQL file? =
+= Why do I end up with a login.php download instead of the exported SQL file? =
 
 It is likely you have a download manager plugin or extension installed in your web browser. You will need to disable it for the SQL download to work properly.
 

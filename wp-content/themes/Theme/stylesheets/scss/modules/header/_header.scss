@@ -39,7 +39,8 @@
 		@include transition(all 0s ease-in-out);
 	}
 
-	&__contact {
+	&__contact,
+	&__login {
 		font-size: 15px;
 		letter-spacing: 2.72px;
 		margin: 0px;
@@ -55,6 +56,10 @@
 		@media (max-width: 600px) {
 			display: none;
 		}
+	}
+
+	&__login {
+		margin-right: 15px;
 	}
 
 	&__nav-button {

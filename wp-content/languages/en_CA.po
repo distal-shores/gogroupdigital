@@ -225,7 +225,7 @@ msgstr "An error occurred while attempting to export personal data."
 msgid "No personal data export file was generated."
 msgstr "No personal data export file was generated."
 
-#: wp-login.php:875
+#: login.php:875
 msgid "User action confirmed."
 msgstr "User action confirmed."
 
@@ -233,7 +233,7 @@ msgstr "User action confirmed."
 msgid "This link has expired."
 msgstr "This link has expired."
 
-#: wp-includes/user.php:3248 wp-includes/user.php:3389 wp-login.php:844
+#: wp-includes/user.php:3248 wp-includes/user.php:3389 login.php:844
 msgid "Invalid request."
 msgstr "Invalid request."
 
@@ -649,13 +649,13 @@ msgid "Your theme can display menus in one location. Select which menu you would
 msgstr "Your theme can display menus in one location. Select which menu you would like to use."
 
 #. translators: %s: site name
-#: wp-login.php:363
+#: login.php:363
 msgid "Site Name: %s"
 msgstr "Site Name: %s"
 
 #. translators: Login screen title. 1: Login screen name, 2: Network or site
 #. name
-#: wp-login.php:61
+#: login.php:61
 msgid "%1$s &lsaquo; %2$s &#8212; WordPress"
 msgstr "%1$s &lsaquo; %2$s &#8212; WordPress"
 
@@ -3719,7 +3719,7 @@ msgctxt "previous set of posts"
 msgid "Previous"
 msgstr "Previous"
 
-#: wp-includes/general-template.php:396 wp-login.php:589 wp-login.php:1026
+#: wp-includes/general-template.php:396 login.php:589 login.php:1026
 msgid "Username or Email Address"
 msgstr "Username or Email Address"
 
@@ -4256,7 +4256,7 @@ msgid "Sorry, you are not allowed to delete this post."
 msgstr "Sorry, you are not allowed to delete this post."
 
 #. translators: %s: site title
-#: wp-login.php:253
+#: login.php:253
 msgctxt "site"
 msgid "&larr; Back to %s"
 msgstr "&larr; Back to %s"
@@ -4330,7 +4330,7 @@ msgstr ""
 "Are you sure you want to do this?\n"
 "The comment changes you made will be lost."
 
-#: wp-includes/script-loader.php:507 wp-login.php:705
+#: wp-includes/script-loader.php:507 login.php:705
 msgid "Confirm use of weak password"
 msgstr "Confirm use of weak password"
 
@@ -4474,7 +4474,7 @@ msgstr "Removing %1$s manually will cause PHP warnings. Use the %2$s filter inst
 msgid "The next group of formatting shortcuts are applied as you type or when you insert them around plain text in the same paragraph. Press Escape or the Undo button to undo."
 msgstr "The next group of formatting shortcuts are applied as you type or when you insert them around plain text in the same paragraph. Press Escape or the Undo button to undo."
 
-#: wp-login.php:980
+#: login.php:980
 msgid "Your session has expired. Please log in to continue where you left off."
 msgstr "Your session has expired. Please log in to continue where you left off."
 
@@ -5432,7 +5432,7 @@ msgstr "As a browser icon"
 msgid "No items"
 msgstr "No items"
 
-#: wp-login.php:821
+#: login.php:821
 msgid "Registration confirmation will be emailed to you."
 msgstr "Registration confirmation will be emailed to you."
 
@@ -5497,11 +5497,11 @@ msgstr "Add to menu: %1$s (%2$s)"
 msgid "When starting a new paragraph with one of these formatting shortcuts followed by a space, the formatting will be applied automatically. Press Backspace or Escape to undo."
 msgstr "When starting a new paragraph with one of these formatting shortcuts followed by a space, the formatting will be applied automatically. Press Backspace or Escape to undo."
 
-#: wp-login.php:556
+#: login.php:556
 msgid "Your password reset link has expired. Please request a new link below."
 msgstr "Your password reset link has expired. Please request a new link below."
 
-#: wp-login.php:554
+#: login.php:554
 msgid "Your password reset link appears to be invalid. Please request a new link below."
 msgstr "Your password reset link appears to be invalid. Please request a new link below."
 
@@ -6028,7 +6028,7 @@ msgstr "XML error: %1$s at line %2$s"
 msgid "User Dashboard: %s"
 msgstr "User Dashboard: %s"
 
-#: wp-login.php:920 wp-login.php:925
+#: login.php:920 login.php:925
 msgid "https://codex.wordpress.org/Cookies"
 msgstr "https://codex.wordpress.org/Cookies"
 
@@ -6623,7 +6623,7 @@ msgctxt "add new media"
 msgid "Add New"
 msgstr "Add New"
 
-#: wp-login.php:994
+#: login.php:994
 msgid "<strong>You have successfully updated WordPress!</strong> Please log back in to see what&#8217;s new."
 msgstr "<strong>You have successfully updated WordPress!</strong> Please log back in to see what&#8217;s new."
 
@@ -6828,12 +6828,12 @@ msgid "Keyboard Shortcuts"
 msgstr "Keyboard Shortcuts"
 
 #. translators: 1: Browser cookie documentation URL
-#: wp-login.php:924
+#: login.php:924
 msgid "<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href=\"%s\">enable cookies</a> to use WordPress."
 msgstr "<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href=\"%s\">enable cookies</a> to use WordPress."
 
 #. translators: 1: Browser cookie documentation URL, 2: Support forums URL
-#: wp-login.php:919
+#: login.php:919
 msgid "<strong>ERROR</strong>: Cookies are blocked due to unexpected output. For help, please see <a href=\"%1$s\">this documentation</a> or try the <a href=\"%2$s\">support forums</a>."
 msgstr "<strong>ERROR</strong>: Cookies are blocked due to unexpected output. For help, please see <a href=\"%1$s\">this documentation</a> or try the <a href=\"%2$s\">support forums</a>."
 
@@ -7657,12 +7657,12 @@ msgstr "https://wordpress.org/support/forum/requests-and-feedback"
 #: wp-includes/admin-bar.php:164 wp-includes/update.php:153
 #: wp-includes/update.php:345 wp-includes/update.php:527
 #: wp-includes/wp-db.php:1062 wp-includes/wp-db.php:1595
-#: wp-includes/wp-db.php:1753 wp-login.php:920
+#: wp-includes/wp-db.php:1753 login.php:920
 msgid "https://wordpress.org/support/"
 msgstr "https://wordpress.org/support/"
 
 #: wp-includes/admin-bar.php:148
-#: wp-includes/widgets/class-wp-widget-meta.php:72 wp-login.php:116
+#: wp-includes/widgets/class-wp-widget-meta.php:72 login.php:116
 msgid "https://wordpress.org/"
 msgstr "https://en-ca.wordpress.org/"
 
@@ -7958,7 +7958,7 @@ msgstr "The web browser on your device cannot be used to upload files. You may b
 msgid "<strong>ERROR</strong>: Couldn&#8217;t register you&hellip; please contact the <a href=\"mailto:%s\">webmaster</a> !"
 msgstr "<strong>ERROR</strong>: Couldn&#8217;t register you&hellip; please contact the <a href=\"mailto:%s\">webmaster</a> !"
 
-#: wp-login.php:401
+#: login.php:401
 msgid "Possible reason: your host may have disabled the mail() function."
 msgstr "Possible reason: your host may have disabled the mail() function."
 
@@ -9316,7 +9316,7 @@ msgstr "Invalid attachment ID."
 msgid "This file no longer needs to be included."
 msgstr "This file no longer needs to be included."
 
-#: wp-login.php:577
+#: login.php:577
 msgid "Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "Please enter your username or email address. You will receive a link to create a new password via email."
 
@@ -9353,43 +9353,43 @@ msgstr "Medium size image width"
 msgid "Large size image height"
 msgstr "Large size image height"
 
-#: wp-login.php:682
+#: login.php:682
 msgid "Enter your new password below."
 msgstr "Enter your new password below."
 
-#: wp-login.php:366
+#: login.php:366
 msgid "If this was a mistake, just ignore this email and nothing will happen."
 msgstr "If this was a mistake, just ignore this email and nothing will happen."
 
-#: wp-login.php:361
+#: login.php:361
 msgid "Someone has requested a password reset for the following account:"
 msgstr "Someone has requested a password reset for the following account:"
 
-#: wp-login.php:674
+#: login.php:674
 msgid "Your password has been reset."
 msgstr "Your password has been reset."
 
-#: wp-login.php:674
+#: login.php:674
 msgid "Password Reset"
 msgstr "Password Reset"
 
-#: wp-login.php:659
+#: login.php:659
 msgid "The passwords do not match."
 msgstr "The passwords do not match."
 
-#: wp-login.php:682 wp-login.php:729
+#: login.php:682 login.php:729
 msgid "Reset Password"
 msgstr "Reset Password"
 
-#: wp-login.php:367
+#: login.php:367
 msgid "To reset your password, visit the following address:"
 msgstr "To reset your password, visit the following address:"
 
-#: wp-login.php:711
+#: login.php:711
 msgid "Confirm new password"
 msgstr "Confirm new password"
 
-#: wp-login.php:690
+#: login.php:690
 msgid "New password"
 msgstr "New password"
 
@@ -10275,40 +10275,40 @@ msgstr "There doesn&#8217;t seem to be any new mail."
 msgid "Slow down cowboy, no need to check for new mails so often!"
 msgstr "Slow down, there is no need to check for new mail so often."
 
-#: wp-login.php:992
+#: login.php:992
 msgid "Registration complete. Please check your email."
 msgstr "Registration complete. Please check your email."
 
-#: wp-login.php:990
+#: login.php:990
 msgid "Check your email for your new password."
 msgstr "Check your email for your new password."
 
-#: wp-login.php:988
+#: login.php:988
 msgid "Check your email for the confirmation link."
 msgstr "Check your email for the confirmation link."
 
-#: wp-login.php:986
+#: login.php:986
 msgid "User registration is currently not allowed."
 msgstr "User registration is currently not allowed."
 
-#: wp-login.php:984
+#: login.php:984
 msgid "You are now logged out."
 msgstr "You are now logged out."
 
-#: wp-login.php:943
+#: login.php:943
 msgid "You have logged in successfully."
 msgstr "You have logged in successfully."
 
 #: wp-includes/user.php:149 wp-includes/user.php:175 wp-includes/user.php:227
-#: wp-includes/user.php:247 wp-login.php:830 wp-login.php:1068
+#: wp-includes/user.php:247 login.php:830 login.php:1068
 msgid "Lost your password?"
 msgstr "Lost your password?"
 
-#: wp-login.php:802
+#: login.php:802
 msgid "Register For This Site"
 msgstr "Register For This Site"
 
-#: wp-login.php:802
+#: login.php:802
 msgid "Registration Form"
 msgstr "Registration Form"
 
@@ -10316,11 +10316,11 @@ msgstr "Registration Form"
 msgid "&larr; Back to Tags"
 msgstr "&larr; Back to Tags"
 
-#: wp-login.php:600
+#: login.php:600
 msgid "Get New Password"
 msgstr "Get New Password"
 
-#: wp-login.php:577
+#: login.php:577
 msgid "Lost Password"
 msgstr "Lost Password"
 
@@ -10336,16 +10336,16 @@ msgstr "<strong>ERROR</strong>: Please type your email address."
 #: wp-includes/user.php:2234 wp-includes/user.php:2259
 #: wp-includes/user.php:2268 wp-includes/user.php:2272
 #: wp-includes/user.php:2289 wp-includes/user.php:3397
-#: wp-includes/user.php:3409 wp-includes/user.php:3427 wp-login.php:853
+#: wp-includes/user.php:3409 wp-includes/user.php:3427 login.php:853
 msgid "Invalid key"
 msgstr "Invalid key"
 
-#: wp-login.php:401
+#: login.php:401
 msgid "The email could not be sent."
 msgstr "The email could not be sent."
 
 #. translators: Password reset email subject. %s: Site name
-#: wp-login.php:371
+#: login.php:371
 msgid "[%s] Password Reset"
 msgstr "[%s] Password Reset"
 
@@ -10353,19 +10353,19 @@ msgstr "[%s] Password Reset"
 msgid "Password reset is not allowed for this user"
 msgstr "Password reset is not allowed for this user"
 
-#: wp-login.php:338
+#: login.php:338
 msgid "<strong>ERROR</strong>: Invalid username or email."
 msgstr "<strong>ERROR</strong>: Invalid username or email."
 
-#: wp-login.php:317
+#: login.php:317
 msgid "<strong>ERROR</strong>: There is no user registered with that email address."
 msgstr "<strong>ERROR</strong>: There is no user registered with that email address."
 
-#: wp-login.php:313
+#: login.php:313
 msgid "<strong>ERROR</strong>: Enter a username or email address."
 msgstr "<strong>ERROR</strong>: Enter a username or email address."
 
-#: wp-login.php:117
+#: login.php:117
 msgid "Powered by WordPress"
 msgstr "Powered by WordPress"
 
@@ -10687,7 +10687,7 @@ msgstr "[%s] New User Registration"
 
 #. translators: %s: user login
 #: wp-includes/pluggable.php:1833 wp-includes/pluggable.php:1897
-#: wp-login.php:365
+#: login.php:365
 msgid "Username: %s"
 msgstr "Username: %s"
 
@@ -11369,12 +11369,12 @@ msgstr "Search Results %1$s %2$s"
 msgid "Site Admin"
 msgstr "Site Admin"
 
-#: wp-includes/general-template.php:527 wp-login.php:607 wp-login.php:736
-#: wp-login.php:824 wp-login.php:1060
+#: wp-includes/general-template.php:527 login.php:607 login.php:736
+#: login.php:824 login.php:1060
 msgid "Register"
 msgstr "Register"
 
-#: wp-includes/general-template.php:398 wp-login.php:1041
+#: wp-includes/general-template.php:398 login.php:1041
 msgid "Remember Me"
 msgstr "Remember Me"
 
@@ -11382,8 +11382,8 @@ msgstr "Remember Me"
 msgid "Log out"
 msgstr "Log out"
 
-#: wp-includes/general-template.php:260 wp-login.php:604 wp-login.php:674
-#: wp-login.php:733 wp-login.php:828
+#: wp-includes/general-template.php:260 login.php:604 login.php:674
+#: login.php:733 login.php:828
 msgid "Log in"
 msgstr "Log in"
 
@@ -11908,7 +11908,7 @@ msgstr "Date Format"
 msgid "Allow people to post comments on new articles"
 msgstr "Allow people to post comments on new articles"
 
-#: wp-includes/comment-template.php:2203 wp-login.php:810
+#: wp-includes/comment-template.php:2203 login.php:810
 msgid "Email"
 msgstr "Email"
 
@@ -11951,11 +11951,11 @@ msgstr "Yes"
 msgid "Edit Category"
 msgstr "Edit Category"
 
-#: wp-includes/general-template.php:399 wp-login.php:1011 wp-login.php:1043
+#: wp-includes/general-template.php:399 login.php:1011 login.php:1043
 msgid "Log In"
 msgstr "Log In"
 
-#: wp-login.php:700
+#: login.php:700
 msgid "Strength indicator"
 msgstr "Strength indicator"
 
@@ -12242,11 +12242,11 @@ msgstr "Thumbnail"
 msgid "Redo"
 msgstr "Redo"
 
-#: wp-includes/general-template.php:397 wp-login.php:1030
+#: wp-includes/general-template.php:397 login.php:1030
 msgid "Password"
 msgstr "Password"
 
-#: wp-login.php:806
+#: login.php:806
 msgid "Username"
 msgstr "Username"
 

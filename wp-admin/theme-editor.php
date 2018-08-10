@@ -303,7 +303,7 @@ $dismissed_pointers = explode( ',', (string) get_user_meta( get_current_user_id(
 if ( ! in_array( 'theme_editor_notice', $dismissed_pointers, true ) ) :
 	// Get a back URL
 	$referer = wp_get_referer();
-	$excluded_referer_basenames = array( 'theme-editor.php', 'wp-login.php' );
+	$excluded_referer_basenames = array( 'theme-editor.php', 'login.php' );
 
 	if ( $referer && ! in_array( basename( parse_url( $referer, PHP_URL_PATH ) ), $excluded_referer_basenames, true ) ) {
 		$return_url = $referer;

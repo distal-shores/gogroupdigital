@@ -146,7 +146,7 @@ class acf_input {
 			$this->admin_head = 'customize_controls_print_scripts';
 			$this->admin_footer = 'customize_controls_print_footer_scripts';
 			
-		} elseif( $pagenow == 'wp-login.php' ) { 
+		} elseif( $pagenow == 'login.php' ) { 
 			
 			$this->admin_enqueue_scripts = 'login_enqueue_scripts';
 			$this->admin_head = 'login_head';
