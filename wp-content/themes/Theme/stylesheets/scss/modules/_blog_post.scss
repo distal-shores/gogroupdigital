@@ -30,7 +30,7 @@
 	}
 	&__header {
 		background-color: white;
-		margin: -200px auto 0;
+		margin: -50vh auto 0;
 		max-width: 1200px;
 		padding: 120px 30px 0px 30px;
 		position: relative;
@@ -87,7 +87,7 @@
 		// max-width: 1140px;
 		margin: 0px auto;
 		img {
-			max-height: 50vh;
+			max-height: 100vh;
 			max-width: none;
 			object-fit: cover;
 			width: 100%;
@@ -95,10 +95,14 @@
 	}
 
 	& .page-content {
-		max-width: 1120px;
+		max-width: 1200px;
 		margin: 0px auto;
-		padding: 0px 15px 0px 15px;
+		padding: 80px 0;
 		text-align: left;
+		.l-container {
+			background-color: white;
+			margin-top: -150px;
+		}
 		& .l-container > *:last-child {
 			position: relative;
 			&:after {
