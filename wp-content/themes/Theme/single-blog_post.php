@@ -22,8 +22,7 @@
 
 
 		<?php if($featured_image): ?>
-			<div class="blog-post__image">
-				<img src="<?php echo $featured_image['sizes']['blog_large']; ?>" />
+			<div class="blog-post__image" style="background-image:url(<?php echo $featured_image['sizes']['blog_large']; ?>)">
 			</div>
 		<?php endif; ?>
 		
@@ -37,7 +36,7 @@
 			<p class="blog-post__header__date">
 				<?php $post_date = get_the_date( 'F j, Y' ); echo $post_date; ?>
 			</p>
-		</div>
+		</div> 
 
 		<div class="page-content">
 			<div class="l-container blog-content">
@@ -72,7 +71,6 @@
 						<div class="blog-post__author__portrait"><img src="<?php echo get_field('profile_image', $author->ID)['url']; ?>" /></div>
 					<?php endif ?>
 				</div> <!-- /.blog-post__author -->
-
 			</div>
 		</div>
 

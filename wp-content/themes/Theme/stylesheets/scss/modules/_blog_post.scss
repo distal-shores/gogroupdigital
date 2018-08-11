@@ -32,7 +32,7 @@
 		background-color: white;
 		margin: -50vh auto 0;
 		max-width: 1200px;
-		padding: 120px 30px 0px 30px;
+		padding: 90px 30px 0px 30px;
 		position: relative;
 		@media (max-width: 670px) {
 			margin: 0;
@@ -84,14 +84,11 @@
 	}
 
 	&__image {
-		// max-width: 1140px;
+		background-position: 50% -60%;
+		background-repeat: no-repeat;
+		background-size: 110%;
+		height: 100vh;
 		margin: 0px auto;
-		img {
-			max-height: 100vh;
-			max-width: none;
-			object-fit: cover;
-			width: 100%;
-		}
 	}
 
 	& .page-content {
