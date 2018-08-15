@@ -17,7 +17,7 @@
 		$author_photo = get_field('author_photo');
 		$go_content = get_field('go_content_switch');
 		$user = wp_get_current_user();
-		$privileged_users = array('administrator', 'go_member');
+		$privileged_users = array('administrator', 'managing_partner','strategic_partner','associate_partner');
 	?>
 
 

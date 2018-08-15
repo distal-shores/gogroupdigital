@@ -11,8 +11,24 @@ License: GPL2
 
 // Add the 'Go Member' user role
 add_role(
-    'go_member',
-    __( 'GO Member' ),
+    'managing_partner',
+    __( 'Managing Partner' ),
+    array(
+        'read'         => true,
+        'edit_posts'   => true,
+    )
+);
+add_role(
+    'strategic_partner',
+    __( 'Strategic Partner' ),
+    array(
+        'read'         => true,
+        'edit_posts'   => true,
+    )
+);
+add_role(
+    'associate_partner',
+    __( 'Associate Partner' ),
     array(
         'read'         => true,
         'edit_posts'   => true,
