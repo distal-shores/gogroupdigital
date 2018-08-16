@@ -123,6 +123,7 @@
 			<p class="blog__description"><?php the_field('evolutionary_to_epic_blurb'); ?></p>
 			<ul class="blog-tiles">
 				<?php
+					$user = wp_get_current_user();
 					$args = array(
 						'post_type' => 'blog_post',
 						'posts_per_page' => 6,
