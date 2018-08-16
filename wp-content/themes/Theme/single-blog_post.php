@@ -17,7 +17,11 @@
 		$author_photo = get_field('author_photo');
 		$go_content = get_field('go_content_switch');
 		$user = wp_get_current_user();
-		$privileged_users = array('administrator', 'managing_partner','strategic_partner','associate_partner');
+		$privilege_level = wp_get_post_terms(get_the_ID(), 'privilege_level');
+		$privilege_levels = array();
+		foreach($privilege_level as $level) {
+			$privilege_levels[] = $level->slug;
+		}
 	?>
 
 
@@ -49,28 +53,24 @@
 				<?php the_content(); ?>
 
 				<?php
-					if($go_content) {
-						if ( in_array_any($privileged_users, (array) $user->roles) ) {
-	    					if( get_field('content') ) {
-	    						echo filter_ptags_on_images_acf($content);
-	    					}
-						} else {
-							echo '<div>This content is reserved for GO Managing and Strategic partners. Please contact <a href="mailto:info@gogroupdigital.com">info@gogroupdigital.com</a> to learn about exclusive access.</div>'; 
-						}
+					if ( in_array_any($privilege_levels, (array) $user->roles) || empty($privilege_levels) || in_array('administrator', $user->roles)) {
+    					if( get_field('content') ) {
+    						echo filter_ptags_on_images_acf($content);
+    					}
 					} else {
-						if( get_field('content') ) {
-	    					echo filter_ptags_on_images_acf($content);
-	    				}
+						echo '
+								<p style="text-align:left">This content is reserved for GO Managing and Strategic partners. Please contact <a href="mailto:info@gogroupdigital.com">info@gogroupdigital.com</a> to learn about exclusive access.
+								</p>'; 
 					}
 				?>
-				<div class="blog-post__author">
 					<?php if($author): ?>
-						<h2><?php echo $author->post_title; ?></h2>
-						<div class="blog-post__author__title"><?php echo get_field('title', $author->ID); ?></div>
-						<div class="blog-post__author__company"><?php echo get_field('company', $author->ID); ?></div>
-						<div class="blog-post__author__portrait"><img src="<?php echo get_field('profile_image', $author->ID)['url']; ?>" /></div>
+						<div class="blog-post__author">
+							<h2><?php echo $author->post_title; ?></h2>
+							<div class="blog-post__author__title"><?php echo get_field('title', $author->ID); ?></div>
+							<div class="blog-post__author__company"><?php echo get_field('company', $author->ID); ?></div>
+							<div class="blog-post__author__portrait"><img src="<?php echo get_field('profile_image', $author->ID)['url']; ?>" /></div>
+						</div> <!-- /.blog-post__author -->
 					<?php endif ?>
-				</div> <!-- /.blog-post__author -->
 			</div>
 		</div>
 

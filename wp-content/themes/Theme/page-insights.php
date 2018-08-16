@@ -15,6 +15,8 @@
 	else:
 		$banner_background = get_bloginfo('stylesheet_directory').'/images/banner-services.jpg';
 	endif;
+
+	$user = wp_get_current_user();
 ?>
 
 <div class="banner" style="background-image: url(<?php echo $banner_background; ?>);">
@@ -37,6 +39,20 @@
 					'posts_per_page' => -1,
 					'orderby'=> 'date',
 					'order' => 'DESC',
+					'tax_query' => array(
+						'relation' => 'OR',
+						array(
+							'taxonomy' => 'privilege_level',
+							'field'    => 'slug',
+							'terms'    => $user->roles,
+						),
+						array(
+            				'taxonomy' => 'privilege_level',
+            				'field'    => 'slug',
+            				'terms'    => array('managing_partner','strategic_partner','associate_partner'),
+            				'operator' => 'NOT IN'
+						),
+					),
 				);
 				$loop = new WP_Query( $args );
 				if ( $loop->have_posts() ): 

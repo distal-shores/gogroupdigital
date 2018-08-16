@@ -128,6 +128,20 @@
 						'posts_per_page' => 6,
 						'orderby'=> 'date',
 						'order' => 'DESC',
+						'tax_query' => array(
+							'relation' => 'OR',
+							array(
+								'taxonomy' => 'privilege_level',
+								'field'    => 'slug',
+								'terms'    => $user->roles,
+							),
+							array(
+            					'taxonomy' => 'privilege_level',
+            					'field'    => 'slug',
+            					'terms'    => array('managing_partner','strategic_partner','associate_partner'),
+            					'operator' => 'NOT IN'
+							),
+					),
 					);
 					$loop = new WP_Query( $args );
 					if ( $loop->have_posts() ): 
