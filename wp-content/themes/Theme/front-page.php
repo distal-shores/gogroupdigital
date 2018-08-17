@@ -158,6 +158,9 @@
 
 					}
 
+					$featured_post = get_field('e_to_e_featured_post');
+					$featured_post = $featured_post[0];
+
 					$loop = new WP_Query( $args );
 					if ( $loop->have_posts() ): 
 					$count = 0;
