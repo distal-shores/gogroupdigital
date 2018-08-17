@@ -123,6 +123,8 @@
 			<p class="blog__description"><?php the_field('evolutionary_to_epic_blurb'); ?></p>
 			<ul class="blog-tiles">
 				<?php
+					$featured_post = get_field('e_to_e_featured_post');
+					$featured_post = $featured_post[0];
 					$user = wp_get_current_user();
 					if(!in_array('administrator', $user->roles)) {
 
@@ -130,6 +132,7 @@
 							'post_type' => 'blog_post',
 							'posts_per_page' => 6,
 							'orderby'=> 'date',
+							'post__not_in' => array($featured_post->ID),
 							'order' => 'DESC',
 							'tax_query' => array(
 								'relation' => 'OR',
@@ -154,12 +157,10 @@
 							'posts_per_page' => 6,
 							'orderby'=> 'date',
 							'order' => 'DESC',
+							'post__not_in' => array($featured_post->ID),
 						);
 
 					}
-
-					$featured_post = get_field('e_to_e_featured_post');
-					$featured_post = $featured_post[0];
 
 					$loop = new WP_Query( $args );
 					if ( $loop->have_posts() ): 
