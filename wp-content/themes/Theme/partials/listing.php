@@ -28,20 +28,20 @@
 
     // Counting
     $position = 'blog-tile--normal';
-    if ($count === 0 ) {
+    if ($count === -1 ) {
     	$position = 'blog-tile--featured';
     }
-    if ($count % 7 == 2 ) {
+    if ($count % 7 == 0 ) {
     	$position = 'blog-tile--long';
     }
-    if ($count % 7 == 6 ) {
+    if ($count % 7 == 2 ) {
     	$position = 'blog-tile--long';
     }
 
 ?>
 
 <li class="blog-tile blog-tile--<?php echo $blog_category_class; ?> <?php echo $position; ?> <?php echo $thumbnail_checker; ?>">
-	<?php if ($count === 0 ): ?>
+	<?php if ($count === -1 ): ?>
 		<a href="<?php the_permalink(); ?>">
 			<?php if( $blog_thumbnail ): ?>
 			<div class="blog-post__thumbnail" style="background-image: url(<?php echo get_field('featured_image', $featured_post)['sizes']['blog_large'] ?>);">
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 		</a>
-	<?php elseif ($count % 7 == 2 || $count % 7 == 6 ): ?>
+	<?php elseif ($count % 7 == 0 || $count % 7 == 2 ): ?>
 		<a href="<?php the_permalink(); ?>" <?php if( $blog_thumbnail ): ?>style="background-image: url(<?php echo $blog_thumbnail_long ?>);"<?php endif; ?>>
 			<span class="blog-tile__content">
 				<p class="blog-tile__content__category"><?php echo $blog_categories_list; ?></p>

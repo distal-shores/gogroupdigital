@@ -34,6 +34,8 @@
 	<div class="l-container">
 		<ul class="blog-tiles">
 			<?php
+				$featured_post = get_field('e_to_e_featured_post', 2);
+				$featured_post = $featured_post[0];
 				if(!in_array('administrator', $user->roles)) {
 
 					$args = array(
@@ -41,6 +43,7 @@
 						'posts_per_page' => 6,
 						'orderby'=> 'date',
 						'order' => 'DESC',
+						'post__not_in' => array($featured_post->ID),
 						'tax_query' => array(
 							'relation' => 'OR',
 							array(
@@ -62,6 +65,7 @@
 					$args = array(
 						'post_type' => 'blog_post',
 						'posts_per_page' => 6,
+						'post__not_in' => array($featured_post->ID),
 						'orderby'=> 'date',
 						'order' => 'DESC',
 					);
@@ -69,7 +73,7 @@
 				}
 				$loop = new WP_Query( $args );
 				if ( $loop->have_posts() ): 
-				$count = 0;
+				$count = -1;
 				while ( $loop->have_posts() ) : $loop->the_post();
 					include(locate_template('partials/listing.php', false, false));
 					$count++;
