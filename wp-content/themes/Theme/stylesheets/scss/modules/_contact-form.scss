@@ -10,10 +10,17 @@
 	opacity: 0;
 	-webkit-overflow-scrolling: touch;
 	@include transition(all 0.3s ease-in-out);
+
 	&.active {
 		opacity: 1;
 		pointer-events: visible;
 		@include transition(all 0.3s ease-in-out);
+	}
+
+	.g-recaptcha {
+		> div {
+			margin: 25px auto 0;
+		}
 	}
 
 	&__form {
