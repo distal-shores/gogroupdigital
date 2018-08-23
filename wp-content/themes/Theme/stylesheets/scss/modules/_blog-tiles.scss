@@ -70,9 +70,9 @@
 		display: block;
 		clear: both;
 		padding-top: 30px;
-		& a {
+		a {
 			height: auto;
-			& .blog-tile__thumbnail {
+			.blog-post__thumbnail {
 				background-size: cover;
 				background-position: center center;
 				background-repeat: no-repeat;

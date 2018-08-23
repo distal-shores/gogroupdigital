@@ -37,7 +37,6 @@
 				$featured_post = get_field('e_to_e_featured_post', 2);
 				$featured_post = $featured_post[0];
 				if(!in_array('administrator', $user->roles)) {
-
 					$args = array(
 						'post_type' => 'blog_post',
 						'posts_per_page' => 6,
@@ -59,9 +58,7 @@
 							),
 						),
 					);
-					
 				} else {
-
 					$args = array(
 						'post_type' => 'blog_post',
 						'posts_per_page' => 6,
@@ -69,11 +66,10 @@
 						'orderby'=> 'date',
 						'order' => 'DESC',
 					);
-
 				}
 				$loop = new WP_Query( $args );
 				if ( $loop->have_posts() ): 
-				$count = -1;
+				$count = 0;
 				while ( $loop->have_posts() ) : $loop->the_post();
 					include(locate_template('partials/listing.php', false, false));
 					$count++;

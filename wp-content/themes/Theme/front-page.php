@@ -164,7 +164,7 @@
 
 					$loop = new WP_Query( $args );
 					if ( $loop->have_posts() ): 
-					$count = -1;
+					$count = 0;
 					while ( $loop->have_posts() ) : $loop->the_post();
 						include(locate_template('partials/listing.php', false, false));
 						$count++;
