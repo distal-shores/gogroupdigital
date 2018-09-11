@@ -19,6 +19,8 @@
 		else:
 			$banner_background = get_bloginfo('stylesheet_directory').'/images/banner-services.jpg';
 		endif;
+
+		$excludePosts = array(); // posts to exclude from the 'More UnitX Members' area
 	?>
 	<div class="banner" style="background-image: url(<?php echo $banner_background; ?>);">
 		<span class="banner__content">
@@ -102,11 +104,13 @@
 					$profile_description = html_entity_decode($profile_description);
 					$profile_industry = get_field('industry');
 					$profile_image = get_field('profile_image');
+					$excludePosts[] = $post->ID;
 					if($profile_image):
 						$profile_image = $profile_image['sizes']['thumbnail'];
 					else:
 						$profile_image = get_bloginfo('stylesheet_directory').'/images/placeholder-member.jpg';
 					endif;
+
 				?>
 		        <div class="member-tile">
 		        	<img src="<?php echo $profile_image; ?>" class="member-tile__image">
@@ -115,7 +119,9 @@
 		            	<span class="member-tile__bio__description"><?php echo $profile_description; ?></span>
 		            </div>
 		        </div>
-				<?php endforeach; wp_reset_postdata(); ?>
+				<?php 
+			endforeach; wp_reset_postdata(); 
+			?>
 			</div>
 		<?php endif; ?>
 
@@ -131,6 +137,7 @@
 					$profile_description = html_entity_decode($profile_description);
 					$profile_industry = get_field('industry');
 					$profile_image = get_field('profile_image');
+					$excludePosts[] = $post->ID;
 					if($profile_image):
 						$profile_image = $profile_image['sizes']['thumbnail'];
 					else:
@@ -148,11 +155,26 @@
 			</div>
 		<?php endif; ?>
 
-		<?php $posts = get_field('featured_unitx_members_3');
-		if( $posts ): ?>
 			<p class="featured-members__title">More UnitX experts.</p>
 			<div class="member-tiles">
-				<?php foreach($posts as $post): setup_postdata($post); 
+				<?php
+					$args = array(
+						'post_type' => 'member',
+						'posts_per_page' => 3,
+						'post__not_in' => $excludePosts,
+						'orderby'   => 'rand',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'member_specialization',
+								'field'    => 'slug',
+								'terms'    => 'unitx',
+							),
+						),
+					);
+					$loop = new WP_Query( $args );
+
+				while ( $loop->have_posts() ) : $loop->the_post();
+				
 					$profile_name = get_the_title();
 					$profile_description = get_field('profile_description');
 					$profile_description = htmlentities($profile_description, null, 'utf-8');
@@ -173,9 +195,8 @@
 		            	<span class="member-tile__bio__description"><?php echo $profile_description; ?></span>
 		            </div>
 		        </div>
-				<?php endforeach; wp_reset_postdata(); ?>
+				<?php endwhile; wp_reset_postdata(); ?>
 			</div>
-		<?php endif; ?>
 		</div>
 	</div>
 

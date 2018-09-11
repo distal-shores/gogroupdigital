@@ -46,9 +46,17 @@ function get_user_role( $user_id = 0 ) {
 add_action( 'init', 'blockusers_init');
 
 function blockusers_init() {
-    if ( is_admin() && get_user_role() == 'go_member' && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+    if ( is_admin() && get_user_role() != 'administrator' && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
         wp_redirect( home_url() );
         exit;
+    }
+}
+
+add_action('after_setup_theme', 'remove_admin_bar');
+ 
+function remove_admin_bar() {
+    if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
     }
 }
 

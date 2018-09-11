@@ -12,6 +12,7 @@
 		endif;
 	$blog_content = get_field('content');
 	$blog_content_truncated = wp_trim_words( $blog_content, $num_words = 25, $more = '...' ); 
+	$featured_post_blog_content_truncated = wp_trim_words( get_field('content', $featured_post), $num_words = 25, $more = '...' ); 
 
 	// Get Categories
 	$blog_categories_array = get_the_terms( get_the_ID(), 'category' );
@@ -27,36 +28,40 @@
 
     // Counting
     $position = 'blog-tile--normal';
-    if ($count === 0 ) {
-    	$position = 'blog-tile--featured';
-    }
-    if ($count % 7 == 2 ) {
+    if ($count === 0 || $count % 7 == 2  || $count % 7 == 4 ) {
     	$position = 'blog-tile--long';
     }
-    if ($count % 7 == 6 ) {
-    	$position = 'blog-tile--long';
-    }
+
+	$featured_post_blog_content_truncated = wp_trim_words( get_field('content', $featured_post), $num_words = 25, $more = '...' ); 
+	$featured_post_category = get_the_category($featured_post->ID)[0]->slug;
+
 ?>
 
-<li class="blog-tile blog-tile--<?php echo $blog_category_class; ?> <?php echo $position; ?> <?php echo $thumbnail_checker; ?>">
-	<?php if ($count === 0 ): ?>
+
+<?php if($count === 0): ?>
+	<li class="blog-tile blog-tile--<?php echo $featured_post_category; ?> blog-tile--featured has-thumbnail">
+
 		<a href="<?php the_permalink(); ?>">
-			<?php if( $blog_thumbnail ): ?>
-			<div class="blog-post__thumbnail" style="background-image: url(<?php echo $blog_thumbnail_featured ?>);">
-				<img src="<?php echo $blog_thumbnail_featured; ?>">
+			<div class="blog-post__thumbnail" style="background-image: url(<?php echo get_field('featured_image', $featured_post)['sizes']['blog_large'] ?>);">
+				<img src="<?php echo get_field('featured_image', $featured_post)['sizes']['blog_large'] ?>">
 			</div>
-			<?php endif; ?>
 			<div class="blog-tile__content">
 				<div class="l-container">
-					<p class="blog-tile__content__meta"><?php echo $blog_title; ?><span></span></p>
+					<p class="blog-tile__content__meta"><?php echo $featured_post->post_title ?><span></span></p>
 					<div class="blog-tile__content__details">
-						<p class="blog-tile__content__details__title"><?php echo $blog_subtitle; ?></p>
-						<p class="blog-tile__content__details__description"><?php echo $blog_content_truncated; ?></p>
+						<p class="blog-tile__content__details__title"><?php echo get_field('subtitle', $featured_post); ?></p>
+						<p class="blog-tile__content__details__description"><?php echo $featured_post_blog_content_truncated; ?></p>
 					</div>
 				</div>
 			</div>
 		</a>
-	<?php elseif ($count % 7 == 2 || $count % 7 == 6 ): ?>
+
+	</li>
+<?php endif; ?>
+
+
+<li class="blog-tile blog-tile--<?php echo $blog_category_class; ?> <?php echo $position; ?> <?php echo $thumbnail_checker; ?>">
+	<?php if ($count === 0 || $count % 7 == 2 || $count % 7 == 4 ): ?>
 		<a href="<?php the_permalink(); ?>" <?php if( $blog_thumbnail ): ?>style="background-image: url(<?php echo $blog_thumbnail_long ?>);"<?php endif; ?>>
 			<span class="blog-tile__content">
 				<p class="blog-tile__content__category"><?php echo $blog_categories_list; ?></p>
