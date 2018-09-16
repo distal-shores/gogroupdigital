@@ -111,13 +111,57 @@
 							<p class="office-tile__details__name"><?php echo $location_name; ?></p>
 							<span class="office-tile__details__address"><?php echo $location_address; ?></span>
 						</div>
-						<div class="office-tile__map" style="background-image: url(<?php echo $location_map; ?>);"></div>
+						<div class="office-tile__map" ></div>
 					</div>
 				<?php endwhile;
 				endif; ?>
 			</div>
 		</div>
 	</div>
-
 </div>
+<script>
+	const offices = Array.from(document.getElementsByClassName('office-tile__map'));
+	function initMap() {
+		let geocoder = new google.maps.Geocoder();
+		let address;
+		offices.map(el => {
+			showLocation(geocoder, el);
+		});
+	}
+	function showLocation(geocoder, el) {
+		let coor = {
+			lat: '',
+			lng: ''
+		};
+		let address = getAddress(el.previousElementSibling.children[1]);
+		geocoder.geocode({'address': address}, function(results, status) {
+			if (status === google.maps.GeocoderStatus.OK) {
+				coor.lat = results[0].geometry.location.lat();
+				coor.lng = results[0].geometry.location.lng();
+				let map = new google.maps.Map(el, {
+					center: coor,
+						zoom: 15
+				});
+				showMarker(map, coor, address);
+			}
+		});
+	}
+	function showMarker(resultedMap, coor, address) {
+		let marker = new google.maps.Marker({
+				map: resultedMap,
+				position: coor
+		});
+		let infoWindow = new google.maps.InfoWindow({
+			content: address
+		});	
+		marker.addListener('click', function() {
+			infoWindow.open(resultedMap, marker);
+		});
+	}
+	function getAddress(string) {
+		return string.children[0].childNodes[0].nodeValue;
+	}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDamahnGNNXb3nehQvuksnFzTEZYORG8KE&callback=initMap"
+    async defer></script>
 <?php get_footer(); ?>
