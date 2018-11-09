@@ -59,9 +59,6 @@
 		background-repeat: no-repeat;
 		height: 300px;
 		overflow: hidden;
-		&:hover {
-			opacity: 0.8;
-		}
 	}
 
 	&--featured {
@@ -216,5 +213,14 @@
 				}
 			}
 		}
+	}
+	.overlay {
+		width: calc(100% - 30px);
+		height: 100%;
+		background-color: black;
+		opacity: 0.4;
+		position: absolute;
+		z-index: 1;
+		right: 15px;
 	}
 }

@@ -40,7 +40,6 @@
 
 <?php if($count === 0): ?>
 	<li class="blog-tile blog-tile--<?php echo $featured_post_category; ?> blog-tile--featured has-thumbnail">
-
 		<a href="<?php the_permalink(); ?>">
 			<div class="blog-post__thumbnail" style="background-image: url(<?php echo get_field('featured_image', $featured_post)['sizes']['blog_large'] ?>);">
 				<img src="<?php echo get_field('featured_image', $featured_post)['sizes']['blog_large'] ?>">
@@ -61,6 +60,7 @@
 
 
 <li class="blog-tile blog-tile--<?php echo $blog_category_class; ?> <?php echo $position; ?> <?php echo $thumbnail_checker; ?>">
+	<div class="overlay"></div>
 	<?php if ($count === 0 || $count % 7 == 2 || $count % 7 == 4 ): ?>
 		<a href="<?php the_permalink(); ?>" <?php if( $blog_thumbnail ): ?>style="background-image: url(<?php echo $blog_thumbnail_long ?>);"<?php endif; ?>>
 			<span class="blog-tile__content">
