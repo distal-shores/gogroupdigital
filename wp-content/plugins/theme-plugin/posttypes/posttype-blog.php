@@ -60,7 +60,7 @@ add_action('init', function(){
 		'taxonomies' => array(''), // Uses the custom taxonomy created in this template
 		'has_archive' => true,
 		'hierarchical' => false,
-		'supports' => array('title', 'editor', 'custom-fields')
+		'supports' => array('title', 'editor', 'custom-fields', 'revisions')
 	  );
 
 	$slug = str_replace(" ", "_", strtolower($singular));
