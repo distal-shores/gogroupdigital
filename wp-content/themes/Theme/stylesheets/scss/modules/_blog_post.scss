@@ -84,18 +84,26 @@
 	}
 
 	&__image {
-		background-position: 50% -60%;
+		height: 50vh;
+		@media (min-width: 1450px) {
+			background-position: 50% -60%;
+			height: 100vh;
+		}
 		background-repeat: no-repeat;
 		background-size: 110%;
-		height: 100vh;
 		margin: 0px auto;
 	}
 
 	& .page-content {
-		max-width: 1200px;
-		margin: 0px auto;
-		padding: 80px 0;
-		text-align: left;
+		max-width: 740px;
+		margin-top: 15vh;
+		img {
+			&.alignleft {
+				float: left;
+				margin: 15px 20px 0 0;
+				display: inline;
+			}
+		}
 		.l-container {
 			background-color: white;
 			margin-top: -150px;
@@ -117,8 +125,6 @@
 		& .l-container ol,
 		& .l-container li {
 			max-width: 740px;
-			margin-left: auto;
-			margin-right: auto;
 			@media (max-width: 480px) {
 				font-size: 18px;
 				line-height: 28px;
@@ -128,38 +134,17 @@
 				line-height: 28px;
 			}
 		}
-		& .l-container h1 {
-			max-width: 740px;
-			margin-left: auto;
-			margin-right: auto;
+		& .l-container h1, h2, h3, h4, h5 {
+			margin: 0 auto;
 		}
 		& .l-container h2 {
-			max-width: 740px;
-			margin-left: auto;
-			margin-right: auto;
 			font-family: $font-accent;
-		}
-		& .l-container h3 {
-			max-width: 740px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		& .l-container h4 {
-			max-width: 740px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		& .l-container h5 {
-			max-width: 740px;
-			margin-left: auto;
-			margin-right: auto;
 		}
 		& blockquote {
 			background: white;
 			border-left: 5px solid $color-brand;
 			padding: 50px 0px 50px 4vw;
 			text-align: left;
-			max-width: 740px;
 			& * {
 				color: $color-base;
 				font-size: 18px;
@@ -175,14 +160,6 @@
 			}
 			p:first-of-type {
 				position: relative;
-				// &:before {
-				// 	content: '\201C';
-				// 	position: absolute;
-				// 	left: -15px;
-				// }
-				// &:after {
-				// 	content: '\201D';
-				// }
 				@media screen and (max-width: 580px) {
 					&:before {
 						position: relative;
@@ -198,8 +175,7 @@
 			margin-bottom: 20px;
 			position: relative;
 			max-width: 740px;
-			margin-left: auto;
-			margin-right: auto;
+			margin: 0 auto;
 			&:before {
 				background-color: #DEE4E5;
 				display: block;
@@ -219,9 +195,7 @@
 	}
 
 	&__subtitle {
-		max-width: 740px;
-		margin-left: auto;
-		margin-right: auto;
+		margin: 0 auto;
 		font-size: 36px;
 		line-height: 55px;
 		font-weight: 400;
