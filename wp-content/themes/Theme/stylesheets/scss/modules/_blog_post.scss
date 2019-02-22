@@ -95,8 +95,11 @@
 	}
 
 	& .page-content {
-		max-width: 740px;
-		margin-top: 15vh;
+		max-width: 1200px;
+		padding: 150px 0;
+		* {
+			margin: 18px auto;
+		}
 		img {
 			&.alignleft {
 				float: left;
@@ -145,6 +148,7 @@
 			border-left: 5px solid $color-brand;
 			padding: 50px 0px 50px 4vw;
 			text-align: left;
+			max-width: 740px;
 			& * {
 				color: $color-base;
 				font-size: 18px;
@@ -170,12 +174,12 @@
 		}
 		& .pullquote {
 			background-color: #f7f7f7;
-			border-radius: 4px;
 			padding: 20px;
 			margin-bottom: 20px;
 			position: relative;
 			max-width: 740px;
-			margin: 0 auto;
+			border-left: 4px solid grey;
+			// margin: 0 auto;
 			&:before {
 				background-color: #DEE4E5;
 				display: block;
