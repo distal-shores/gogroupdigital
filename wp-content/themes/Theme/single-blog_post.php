@@ -59,7 +59,7 @@
     					}
 					} else {
 						echo '
-								<p style="text-align:left">This content is reserved for GO Managing and Strategic partners. Please contact <a href="mailto:info@gogroupdigital.com">info@gogroupdigital.com</a> to learn about exclusive access.
+								<p style="text-align:left">This content is reserved for GO Partners. Please contact <a href="mailto:info@gogroupdigital.com">info@gogroupdigital.com</a> to learn about exclusive access.
 								</p>'; 
 					}
 				?>

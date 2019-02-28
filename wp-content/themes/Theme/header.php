@@ -60,7 +60,11 @@
 
 		<!-- Contact Button -->
 		<a href="#contact" class="header__contact contact-button">Get In Touch</a>
-		<a href="<?php echo wp_login_url() ?>" class="header__login login-button">Partner Login</a>
+		<?php if(!is_user_logged_in()) : ?>
+			<a href="<?php echo wp_login_url() ?>" class="header__login login-button">Partner Login</a>
+		<?php else : ?>
+			<a href="<?php echo wp_logout_url() ?>" class="header__login login-button">Log Out</a>
+		<?php endif; ?>
 
 	</div>
 </header>

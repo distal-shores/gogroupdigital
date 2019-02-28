@@ -65,16 +65,16 @@
 		<a href="<?php the_permalink(); ?>" <?php if( $blog_thumbnail ): ?>style="background-image: url(<?php echo $blog_thumbnail_long ?>);"<?php endif; ?>>
 			<span class="blog-tile__content">
 				<p class="blog-tile__content__category"><?php echo $blog_categories_list; ?></p>
-				<p class="blog-tile__content__subtitle"><?php echo $blog_subtitle; ?></p>
 				<p class="blog-tile__content__title"><?php echo $blog_title; ?></p>
+				<p class="blog-tile__content__subtitle"><?php echo $blog_subtitle; ?></p>
 			</span>
 		</a>
 	<?php else: ?>
 		<a href="<?php the_permalink(); ?>" <?php if( $blog_thumbnail ): ?>style="background-image: url(<?php echo $blog_thumbnail_small ?>);"<?php endif; ?>>
 			<span class="blog-tile__content">
 				<p class="blog-tile__content__category"><?php echo $blog_categories_list; ?></p>
-				<p class="blog-tile__content__subtitle"><?php echo $blog_subtitle; ?></p>
 				<p class="blog-tile__content__title"><?php echo $blog_title; ?></p>
+				<p class="blog-tile__content__subtitle"><?php echo $blog_subtitle; ?></p>
 			</span>
 		</a>
 	<?php endif; ?>
