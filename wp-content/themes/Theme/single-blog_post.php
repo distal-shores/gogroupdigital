@@ -27,20 +27,20 @@
 
 		<?php if($featured_image): ?>
 			<div class="blog-post__image" style="background-image:url(<?php echo $featured_image['sizes']['blog_large']; ?>)">
+				<div class="blog-post__header">
+					<h1 class="blog-post__header__title"><?php the_title(); ?></h1>
+					<p class="blog-post__header__categories">
+						<?php foreach((get_the_category()) as $category) { 
+							echo $category->cat_name . ' '; 
+						}  ?>
+					</p>
+					<p class="blog-post__header__date">
+						<?php $post_date = get_the_date( 'F j, Y' ); echo $post_date; ?>
+					</p>
+				</div> 
 			</div>
 		<?php endif; ?>
 		
-		<div class="blog-post__header">
-			<h1 class="blog-post__header__title"><?php the_title(); ?></h1>
-			<p class="blog-post__header__categories">
-				<?php foreach((get_the_category()) as $category) { 
-					echo $category->cat_name . ' '; 
-				}  ?>
-			</p>
-			<p class="blog-post__header__date">
-				<?php $post_date = get_the_date( 'F j, Y' ); echo $post_date; ?>
-			</p>
-		</div> 
 
 		<div class="page-content">
 			<div class="l-container blog-content">
@@ -100,7 +100,66 @@
 				}
 			wp_reset_postdata();
 			?>
+
 		</div>
+		<!-- Blog Posts -->
+		<div class="l-container">
+			<h2 class="other-posts">Other Posts from Evolutionary to Epic</h2>
+			<ul class="blog-tiles">
+				<?php
+					$user = wp_get_current_user();
+					if(!in_array('administrator', $user->roles)) {
+
+						$args = array(
+							'post_type' => 'blog_post',
+							'posts_per_page' => 6,
+							'orderby'=> 'date',
+							'post__not_in' => array($featured_post->ID),
+							'order' => 'DESC',
+							'tax_query' => array(
+								'relation' => 'OR',
+								array(
+									'taxonomy' => 'privilege_level',
+									'field'    => 'slug',
+									'terms'    => $user->roles,
+								),
+								array(
+	            					'taxonomy' => 'privilege_level',
+	            					'field'    => 'slug',
+	            					'terms'    => array('managing_partner','strategic_partner','associate_partner'),
+	            					'operator' => 'NOT IN'
+								),
+							),
+						);
+						
+					} else {
+
+						$args = array(
+							'post_type' => 'blog_post',
+							'posts_per_page' => 6,
+							'orderby'=> 'date',
+							'order' => 'DESC',
+							'post__not_in' => array($featured_post->ID),
+						);
+
+					}
+
+					$loop = new WP_Query( $args );
+					if ( $loop->have_posts() ): 
+					$count = 0;
+					while ( $loop->have_posts() ) : $loop->the_post();
+						include(locate_template('partials/listing.php', false, false));
+						$count++;
+					endwhile;
+					endif;
+					wp_reset_postdata();
+				?>
+			</ul>
+			<a href="<?php bloginfo('url'); ?>/insights" class="blog__button">See More</a>
+		</div>
+		<span class="helix helix--three"></span>
+		</div>
+
 
 	<?php endwhile;
 	endif;
