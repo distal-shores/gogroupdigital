@@ -14,7 +14,7 @@
   		gtag('config', 'UA-93234307-1');
 	</script>
 	<meta name="description" content="<?php bloginfo('description') ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	<meta http-equiv="content-type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600|Muli:400,700" rel="stylesheet">

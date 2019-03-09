@@ -64,3 +64,10 @@ function remove_admin_bar() {
 function in_array_any($needles, $haystack) {
     return !!array_intersect($needles, $haystack);
 }
+
+function admin_default_page() {
+    $url = home_url() . '/insights';
+    return $url;
+}
+
+add_filter('login_redirect', 'admin_default_page');
