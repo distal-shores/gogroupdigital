@@ -47,6 +47,7 @@
 	<?php
 		$args = array(
 			'post_type' => 'member',
+			'post_status' => 'publish',
 			'posts_per_page' => -1,
 			'orderby'=> 'menu_order',
 			'meta_query' => array(
