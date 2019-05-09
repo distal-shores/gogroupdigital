@@ -44,27 +44,28 @@
 			endif; ?>
 		</div>
 	</div>
-
+	<?php
+		$args = array(
+			'post_type' => 'member',
+			'posts_per_page' => -1,
+			'orderby'=> 'menu_order',
+			'meta_query' => array(
+				array(
+					'key' => 'location', 
+					'value' => '"' . get_the_ID() . '"', 
+					'compare' => 'LIKE'
+				)
+			)
+		);
+		$loop = new WP_Query( $args );
+		if ( $loop->have_posts() ): 
+	?>
 <!-- Members -->
 	<div class="location-members">
 		<div class='l-container'>
 			<p class="location-members__title">Our Leaders</p>
 			<ul class="members">
 				<?php
-					$args = array(
-						'post_type' => 'member',
-						'posts_per_page' => -1,
-						'orderby'=> 'menu_order',
-						'meta_query' => array(
-							array(
-								'key' => 'location', 
-								'value' => '"' . get_the_ID() . '"', 
-								'compare' => 'LIKE'
-							)
-						)
-					);
-					$loop = new WP_Query( $args );
-					if ( $loop->have_posts() ): 
 					while ( $loop->have_posts() ) : $loop->the_post();
 						$profile_name = get_the_title();
 						$profile_description = get_field('profile_description');
