@@ -39,7 +39,7 @@
 				if(!in_array('administrator', $user->roles)) {
 					$args = array(
 						'post_type' => 'blog_post',
-						'posts_per_page' => 6,
+						// 'posts_per_page' => 6,
 						'orderby'=> 'date',
 						'order' => 'DESC',
 						'post__not_in' => array($featured_post->ID),
@@ -61,7 +61,7 @@
 				} else {
 					$args = array(
 						'post_type' => 'blog_post',
-						'posts_per_page' => 6,
+						// 'posts_per_page' => 6,
 						'post__not_in' => array($featured_post->ID),
 						'orderby'=> 'date',
 						'order' => 'DESC',
