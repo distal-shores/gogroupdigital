@@ -9,7 +9,7 @@
 	<?php 
 		$featured_image = get_field('featured_image'); 
 		$subtitle = get_field('subtitle'); 
-		$content = get_field('content');
+		$content = get_the_content();
 		$author = get_field('author');
 		$author = $author[0];
 		// $author_portrait = get_field('author_portrait');
@@ -50,13 +50,9 @@
 					</h2>
 				<?php endif; ?>
 
-				<?php the_content(); ?>
-
 				<?php
 					if ( in_array_any($privilege_levels, (array) $user->roles) || empty($privilege_levels) || in_array('administrator', $user->roles)) {
-    					if( get_field('content') ) {
-    						echo filter_ptags_on_images_acf($content);
-    					}
+    					echo filter_ptags_on_images_acf($content);
 					} else {
 						echo '
 								<p style="text-align:left">This content is reserved for GO Partners. Please contact <a href="mailto:info@gogroupdigital.com">info@gogroupdigital.com</a> to learn about exclusive access.
