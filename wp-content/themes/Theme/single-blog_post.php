@@ -74,7 +74,6 @@
 			<p class="blog-post__footer__date">Posted on <?php $post_date = get_the_date( 'F j, Y' ); echo $post_date; ?></p>
 			<p class="blog-post__footer__categories"> Posted under <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; }  ?></p>
 			<div class="blog-post__footer__share">
-				<?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
 			</div>
 		</div>
 
@@ -104,13 +103,14 @@
 			<ul class="blog-tiles">
 				<?php
 					$user = wp_get_current_user();
+					$id = get_the_ID();
 					if(!in_array('administrator', $user->roles)) {
 
 						$args = array(
 							'post_type' => 'blog_post',
 							'posts_per_page' => 6,
 							'orderby'=> 'date',
-							'post__not_in' => array($featured_post->ID),
+							'post__not_in' => array($featured_post->ID, $id),
 							'order' => 'DESC',
 							'tax_query' => array(
 								'relation' => 'OR',
@@ -135,7 +135,7 @@
 							'posts_per_page' => 6,
 							'orderby'=> 'date',
 							'order' => 'DESC',
-							'post__not_in' => array($featured_post->ID),
+							'post__not_in' => array($featured_post->ID, $id),
 						);
 
 					}
