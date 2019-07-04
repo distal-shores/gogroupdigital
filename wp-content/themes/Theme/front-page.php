@@ -134,20 +134,20 @@
 							'orderby'=> 'date',
 							'post__not_in' => array($featured_post->ID),
 							'order' => 'DESC',
-							'tax_query' => array(
-								'relation' => 'OR',
-								array(
-									'taxonomy' => 'privilege_level',
-									'field'    => 'slug',
-									'terms'    => $user->roles,
-								),
-								array(
-	            					'taxonomy' => 'privilege_level',
-	            					'field'    => 'slug',
-	            					'terms'    => array('managing_partner','strategic_partner','associate_partner'),
-	            					'operator' => 'NOT IN'
-								),
-							),
+							// 'tax_query' => array(
+							// 	'relation' => 'OR',
+							// 	array(
+							// 		'taxonomy' => 'privilege_level',
+							// 		'field'    => 'slug',
+							// 		'terms'    => $user->roles,
+							// 	),
+							// 	array(
+	            			// 		'taxonomy' => 'privilege_level',
+	            			// 		'field'    => 'slug',
+	            			// 		'terms'    => array('managing_partner','strategic_partner','associate_partner'),
+	            			// 		'operator' => 'NOT IN'
+							// 	),
+							// ),
 						);
 						
 					} else {

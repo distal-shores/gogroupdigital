@@ -12,7 +12,6 @@
 		$content = get_the_content();
 		$author = get_field('author');
 		$author = $author[0];
-		// $author_portrait = get_field('author_portrait');
 		$author_name = get_field('author_name');
 		$author_photo = get_field('author_photo');
 		$go_content = get_field('go_content_switch');
@@ -54,9 +53,8 @@
 					if ( in_array_any($privilege_levels, (array) $user->roles) || empty($privilege_levels) || in_array('administrator', $user->roles)) {
     					echo filter_ptags_on_images_acf($content);
 					} else {
-						echo '
-								<p style="text-align:left">This content is reserved for GO Partners. Please contact <a href="mailto:info@gogroupdigital.com">info@gogroupdigital.com</a> to learn about exclusive access.
-								</p>'; 
+						echo '<p style="text-align:left">This content is reserved for GO Partners. Please contact <a href="mailto:info@gogroupdigital.com">info@gogroupdigital.com</a> to learn about exclusive access.
+						</p>'; 
 					}
 				?>
 					<?php if($author): ?>
@@ -112,20 +110,20 @@
 							'orderby'=> 'date',
 							'post__not_in' => array($featured_post->ID, $id),
 							'order' => 'DESC',
-							'tax_query' => array(
-								'relation' => 'OR',
-								array(
-									'taxonomy' => 'privilege_level',
-									'field'    => 'slug',
-									'terms'    => $user->roles,
-								),
-								array(
-	            					'taxonomy' => 'privilege_level',
-	            					'field'    => 'slug',
-	            					'terms'    => array('managing_partner','strategic_partner','associate_partner'),
-	            					'operator' => 'NOT IN'
-								),
-							),
+							// 'tax_query' => array(
+							// 	'relation' => 'OR',
+							// 	array(
+							// 		'taxonomy' => 'privilege_level',
+							// 		'field'    => 'slug',
+							// 		'terms'    => $user->roles,
+							// 	),
+							// 	array(
+	            			// 		'taxonomy' => 'privilege_level',
+	            			// 		'field'    => 'slug',
+	            			// 		'terms'    => array('managing_partner','strategic_partner','associate_partner'),
+	            			// 		'operator' => 'NOT IN'
+							// 	),
+							// ),
 						);
 						
 					} else {
