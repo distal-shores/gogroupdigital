@@ -1,6 +1,4 @@
 wp-config.php
 package-lock.json
 wp-content/debug.log
-wp-content/uploads
-wp-content/plugins
 .htaccess
