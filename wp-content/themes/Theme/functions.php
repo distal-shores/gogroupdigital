@@ -71,3 +71,48 @@ function admin_default_page() {
 }
 
 add_filter('login_redirect', 'admin_default_page');
+
+wp_enqueue_script( 'ajax-fetch',  get_stylesheet_directory_uri() . '/js/ajax-fetch.js', array( 'jquery' ), '1.0', true );
+
+add_action('init','localize_ajax');
+
+function localize_ajax(){
+    $args = array(
+        'post_type' => 'blog_post',
+        'orderby'=> 'date',
+        'order' => 'DESC',
+        'posts_per_page' => 3,
+        'post__not_in' => array($featured_post->ID),
+        'tax_query' => array( 
+            array(
+                'taxonomy' => 'category', // Taxonomy, in my case I need default post categories
+                'field'    => 'slug',
+                'terms'    => 'groupx', // Your category slug (I have a category 'interior')
+            ),
+        )
+    );
+    $loop = new WP_Query( $args );
+    wp_localize_script( 'ajax-fetch', 'ajaxfetch', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'query_vars' => json_encode( $loop->query )
+    ));
+}
+
+add_action( 'wp_ajax_nopriv_ajax_fetch', 'my_ajax_fetch' );
+add_action( 'wp_ajax_ajax_fetch', 'my_ajax_fetch' );
+
+function my_ajax_fetch() {
+    $query_vars = json_decode( stripslashes( $_POST['query_vars'] ), true );
+    $posts = new WP_Query( $query_vars );
+    $GLOBALS['wp_query'] = $posts;
+    if( ! $posts->have_posts() ) { 
+        get_template_part( 'content', 'none' );
+    }
+    else {
+        while ( $posts->have_posts() ) { 
+            $posts->the_post();
+            include(locate_template('partials/listing-index.php', false, false));
+        }
+    }
+    die();
+}

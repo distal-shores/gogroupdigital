@@ -2,9 +2,12 @@
 	<div class="footer-top">
 		<div class="l-container">
 			<p class="footer-top__title">
-				<?php the_field('data_points', 'option'); ?> Data Points<br>
-				<?php the_field('accelerations', 'option'); ?> Accelerations<br>
-				<?php the_field('industries', 'option'); ?> Industries
+				<span class="numeral"><?php the_field('data_points', 'option'); ?></span><br>
+				<span class="text">Data Points</span><br>
+				<span class="numeral"><?php the_field('accelerations', 'option'); ?></span><br>
+				<span class="text">Accelerations</span><br>
+				<span class="numeral"><?php the_field('industries', 'option'); ?></span><br>
+				<span class="text">Industries</span><br>
 			</p>
 			<p class="footer-top__cta">Ready to go evolutionary to epic? <a href="#contact" class="contact-button">Get in Touch</a></p>
 		</div>

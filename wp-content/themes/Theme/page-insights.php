@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('blog'); ?>
 
 <?php 
 	// Banner Content
@@ -17,69 +17,175 @@
 	endif;
 
 	$user = wp_get_current_user();
+
+	// Get Categories
+	$terms = get_terms( array(
+		'taxonomy' => 'category',
+		'hide_empty' => 'false'
+	));
 ?>
 
-<div class="banner" style="background-image: url(<?php echo $banner_background; ?>);">
+<div class="banner" id="banner--insights" style="background-image: linear-gradient(to bottom, rgba(113, 76, 182, 0.7), rgba(39, 96, 182, 0.7)), url(<?php echo $banner_background; ?>);">
 	<span class="banner__content">
 		<?php if($banner_title): ?>
-			<p class="banner__content--first"><?php echo $banner_title; ?><span class="go go--white"></span></p>
+			<p class="banner__content--first"><?php echo $banner_title; ?></p>
 		<?php endif; ?>
 		<?php if($banner_subtitle): ?>
-			<p class="banner__content--second"><?php echo $banner_subtitle; ?></p>
+			<hr class="banner__content__hr__short-blue"/>
+			<p class="banner__content--second">The world’s first publication dedicated to revealing how the power of <strong>experimentation unlocks epic business growth.</strong></p>
 		<?php endif; ?>
 	</span>
 </div>
 
 <div class="blog">
 	<div class="l-container">
-		<ul class="blog-tiles">
-			<?php
-				$featured_post = get_field('e_to_e_featured_post', 2);
-				$featured_post = $featured_post[0];
-				if(!in_array('administrator', $user->roles)) {
-					$args = array(
-						'post_type' => 'blog_post',
-						// 'posts_per_page' => 6,
-						'orderby'=> 'date',
-						'order' => 'DESC',
-						'post__not_in' => array($featured_post->ID),
-						// 'tax_query' => array(
-						// 	'relation' => 'OR',
-						// 	array(
-						// 		'taxonomy' => 'privilege_level',
-						// 		'field'    => 'slug',
-						// 		'terms'    => $user->roles,
-						// 	),
-						// 	array(
-            			// 		'taxonomy' => 'privilege_level',
-            			// 		'field'    => 'slug',
-            			// 		'terms'    => array('managing_partner','strategic_partner','associate_partner'),
-            			// 		'operator' => 'NOT IN'
-						// 	),
-						// ),
-					);
-				} else {
-					$args = array(
-						'post_type' => 'blog_post',
-						// 'posts_per_page' => 6,
-						'post__not_in' => array($featured_post->ID),
-						'orderby'=> 'date',
-						'order' => 'DESC',
-					);
-				}
-				$loop = new WP_Query( $args );
-				if ( $loop->have_posts() ): 
-				$count = 0;
-				while ( $loop->have_posts() ) : $loop->the_post();
-					include(locate_template('partials/listing.php', false, false));
-					$count++;
-				endwhile;
+		<?php
+			$featured_post = get_field('e_to_e_featured_post', 2);
+			$featured_post = $featured_post[0];
+			$args = array(
+				'post_type' => 'blog_post',
+			);
+			$loop = new WP_Query( $args );
+			if ( $loop->have_posts() ): 
+			$count = 0;
+		?>
+		<ul id="featured-post-list" class="blog-tiles">
+			<?php 			
+				include(locate_template('partials/listing-featured.php', false, false));
+				$count++;
 				endif;
 				wp_reset_postdata();
 			?>
+		</ul>
+		<div class="spacer"></div>
+		<h3 class="blog-index-headline">Recent Articles</h3>
+		<ul id="recent-articles-list" class="blog-tiles">
+			<?php
+				$args = array(
+					'post_type' => 'blog_post',
+					'orderby'=> 'date',
+					'order' => 'DESC',
+					'posts_per_page' => 3,
+					'post__not_in' => array($featured_post->ID),
+				);
+				$loop = new WP_Query( $args );
+				$excluded_posts = array();
+				if ( $loop->have_posts() ): 
+					while ( $loop->have_posts() ) : $loop->the_post();
+						include(locate_template('partials/listing-index.php', false, false));
+						array_push($excluded_posts, get_the_id()); 
+						$count++;
+					endwhile;
+				endif;
+				wp_reset_postdata(); 
+			?>
+		</ul>
+		<h3 class="blog-index-headline">More GO Insights</h3>
+		<div class="blog-categories-select-wrapper">
+			<select class="blog-categories-select">
+				<option>View All</option>
+				<?php foreach($terms as $term) : ?>
+				<option><?= $term->name ?></option>
+				<?php endforeach ?>
+			</select>
+		</div>
+		<?php 
+			$args = array(
+				'post_type' => 'blog_post',
+				'orderby'=> 'date',
+				'order' => 'DESC',
+				'posts_per_page' => 3,
+				'post__not_in' => $excluded_posts,
+			);
+			$loop = new WP_Query( $args );
+		?>
+		<ul id="more-go-content" class="blog-tiles">
+			<?php if ( $loop->have_posts() ): 
+				while ( $loop->have_posts() ) : $loop->the_post();
+					include(locate_template('partials/listing-index.php', false, false));
+				endwhile;
+			endif;
+			wp_reset_postdata();
+		?>
 		</ul>
 	</div>
 	<span class="helix helix--five"><img src="<?php echo get_bloginfo('stylesheet_directory').'/images/background-helix_five.png'; ?>"/></span>
 </div>
 
+<script type="text/javascript">
+	var x, i, j, selElmnt, a, b, c;
+	/* Look for any elements with the class "custom-select": */
+	x = document.getElementsByClassName("blog-categories-select-wrapper");
+	for (i = 0; i < x.length; i++) {
+  		selElmnt = x[i].getElementsByTagName("select")[0];
+  		/* For each element, create a new DIV that will act as the selected item: */
+  		a = document.createElement("DIV");
+		a.setAttribute("class", "select-selected");
+		a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+		x[i].appendChild(a);
+		/* For each element, create a new DIV that will contain the option list: */
+		b = document.createElement("DIV");
+		b.setAttribute("class", "select-items select-hide");
+  		for (j = 1; j < selElmnt.length; j++) {
+			/* For each option in the original select element,
+			create a new DIV that will act as an option item: */
+			c = document.createElement("DIV");
+			c.innerHTML = selElmnt.options[j].innerHTML;
+			c.addEventListener("click", function(e) {
+				/* When an item is clicked, update the original select box,
+				and the selected item: */
+				var y, i, k, s, h;
+				s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+				h = this.parentNode.previousSibling;
+        		for (i = 0; i < s.length; i++) {
+          			if (s.options[i].innerHTML == this.innerHTML) {
+						s.selectedIndex = i;
+						h.innerHTML = this.innerHTML;
+						y = this.parentNode.getElementsByClassName("same-as-selected");
+							for (k = 0; k < y.length; k++) {
+								y[k].removeAttribute("class");
+							}
+						this.setAttribute("class", "same-as-selected");
+						break;
+          			}
+        		}
+        		h.click();
+    		});
+			b.appendChild(c);
+		}
+		x[i].appendChild(b);
+		a.addEventListener("click", function(e) {
+			/* When the select box is clicked, close any other select boxes,
+			and open/close the current select box: */
+			e.stopPropagation();
+			closeAllSelect(this);
+			this.nextSibling.classList.toggle("select-hide");
+			this.classList.toggle("select-arrow-active");
+		});
+	}
+
+	function closeAllSelect(elmnt) {
+		/* A function that will close all select boxes in the document,
+		except the current select box: */
+		var x, y, i, arrNo = [];
+		x = document.getElementsByClassName("select-items");
+		y = document.getElementsByClassName("select-selected");
+		for (i = 0; i < y.length; i++) {
+			if (elmnt == y[i]) {
+			arrNo.push(i)
+			} else {
+			y[i].classList.remove("select-arrow-active");
+			}
+		}
+		for (i = 0; i < x.length; i++) {
+			if (arrNo.indexOf(i)) {
+			x[i].classList.add("select-hide");
+			}
+		}
+	}
+
+	/* If the user clicks anywhere outside the select box,
+	then close all select boxes: */
+	document.addEventListener("click", closeAllSelect);
+</script>
 <?php get_footer(); ?>

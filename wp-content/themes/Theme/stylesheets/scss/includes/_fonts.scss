@@ -4,3 +4,13 @@
   Any @font-face or third party font imports should go in this file
 
 */
+
+@font-face {
+  font-family: "Calluna";
+  src: url("../fonts/calluna.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/avenir.ttc") format("ttc");
+}

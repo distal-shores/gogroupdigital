@@ -7,30 +7,25 @@
 		text-align: left;
 		@include clearfix;
 		&__title {
-			font-family: $font-accent;
-			font-size: 68px;
-			line-height: 74px;
+			.numeral {
+				font-family: 'Calluna', Arial, sans-serif;
+				font-size: 48px;
+				font-weight: 400;
+				display: inline-block;
+			}
+			.text {
+				display: inline-block;
+				margin-bottom: 15px;
+			}
+			font-family: 'Avenir', Arial, sans-serif;
+			font-size: 14px;
+			text-transform: uppercase;
+			font-weight: 700;
 			color: $color-base-alt;
-			font-weight: 400;
-			margin: 0px auto 40px auto;
+			margin: 0;
 			padding: $column-padding;
-			@media (max-width: 1000px) {
-				font-size: 50px;
-				line-height: 60px;
-			}
-			@media (max-width: 800px) {
-				font-size: 35px;
-				line-height: 40px;
-				margin-bottom: 20px;
-			}
-			@media (max-width: 560px) {
-				font-size: 25px;
-				line-height: 30px;
-			}
-			@media (max-width: 400px) {
-				font-size: 20px;
-				line-height: 26px;
-			}
+			border-bottom: 2px solid #194D9D;
+			padding-bottom: 30px;
 		}
 		&__cta {
 			font-size: 15px;
@@ -40,22 +35,22 @@
 			font-weight: 400;
 			margin: 0px auto;
 			padding: $column-padding;
+			padding-top: 30px;
 			& a {
-				font-size: 12.75px;
-				line-height: 17px;
-				letter-spacing: 2.31px;
+				background-color: #fff;
+				border-radius: 5px;
+				color: #2760B6;
+				width: 150px;
+				height: 50px;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-family: 'Avenir', Arial, sans-serif;
+				font-size: 14px;
 				text-transform: uppercase;
-				color: $color-base-alt;
-				border: 1px solid $color-base-alt;
-				padding: 5px 12px;
-				margin-left: 12px;
-				@media (max-width: 560px) {
-					clear: both;
-					display: block;
-					width: 145px;
-					margin-top: 10px;
-					margin-left: 0px;
-				}
+				font-weight: 700;
+				margin-top: 5px;
 				&:hover {
 					background: $color-base-alt;
 					color: $color-canvas-alt;
