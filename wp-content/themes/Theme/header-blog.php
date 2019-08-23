@@ -39,7 +39,10 @@
     <a href="<?php bloginfo('url'); ?>" class="header__logo">GO Group</a>
 
     <!-- Menu Button -->
-    <span class="header__nav-button"><i class="fas fa-bars"></i></span>
+    <span class="header__nav-button">
+        <i class="fas fa-bars"></i>
+        <span class="header__nav-button__button">Menu</span>
+    </span>
 
     <!-- Menu -->
     <div class="header__menu">
@@ -56,14 +59,6 @@
         ?>
         <span class="header__menu__close">Close</span>
     </div>
-
-    <!-- Contact Button -->
-    <a href="#contact" class="header__contact contact-button">Get In Touch</a>
-    <?php if(!is_user_logged_in()) : ?>
-        <a href="<?php echo wp_login_url() ?>" class="header__login login-button">Partner Login</a>
-    <?php else : ?>
-        <a href="<?php echo wp_logout_url() ?>" class="header__login login-button">Log Out</a>
-    <?php endif; ?>
 
 </header>
 

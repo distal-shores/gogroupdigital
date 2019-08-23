@@ -117,7 +117,7 @@
 	/* Look for any elements with the class "custom-select": */
 	x = document.getElementsByClassName("blog-categories-select-wrapper");
 	for (i = 0; i < x.length; i++) {
-  		selElmnt = x[i].getElementsByTagName("select")[0];
+		selElmnt = x[i].getElementsByTagName("select")[0];
   		/* For each element, create a new DIV that will act as the selected item: */
   		a = document.createElement("DIV");
 		a.setAttribute("class", "select-selected");
@@ -126,7 +126,7 @@
 		/* For each element, create a new DIV that will contain the option list: */
 		b = document.createElement("DIV");
 		b.setAttribute("class", "select-items select-hide");
-  		for (j = 1; j < selElmnt.length; j++) {
+  		for (j = 0; j < selElmnt.length; j++) {
 			/* For each option in the original select element,
 			create a new DIV that will act as an option item: */
 			c = document.createElement("DIV");

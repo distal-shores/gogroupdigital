@@ -24,6 +24,16 @@
 			margin: 0 auto;
 			order: 2;
 		}
+		&.active {
+			.header__nav-button {
+				&__button {
+					@media screen and (min-width: 800px) {
+						background-color: $color-brand;
+						color: #fff;
+					}
+				}
+			}
+		}
 		.header__nav-button {
 			display: inline-block;
 			order: 1;
@@ -38,6 +48,24 @@
 			i {
 				font-style: initial;
 				font-size: 24px;
+				@media screen and (min-width: 800px) {
+					display: none;
+				}
+			}
+			&__button {
+				display: none;
+				@media screen and (min-width: 800px) {
+					display: block;
+					background-color: #fff;
+					color: $color-brand;
+					font-family: 'Avenir', Arial, sans-serif;
+					text-transform: uppercase;
+					font-weight: 700;
+					font-size: 18px;
+					padding: 11px 20px;
+					font-size: 14px;
+					border-radius: 5px;
+				}
 			}
 		}
 	}

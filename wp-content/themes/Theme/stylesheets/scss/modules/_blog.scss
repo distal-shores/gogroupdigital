@@ -6,23 +6,38 @@
 	.blog-index-headline {
 		font-family: 'Calluna', Arial, sans-serif;
 		font-weight: 300;
+		@media screen and (min-width: 800px) {
+			font-size: 30px;
+			display: inline-block;
+			margin-right: 30px;
+			width: auto;
+		}
 	}
 	.spacer {
-		padding-top: 310px;
+		padding-top: 375px;
 	}
 	.blog-categories-select-wrapper {
 		position: relative;
 		-webkit-box-shadow: 0px 5px 9px 5px rgba(206,206,206,0.54); 
 		box-shadow: 0px 5px 9px 5px rgba(206,206,206,0.54);
-		margin-bottom: 30px;
+		margin: 0 0 30px;
 		.blog-categories-select {
 			display: none;
+		}
+		@media screen and (min-width: 800px) {
+			display: inline-block;
+			width: 215px;
+			position: relative;
+			top: -4px;
 		}
 	}
 	.select-selected {
 		background-color: #fff;
 		color: $color-base;
 		font-weight: 700;
+		@media screen and (min-width: 800px) {
+			padding-left: 1px;
+		}
 	}
 	.select-selected:after {
 		position: absolute;

@@ -4,6 +4,10 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
+	@media (min-width: 800px) {
+		height: 80vh;
+		background-position: 50% 100%;
+	}
 	&.banner--first.banner--home {
 		@media (max-width: 480px) {
 			min-height: 400px;
@@ -42,25 +46,13 @@
 			color: $color-base-alt;
 			font-weight: 400;
 			margin: 0px auto;
-			// @media (max-width: 930px) {
-			// 	font-size: 60px;
-			// 	line-height: 70px;
-			// }
-			// @media (max-width: 670px) {
-			// 	font-size: 50px;
-			// 	line-height: 55px;
-			// }
-			// @media (max-width: 500px) {
-			// 	font-size: 40px;
-			// 	line-height: 42px;
-			// }
-			// @media (max-width: 400px) {
-			// 	font-size: 30px;
-			// 	line-height: 32px;
-			// }
+			@media (min-width: 800px) {
+				font-size: 48px;
+				margin-bottom: 25px;
+			}
 		}
 		&__hr__short-blue {
-			background: $color-headline-hr;
+			background: #3077E1;
 			border: none;
 			height: 3px;
 			margin-top: 20px;
@@ -77,6 +69,10 @@
 				font-size: 16px;
 				line-height: 26px;
 				margin-top: 10px;
+			}
+			@media (min-width: 800px) {
+				font-size: 24px;
+				max-width: 500px;
 			}
 		}
 		// Home first banner

@@ -9,29 +9,90 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	@media screen and (min-width: 800px) {
+		display: flex;
+	}
 	&#featured-post-list {
 		margin-top: 0;
 		position: absolute;
 		top: -75px;
 		left: 50%;
 		transform: translateX(-50%);
+		@media screen and (min-width: 800px) {
+			width: 100%;
+			top: -125px;
+			left: initial;
+			transform: initial;
+			max-width: 1170px;
+		}
 	}
 	&#more-go-content {
 		.blog-tile {
 			&:last-of-type {
 				border-bottom: none;
 			}
+			&__content-container {
+				@media screen and (min-width: 800px) {
+					display: flex;
+					height: 100%;
+					justify-content: center;
+					padding: 3rem;
+					flex-direction: column;
+				}
+			}
+		}
+		@media screen and (min-width: 800px) {
+			flex-direction: column;
+			.blog-tile {
+				display: flex;
+				&__thumbnail {
+					flex: 1 0 auto;
+					width: 540px;
+					height: 250px;
+				}
+			}
+		}
+	}
+	&#recent-articles-list {
+		.blog-tile {
+			@media screen and (min-width: 800px) {
+				&:nth-of-type(2) {
+					margin: 0 2rem;
+				}
+				&__category {
+					margin-top: 15px;
+				}
+				&__content-container {
+					@media screen and (min-width: 800px) {
+						display: flex;
+						height: 180px;
+						flex-direction: column;
+						a {
+							margin: auto 0 0;
+						}
+					}
+				}
+			}
 		}
 	}
 	.blog-tile {
+		background-repeat: no-repeat;
+		background-size: cover;
 		bottom: 0;
 		margin: 0 auto;
 		padding: 30px 25px;
 		height: 355px;
 		width: 355px;
+		@media screen and (min-width: 800px) {
+			height: 500px;
+			width: 100%;
+		}
 		&:not(last-of-type) {
 			border-bottom: 1px solid #DDDDDD;
 			margin-bottom: 30px;
+			@media screen and (min-width: 800px) {
+				border-bottom: none;
+			}
 		}
 		&--index {
 			height: auto;
@@ -51,6 +112,10 @@
 			background-repeat: no-repeat;
 			background-position: center;
 			margin-bottom: 15px;
+			@media screen and (min-width: 800px) {
+				margin: 0;
+				width: 100%;
+			}
 		}
 		&__content {
 			bottom: 0;
@@ -61,6 +126,10 @@
 				font-size: 24px;
 				font-weight: 400;
 				margin-top: 7px;
+			}
+			@media screen and (min-width: 800px) {
+				font-size: 30px;
+				max-width: 450px;
 			}
 			&__read-more {
 				display: inline-block;
@@ -103,9 +172,16 @@
 				font-size: 12px;
 				font-weight: 700;
 				padding: 4px 10px;
+				@media screen and (min-width: 800px) {
+					height: 30px;
+					text-align: center;
+					line-height: 30px;
+					width: 145px;
+					padding: 0;
+				}
 				&::after {
 					color: #fff;
-					content: 'Featured Post';
+					content: 'Featured Post'; 
 					text-transform: uppercase;
 				}
 	

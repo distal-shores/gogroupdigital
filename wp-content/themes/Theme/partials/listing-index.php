@@ -30,7 +30,9 @@
 
 <li class="blog-tile blog-tile--index blog-tile--<?php echo $blog_category_class; ?> <?php echo $position; ?>">
 	<div class="blog-tile__thumbnail" style="background-image: url(<?php echo $blog_thumbnail['sizes']['blog_small'];?>);"></div>
-	<span class="blog-tile__category"><?php echo $blog_categories_list; ?></span>
-	<h2 class="blog-tile__content__title"><?php echo $blog_title; ?></h2>
-	<a class="blog-tile__content__read-more" href="<?php the_permalink(); ?>">Read More</a>
+	<div class="blog-tile__content-container">
+		<span class="blog-tile__category"><?php echo $blog_categories_list; ?></span>
+		<h2 class="blog-tile__content__title"><?php echo $blog_title; ?></h2>
+		<a class="blog-tile__content__read-more" href="<?php the_permalink(); ?>">Read More</a>
+	</div>
 </li>
