@@ -14,7 +14,10 @@
 		}
 	}
 	.spacer {
-		padding-top: 375px;
+		padding-top: 325px;
+		@media screen and (min-width: 800px) {
+			padding-top: 375px;
+		}
 	}
 	.blog-categories-select-wrapper {
 		position: relative;

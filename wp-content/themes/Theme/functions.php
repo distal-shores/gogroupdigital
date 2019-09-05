@@ -15,6 +15,7 @@ include_once 'includes/clean_up.php'; // Remove all commented code from showing
 include_once 'includes/conceal_settings.php'; // Conceal Settings
 include_once 'includes/cpt_archives.php'; // Add custom post types to wp_get_archives
 include_once 'includes/custom_editor_styles.php'; // Add stylesheet to apply styles to editor
+include_once 'includes/custom_shortcodes.php'; // Add stylesheet to apply styles to editor
 include_once 'includes/edit_class.php'; // Expand edit link classes
 include_once 'includes/image_sizes.php'; // image size definitions
 include_once 'includes/image_strip.php'; // Strip <p> from images
@@ -73,6 +74,7 @@ function admin_default_page() {
 add_filter('login_redirect', 'admin_default_page');
 
 wp_enqueue_script( 'ajax-fetch',  get_stylesheet_directory_uri() . '/js/ajax-fetch.js', array( 'jquery' ), '1.0', true );
+wp_enqueue_script( 'footnote-append',  get_stylesheet_directory_uri() . '/js/footnote-append.js', array( 'jquery' ), '1.0', true );
 
 add_action('init','localize_ajax');
 

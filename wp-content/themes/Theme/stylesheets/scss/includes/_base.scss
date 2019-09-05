@@ -151,31 +151,6 @@ button,
 	}
 } // button
 
-blockquote {
-	background: $color-brand;
-	padding: 70px 0px 80px 0px;
-	text-align: center;
-	border-left: 0px solid $color-keyline;
-	padding: 0px;
-	margin: 20px auto 20px auto;
-	& * {
-		color: white;
-		font-size: 18px;
-		line-height: 28px;
-		margin: 0px auto;
-		padding: 0px 30px;
-		&:first-child {
-			font-size: 30px;
-			line-height: 35px;
-			margin: 0px auto 20px auto;
-			font-family: $font-accent;
-		}
-	}
-	&:before {
-		content: '';
-	}
-} // blockquote
-
 figure {
 	margin: 0px;
 	max-width: 100%;

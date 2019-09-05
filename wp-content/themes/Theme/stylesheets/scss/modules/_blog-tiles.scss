@@ -12,12 +12,16 @@
 	@media screen and (min-width: 800px) {
 		display: flex;
 	}
+	li:last-of-type {
+		border-bottom: none;
+	}
 	&#featured-post-list {
 		margin-top: 0;
 		position: absolute;
 		top: -75px;
 		left: 50%;
 		transform: translateX(-50%);
+		width: 100%;
 		@media screen and (min-width: 800px) {
 			width: 100%;
 			top: -125px;
@@ -25,12 +29,14 @@
 			transform: initial;
 			max-width: 1170px;
 		}
+		li {
+			@media screen and (min-width: 800px) {
+				max-width: none;
+			}
+		}
 	}
 	&#more-go-content {
 		.blog-tile {
-			&:last-of-type {
-				border-bottom: none;
-			}
 			&__content-container {
 				@media screen and (min-width: 800px) {
 					display: flex;
@@ -45,6 +51,8 @@
 			flex-direction: column;
 			.blog-tile {
 				display: flex;
+				margin: 20px 0;
+				max-width: none;
 				&__thumbnail {
 					flex: 1 0 auto;
 					width: 540px;
@@ -82,17 +90,15 @@
 		margin: 0 auto;
 		padding: 30px 25px;
 		height: 355px;
-		width: 355px;
+		max-width: 80%;
+		border-bottom: 1px solid #DDDDDD;
+		margin-bottom: 30px;
+		@media screen and (min-width: 800px) {
+			border-bottom: none;
+		}
 		@media screen and (min-width: 800px) {
 			height: 500px;
 			width: 100%;
-		}
-		&:not(last-of-type) {
-			border-bottom: 1px solid #DDDDDD;
-			margin-bottom: 30px;
-			@media screen and (min-width: 800px) {
-				border-bottom: none;
-			}
 		}
 		&--index {
 			height: auto;
@@ -107,7 +113,7 @@
 		}
 		&__thumbnail {
 			height: 250px;
-			width: 350px;
+			width: 100%;
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
