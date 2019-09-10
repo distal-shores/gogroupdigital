@@ -1,7 +1,7 @@
 <?php
 // Add a stylesheet to apply styles to the wordpress editor
 function add_editor_styles() {
-    add_editor_style( 'stylesheets/css/custom-editor-style.css' );
+    add_editor_style( 'stylesheets/css/custom-editor-style.css?1' );
 }
 add_action( 'admin_init', 'add_editor_styles' );
 

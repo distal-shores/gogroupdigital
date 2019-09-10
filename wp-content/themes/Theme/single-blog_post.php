@@ -29,7 +29,11 @@
 				</p>
 				<h1 class="blog-post__header__title"><?php the_title(); ?></h1>
 				<hr class="blog-post__header__hr__short-blue" />
-				<p class="blog-post__header__byline">By PLACEHOLDER</p>
+				<p class="blog-post__header__byline">
+					By <?php foreach( $authors as $a ): ?>
+						<span class="blog-post__header__byline__name"><?= get_the_title($a->ID) ?></span>
+					<?php endforeach; ?>
+				</p>
 			</div> 
 		</div>
 	<?php endif; ?>
@@ -59,7 +63,7 @@
 			<?php if($authors): ?>
 				<h3 class="blog-post__authors__header">Contributing Author(s)</h3>
 				<ul class="blog-post__authors">
-					<?php foreach( $authors as $a ): // variable must NOT be called $post (IMPORTANT) ?>
+					<?php foreach( $authors as $a ): ?>
 						<li>
 							<img class="blog-post__authors__headshot" src="<?= get_field('profile_image', $a->ID)["url"]; ?>">
 							<div class="blog-post__authors__details">
