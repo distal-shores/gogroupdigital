@@ -1,4 +1,6 @@
-<?php get_header('blog'); ?>
+<?php get_header('blog'); 
+
+?>
 
 <div class="l-body blog-post">
 
@@ -29,11 +31,13 @@
 				</p>
 				<h1 class="blog-post__header__title"><?php the_title(); ?></h1>
 				<hr class="blog-post__header__hr__short-blue" />
-				<p class="blog-post__header__byline">
-					By <?php foreach( $authors as $a ): ?>
-						<span class="blog-post__header__byline__name"><?= get_the_title($a->ID) ?></span>
-					<?php endforeach; ?>
-				</p>
+				<?php if($authors != NULL): ?>
+					<p class="blog-post__header__byline">
+						By <?php foreach( $authors as $a ): ?>
+							<span class="blog-post__header__byline__name"><?= get_the_title($a->ID) ?></span>
+						<?php endforeach; ?>
+					</p>
+				<?php endif; ?>
 			</div> 
 		</div>
 	<?php endif; ?>
@@ -78,93 +82,16 @@
 				<h3>Got Questions?</h3>
 				<a href="">Reach Out to Us</a>
 			</div>
-			<div class="blog-post__about">
-				<?php echo get_field('blog_post_about_go', 2); ?>
-			</div>
+			<?php if(get_field('blog_post_about_go', 2) != NULL) : ?>
+				<div class="blog-post__about">
+					<?php echo get_field('blog_post_about_go', 2); ?>
+				</div>
+			<?php endif; ?>
 			<div class="blog-post__footnotes">
 				<h3>Sources</h3>
 			</div>
 		</div>
 	</div>
-
-		<!-- <div class="l-container post-nav"> -->
-			<?php
-			// $prev_post = get_previous_post();
-			// setup_postdata($prev_post);
-			// 	if($prev_post) {
-			// 	   $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
-			// 	   echo '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title. '" class="post-nav__prev"><span class="post-nav__wrapper"><p>Previous Article</p></span></a>';
-			// 	}
-			// wp_reset_postdata();
-
-			// $next_post = get_next_post();
-			// setup_postdata($next_post);
-			// 	if($next_post) {
-			// 	   $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
-			// 	   echo '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title. '" class="post-nav__next"><span class="post-nav__wrapper"><p>Next Article</p></span></a>';
-			// 	}
-			// wp_reset_postdata();
-			?>
-		<!-- </div> -->
-
-		<!-- Blog Posts -->
-		<!-- <div class="l-container">
-			<h2 class="other-posts">Other Posts from Evolutionary to Epic</h2>
-			<ul class="blog-tiles"> -->
-				<?php
-					// $user = wp_get_current_user();
-					// $id = get_the_ID();
-					// if(!in_array('administrator', $user->roles)) {
-
-					// 	$args = array(
-					// 		'post_type' => 'blog_post',
-					// 		'posts_per_page' => 6,
-					// 		'orderby'=> 'date',
-					// 		'post__not_in' => array($featured_post->ID, $id),
-					// 		'order' => 'DESC',
-					// 		// 'tax_query' => array(
-					// 		// 	'relation' => 'OR',
-					// 		// 	array(
-					// 		// 		'taxonomy' => 'privilege_level',
-					// 		// 		'field'    => 'slug',
-					// 		// 		'terms'    => $user->roles,
-					// 		// 	),
-					// 		// 	array(
-	            	// 		// 		'taxonomy' => 'privilege_level',
-	            	// 		// 		'field'    => 'slug',
-	            	// 		// 		'terms'    => array('managing_partner','strategic_partner','associate_partner'),
-	            	// 		// 		'operator' => 'NOT IN'
-					// 		// 	),
-					// 		// ),
-					// 	);
-						
-					// } else {
-
-					// 	$args = array(
-					// 		'post_type' => 'blog_post',
-					// 		'posts_per_page' => 6,
-					// 		'orderby'=> 'date',
-					// 		'order' => 'DESC',
-					// 		'post__not_in' => array($featured_post->ID, $id),
-					// 	);
-
-					// }
-
-					// $loop = new WP_Query( $args );
-					// if ( $loop->have_posts() ): 
-					// $count = 0;
-					// while ( $loop->have_posts() ) : $loop->the_post();
-					// 	include(locate_template('partials/listing.php', false, false));
-					// 	$count++;
-					// endwhile;
-					// endif;
-					// wp_reset_postdata();
-				?>
-			</ul>
-			<!-- <a href="<?php bloginfo('url'); ?>/insights" class="blog__button">See More</a> -->
-		</div>
-		</div>
-
 
 	<?php endwhile;
 	endif;
