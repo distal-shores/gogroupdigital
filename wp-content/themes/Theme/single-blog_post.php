@@ -12,7 +12,8 @@
 		$featured_image = get_field('featured_image'); 
 		$subtitle = get_field('subtitle'); 
 		$content = get_the_content();
-		$authors = get_field('authors');
+		$contributing_authors = get_field('contributing_authors');
+		$byline_authors = get_field('byline_authors');
 		$go_content = get_field('go_content_switch');
 		$user = wp_get_current_user();
 		$privilege_level = wp_get_post_terms(get_the_ID(), 'privilege_level');
@@ -31,13 +32,15 @@
 				</p>
 				<h1 class="blog-post__header__title"><?php the_title(); ?></h1>
 				<hr class="blog-post__header__hr__short-blue" />
-				<?php if($authors != NULL): ?>
-					<p class="blog-post__header__byline">
-						By <?php foreach( $authors as $a ): ?>
+				<p class="blog-post__header__byline">
+					<?php if($byline_authors != NULL): ?>
+						By <?php foreach( $byline_authors as $a ): ?>
 							<span class="blog-post__header__byline__name"><?= get_the_title($a->ID) ?></span>
 						<?php endforeach; ?>
-					</p>
-				<?php endif; ?>
+					<?php else : ?>
+						By GO Group Digital
+					<?php endif; ?>
+				</p>
 			</div> 
 		</div>
 	<?php endif; ?>
@@ -64,10 +67,10 @@
 					</p>'; 
 				}
 			?>
-			<?php if($authors): ?>
+			<?php if($contributing_authors): ?>
 				<h3 class="blog-post__authors__header">Contributing Author(s)</h3>
 				<ul class="blog-post__authors">
-					<?php foreach( $authors as $a ): ?>
+					<?php foreach( $contributing_authors as $a ): ?>
 						<li>
 							<img class="blog-post__authors__headshot" src="<?= get_field('profile_image', $a->ID)["url"]; ?>">
 							<div class="blog-post__authors__details">
@@ -80,7 +83,7 @@
 			<?php endif ?>
 			<div class="blog-post__contact">
 				<h3>Got Questions?</h3>
-				<a href="">Reach Out to Us</a>
+				<a href="javascript:;" class="contact-button">Reach Out to Us</a>
 			</div>
 			<?php if(get_field('blog_post_about_go', 2) != NULL) : ?>
 				<div class="blog-post__about">

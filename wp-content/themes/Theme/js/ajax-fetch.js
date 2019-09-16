@@ -16,6 +16,7 @@
             if(taxQuery === true) {
                 queryVars = {
                     "post_type": "blog_post",
+                    "post_status": "publish",
                     "orderby": "date",
                     "order": "DESC",
                     "posts_per_page": 3,
@@ -28,6 +29,7 @@
             } else {
                 queryVars = {
                     "post_type": "blog_post",
+                    "post_status": "publish",
                     "orderby": "date",
                     "order": "DESC",
                     "posts_per_page": 3,
