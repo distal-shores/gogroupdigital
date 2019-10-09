@@ -70,7 +70,7 @@
 					'post__not_in' => array($featured_post->ID),
 				);
 				$loop = new WP_Query( $args );
-				$excluded_posts = array();
+				$excluded_posts = array($featured_post->ID);
 				if ( $loop->have_posts() ): 
 					while ( $loop->have_posts() ) : $loop->the_post();
 						include(locate_template('partials/listing-index.php', false, false));

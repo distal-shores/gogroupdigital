@@ -7,10 +7,20 @@
 
 @font-face {
   font-family: "Calluna";
-  src: url("../fonts/calluna.otf") format("otf");
+  src: font-url("calluna.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Avenir";
-  src: url("../fonts/avenir.ttc") format("ttc");
+  src: font-url("Avenir-Book-01.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Avenir Black";
+  src: font-url("Avenir-Black-03.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Avenir Heavy";
+  src: font-url("Avenir-Heavy-05.ttf") format("truetype");
 }

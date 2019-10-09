@@ -3,19 +3,30 @@
 	z-index: 2;
 	&-top {
 		background: $color-canvas-alt;
-		padding: 70px 0px 80px 0px;
+		padding: 70px 0px 40px 0px;
 		text-align: left;
 		@include clearfix;
 		&__title {
 			.numeral {
 				font-family: 'Calluna', Arial, sans-serif;
-				font-size: 48px;
+				font-size: 32px;
 				font-weight: 400;
 				display: inline-block;
+				margin-bottom: 45px;
 			}
 			.text {
+				font-family: 'Avenir Heavy', Arial, sans-serif;
 				display: inline-block;
 				margin-bottom: 15px;
+				font-size: 14px;
+			}
+			@media screen and (min-width: 800px) {
+				.numeral {
+					font-size: 60px;
+				}
+				.text {
+					font-size: 18px;
+				}
 			}
 			font-family: 'Avenir', Arial, sans-serif;
 			font-size: 14px;
@@ -50,10 +61,15 @@
 				font-size: 14px;
 				text-transform: uppercase;
 				font-weight: 700;
-				margin-top: 5px;
+				margin: 30px 0 0;
 				&:hover {
 					background: $color-base-alt;
 					color: $color-canvas-alt;
+				}
+				@media screen and (min-width: 800px) {
+					display: inline-flex;
+					margin-top: 5px;
+					margin-left: 30px;
 				}
 			}
 		}

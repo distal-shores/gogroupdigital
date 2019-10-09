@@ -117,7 +117,7 @@
 	endif; ?>
 
 <!-- Blog Posts -->
-	<div class="blog">
+	<div class="blog blog-home">
 		<div class="l-container">
 			<p class="blog__title">Evolutionary to Epic by <span class="go go--blue">GO</span></p>
 			<p class="blog__description"><?php the_field('evolutionary_to_epic_blurb'); ?></p>
@@ -130,10 +130,10 @@
 
 						$args = array(
 							'post_type' => 'blog_post',
-							'posts_per_page' => 6,
+							'posts_per_page' => 3,
 							'orderby'=> 'date',
-							'post__not_in' => array($featured_post->ID),
 							'order' => 'DESC',
+							'post__not_in' => array($featured_post->ID),
 							// 'tax_query' => array(
 							// 	'relation' => 'OR',
 							// 	array(
@@ -154,7 +154,7 @@
 
 						$args = array(
 							'post_type' => 'blog_post',
-							'posts_per_page' => 6,
+							'posts_per_page' => 3,
 							'orderby'=> 'date',
 							'order' => 'DESC',
 							'post__not_in' => array($featured_post->ID),
@@ -173,7 +173,7 @@
 					wp_reset_postdata();
 				?>
 			</ul>
-			<a href="<?php bloginfo('url'); ?>/insights" class="blog__button">See More</a>
+			<a href="<?php // bloginfo('url'); ?>/insights" class="blog__button">See More</a>
 		</div>
 		<span class="helix helix--three"></span>
 	</div>

@@ -46,6 +46,8 @@
 			text-decoration: none;
 			padding-left: 10px;
 			margin: 0;
+			position: absolute;
+			margin-left: 1.2rem;
 			i {
 				font-style: initial;
 				font-size: 24px;
@@ -58,11 +60,13 @@
 				@media screen and (min-width: 800px) {
 					display: block;
 					background-color: #fff;
+					box-shadow: 0px 2px 4px 0 rgba(0,0,0,1);
 					color: $color-brand;
-					font-family: 'Avenir', Arial, sans-serif;
+					font-family: 'Avenir Black', Arial, sans-serif;
 					text-transform: uppercase;
 					font-weight: 700;
 					font-size: 18px;
+					max-height: 50px;
 					padding: 11px 20px;
 					font-size: 14px;
 					border-radius: 5px;
@@ -93,7 +97,7 @@
 			}
 		}
 	&__logo {
-		@include sprite-background('logo');
+		@include sprite-background('logo-white');
 		display: inline-block;
 		padding: $column-padding;
 		text-indent: -9000px;
@@ -156,7 +160,7 @@
 			@include sprite-background('icon-close');
 			position: fixed;
 			top: 30px;
-			right: 30px;
+			left: 1.2rem;
 			z-index: 4;
 			cursor: pointer;
 			text-indent: -9000px;

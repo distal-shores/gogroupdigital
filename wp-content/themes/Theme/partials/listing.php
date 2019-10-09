@@ -44,7 +44,9 @@
 			<div class="blog-post__thumbnail" style="background-image: url(<?php echo get_field('featured_image', $featured_post)['sizes']['blog_large'] ?>);">
 				<img src="<?php echo get_field('featured_image', $featured_post)['sizes']['blog_large'] ?>">
 			</div>
+			<div class="overlay"></div>
 			<div class="blog-tile__content">
+				<span class="blog-tile__content__featured-flag"></span>
 				<div class="l-container">
 					<p class="blog-tile__content__meta"><?php echo $featured_post->post_title ?><span></span></p>
 					<div class="blog-tile__content__details">

@@ -6,6 +6,7 @@ html {
 	&.contact-active {
 		overflow: hidden;
 	}
+	overflow-x: hidden;
 } // html
 
 *,
@@ -25,6 +26,7 @@ body {
 	background-color: $color-canvas;
 	overflow-x: hidden;
 	text-align: center;
+	position: relative;
 	&.contact-active {
 		position: fixed;
 		overflow: hidden;
@@ -102,11 +104,11 @@ h4 { // Intro Text
 h5 { // Small meta headings
 }
 
-img {
-	@include responsive-image;
-	display: block;
-	margin: 0px auto;
-} // img
+// img {
+// 	@include responsive-image;
+// 	display: block;
+// 	margin: 0px auto;
+// } // img
 
 .videowrapper { // Making all iframes responsive
 	position: relative;

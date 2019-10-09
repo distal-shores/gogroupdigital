@@ -8,7 +8,8 @@
 	if ( have_posts() ) :
 	while ( have_posts() ) : the_post(); ?>
 
-	<?php 
+	<?php
+		$marketing_page = get_field('marketing_page') == true ? true : false;
 		$featured_image = get_field('featured_image'); 
 		$subtitle = get_field('subtitle'); 
 		$content = get_the_content();
@@ -32,15 +33,17 @@
 				</p>
 				<h1 class="blog-post__header__title"><?php the_title(); ?></h1>
 				<hr class="blog-post__header__hr__short-blue" />
-				<p class="blog-post__header__byline">
-					<?php if($byline_authors != NULL): ?>
-						By <?php foreach( $byline_authors as $a ): ?>
-							<span class="blog-post__header__byline__name"><?= get_the_title($a->ID) ?></span>
-						<?php endforeach; ?>
-					<?php else : ?>
-						By GO Group Digital
-					<?php endif; ?>
-				</p>
+				<?php if(!$marketing_page): ?>
+					<p class="blog-post__header__byline">
+						<?php if($byline_authors != NULL): ?>
+							<span class="blog-post__header__byline__by">By</span> <?php foreach( $byline_authors as $a ): ?>
+								<span class="blog-post__header__byline__name"><?= get_the_title($a->ID) ?></span>
+							<?php endforeach; ?>
+						<?php else : ?>
+							<span class="blog-post__header__byline__by">By</span> GO Group Digital
+						<?php endif; ?>
+					</p>
+				<?php endif; ?>
 			</div> 
 		</div>
 	<?php endif; ?>
@@ -48,17 +51,18 @@
 
 	<div class="page-content">
 		<div class="l-container blog-content">
-			<ul class="blog-post__blog-content__categories">
-				<li><?php foreach((get_the_category()) as $category) { 
-					echo $category->cat_name . ' '; 
-				}  ?></li>
-			</ul>
+			<?php if(!$marketing_page): ?>
+				<ul class="blog-post__blog-content__categories">
+					<li><?php foreach((get_the_category()) as $category) { 
+						echo $category->cat_name . ' '; 
+					}  ?></li>
+				</ul>
+			<?php endif; ?>
 			<?php if($subtitle): ?>
 				<h3 class="blog-post__subtitle">
 					<?php echo $subtitle; ?>
 				</h3>
 			<?php endif; ?>
-
 			<?php
 				if ( in_array_any($privilege_levels, (array) $user->roles) || empty($privilege_levels) || in_array('administrator', $user->roles)) {
 					the_content();
@@ -67,8 +71,8 @@
 					</p>'; 
 				}
 			?>
-			<?php if($contributing_authors): ?>
-				<h3 class="blog-post__authors__header">Contributing Author(s)</h3>
+			<?php if($contributing_authors && !$marketing_page): ?>
+				<h4 class="blog-post__authors__header">Contributing Author(s)</h4>
 				<ul class="blog-post__authors">
 					<?php foreach( $contributing_authors as $a ): ?>
 						<li>
@@ -81,17 +85,18 @@
 					<?php endforeach; ?>
 				</ul> <!-- /.blog-post__author -->
 			<?php endif ?>
-			<div class="blog-post__contact">
-				<h3>Got Questions?</h3>
+			<div class="blog-post__contact <?= $marketing_page == true ? 'blog-post__contact__no-border' : '' ?>">
+				<h4>Got Questions?</h4>
 				<a href="javascript:;" class="contact-button">Reach Out to Us</a>
 			</div>
-			<?php if(get_field('blog_post_about_go', 2) != NULL) : ?>
-				<div class="blog-post__about">
-					<?php echo get_field('blog_post_about_go', 2); ?>
-				</div>
+			<?php if(!$marketing_page): ?>
+				<?php if(get_field('blog_post_about_go', 2) != NULL) : ?>
+					<div class="blog-post__about">
+						<?php echo get_field('blog_post_about_go', 2); ?>
+					</div>
+				<?php endif; ?>
 			<?php endif; ?>
 			<div class="blog-post__footnotes">
-				<h3>Sources</h3>
 			</div>
 		</div>
 	</div>
