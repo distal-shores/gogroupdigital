@@ -22,6 +22,10 @@
 		foreach($privilege_level as $level) {
 			$privilege_levels[] = $level->slug;
 		}
+		$categories = array();
+		foreach((get_the_category()) as $category) { 
+			array_push($categories, $category->category_nicename);
+		}
 	?>
 
 	<?php if($featured_image): ?>
@@ -98,12 +102,44 @@
 			<?php endif; ?>
 			<div class="blog-post__footnotes">
 			</div>
+			<?php endwhile;
+				endif;
+			?>
+		</div>
+	</div>
+	<div class="related-articles">
+		<div class="related-articles__wrapper">
+			<?php 
+				$args = array(
+					'post_type' => 'blog_post',
+					'post_status' => 'publish',
+					'orderby'=> 'date',
+					'order' => 'DESC',
+					'posts_per_page' => 3,
+					'post__not_in' => $excluded_posts,
+					'tax_query' => array(
+						array(
+	                        'taxonomy' => 'category',
+	                        'field' => 'slug',
+	                        'terms' => $categories,
+	                    )
+	                ),
+				);
+				$loop = new WP_Query( $args );
+			?>
+			<?php if ( $loop->have_posts() ): ?>
+			<h2>Related Articles</h2>
+			<ul id="recent-articles-list" class="blog-tiles">
+				<?php while ( $loop->have_posts() ) : $loop->the_post();
+						include(locate_template('partials/listing-index.php', false, false));
+					endwhile;
+				endif;
+				wp_reset_postdata();
+				?>
+			</ul>
 		</div>
 	</div>
 
-	<?php endwhile;
-	endif;
-	?>
 
 </div>
 
