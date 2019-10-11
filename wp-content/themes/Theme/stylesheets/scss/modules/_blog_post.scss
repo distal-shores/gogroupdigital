@@ -5,6 +5,7 @@
 	h3 {
 		font-family: 'Calluna', sans-serif;
 		font-size: 21px;
+		font-weight: 400;
 		padding-bottom: 30px;
 		position: relative;
 		&:after {
@@ -116,6 +117,10 @@
 				li {
 					font-family: 'Avenir', Arial, sans-serif;
 					line-height: 26px;
+					font-size: 16px;
+					@media screen and (min-width: 800px) {
+						font-size: 18px;
+					}
 				}
 			}
 		}
@@ -293,6 +298,7 @@
 	&__image {
 		background-size: cover;
 		background-repeat: no-repeat;
+		background-position: center;
 		position: relative;
 		.overlay {
 			position: absolute;

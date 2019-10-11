@@ -3,7 +3,9 @@
 <!--[if gt IE 9]><!-->
 <html class="no-js" lang="<?php bloginfo('language') ?>"><!--<![endif]-->
 <head>
-	<?php wp_head(); ?>
+	<?php 
+    global $post;
+    wp_head(); ?>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93234307-1"></script>
 	<script>
@@ -27,6 +29,10 @@
 	<meta name="msapplication-TileColor" content="#2760b6">
 	<meta name="theme-color" content="#ffffff">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="<?php echo get_the_title($post->ID);?>"/>
+    <!-- <meta property="og:image" content="https://davidwalsh.name/wp-content/themes/klass/img/facebooklogo.png"/> -->
+    <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+    <!-- <meta property="og:description" content="<"/> -->
     <!--[if IE 8]>
         <style>html.ie-force-pseudo-refresh :before,html.ie-force-pseudo-refresh :after {content : none !important;}</style>
         <script>window.attachEvent&&!window.addEventListener&&window.attachEvent("onload",function(){var a=document.documentElement,b=a.className;a.className=b+" ie-force-pseudo-refresh",setTimeout(function(){a.className=b},10)});</script>
@@ -61,4 +67,8 @@
     </div>
 
 </header>
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=670426330032456&autoLogAppEvents=1"></script>
 

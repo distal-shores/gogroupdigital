@@ -51,3 +51,24 @@ function generate_pullquote( $atts, $content = null ) {
 }
 
 add_shortcode( 'pullquote', 'generate_pullquote' );
+
+function generate_social_shares( $atts ) {
+	$a = shortcode_atts( array(), $atts );
+	global $post;
+	ob_start();
+	?>
+		<div class="social-shares">
+			<span class="social-shares__heading">Share Article:</span>
+			<ul class="social-shares__icons">
+				<li class="linkedin"><a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo urlencode(get_permalink($post->ID)); ?>"><i class="fa fa-linkedin"></i></a></li>
+				<li class="facebook" data-href="<?php echo get_permalink($post->ID); ?>" data-layout="button_count"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>"><i class="fa fa-facebook"></i></a></li>
+				<li class="twitter"><a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo get_the_title($post->ID); ?>&amp;url=<?php echo urlencode(get_permalink($post->ID)); ?>"><i class="fa fa-twitter"></i></a></li>
+				  <!-- Your share button code -->
+			</ul>
+		</div>
+	<?php
+	return ob_get_clean();
+}
+
+add_shortcode( 'social-shares', 'generate_social_shares' );
+

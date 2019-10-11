@@ -19,6 +19,7 @@
 		$user = wp_get_current_user();
 		$privilege_level = wp_get_post_terms(get_the_ID(), 'privilege_level');
 		$privilege_levels = array();
+		$excluded_posts = array(get_the_ID());
 		foreach($privilege_level as $level) {
 			$privilege_levels[] = $level->slug;
 		}
