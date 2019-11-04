@@ -76,6 +76,7 @@
 					</p>'; 
 				}
 			?>
+			<?php echo !$marketing_page ? do_shortcode('[social-shares]') : '' ?>
 			<?php if($contributing_authors && !$marketing_page): ?>
 				<h4 class="blog-post__authors__header">Contributing Author(s)</h4>
 				<ul class="blog-post__authors">

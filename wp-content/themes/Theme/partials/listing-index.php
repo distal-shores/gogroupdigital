@@ -28,7 +28,7 @@
 
 ?>
 
-<li class="blog-tile blog-tile--index blog-tile--<?php echo $blog_category_class; ?> <?php echo $position; ?>">
+<li data-post-id="<?php echo the_ID(); ?>" class="blog-tile blog-tile--index blog-tile--<?php echo $blog_category_class; ?> <?php echo $position; ?>">
 	<div class="blog-tile__thumbnail" style="background-image: url(<?php echo $blog_thumbnail['sizes']['blog_small'];?>);">
 		<a href="<?php the_permalink(); ?>"></a>
 	</div>

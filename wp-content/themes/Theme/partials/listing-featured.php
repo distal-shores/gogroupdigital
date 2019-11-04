@@ -30,6 +30,7 @@
 ?>
 
 <li class="blog-tile blog-tile--<?php echo $featured_post_category; ?> blog-tile--featured has-thumbnail" style="background-image: url(<?php echo get_field('featured_image', $featured_post)['sizes']['blog_large'] ?>);">
+	<div class="blog-tile--featured--overlay"></div>
     <a href="<?php echo get_permalink($featured_post, false); ?>">
         <div class="blog-tile__content">
 			<span class="blog-tile__content__featured-flag"></span>

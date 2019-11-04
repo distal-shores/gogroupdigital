@@ -110,7 +110,9 @@
 			wp_reset_postdata();
 		?>
 		</ul>
+		<a href="" class="blog__view-more">View More Articles</a>
 	</div>
+
 	<span class="helix helix--five"><img src="<?php echo get_bloginfo('stylesheet_directory').'/images/background-helix_five.png'; ?>"/></span>
 </div>
 

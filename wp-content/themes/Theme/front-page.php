@@ -123,8 +123,20 @@
 			<p class="blog__description"><?php the_field('evolutionary_to_epic_blurb'); ?></p>
 			<ul class="blog-tiles">
 				<?php
-					$featured_post = get_field('e_to_e_featured_post');
+					$featured_post = get_field('e_to_e_featured_post', 2);
 					$featured_post = $featured_post[0];
+					$args = array(
+						'post_type' => 'blog_post',
+					);
+					$loop = new WP_Query( $args );
+					if ( $loop->have_posts() ): 
+					$count = 0;
+					include(locate_template('partials/listing-featured.php', false, false));
+					$count++;
+					endif;
+					wp_reset_postdata();
+				?>
+				<?php
 					$user = wp_get_current_user();
 					if(!in_array('administrator', $user->roles)) {
 
@@ -166,7 +178,7 @@
 					if ( $loop->have_posts() ): 
 					$count = 0;
 					while ( $loop->have_posts() ) : $loop->the_post();
-						include(locate_template('partials/listing.php', false, false));
+						include(locate_template('partials/listing-index.php', false, false));
 						$count++;
 					endwhile;
 					endif;
