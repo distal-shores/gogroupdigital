@@ -20,8 +20,8 @@ module.exports = function(grunt) {
         beautify: false,
         mangle: true,
         compress: {
-          dropConsole: false,
-          dropDebugger: false
+          drop_console: false,
+          drop_debugger: false
         }
       },
       all: {
