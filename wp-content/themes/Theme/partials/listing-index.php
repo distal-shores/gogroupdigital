@@ -34,7 +34,7 @@
 	</div>
 		<div class="blog-tile__content-container">
 			<span class="blog-tile__category"><?php echo $blog_categories_list; ?></span>
-			<h2 class="blog-tile__content__title"><?php echo $blog_title; ?></h2>
+			<a href="<?php the_permalink(); ?>"><h2 class="blog-tile__content__title"><?php echo $blog_title; ?></h2></a>
 			<a class="blog-tile__content__read-more" href="<?php the_permalink(); ?>">Read More</a>
 		</div>
 
