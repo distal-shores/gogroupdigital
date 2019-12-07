@@ -85,19 +85,24 @@ class VFB_Pro_Preview_Email {
 		$vfbdb = new VFB_Pro_Data();
 		$vfbp_email_template_data  = $vfbdb->get_email_design_settings( $form_id );
 
-		$template   = isset( $vfbp_email_template_data['email-template']             )  ? $vfbp_email_template_data['email-template']             : $template;
-		$color_bg   = isset( $vfbp_email_template_data['email-design']['color-bg']   )	? $vfbp_email_template_data['email-design']['color-bg']   : '#fbfbfb';
-		$color_link = isset( $vfbp_email_template_data['email-design']['color-link'] ) 	? $vfbp_email_template_data['email-design']['color-link'] : '#41637e';
-		$color_h1   = isset( $vfbp_email_template_data['email-design']['color-h1']   ) 	? $vfbp_email_template_data['email-design']['color-h1']   : '#565656';
-		$font_h1    = isset( $vfbp_email_template_data['email-design']['font-h1']    ) 	? $vfbp_email_template_data['email-design']['font-h1']    : 'Arial';
-		$color_h2   = isset( $vfbp_email_template_data['email-design']['color-h2']   ) 	? $vfbp_email_template_data['email-design']['color-h2']   : '#555555';
-		$font_h2    = isset( $vfbp_email_template_data['email-design']['font-h2']    ) 	? $vfbp_email_template_data['email-design']['font-h2']	  : 'Georgia';
-		$color_h3   = isset( $vfbp_email_template_data['email-design']['color-h3']   ) 	? $vfbp_email_template_data['email-design']['color-h3']   : '#555555';
-		$font_h3    = isset( $vfbp_email_template_data['email-design']['font-h3']    ) 	? $vfbp_email_template_data['email-design']['font-h3']	  : 'Georgia';
-		$color_text = isset( $vfbp_email_template_data['email-design']['color-text'] )	? $vfbp_email_template_data['email-design']['color-text'] : '#565656';
-		$font_text  = isset( $vfbp_email_template_data['email-design']['font-text']  ) 	? $vfbp_email_template_data['email-design']['font-text']  : 'Georgia';
-		$header_img = isset( $vfbp_email_template_data['email-design']['header-img'] ) 	? $vfbp_email_template_data['email-design']['header-img'] : '';
-		$link_love  = isset( $vfbp_email_template_data['email-design']['link-love']  ) 	? $vfbp_email_template_data['email-design']['link-love']  : '';
+		$template            = isset( $vfbp_email_template_data['email-template'] ) ? $vfbp_email_template_data['email-template'] : $template;
+		$color_bg            = isset( $vfbp_email_template_data['email-design']['color-bg'] )	? $vfbp_email_template_data['email-design']['color-bg'] : '#fbfbfb';
+		$color_link          = isset( $vfbp_email_template_data['email-design']['color-link'] ) 	? $vfbp_email_template_data['email-design']['color-link'] : '#41637e';
+		$color_headings_bg   = isset( $vfbp_email_template_data['email-design']['color-headings-bg'] )	? $vfbp_email_template_data['email-design']['color-headings-bg'] : '#348eda';
+		$color_headings_text = isset( $vfbp_email_template_data['email-design']['color-headings-text'] )	? $vfbp_email_template_data['email-design']['color-headings-text'] : '#ffffff';
+		$color_h1            = isset( $vfbp_email_template_data['email-design']['color-h1'] ) 	? $vfbp_email_template_data['email-design']['color-h1'] : '#565656';
+		$font_h1             = isset( $vfbp_email_template_data['email-design']['font-h1'] ) 	? $vfbp_email_template_data['email-design']['font-h1'] : 'Arial';
+		$color_h2            = isset( $vfbp_email_template_data['email-design']['color-h2'] ) 	? $vfbp_email_template_data['email-design']['color-h2'] : '#555555';
+		$font_h2             = isset( $vfbp_email_template_data['email-design']['font-h2'] ) 	? $vfbp_email_template_data['email-design']['font-h2']	 : 'Georgia';
+		$color_h3            = isset( $vfbp_email_template_data['email-design']['color-h3'] ) 	? $vfbp_email_template_data['email-design']['color-h3'] : '#555555';
+		$font_h3             = isset( $vfbp_email_template_data['email-design']['font-h3'] ) 	? $vfbp_email_template_data['email-design']['font-h3']	 : 'Georgia';
+		$color_text          = isset( $vfbp_email_template_data['email-design']['color-text'] )	? $vfbp_email_template_data['email-design']['color-text'] : '#565656';
+		$font_text           = isset( $vfbp_email_template_data['email-design']['font-text'] ) 	? $vfbp_email_template_data['email-design']['font-text'] : 'Georgia';
+		$header_img          = isset( $vfbp_email_template_data['email-design']['header-img'] ) 	? $vfbp_email_template_data['email-design']['header-img'] : '';
+		$link_love           = isset( $vfbp_email_template_data['email-design']['link-love'] ) 	? $vfbp_email_template_data['email-design']['link-love'] : '';
+		$title               = isset( $vfbp_email_template_data['email-design']['title'] ) ? $vfbp_email_template_data['email-design']['title'] : __( 'VFB Pro', 'vfb-pro' );
+		$message             = isset( $vfbp_email_template_data['email-design']['message'] ) ? $vfbp_email_template_data['email-design']['message'] : __( 'Your submission has been processed.', 'vfb-pro' );
+		$address             = isset( $vfbp_email_template_data['email-design']['address'] ) ? $vfbp_email_template_data['email-design']['address'] : __( 'Acme Inc. 123 Van Ness, San Francisco 94102', 'vfb-pro' );
 
 		// Hide the Link Love text, if setting is checked
 		$link_love_text = 1 == $link_love ? '' : __( 'This email was built and sent using <a href="http://vfbpro.com">VFB Pro</a>.', 'vfb-pro' );
@@ -106,18 +111,23 @@ class VFB_Pro_Preview_Email {
 		$header_img_src = $this->get_header_image( $header_img );
 
 		$defaults = array(
-			'color-bg'      => $color_bg,
-			'color-link'    => $color_link,
-			'color-h1'      => $color_h1,
-			'font-h1'       => $font_h1,
-			'color-h2'      => $color_h2,
-			'font-h2'       => $font_h2,
-			'color-h3'      => $color_h3,
-			'font-h3'       => $font_h3,
-			'color-text'    => $color_text,
-			'font-text'     => $font_text,
-			'header-img'    => $header_img_src,
-			'vfb-link-love' => $link_love_text,
+			'color-bg'            => $color_bg,
+			'color-headings-bg'   => $color_headings_bg,
+			'color-headings-text' => $color_headings_text,
+			'color-link'          => $color_link,
+			'color-h1'            => $color_h1,
+			'font-h1'             => $font_h1,
+			'color-h2'            => $color_h2,
+			'font-h2'             => $font_h2,
+			'color-h3'            => $color_h3,
+			'font-h3'             => $font_h3,
+			'color-text'          => $color_text,
+			'font-text'           => $font_text,
+			'header-img'          => $header_img_src,
+			'vfb-link-love'       => $link_love_text,
+			'title'               => $title,
+			'message'             => $message,
+			'address'             => $address,
 		);
 
 		$template = $this->email_templating( $form_id, $template, $defaults );

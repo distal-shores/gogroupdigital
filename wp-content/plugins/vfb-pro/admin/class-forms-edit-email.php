@@ -308,7 +308,7 @@ class VFB_Pro_Forms_Edit_Email {
 								<label for="notify-message"><?php _e( 'Message' , 'vfb-pro'); ?></label>
 							</th>
 							<td>
-								<textarea id="notify-message" name="settings[notify-message]" class="large-text" rows="10"><?php echo $notify_message; ?></textarea>
+								<?php wp_editor( $notify_message, 'notify_message', array( 'textarea_name' => 'settings[notify-message]' ) ); ?>
 							</td>
 						</tr>
 

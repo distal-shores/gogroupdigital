@@ -3,6 +3,6 @@ jQuery(document).ready(function($) {
 	    width: '35em',
 	    height: 'auto',
 	    defaultText: 'add an email',
-	    pattern: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+	    pattern: /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
 	});
 });

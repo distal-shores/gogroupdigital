@@ -26,7 +26,7 @@ class VFB_Pro_Install {
 
 		$current_db_version = VFB_DB_VERSION;
 
-		if ( get_site_option( 'vfbp_db_version' ) != $current_db_version )
+		if ( get_option( 'vfbp_db_version' ) != $current_db_version )
 			$this->install_db();
 	}
 

@@ -3,7 +3,7 @@
 Plugin Name:	VFB Pro
 Plugin URI:		http://vfbpro.com
 Description:	VFB Pro is the easiest form builder on the market.
-Version:		3.3.4
+Version:		3.4.2
 Author:			Matthew Muro
 Author URI:		http://vfbpro.com
 Text Domain:	vfb-pro
@@ -32,7 +32,7 @@ class VFB_Pro {
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
-	protected $version = '3.3.4';
+	protected $version = '3.4.2';
 
 	/**
 	 * The current DB version. Used if we need to update the DB later.
@@ -112,6 +112,9 @@ class VFB_Pro {
 
 			$screen_options = new VFB_Pro_Admin_Screen_Options();
 			add_filter( 'set-screen-option', array( $screen_options, 'save_option' ), 10, 3 );
+
+			// Robots.txt
+			add_filter( 'robots_txt', array( self::$instance, 'robots_txt' ), 10, 2 );
 		}
 
 		return self::$instance;
@@ -200,7 +203,7 @@ class VFB_Pro {
 		require_once( VFB_PLUGIN_DIR . 'admin/class-fields.php' );					// VFB_Pro_Admin_Fields class
 		require_once( VFB_PLUGIN_DIR . 'admin/class-fields-settings.php' );			// VFB_Pro_Admin_Fields_Settings class
 		require_once( VFB_PLUGIN_DIR . 'admin/class-page-settings.php' );			// VFB_Pro_Page_Settings class
-		require_once( VFB_PLUGIN_DIR . 'admin/class-page-addons.php' );				// VFB_Pro_Page_AddOns class
+		require_once( VFB_PLUGIN_DIR . 'admin/class-page-help.php' );				// VFB_Pro_Page_Help class
 		require_once( VFB_PLUGIN_DIR . 'admin/class-diagnostics.php' );				// VFB_Pro_Admin_Diagnostics class
 		require_once( VFB_PLUGIN_DIR . 'admin/class-ajax.php' );					// VFB_Pro_Admin_AJAX class
 		require_once( VFB_PLUGIN_DIR . 'admin/class-save.php' );					// VFB_Pro_Admin_Save class
@@ -244,7 +247,7 @@ class VFB_Pro {
 
 		$current_db_version = VFB_DB_VERSION;
 
-		if ( get_site_option( 'vfbp_db_version' ) != $current_db_version ) {
+		if ( get_option( 'vfbp_db_version' ) != $current_db_version ) {
 			$install = new VFB_Pro_Install();
 			$install->install_db();
 			$install->add_caps();
@@ -300,8 +303,10 @@ class VFB_Pro {
 	 */
 	public function start_session() {
 		if ( !is_admin() ) {
-			if ( $this->is_session_started() === false ) {
-				session_start();
+			if ( !headers_sent() ) {
+				if ( $this->is_session_started() === false ) {
+					session_start();
+				}
 			}
 		}
 	}
@@ -324,6 +329,20 @@ class VFB_Pro {
 	    }
 
 	    return false;
+	}
+
+	/**
+	 * Filter robots.txt file to prevent VFB uploads folder being indexed
+	 *
+	 * @since  3.4.1
+	 * @param  string	$output robots.txt output
+	 * @param  bool		$public whether the site is considered public
+	 * @return string	the output
+	 */
+	public function robots_txt( $output, $public ) {
+		$output .= "Disallow: /wp-content/uploads/vfb/\n";
+
+		return $output;
 	}
 
 	/**

@@ -46,6 +46,17 @@
 		padding: 15px;
 		text-align: center;
 	}
+
+	.vfb-addons-widget-footer {
+		.button-disabled {
+			padding-left: 3px;
+
+			.dashicons {
+				font-size: 28px;
+				margin-right: 9px;
+			}
+		}
+	}
 }
 
 #vfb-addon-create-post {

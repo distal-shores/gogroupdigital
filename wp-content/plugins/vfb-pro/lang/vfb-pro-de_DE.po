@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the VFB Pro package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-01-31 05:43:23+0000\n"
+"PO-Revision-Date: 2019-08-09 17:14:39+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,19 +11,371 @@ msgstr ""
 "Language: de\n"
 "Project-Id-Version: VFB Pro\n"
 
+#: admin/class-template-tags.php:139
+msgid "Your address or other text displayed in the footer of the email."
+msgstr ""
+
+#: admin/class-template-tags.php:134
+msgid "A short message displayed above the fields table and below the title heading."
+msgstr ""
+
+#: admin/class-template-tags.php:129
+msgid "The title heading of the email."
+msgstr ""
+
+#: admin/class-template-tags.php:74
+msgid "Headings field text color."
+msgstr ""
+
+#: admin/class-template-tags.php:69
+msgid "Headings field background color."
+msgstr ""
+
+#: admin/class-page-settings.php:186
+msgid "v3 (Invisible)"
+msgstr ""
+
+#: admin/class-page-settings.php:182
+msgid "v2 (Checkbox)"
+msgstr ""
+
+#: admin/class-page-help.php:210 admin/class-page-help.php:230
+#: admin/class-page-help.php:250 admin/class-page-help.php:272
+#: admin/class-page-help.php:292 admin/class-page-help.php:312
+msgid "Buy Now"
+msgstr ""
+
+#: admin/class-page-help.php:208 admin/class-page-help.php:228
+#: admin/class-page-help.php:248 admin/class-page-help.php:270
+#: admin/class-page-help.php:290 admin/class-page-help.php:310
+msgid "Installed"
+msgstr ""
+
+#: admin/class-page-help.php:194
+msgid "The following add-ons are available for purchase from our <a href=\"https://vfbpro.com\" target=\"_blank\">store</a>."
+msgstr ""
+
+#: admin/class-page-help.php:106
+msgid "Search Results for %s"
+msgstr ""
+
+#: admin/class-page-help.php:95
+msgid "Search"
+msgstr ""
+
+#: admin/class-page-help.php:86
+msgid "Thank you for using VFB Pro! Use the form below to search through our <a href=\"https://docs.vfbpro.com\" target=\"_blank\">knowledge base</a> for answers to common questions, tutorials, videos, and more."
+msgstr ""
+
+#: admin/class-page-help.php:39
+msgid "Documentation"
+msgstr ""
+
+#: admin/class-fields-settings.php:795
+msgid "Referer URL"
+msgstr ""
+
+#: admin/class-email-design.php:158
+msgid "Headings Text Color"
+msgstr ""
+
+#: admin/class-email-design.php:149
+msgid "Headings Background Color"
+msgstr ""
+
+#: admin/class-email-design.php:65 inc/class-preview-email.php:105
+#: public/class-templating.php:87
+msgid "Acme Inc. 123 Van Ness, San Francisco 94102"
+msgstr ""
+
+#: admin/class-email-design.php:64 inc/class-preview-email.php:104
+#: public/class-templating.php:86
+msgid "Your submission has been processed."
+msgstr ""
+
+#: admin/class-admin-menu.php:97 admin/class-admin-menu.php:98
+#: admin/class-admin-toolbar.php:171
+msgid "Help"
+msgstr ""
+
+#: public/class-security.php:143
+msgid "Security check: It appears you have failed to properly answer the security Captcha question. Please go back and try again."
+msgstr "Sicherheitscheck: Es scheint, dass Sie die Sicherheitsfrage nicht richtig beantwortet haben. Bitte gehen Sie zurück und versuchen es noch einmal."
+
+#: public/class-security.php:135
+msgid "Security check: Captcha verification has been tampered with. If you think this is an error, please email the site owner."
+msgstr "Sicherheitscheck Captcha Überprüfung wurde verändert. Falls Sie der Meinung sind, dies sei ein Fehler bitte senden Sie eine E-Mail an den Seitenbetreiber."
+
+#: public/class-form-display.php:2669
+msgid "You are logged in as <a href=\"%1$s\">%2$s</a>. CAPTCHA verification not required."
+msgstr "Sie sind eingeloggt als <a href=\"%1$s\">%2$s</a>. Captcha Überprüfung ist nicht erforderlich."
+
+#: public/class-form-display.php:2646
+msgid "For security verification, please enter any random two digit number. For example: %d"
+msgstr "Zur Sicherheitsüberprüfung geben Sie bitte eine zufällige zweistellige Zahl ein. Zum Beispiel: %d"
+
+#: public/class-form-display.php:135
+msgid "VFB Pro Security Check - 6"
+msgstr "VFB Pro Sicherheitsüberprüfung"
+
+#: admin/class-fields-settings.php:2016
+msgid "Simple"
+msgstr "Einfach"
+
+#: admin/class-fields-settings.php:2015
+msgid "reCAPTCHA"
+msgstr "reCAPTCHA"
+
+#: admin/class-fields-settings.php:2012
+msgid "Select the type of CAPTCHA to display. By default, Google's reCAPTCHA is selected but you can choose display a Simple version instead."
+msgstr "Wählen Sie die Art des Captcha zur Darstellung. Standard ist Google's reCAPTCHA, Sie können jedoch eine einfachere Darstellung wählen."
+
+#: admin/class-fields-settings.php:2012
+msgid "About CAPTCHA Option"
+msgstr "Über die Captcha Option"
+
+#: admin/class-fields-settings.php:2009
+msgid "CAPTCHA Option"
+msgstr "CAPTCHA Option"
+
+#: admin/class-admin-notices.php:59
+msgid "Error saving form. The maximum amount of data allowed by your server has been reached. Please update <a href=\"%s\" target=\"_blank\">max_input_vars</a> in your php.ini file to allow more data to be saved. The current limit is <strong>%d</strong>"
+msgstr "Fehler beim Speichern des Formulars. Die maximale Anzahl an Daten die Ihr Server erlaubt wurde erreicht. Bitte aktualisieren Sie <a href=\"%s\" target=\"_blank\">max_input_vars</a>  in Ihrer php.ini Datei um mehr Daten speichern zu können. Das derzeitige Limit beträgt <strong>%d</strong>"
+
+#: inc/addressfield.json.php:2394
+msgid "United States"
+msgstr "Vereinigte Staaten"
+
+#: inc/addressfield.json.php:2387
+msgid "United Kingdom"
+msgstr "Vereinigtes Königreich (UK)"
+
+#: inc/addressfield.json.php:2351
+msgid "U.S. Virgin Islands"
+msgstr "Amerikanische Jungferninseln"
+
+#: inc/addressfield.json.php:1912
+msgid "Sao Tome and Principe"
+msgstr "São Tomé und Príncipe"
+
+#: inc/addressfield.json.php:1901
+msgid "Samoa"
+msgstr "Samoa"
+
+#: inc/addressfield.json.php:1861
+msgid "Saint Barthalemy"
+msgstr "Sankt Bartholomäus"
+
+#: inc/addressfield.json.php:1645
+msgid "Palau"
+msgstr "Palau"
+
+#: inc/addressfield.json.php:1226
+msgid "Jordon"
+msgstr "Jordanien"
+
+#: inc/addressfield.json.php:939
+msgid "Ireland"
+msgstr "Irland"
+
+#: inc/addressfield.json.php:583
+msgid "Eqypt"
+msgstr "Ägypten"
+
+#: inc/addressfield.json.php:536
+msgid "CuraÇao"
+msgstr "Curaçao"
+
+#: inc/addressfield.json.php:512
+msgid "Cooks Islands"
+msgstr "Cook Inseln"
+
+#: inc/addressfield.json.php:114
+msgid "Antiqua and Barbuda"
+msgstr "Antigua und Barbados"
+
+#: inc/addressfield.json.php:67
+msgid "Aland Islands"
+msgstr "Åland Inseln"
+
+#: inc/addressfield.json.php:49
+msgid "Land"
+msgstr "Land"
+
+#: inc/addressfield.json.php:46
+msgid "PIN code"
+msgstr "PIN-Code"
+
+#: inc/addressfield.json.php:45
+msgid "Postal code"
+msgstr "Postleitzahl"
+
+#: inc/addressfield.json.php:44
+msgid "Postcode"
+msgstr "Postleitzahl"
+
+#: inc/addressfield.json.php:43
+msgid "ZIP code"
+msgstr "Postleitzahl"
+
+#: inc/addressfield.json.php:40
+msgid "Emirate"
+msgstr "Emirate"
+
+#: inc/addressfield.json.php:39
+msgid "Department"
+msgstr "Abteilung"
+
+#: inc/addressfield.json.php:38
+msgid "Region"
+msgstr "Region"
+
+#: inc/addressfield.json.php:36
+msgid "Prefecture"
+msgstr "Verwaltungsbezirk"
+
+#: inc/addressfield.json.php:35
+msgid "Parish"
+msgstr "Kirchgemeinde"
+
+#: inc/addressfield.json.php:34
+msgid "Area"
+msgstr "Gebiet"
+
+#: inc/addressfield.json.php:33
+msgid "Governorate"
+msgstr "Gouvernorat"
+
+#: inc/addressfield.json.php:32
+msgid "Island"
+msgstr "Island"
+
+#: inc/addressfield.json.php:31
+msgid "Province"
+msgstr "Bundesland / Provinz"
+
+#: inc/addressfield.json.php:29
+msgid "County"
+msgstr "Kreis"
+
+#: inc/addressfield.json.php:26 inc/addressfield.json.php:37
+msgid "District"
+msgstr "Bezirk"
+
+#: inc/addressfield.json.php:25
+msgid "Woonplaats"
+msgstr "Wohnort"
+
+#: inc/addressfield.json.php:24
+msgid "City/regency"
+msgstr "Stadt/Regentschaft"
+
+#: inc/addressfield.json.php:23
+msgid "Town/city"
+msgstr "Stadt/Ort"
+
+#: inc/addressfield.json.php:19
+msgid "Thoroughfare"
+msgstr "Durchgangsstraße"
+
+#: admin/class-email-design.php:129 inc/addressfield.json.php:18
+msgid "Address"
+msgstr "Adresse"
+
+#: admin/class-fields-settings.php:301
+msgid "Three Columns"
+msgstr "Drei Spalten"
+
+#: admin/class-fields-settings.php:300
+msgid "Two Columns"
+msgstr "Zwei Spalten"
+
+#: admin/class-fields-settings.php:299
+msgid "One Column"
+msgstr "Eine Spalte"
+
+#: public/class-security.php:194
+msgid "Security check: the form was submitted too fast and looks like a SPAM bot. Please wait a few seconds before sending. If you think this is an error, please email the site owner."
+msgstr "Sicherheits-Check: Sieht aus als seien Sie ein Spam-Bot, denn das Formular wurde zu schnell übermittelt. Wenn Sie der Meinung sind, dies sei ein Fehler, senden Sie dem Inhaber der Website eine Nachricht."
+
+#: public/class-form-display.php:2706
+msgid "reCAPTCHA is required."
+msgstr "reCAPTCHA erforderlich."
+
+#: admin/class-rules.php:373 admin/class-rules.php:432
+msgid "is less than"
+msgstr "ist kleiner als"
+
+#: admin/class-rules.php:372 admin/class-rules.php:431
+msgid "is greater than"
+msgstr "ist größer als"
+
+#: admin/class-rules.php:371 admin/class-rules.php:430
+msgid "is not equal to"
+msgstr "ist nicht gleich"
+
+#: admin/class-rules.php:370 admin/class-rules.php:429
+msgid "is equal to"
+msgstr "ist gleich"
+
+#: admin/class-rules.php:369 admin/class-rules.php:428
+msgid "Number match"
+msgstr "Nummern Übereinstimmung"
+
+#: admin/class-rules.php:361 admin/class-rules.php:420
+msgid "Keyword match"
+msgstr "Schlüsselwort Übereinstimmung"
+
+#: admin/class-forms-edit-settings.php:145
+msgid "This setting is most helpful for European Union users wishing to comply with the General Data Protection Regulation (GDPR)."
+msgstr "Diese Einstellung ist hilfreich für Benutzer der Europäischen Union die mit der General Data Protection Regulation (GDPR) konform gehen möchten."
+
+#: admin/class-forms-edit-settings.php:142
+msgid "Disables saving entry data for each submission after all emails have been sent."
+msgstr "Deaktiviert das Speichern von Formularinhalten nach dem Absenden aller E-Mails für ein ausgefülltes Formular."
+
+#: admin/class-forms-edit-settings.php:136
+msgid "Disable Saving Entry"
+msgstr "Deaktivieren Sie das Speichern von Einträgen"
+
+#: admin/class-forms-edit-confirmation.php:151
+#: admin/class-forms-edit-confirmation.php:181
+msgid "Please note that some data such as file uploads will not be available through this feature."
+msgstr "Bitte beachten Sie, dass einige Daten wie Datei-Uploads über diese Funktion nicht verfügbar sein werden."
+
+#: admin/class-forms-edit-confirmation.php:150
+#: admin/class-forms-edit-confirmation.php:180
+msgid "For example: <code>?vfb-field-1=valueA&vfb-field-2=valueB</code>"
+msgstr "Zum Beispiel: <code>?vfb-field-1=valueA&vfb-field-2=valueB</code>"
+
+#: admin/class-forms-edit-confirmation.php:149
+#: admin/class-forms-edit-confirmation.php:179
+msgid "This option will add the form variable IDs and their respecitve values to URL for use in PHP through the $_GET method."
+msgstr "Diese Option wird die Formularvariablen IDs und ihre entsprechenden Werte zur URL hinzufügen, um Sie in PHP über die $ _GET-Methode zu verwenden."
+
+#: admin/class-forms-edit-confirmation.php:145
+#: admin/class-forms-edit-confirmation.php:175
+msgid "Append submitted form data to the URL."
+msgstr "Hänge die übermittelten Formulardaten an die URL."
+
+#: admin/class-forms-edit-confirmation.php:139
+#: admin/class-forms-edit-confirmation.php:169
+msgid "Add GET Query Variables"
+msgstr "Get Query Variablen hinzufügen"
+
 #: inc/class-vfb-list-table.php:674
 msgid "No pending comments"
-msgstr ""
+msgstr "Keine ausstehenden Kommentare"
 
-#: admin/class-admin-notices.php:270
+#: admin/class-admin-notices.php:280
 msgid "You have attempted to mark an entry as spam, but Akismet is not detected. Please install and activate <a href=\"https://wordpress.org/plugins/akismet/\" target=\"_blank\">Akismet</a>."
-msgstr ""
+msgstr "Sie haben versucht, einen Eintrag als Spam zu markieren, aber Kismet wurde nicht erkannt. Bitte installieren und aktivieren Sie <a href=\"https://wordpress.org/plugins/akismet/\" target=\"_blank\">Akismet</a>."
 
-#: public/class-security.php:75
+#: public/class-security.php:86
 msgid "Security check: reCaptcha verification expects a response and did not see one. Please submit the form again. If you think this is an error, please email the site owner."
 msgstr "Sicherheitsüberprüfung: die reCaptcha Prüfung erwartet eine Eingabe die nicht erfolgte. Bitte senden Sie das Formular erneut ab. Falls Sie meinen dies sein ein Fehler kontaktieren Sie bitte den Seiteninhaber."
 
-#: public/class-security.php:72
+#: public/class-security.php:83
 msgid "Security check: reCaptcha verification has been tampered with. If you think this is an error, please email the site owner."
 msgstr "Sicherheitsüberprüfung: reCaptcha Prüfung wurde manipuliert. Falls Sie meinen dies sein ein Fehler kontaktieren Sie bitte den Seiteninhaber."
 
@@ -51,47 +403,47 @@ msgstr "Fehlendes CSRF Session Token. Das generierte Session Token wurde bereits
 msgid "PHP Sessions are disabled. This server has not configured PHP sessions correctly. Please contact your hosting provider."
 msgstr "PHP Sessions nicht aktiviert. Ihr Server wurde nicht für PHP Sessions aktiviert. Bitte kontaktieren Sie Ihren Hosting Provider."
 
-#: admin/class-forms-edit-settings.php:129
+#: admin/class-forms-edit-settings.php:130
 msgid "Your server is required have PHP Sessions enabled and properly configured for this setting to function correctly."
 msgstr "Ihr Server benötigt die aktivierte und richtig konfigurierte Einstellung für PHP Sessions damit diese Einstellung funktioniert."
 
-#: admin/class-forms-edit-settings.php:126
+#: admin/class-forms-edit-settings.php:127
 msgid "Protects your forms from CSRF (Cross-Site Request Forgery) attacks."
 msgstr "Schützt Ihre Formulare vor CSRF Attacken (Cross-Site Request Forgery, Website-übergreifende Anfragenfälschungen)."
 
-#: admin/class-forms-edit-settings.php:120
+#: admin/class-forms-edit-settings.php:121
 msgid "CSRF Protection"
 msgstr "CSRF Schutz"
 
-#: admin/class-forms-edit-settings.php:139
+#: admin/class-forms-edit-settings.php:155
 msgid "The onSubmit form attribute will allow you to run a script action, such as recording a hit with Google Analytics, when the form is submitted."
 msgstr "Das onSubmit Attribut erlaubt es beim Absenden eines Formulars eine Script-Aktion ausführen zu können, dies kann zum Beispiel das verzeichnen eines Klicks über Google Analytics sein."
 
-#: admin/class-forms-edit-settings.php:135
+#: admin/class-forms-edit-settings.php:151
 msgid "onSubmit attribute"
 msgstr "onSubmit Attribut"
 
-#: admin/class-fields-settings.php:1011
+#: admin/class-fields-settings.php:1014
 msgid "2 / years"
 msgstr "2 / Jahre"
 
-#: admin/class-fields-settings.php:1010
+#: admin/class-fields-settings.php:1013
 msgid "1 / months"
 msgstr "1 / Monate"
 
-#: admin/class-fields-settings.php:1009
+#: admin/class-fields-settings.php:1012
 msgid "0 / days"
 msgstr "0 / Tage"
 
-#: admin/class-fields-settings.php:994
+#: admin/class-fields-settings.php:997
 msgid "2 / decade"
 msgstr "2 / Dekade"
 
-#: admin/class-fields-settings.php:993
+#: admin/class-fields-settings.php:996
 msgid "1 / year"
 msgstr "1 / Jahr"
 
-#: admin/class-fields-settings.php:992
+#: admin/class-fields-settings.php:995
 msgid "0 / month"
 msgstr "0 / Monat"
 
@@ -103,43 +455,43 @@ msgstr "12 (breit)"
 msgid "1 (smallest)"
 msgstr "1 (schmal)"
 
-#: admin/class-email-design.php:212
+#: admin/class-email-design.php:265
 msgid "NOTE: if you experience problems with this enabled, you can manually process the email on the Premailer website and save it in the Email Template below."
 msgstr "HINWEIS: Wenn Sie Probleme haben, können Sie Ihre Vorlage auch manuell auf der Premailer Webseite verarbeiten. Kopieren Sie ihren Source-Code und fügen ihn auf der Premailer Seite über die Option 'Paste HTML as the source' ein. Nach der Verarbeitung können Sie den verarbeiteten Source-Code hier als E-Mail Vorlage wieder einfügen und speichern."
 
-#: admin/class-email-design.php:211
+#: admin/class-email-design.php:264
 msgid "<a href=\"%s\" target=\"_blank\">Premailer</a> converts all CSS to inline styles for best HTML email results."
 msgstr "Der <a href=\"%s\" target=\"_blank\">Premailer</a> konvertiert CSS in inline Styles um die bestmögliche HTML E-Mail Darstellung zu erzielen."
 
-#: admin/class-email-design.php:207
+#: admin/class-email-design.php:260
 msgid "Process template through the Premailer API."
 msgstr "Vorlagen über die Premier API verarbeiten."
 
-#: admin/class-email-design.php:201
+#: admin/class-email-design.php:254
 msgid "Enable Premailer"
 msgstr "Enable"
 
-#: inc/class-vfb-list-table.php:830
+#: inc/class-vfb-list-table.php:835
 msgid "Last page"
 msgstr "Letzte Seite"
 
-#: inc/class-vfb-list-table.php:820
+#: inc/class-vfb-list-table.php:824
 msgid "Next page"
 msgstr "Nächste Seite"
 
-#: inc/class-vfb-list-table.php:804 inc/class-vfb-list-table.php:807
+#: inc/class-vfb-list-table.php:806 inc/class-vfb-list-table.php:810
 msgid "Current Page"
 msgstr "Aktuelle Seite"
 
-#: inc/class-vfb-list-table.php:797
+#: inc/class-vfb-list-table.php:799
 msgid "Previous page"
 msgstr "Vorherige Seite"
 
-#: inc/class-vfb-list-table.php:787
+#: inc/class-vfb-list-table.php:788
 msgid "First page"
 msgstr "Erste Seite"
 
-#: inc/class-vfb-list-table.php:751 inc/class-vfb-list-table.php:1337
+#: inc/class-vfb-list-table.php:751 inc/class-vfb-list-table.php:1342
 msgid "%s item"
 msgid_plural "%s items"
 msgstr[0] "%s Element"
@@ -172,220 +524,220 @@ msgid_plural "%s comments"
 msgstr[0] "%s Kommentar"
 msgstr[1] "%s Kommentare"
 
-#: public/class-form-display.php:2453
+#: public/class-form-display.php:2582
 msgid "Reset Signature"
 msgstr "Unterschrift zurücksetzen"
 
-#: admin/class-fields-settings.php:2364
+#: admin/class-fields-settings.php:2382
 msgid "If checked, the knob will display the previously selected value with transparency."
 msgstr "Falls aktiviert, wird der vorherige Wert des Drehknopfs transparent dargestellt."
 
-#: admin/class-fields-settings.php:2364
+#: admin/class-fields-settings.php:2382
 msgid "About Display Previous Value"
 msgstr "Über den Vorherigen Wert anzeigen"
 
-#: admin/class-fields-settings.php:2361
+#: admin/class-fields-settings.php:2379
 msgid "Display Previous Value"
 msgstr "Vorherigen Wert anzeigen"
 
-#: admin/class-fields-settings.php:2353
+#: admin/class-fields-settings.php:2371
 msgid "If checked, this will hide the number input box associated with the knob controller."
 msgstr "Falls aktiviert, wird das Nummern-Eingabefeld für den Drehknopf nicht angezeigt."
 
-#: admin/class-fields-settings.php:2353
+#: admin/class-fields-settings.php:2371
 msgid "About Hide Input"
 msgstr "Über die Eingabe verstecken"
 
-#: admin/class-fields-settings.php:2350
+#: admin/class-fields-settings.php:2368
 msgid "Hide Input"
 msgstr "Eingabe verstecken"
 
-#: admin/class-fields-settings.php:2340
+#: admin/class-fields-settings.php:2358
 msgid "Set Knob background color using six digit hex color code. Default is #EEEEEE."
 msgstr "Legen Sie die Hintergrundfarbe des Drehkopfs fest. Nutzen Sie sechsstellige HEX Farbwerte. Standard ist #EEEEEE."
 
-#: admin/class-fields-settings.php:2340
+#: admin/class-fields-settings.php:2358
 msgid "About Knob Background Color"
 msgstr "Über die Drehknopf Hintergrundfarbe"
 
-#: admin/class-fields-settings.php:2328
+#: admin/class-fields-settings.php:2346
 msgid "Set Knob input color using six digit hex color code. Default is #87CEEB."
 msgstr "Legen Sie die Eingabefarbe des Drehkopfs fest. Nutzen Sie sechsstellige HEX Farbwerte. Standard ist #87CEEB."
 
-#: admin/class-fields-settings.php:2328
+#: admin/class-fields-settings.php:2346
 msgid "About Knob Input Color"
 msgstr "Über die Eingabefarbe für den Drehknopf"
 
-#: admin/class-fields-settings.php:2325
+#: admin/class-fields-settings.php:2343
 msgid "Input Color"
 msgstr "Eingabefarbe"
 
-#: admin/class-fields-settings.php:2316
+#: admin/class-fields-settings.php:2334
 msgid "Set Knob foreground color using six digit hex color code. Default is #87CEEB."
 msgstr "Legen Sie die Vordergrundfarbe des Drehkopfs fest. Nutzen Sie sechsstellige HEX Farbwerte. Standard ist #87CEEB."
 
-#: admin/class-fields-settings.php:2316
+#: admin/class-fields-settings.php:2334
 msgid "About Knob Foreground Color"
 msgstr "Über die Drehknopf Vodergrundfarbe"
 
-#: admin/class-fields-settings.php:2313
+#: admin/class-fields-settings.php:2331
 msgid "Foreground Color"
 msgstr "Vordergrundfarbe"
 
-#: admin/class-fields-settings.php:2304
+#: admin/class-fields-settings.php:2322
 msgid "Set Knob width, in pixels. Default is 200."
 msgstr "Legen Sie die Breite des Drehknopf fest. Standard ist 200."
 
-#: admin/class-fields-settings.php:2304
+#: admin/class-fields-settings.php:2322
 msgid "About Knob Width"
 msgstr "Über die Drehknopf Breite"
 
-#: admin/class-fields-settings.php:2301
+#: admin/class-fields-settings.php:2319
 msgid "Width"
 msgstr "Breite"
 
-#: admin/class-fields-settings.php:2293
+#: admin/class-fields-settings.php:2311
 msgid "Round"
 msgstr "Rund"
 
-#: admin/class-fields-settings.php:2292
+#: admin/class-fields-settings.php:2310
 msgid "Flat"
 msgstr "Flach"
 
-#: admin/class-fields-settings.php:2289
+#: admin/class-fields-settings.php:2307
 msgid "Set the Knob gauge stroke endings. Default is Flat."
 msgstr "Legen Sie die Art der Linienenden für den Drehknopf fest. Standard ist flach."
 
-#: admin/class-fields-settings.php:2289
+#: admin/class-fields-settings.php:2307
 msgid "About Knob Line Cap"
 msgstr "Über die Drehknopf Linienenden"
 
-#: admin/class-fields-settings.php:2286
+#: admin/class-fields-settings.php:2304
 msgid "Line Cap"
 msgstr "Linienenden"
 
-#: admin/class-fields-settings.php:2277
+#: admin/class-fields-settings.php:2295
 msgid "Set Knob gauge thickness. Default is about 0.35."
 msgstr "Legen Sie die Dicke für den Drehknopf fest. Standard liegt bei 0.35."
 
-#: admin/class-fields-settings.php:2277
+#: admin/class-fields-settings.php:2295
 msgid "About Knob Thickness"
 msgstr "Über das Drehknopf Dickenmaß"
 
-#: admin/class-fields-settings.php:2274
+#: admin/class-fields-settings.php:2292
 msgid "Gauge Thickness"
 msgstr "Dickenmaß"
 
-#: admin/class-fields-settings.php:2266
+#: admin/class-fields-settings.php:2284
 msgid "Counter Clockwise"
 msgstr "Gegen den Uhrzeigersinn"
 
-#: admin/class-fields-settings.php:2265
+#: admin/class-fields-settings.php:2283
 msgid "Clockwise"
 msgstr "Im Uhrzeigersinn"
 
-#: admin/class-fields-settings.php:2262
+#: admin/class-fields-settings.php:2280
 msgid "Set the Knob direction of progress. Default is Clockwise."
 msgstr "Die Richtung für den Drehknopf festlegen. Standard ist im Uhrzeigersinn."
 
-#: admin/class-fields-settings.php:2262
+#: admin/class-fields-settings.php:2280
 msgid "About Knob Rotation"
 msgstr "Über die Drehknopf Drehung"
 
-#: admin/class-fields-settings.php:2259
+#: admin/class-fields-settings.php:2277
 msgid "Rotation"
 msgstr "Drehung"
 
-#: admin/class-fields-settings.php:2250
+#: admin/class-fields-settings.php:2268
 msgid "Set Knobs arc size in degrees. Default is 360."
 msgstr "Die Größe des Winkelbogens für den Drehknopf in Grad festlegen. Standard ist 360."
 
-#: admin/class-fields-settings.php:2250
+#: admin/class-fields-settings.php:2268
 msgid "About Knob Angle Arc"
 msgstr "Über den Drehknopf Winkelbogen"
 
-#: admin/class-fields-settings.php:2247
+#: admin/class-fields-settings.php:2265
 msgid "Angle Arc"
 msgstr "Winkelbogen"
 
-#: admin/class-fields-settings.php:2238
+#: admin/class-fields-settings.php:2256
 msgid "Set Knobs starting angle in degrees. Default is 0."
 msgstr "Die Anfangsposition des Winkelversatz für den Drehknopf festlegen. Standard ist 0."
 
-#: admin/class-fields-settings.php:2238
+#: admin/class-fields-settings.php:2256
 msgid "About Knob Angle Offset"
 msgstr "Über den Drehknopf Winkelversatz"
 
-#: admin/class-fields-settings.php:2235
+#: admin/class-fields-settings.php:2253
 msgid "Angle Offset"
 msgstr "Winkelversatz"
 
-#: admin/class-fields-settings.php:2226
+#: admin/class-fields-settings.php:2244
 msgid "Set Knobs step. Always > 0. Default is 1."
 msgstr "Die Drehknopf Schritte festlegen. Immer > 0. Standard ist 1."
 
-#: admin/class-fields-settings.php:2226
+#: admin/class-fields-settings.php:2244
 msgid "About Knob Step"
 msgstr "Über die Drehknopf Schritte"
 
-#: admin/class-fields-settings.php:2223
+#: admin/class-fields-settings.php:2241
 msgid "Knob Step"
 msgstr "Drehknopf Schritte"
 
-#: admin/class-fields-settings.php:2214
+#: admin/class-fields-settings.php:2232
 msgid "Set Knob maximum value. Default is 100."
 msgstr "Das Drehknopf Maximum festlegen. Standard ist 100."
 
-#: admin/class-fields-settings.php:2214
+#: admin/class-fields-settings.php:2232
 msgid "About Knob Max"
 msgstr "Über das Drehknopf Max"
 
-#: admin/class-fields-settings.php:2211
+#: admin/class-fields-settings.php:2229
 msgid "Knob Max"
 msgstr "Drehknopf Max"
 
-#: admin/class-fields-settings.php:2202
+#: admin/class-fields-settings.php:2220
 msgid "Set knob minimum value. Default is 0."
 msgstr "Das Drehknopf Minimum festlegen. Standard ist 0."
 
-#: admin/class-fields-settings.php:2202
+#: admin/class-fields-settings.php:2220
 msgid "About Knob Min"
 msgstr "Über das Drehknopf Min"
 
-#: admin/class-fields-settings.php:2199
+#: admin/class-fields-settings.php:2217
 msgid "Knob Min"
 msgstr "Drehknopf Min"
 
-#: admin/class-fields-settings.php:792
+#: admin/class-fields-settings.php:794
 msgid "Current Time"
 msgstr "Aktuelle Zeit"
 
-#: admin/class-fields-settings.php:791
+#: admin/class-fields-settings.php:793
 msgid "Today's Date"
 msgstr "Aktuelles Datum"
 
-#: admin/class-fields-settings.php:680
+#: admin/class-fields-settings.php:682
 msgid "If true, will wrap all fields BELOW this heading in a container with a background color."
 msgstr "Wenn aktiviert, werden alle Felder UNTER dieser Überschrift in einen Bereich mit einer Hintergrundfarbe dargestellt."
 
-#: admin/class-fields-settings.php:680
+#: admin/class-fields-settings.php:682
 msgid "About Background Container"
 msgstr "Über den Hintergrund Container"
 
-#: admin/class-fields-settings.php:677
+#: admin/class-fields-settings.php:679
 msgid "Background Container"
 msgstr "Hintergrund Container"
 
-#: admin/class-entries.php:589 inc/class-vfb-list-table.php:512
-#: inc/class-vfb-list-table.php:1312
+#: admin/class-entries.php:605 inc/class-vfb-list-table.php:512
+#: inc/class-vfb-list-table.php:1317
 msgid "Show more details"
 msgstr "Zeige mehr Details"
 
-#: admin/class-page-settings.php:28
+#: admin/class-page-help.php:42
 msgid "Diagnostics"
 msgstr "Diagnose"
 
-#: admin/class-page-settings.php:25
+#: admin/class-page-settings.php:24
 msgid "General Settings"
 msgstr "Allgemeine Einstellungen"
 
@@ -415,7 +767,7 @@ msgstr "wp_remote_post() fehlgeschlagen. Kontaktieren Sie Ihren Hosting-Anbieter
 
 #: admin/class-diagnostics.php:717
 msgid "wp_remote_post() was successful"
-msgstr "wp_remote_post() war erfolgreich."
+msgstr "wp_remote_post() war erfolgreich"
 
 #: admin/class-diagnostics.php:712
 msgid "wp_remote_post()"
@@ -668,7 +1020,7 @@ msgstr "Auf unsere Nachfrage hin bitten wir Sie, einen Bericht auf Basis der fol
 msgid "This page will detail information about your server setup, installed plugins, and other details powering your WordPress installation."
 msgstr "Auf dieser Seite werden Informationen über Ihr Server-Setup, installierte Plugins und andere Details Ihrer WordPress-Installation dargestellt."
 
-#: admin/class-template-tags.php:114
+#: admin/class-template-tags.php:124
 msgid "Custom header image."
 msgstr "Benutzerdefiniertes Kopf-Bild (Haeder-Bild)"
 
@@ -680,27 +1032,27 @@ msgstr "Bild auswählen"
 msgid "or"
 msgstr "oder"
 
-#: admin/class-email-design.php:238
+#: admin/class-email-design.php:291
 msgid "Remove the link back to VFB Pro."
 msgstr "Entfernt den Link mit Verweis auf die Nutzung von VFB Pro."
 
-#: admin/class-email-design.php:232
+#: admin/class-email-design.php:285
 msgid "Remove Link Love"
 msgstr "Hinweis-Link entfernen"
 
-#: admin/class-email-design.php:191
+#: admin/class-email-design.php:244
 msgid "Remove image"
 msgstr "Bild entfernen"
 
-#: admin/class-email-design.php:187
+#: admin/class-email-design.php:240
 msgid "Add new image"
 msgstr "Bild hinzufügen"
 
-#: admin/class-email-design.php:175
+#: admin/class-email-design.php:228
 msgid "Header Image"
 msgstr "Kopf-Bild (Haeder-Bild)"
 
-#: admin/class-admin-notices.php:289
+#: admin/class-admin-notices.php:299
 msgid "View form preview"
 msgstr "Formularvorschau ansehen"
 
@@ -712,27 +1064,30 @@ msgstr "Matthew Muro"
 msgid "VFB Pro is the easiest form builder on the market."
 msgstr "VFB Pro ist der einfachste verfügbare Form Generator auf dem Markt."
 
+#. #-#-#-#-#  vfb-pro.pot (VFB Pro 3.4.1)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  vfb-pro.pot (VFB Pro 3.4.1)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "http://vfbpro.com"
 msgstr "http://vfbpro.com"
 
-#: public/class-security.php:134
+#: public/class-security.php:169
 msgid "Security check: looks like you are a SPAM bot. If you think this is an error, please email the site owner."
 msgstr "Sicherheits-Check: Sieht aus als seist Du ein Spam-Bot. Wenn Sie der Meinung sind, dies sei ein Fehler, senden Sie dem Inhaber der Website eine Nachricht."
 
-#: public/class-security.php:90
+#: public/class-security.php:101
 msgid "The reCAPTCHA response is invalid or malformed."
 msgstr "Die reCAPTCHA Antwort ist ungültig oder fehlerhaft."
 
-#: public/class-security.php:89
+#: public/class-security.php:100
 msgid "The reCAPTCHA response is missing."
 msgstr "Die reCAPTCHA Antwort fehlt."
 
-#: public/class-security.php:88
+#: public/class-security.php:99
 msgid "The private key for reCAPTCHA is invalid or malformed."
 msgstr "Der private Schlüssel für reCAPTCHA ist ungültig oder falsch formatiert."
 
-#: public/class-security.php:87
+#: public/class-security.php:98
 msgid "The private key for reCAPTCHA is missing."
 msgstr "Der private Schlüssel für ReCAPTCHA fehlt."
 
@@ -740,103 +1095,103 @@ msgstr "Der private Schlüssel für ReCAPTCHA fehlt."
 msgid "Security check: you filled out a form field that was created to stop spam bots and should be left blank. If you think this is an error, please email the site owner."
 msgstr "Sicherheits-Check: Sie haben ein Formularfeld ausgefüllt, dass geschaffen wurde, um Spam-Bots zu stoppen, es sollte leer bleiben. Wenn Sie denken, dass dies ein Fehler ist, senden Sie dem Inhaber der Website eine Nachricht."
 
-#: public/class-form-display.php:2507
+#: public/class-form-display.php:2695
 msgid "reCAPTCHA Public Key not found. Both Public and Private keys must be set in order for reCAPTCHA to function."
 msgstr "Öffentlicher reCAPTCHA Schlüssel nicht gefunden. Öffentlicher und privater Schlüssel müssen gesetzt sein, damit reCAPTCHA funktionieren kann."
 
-#: public/class-form-display.php:2117
+#: public/class-form-display.php:2246
 msgid "Suffix"
 msgstr "Suffix"
 
-#: public/class-form-display.php:2116
+#: public/class-form-display.php:2245
 msgid "Last"
 msgstr "Nachname"
 
-#: public/class-form-display.php:2115
+#: public/class-form-display.php:2244
 msgid "First"
 msgstr "Vorname"
 
-#: public/class-form-display.php:2114
+#: admin/class-email-design.php:111 public/class-form-display.php:2243
 msgid "Title"
 msgstr "Titel"
 
-#: public/class-form-display.php:1713
+#: public/class-form-display.php:1838
 msgid "Strong"
-msgstr "stark"
+msgstr "Stark"
 
-#: public/class-form-display.php:1712
+#: public/class-form-display.php:1837
 msgid "Medium"
-msgstr "mittel"
+msgstr "Mittel"
 
-#: public/class-form-display.php:1711
+#: public/class-form-display.php:1836
 msgid "Weak"
-msgstr "schwach"
+msgstr "Schwach"
 
-#: public/class-form-display.php:1710
+#: public/class-form-display.php:1835
 msgid "Very Weak"
-msgstr "sehr schwach"
+msgstr "Sehr schwach"
 
-#: public/class-form-display.php:1709
+#: public/class-form-display.php:1834
 msgid "Too Short"
-msgstr "zu kurz"
+msgstr "Zu kurz"
 
-#: public/class-form-display.php:1559
+#: public/class-form-display.php:1684
 msgid "Upload"
 msgstr "Hochladen"
 
-#: public/class-form-display.php:1558
+#: public/class-form-display.php:1683
 msgid "Remove"
 msgstr "Entfernen"
 
-#: public/class-form-display.php:1557
+#: public/class-form-display.php:1682
 msgid "Browse"
 msgstr "Durchsuchen"
 
-#: public/class-form-display.php:1396
+#: public/class-form-display.php:1521
 msgid "Done"
 msgstr "Fertig"
 
-#: public/class-form-display.php:1053
+#: public/class-form-display.php:1178
 msgid "Zip code"
 msgstr "Postleitzahl"
 
-#: public/class-form-display.php:1052
+#: inc/addressfield.json.php:30 public/class-form-display.php:1177
 msgid "State"
 msgstr "Provinz"
 
-#: public/class-form-display.php:1051
+#: inc/addressfield.json.php:22 public/class-form-display.php:1176
 msgid "City"
 msgstr "Stadt"
 
-#: public/class-form-display.php:1050
+#: public/class-form-display.php:1175
 msgid "Country"
 msgstr "Land"
 
-#: public/class-form-display.php:1049
+#: public/class-form-display.php:1174
 msgid "Apt, suite, etc."
 msgstr "Adresszusatz, Apartment, Suite, etc."
 
-#: public/class-form-display.php:1048
+#: public/class-form-display.php:1173
 msgid "Street Address"
 msgstr "Straße"
 
-#: public/class-form-display.php:649
+#: public/class-form-display.php:688
 msgid "Next"
-msgstr "weiter"
+msgstr "Weiter"
 
-#: public/class-form-display.php:648
+#: public/class-form-display.php:687
 msgid "Previous"
-msgstr "zurück"
+msgstr "Zurück"
 
-#: inc/countries.php:261
+#: inc/addressfield.json.php:2555 inc/countries.php:261
 msgid "Zimbabwe"
 msgstr "Simbabwe"
 
-#: inc/countries.php:260
+#: inc/addressfield.json.php:2549 inc/countries.php:260
 msgid "Zambia"
 msgstr "Sambia"
 
-#: inc/countries.php:259
+#: inc/addressfield.json.php:2543 inc/countries.php:259
 msgid "Yemen"
 msgstr "Jemen"
 
@@ -844,139 +1199,139 @@ msgstr "Jemen"
 msgid "Western Samoa"
 msgstr "West-Samoa"
 
-#: inc/countries.php:257
+#: inc/addressfield.json.php:2537 inc/countries.php:257
 msgid "Western Sahara"
 msgstr "Westsahara"
 
-#: inc/countries.php:256
+#: inc/addressfield.json.php:2531 inc/countries.php:256
 msgid "Wallis and Futuna"
 msgstr "Wallis und Futuna"
 
-#: inc/countries.php:255
+#: inc/addressfield.json.php:2524 inc/countries.php:255
 msgid "Vietnam"
 msgstr "Vietnam"
 
-#: inc/countries.php:254
+#: inc/addressfield.json.php:2488 inc/countries.php:254
 msgid "Venezuela"
 msgstr "Venezuela"
 
-#: inc/countries.php:253
+#: inc/addressfield.json.php:2482 inc/countries.php:253
 msgid "Vatican"
 msgstr "Vatikanstadt"
 
-#: inc/countries.php:252
+#: inc/addressfield.json.php:2477 inc/countries.php:252
 msgid "Vanuatu"
 msgstr "Vanuatu"
 
-#: inc/countries.php:251
+#: inc/addressfield.json.php:2471 inc/countries.php:251
 msgid "Uzbekistan"
 msgstr "Usbekistan"
 
-#: inc/countries.php:250
+#: inc/addressfield.json.php:2464 inc/countries.php:250
 msgid "Uruguay"
 msgstr "Uruguay"
 
-#: inc/countries.php:249
+#: inc/addressfield.json.php:2370 inc/countries.php:249
 msgid "United Arab Emirates"
 msgstr "Vereinigte Arabische Emirate"
 
-#: inc/countries.php:248
+#: inc/addressfield.json.php:2363 inc/countries.php:248
 msgid "Ukraine"
 msgstr "Ukraine"
 
-#: inc/countries.php:247
+#: inc/addressfield.json.php:2358 inc/countries.php:247
 msgid "Uganda"
 msgstr "Uganda"
 
-#: inc/countries.php:246
+#: inc/addressfield.json.php:2331 inc/countries.php:246
 msgid "Tuvalu"
 msgstr "Tuvalu"
 
-#: inc/countries.php:245
+#: inc/addressfield.json.php:2325 inc/countries.php:245
 msgid "Turks and Caicos Islands"
 msgstr "Turks- und Caicosinseln"
 
-#: inc/countries.php:244
+#: inc/addressfield.json.php:2319 inc/countries.php:244
 msgid "Turkmenistan"
 msgstr "Turkmenistan"
 
-#: inc/countries.php:243
+#: inc/addressfield.json.php:2227 inc/countries.php:243
 msgid "Turkey"
 msgstr "Türkei"
 
-#: inc/countries.php:242
+#: inc/addressfield.json.php:2221 inc/countries.php:242
 msgid "Tunisia"
 msgstr "Tunesien"
 
-#: inc/countries.php:241
+#: inc/addressfield.json.php:2216 inc/countries.php:241
 msgid "Trinidad and Tobago"
 msgstr "Trinidad und Tobago"
 
-#: inc/countries.php:240
+#: inc/addressfield.json.php:2211 inc/countries.php:240
 msgid "Tonga"
 msgstr "Tonga"
 
-#: inc/countries.php:239
+#: inc/addressfield.json.php:2205 inc/countries.php:239
 msgid "Tokelau"
 msgstr "Tokelau"
 
-#: inc/countries.php:238
+#: inc/addressfield.json.php:2200 inc/countries.php:238
 msgid "Togo"
 msgstr "Togo"
 
-#: inc/countries.php:237
+#: inc/addressfield.json.php:2195 inc/countries.php:237
 msgid "Timor-Leste"
 msgstr "Osttimor"
 
-#: inc/countries.php:236
+#: inc/addressfield.json.php:2188 inc/countries.php:236
 msgid "Thailand"
 msgstr "Thailand"
 
-#: inc/countries.php:235
+#: inc/addressfield.json.php:2183 inc/countries.php:235
 msgid "Tanzania"
 msgstr "Tanzania"
 
-#: inc/countries.php:234
+#: inc/addressfield.json.php:2177 inc/countries.php:234
 msgid "Tajikistan"
 msgstr "Tadschikistan"
 
-#: inc/countries.php:233
+#: inc/addressfield.json.php:2144 inc/countries.php:233
 msgid "Taiwan"
 msgstr "Taiwan"
 
-#: inc/countries.php:232
+#: inc/addressfield.json.php:2138 inc/countries.php:232
 msgid "Syria"
 msgstr "Syrien"
 
-#: inc/countries.php:231
+#: inc/addressfield.json.php:2132 inc/countries.php:231
 msgid "Switzerland"
 msgstr "Schweiz"
 
-#: inc/countries.php:230
+#: inc/addressfield.json.php:2126 inc/countries.php:230
 msgid "Sweden"
 msgstr "Schweden"
 
-#: inc/countries.php:229
+#: inc/addressfield.json.php:2120 inc/countries.php:229
 msgid "Swaziland"
 msgstr "Swasiland"
 
-#: inc/countries.php:228
+#: inc/addressfield.json.php:2114 inc/countries.php:228
 msgid "Svalbard and Jan Mayen"
 msgstr "Svalbard und Jan Mayen"
 
-#: inc/countries.php:227
+#: inc/addressfield.json.php:2107 inc/countries.php:227
 msgid "Suriname"
 msgstr "Surinam"
 
-#: inc/countries.php:226
+#: inc/addressfield.json.php:2101 inc/countries.php:226
 msgid "Sudan"
 msgstr "Sudan"
 
-#: inc/countries.php:225
+#: inc/addressfield.json.php:2095 inc/countries.php:225
 msgid "Sri Lanka"
 msgstr "Sri Lanka"
 
-#: inc/countries.php:224
+#: inc/addressfield.json.php:2032 inc/countries.php:224
 msgid "Spain"
 msgstr "Spanien"
 
@@ -984,55 +1339,55 @@ msgstr "Spanien"
 msgid "South Sudan"
 msgstr "Südsudan"
 
-#: inc/countries.php:222
+#: inc/addressfield.json.php:2004 inc/countries.php:222
 msgid "South Korea"
 msgstr "Südkorea"
 
-#: inc/countries.php:221
+#: inc/addressfield.json.php:1998 inc/countries.php:221
 msgid "South Georgia/Sandwich Islands"
 msgstr "Südgeorgien und die Südlichen Sandwichinseln"
 
-#: inc/countries.php:220
+#: inc/addressfield.json.php:1978 inc/countries.php:220
 msgid "South Africa"
 msgstr "Südafrika"
 
-#: inc/countries.php:219
+#: inc/addressfield.json.php:1971 inc/countries.php:219
 msgid "Somalia"
 msgstr "Somalia"
 
-#: inc/countries.php:218
+#: inc/addressfield.json.php:1965 inc/countries.php:218
 msgid "Solomon Islands"
 msgstr "Salomonen"
 
-#: inc/countries.php:217
+#: inc/addressfield.json.php:1959 inc/countries.php:217
 msgid "Slovenia"
 msgstr "Slovenien"
 
-#: inc/countries.php:216
+#: inc/addressfield.json.php:1953 inc/countries.php:216
 msgid "Slovakia"
 msgstr "Slowakei"
 
-#: inc/countries.php:215
+#: inc/addressfield.json.php:1947 inc/countries.php:215
 msgid "Singapore"
 msgstr "Singapur"
 
-#: inc/countries.php:214
+#: inc/addressfield.json.php:1942 inc/countries.php:214
 msgid "Sierra Leone"
 msgstr "Sierra Leone"
 
-#: inc/countries.php:213
+#: inc/addressfield.json.php:1935 inc/countries.php:213
 msgid "Seychelles"
 msgstr "Seychellen"
 
-#: inc/countries.php:212
+#: inc/addressfield.json.php:1929 inc/countries.php:212
 msgid "Serbia"
 msgstr "Serbien"
 
-#: inc/countries.php:211
+#: inc/addressfield.json.php:1923 inc/countries.php:211
 msgid "Senegal"
 msgstr "Senegal"
 
-#: inc/countries.php:210
+#: inc/addressfield.json.php:1917 inc/countries.php:210
 msgid "Saudi Arabia"
 msgstr "Saudi-Arabien"
 
@@ -1040,15 +1395,15 @@ msgstr "Saudi-Arabien"
 msgid "S&atilde;o Tom&eacute; and Pr&iacute;ncipe"
 msgstr "São Tomé und Príncipe"
 
-#: inc/countries.php:208
+#: inc/addressfield.json.php:1906 inc/countries.php:208
 msgid "San Marino"
 msgstr "San Marino"
 
-#: inc/countries.php:207
+#: inc/addressfield.json.php:1896 inc/countries.php:207
 msgid "Saint Vincent and the Grenadines"
 msgstr "St. Vincent und die Grenadinen"
 
-#: inc/countries.php:206
+#: inc/addressfield.json.php:1890 inc/countries.php:206
 msgid "Saint Pierre and Miquelon"
 msgstr "Saint-Pierre und Miquelon"
 
@@ -1056,19 +1411,19 @@ msgstr "Saint-Pierre und Miquelon"
 msgid "Saint Martin (Dutch part)"
 msgstr "Saint Martin (Niederländischer Teil)"
 
-#: inc/countries.php:204
+#: inc/addressfield.json.php:1884 inc/countries.php:204
 msgid "Saint Martin (French part)"
 msgstr "St. Martin (Französischer Teil)"
 
-#: inc/countries.php:203
+#: inc/addressfield.json.php:1879 inc/countries.php:203
 msgid "Saint Lucia"
 msgstr "St. Lucia"
 
-#: inc/countries.php:202
+#: inc/addressfield.json.php:1873 inc/countries.php:202
 msgid "Saint Kitts and Nevis"
 msgstr "St. Kitts und Nevis"
 
-#: inc/countries.php:201
+#: inc/addressfield.json.php:1867 inc/countries.php:201
 msgid "Saint Helena"
 msgstr "St. Helena"
 
@@ -1076,267 +1431,267 @@ msgstr "St. Helena"
 msgid "Saint Barth&eacute;lemy"
 msgstr "Saint-Barthélemy (Insel)"
 
-#: inc/countries.php:199
+#: inc/addressfield.json.php:1856 inc/countries.php:199
 msgid "Rwanda"
 msgstr "Ruanda"
 
-#: inc/countries.php:198
+#: inc/addressfield.json.php:1762 inc/countries.php:198
 msgid "Russia"
 msgstr "Russland"
 
-#: inc/countries.php:197
+#: inc/addressfield.json.php:1756 inc/countries.php:197
 msgid "Romania"
 msgstr "Rumänien"
 
-#: inc/countries.php:196
+#: inc/addressfield.json.php:1750 inc/countries.php:196
 msgid "Reunion"
 msgstr "Réunion"
 
-#: inc/countries.php:195
+#: inc/addressfield.json.php:1744 inc/countries.php:195
 msgid "Qatar"
 msgstr "Katar"
 
-#: inc/countries.php:194
+#: inc/addressfield.json.php:1732 inc/countries.php:194
 msgid "Portugal"
 msgstr "Portugal"
 
-#: inc/countries.php:193
+#: inc/addressfield.json.php:1726 inc/countries.php:193
 msgid "Poland"
 msgstr "Polen"
 
-#: inc/countries.php:192
+#: inc/addressfield.json.php:1720 inc/countries.php:192
 msgid "Pitcairn"
 msgstr "Pitcairninseln"
 
-#: inc/countries.php:191
+#: inc/addressfield.json.php:1713 inc/countries.php:191
 msgid "Philippines"
 msgstr "Philippinen"
 
-#: inc/countries.php:190
+#: inc/addressfield.json.php:1677 inc/countries.php:190
 msgid "Peru"
 msgstr "Peru"
 
-#: inc/countries.php:189
+#: inc/addressfield.json.php:1671 inc/countries.php:189
 msgid "Paraguay"
 msgstr "Paraguay"
 
-#: inc/countries.php:188
+#: inc/addressfield.json.php:1664 inc/countries.php:188
 msgid "Papua New Guinea"
 msgstr "Papua-Neuguinea"
 
-#: inc/countries.php:187
+#: inc/addressfield.json.php:1658 inc/countries.php:187
 msgid "Panama"
 msgstr "Panama"
 
-#: inc/countries.php:186
+#: inc/addressfield.json.php:1652 inc/countries.php:186
 msgid "Palestinian Territory"
 msgstr "Palästinensische Autonomiegebiete"
 
-#: inc/countries.php:185
+#: inc/addressfield.json.php:1639 inc/countries.php:185
 msgid "Pakistan"
 msgstr "Pakistan"
 
-#: inc/countries.php:184
+#: inc/addressfield.json.php:1632 inc/countries.php:184
 msgid "Oman"
 msgstr "Oman"
 
-#: inc/countries.php:183
+#: inc/addressfield.json.php:1626 inc/countries.php:183
 msgid "Norway"
 msgstr "Norwegen"
 
-#: inc/countries.php:182
+#: inc/addressfield.json.php:1621 inc/countries.php:182
 msgid "North Korea"
 msgstr "Nordkorea (Volksrepublik)"
 
-#: inc/countries.php:181
+#: inc/addressfield.json.php:1607 inc/countries.php:181
 msgid "Norfolk Island"
 msgstr "Norfolkinsel"
 
-#: inc/countries.php:180
+#: inc/addressfield.json.php:1600 inc/countries.php:180
 msgid "Niue"
 msgstr "Niue"
 
-#: inc/countries.php:179
+#: inc/addressfield.json.php:1593 inc/countries.php:179
 msgid "Nigeria"
 msgstr "Nigeria"
 
-#: inc/countries.php:178
+#: inc/addressfield.json.php:1587 inc/countries.php:178
 msgid "Niger"
 msgstr "Niger"
 
-#: inc/countries.php:177
+#: inc/addressfield.json.php:1580 inc/countries.php:177
 msgid "Nicaragua"
 msgstr "Nicaragua"
 
-#: inc/countries.php:176
+#: inc/addressfield.json.php:1552 inc/countries.php:176
 msgid "New Zealand"
 msgstr "Neuseeland"
 
-#: inc/countries.php:175
+#: inc/addressfield.json.php:1546 inc/countries.php:175
 msgid "New Caledonia"
 msgstr "Neukaledonien"
 
-#: inc/countries.php:174
+#: inc/addressfield.json.php:1540 inc/countries.php:174
 msgid "Netherlands Antilles"
 msgstr "Niederländische Antillen"
 
-#: inc/countries.php:173
+#: inc/addressfield.json.php:1533 inc/countries.php:173
 msgid "Netherlands"
 msgstr "Niederlande"
 
-#: inc/countries.php:172
+#: inc/addressfield.json.php:1527 inc/countries.php:172
 msgid "Nepal"
 msgstr "Nepal"
 
-#: inc/countries.php:171
+#: inc/addressfield.json.php:1522 inc/countries.php:171
 msgid "Nauru"
 msgstr "Nauru"
 
-#: inc/countries.php:170
+#: inc/addressfield.json.php:1517 inc/countries.php:170
 msgid "Namibia"
 msgstr "Namibia"
 
-#: inc/countries.php:169
+#: inc/addressfield.json.php:1511 inc/countries.php:169
 msgid "Myanmar"
 msgstr "Myanmar"
 
-#: inc/countries.php:168
+#: inc/addressfield.json.php:1504 inc/countries.php:168
 msgid "Mozambique"
 msgstr "Mosambik"
 
-#: inc/countries.php:167
+#: inc/addressfield.json.php:1498 inc/countries.php:167
 msgid "Morocco"
 msgstr "Marokko"
 
-#: inc/countries.php:166
+#: inc/addressfield.json.php:1492 inc/countries.php:166
 msgid "Montserrat"
 msgstr "Montserrat"
 
-#: inc/countries.php:165
+#: inc/addressfield.json.php:1486 inc/countries.php:165
 msgid "Montenegro"
 msgstr "Montenegro"
 
-#: inc/countries.php:164
+#: inc/addressfield.json.php:1479 inc/countries.php:164
 msgid "Mongolia"
 msgstr "Mongolei"
 
-#: inc/countries.php:162
+#: inc/addressfield.json.php:1467 inc/countries.php:162
 msgid "Moldova"
 msgstr "Moldawien"
 
-#: inc/countries.php:161
+#: inc/addressfield.json.php:1460 inc/countries.php:161
 msgid "Micronesia"
 msgstr "Mikronesien"
 
-#: inc/countries.php:160
+#: inc/addressfield.json.php:1417 inc/countries.php:160
 msgid "Mexico"
 msgstr "Mexiko"
 
-#: inc/countries.php:159
+#: inc/addressfield.json.php:1411 inc/countries.php:159
 msgid "Mayotte"
 msgstr "Mayotte"
 
-#: inc/countries.php:158
+#: inc/addressfield.json.php:1405 inc/countries.php:158
 msgid "Mauritius"
 msgstr "Mauritius"
 
-#: inc/countries.php:157
+#: inc/addressfield.json.php:1400 inc/countries.php:157
 msgid "Mauritania"
 msgstr "Mauretanien"
 
-#: inc/countries.php:156
+#: inc/addressfield.json.php:1394 inc/countries.php:156
 msgid "Martinique"
 msgstr "Martinique"
 
-#: inc/countries.php:155
+#: inc/addressfield.json.php:1387 inc/countries.php:155
 msgid "Marshall Islands"
 msgstr "Marshall-Inseln"
 
-#: inc/countries.php:154
+#: inc/addressfield.json.php:1381 inc/countries.php:154
 msgid "Malta"
 msgstr "Malta"
 
-#: inc/countries.php:153
+#: inc/addressfield.json.php:1376 inc/countries.php:153
 msgid "Mali"
 msgstr "Mali"
 
-#: inc/countries.php:152
+#: inc/addressfield.json.php:1370 inc/countries.php:152
 msgid "Maldives"
 msgstr "Malediven"
 
-#: inc/countries.php:151
+#: inc/addressfield.json.php:1343 inc/countries.php:151
 msgid "Malaysia"
 msgstr "Malaysia"
 
-#: inc/countries.php:150
+#: inc/addressfield.json.php:1337 inc/countries.php:150
 msgid "Malawi"
 msgstr "Malawi"
 
-#: inc/countries.php:149
+#: inc/addressfield.json.php:1331 inc/countries.php:149
 msgid "Madagascar"
 msgstr "Madagaskar"
 
-#: inc/countries.php:148
+#: inc/addressfield.json.php:1325 inc/countries.php:148
 msgid "Macedonia"
 msgstr "Mazedonien"
 
-#: inc/countries.php:147
+#: inc/addressfield.json.php:1319 inc/countries.php:147
 msgid "Macao S.A.R., China"
 msgstr "Macao"
 
-#: inc/countries.php:146
+#: inc/addressfield.json.php:1313 inc/countries.php:146
 msgid "Luxembourg"
 msgstr "Luxemburg"
 
-#: inc/countries.php:145
+#: inc/addressfield.json.php:1307 inc/countries.php:145
 msgid "Lithuania"
 msgstr "Litauen"
 
-#: inc/countries.php:144
+#: inc/addressfield.json.php:1301 inc/countries.php:144
 msgid "Liechtenstein"
 msgstr "Liechtenstein"
 
-#: inc/countries.php:143
+#: inc/addressfield.json.php:1296 inc/countries.php:143
 msgid "Libya"
 msgstr "Lybien"
 
-#: inc/countries.php:142
+#: inc/addressfield.json.php:1290 inc/countries.php:142
 msgid "Liberia"
 msgstr "Liberia"
 
-#: inc/countries.php:141
+#: inc/addressfield.json.php:1284 inc/countries.php:141
 msgid "Lesotho"
 msgstr "Lesotho"
 
-#: inc/countries.php:140
+#: inc/addressfield.json.php:1278 inc/countries.php:140
 msgid "Lebanon"
 msgstr "Libanon"
 
-#: inc/countries.php:139
+#: inc/addressfield.json.php:1272 inc/countries.php:139
 msgid "Latvia"
 msgstr "Lettland"
 
-#: inc/countries.php:138
+#: inc/addressfield.json.php:1266 inc/countries.php:138
 msgid "Laos"
 msgstr "Laos"
 
-#: inc/countries.php:137
+#: inc/addressfield.json.php:1260 inc/countries.php:137
 msgid "Kyrgyzstan"
 msgstr "Kirgisistan"
 
-#: inc/countries.php:136
+#: inc/addressfield.json.php:1253 inc/countries.php:136
 msgid "Kuwait"
 msgstr "Kuwait"
 
-#: inc/countries.php:135
+#: inc/addressfield.json.php:1246 inc/countries.php:135
 msgid "Kiribati"
 msgstr "Kiribati"
 
-#: inc/countries.php:134
+#: inc/addressfield.json.php:1240 inc/countries.php:134
 msgid "Kenya"
 msgstr "Kenia"
 
-#: inc/countries.php:133
+#: inc/addressfield.json.php:1233 inc/countries.php:133
 msgid "Kazakhstan"
 msgstr "Kasachstan"
 
@@ -1344,31 +1699,31 @@ msgstr "Kasachstan"
 msgid "Jordan"
 msgstr "Jordanien"
 
-#: inc/countries.php:131
+#: inc/addressfield.json.php:1220 inc/countries.php:131
 msgid "Jersey"
 msgstr "Jersey"
 
-#: inc/countries.php:130
+#: inc/addressfield.json.php:1163 inc/countries.php:130
 msgid "Japan"
 msgstr "Japan"
 
-#: inc/countries.php:129
+#: inc/addressfield.json.php:1139 inc/countries.php:129
 msgid "Jamaica"
 msgstr "Jamaika"
 
-#: inc/countries.php:128
+#: inc/addressfield.json.php:1133 inc/countries.php:128
 msgid "Ivory Coast"
 msgstr "Elfenbeinküste"
 
-#: inc/countries.php:127
+#: inc/addressfield.json.php:1012 inc/countries.php:127
 msgid "Italy"
 msgstr "Italien"
 
-#: inc/countries.php:126
+#: inc/addressfield.json.php:1006 inc/countries.php:126
 msgid "Israel"
 msgstr "Israel"
 
-#: inc/countries.php:125
+#: inc/addressfield.json.php:1000 inc/countries.php:125
 msgid "Isle of Man"
 msgstr "Isle of Man"
 
@@ -1376,151 +1731,151 @@ msgstr "Isle of Man"
 msgid "Republic of Ireland"
 msgstr "Republik Irland"
 
-#: inc/countries.php:123
+#: inc/addressfield.json.php:932 inc/countries.php:123
 msgid "Iraq"
 msgstr "Irak"
 
-#: inc/countries.php:122
+#: inc/addressfield.json.php:925 inc/countries.php:122
 msgid "Iran"
 msgstr "Iran"
 
-#: inc/countries.php:121
+#: inc/addressfield.json.php:881 inc/countries.php:121
 msgid "Indonesia"
 msgstr "Indonesien"
 
-#: inc/countries.php:120
+#: inc/addressfield.json.php:835 inc/countries.php:120
 msgid "India"
 msgstr "Indien"
 
-#: inc/countries.php:119
+#: inc/addressfield.json.php:829 inc/countries.php:119
 msgid "Iceland"
 msgstr "Island"
 
-#: inc/countries.php:118
+#: inc/addressfield.json.php:823 inc/countries.php:118
 msgid "Hungary"
 msgstr "Ungarn"
 
-#: inc/countries.php:117
+#: inc/addressfield.json.php:810 inc/countries.php:117
 msgid "Hong Kong"
 msgstr "Hongkong"
 
-#: inc/countries.php:116
+#: inc/addressfield.json.php:803 inc/countries.php:116
 msgid "Honduras"
 msgstr "Honduras"
 
-#: inc/countries.php:115
+#: inc/addressfield.json.php:797 inc/countries.php:115
 msgid "Heard Island and McDonald Islands"
 msgstr "Heard und McDonald Inseln"
 
-#: inc/countries.php:114
+#: inc/addressfield.json.php:791 inc/countries.php:114
 msgid "Haiti"
 msgstr "Haiti"
 
-#: inc/countries.php:113
+#: inc/addressfield.json.php:786 inc/countries.php:113
 msgid "Guyana"
 msgstr "Guyana"
 
-#: inc/countries.php:112
+#: inc/addressfield.json.php:780 inc/countries.php:112
 msgid "Guinea-Bissau"
 msgstr "Guinea-Bissau"
 
-#: inc/countries.php:111
+#: inc/addressfield.json.php:774 inc/countries.php:111
 msgid "Guinea"
 msgstr "Guinea"
 
-#: inc/countries.php:110
+#: inc/addressfield.json.php:768 inc/countries.php:110
 msgid "Guernsey"
 msgstr "Guernsey"
 
-#: inc/countries.php:109
+#: inc/addressfield.json.php:762 inc/countries.php:109
 msgid "Guatemala"
 msgstr "Guatemala"
 
-#: inc/countries.php:108
+#: inc/addressfield.json.php:749 inc/countries.php:108
 msgid "Guadeloupe"
 msgstr "Guadeloupe"
 
-#: inc/countries.php:107
+#: inc/addressfield.json.php:744 inc/countries.php:107
 msgid "Grenada"
 msgstr "Grenada"
 
-#: inc/countries.php:106
+#: inc/addressfield.json.php:738 inc/countries.php:106
 msgid "Greenland"
 msgstr "Grönland"
 
-#: inc/countries.php:105
+#: inc/addressfield.json.php:732 inc/countries.php:105
 msgid "Greece"
 msgstr "Griechenland"
 
-#: inc/countries.php:104
+#: inc/addressfield.json.php:727 inc/countries.php:104
 msgid "Gibraltar"
 msgstr "Gibraltar"
 
-#: inc/countries.php:103
+#: inc/addressfield.json.php:722 inc/countries.php:103
 msgid "Ghana"
 msgstr "Ghana"
 
-#: inc/countries.php:102
+#: inc/addressfield.json.php:716 inc/countries.php:102
 msgid "Germany"
 msgstr "Deutschland"
 
-#: inc/countries.php:100
+#: inc/addressfield.json.php:705 inc/countries.php:100
 msgid "Gambia"
 msgstr "Gambia"
 
-#: inc/countries.php:99
+#: inc/addressfield.json.php:699 inc/countries.php:99
 msgid "Gabon"
 msgstr "Gabon"
 
-#: inc/countries.php:98
+#: inc/addressfield.json.php:693 inc/countries.php:98
 msgid "French Southern Territories"
 msgstr "Französische Süd- und Antarktisgebiete"
 
-#: inc/countries.php:97
+#: inc/addressfield.json.php:686 inc/countries.php:97
 msgid "French Polynesia"
 msgstr "Französisch-Polynesien"
 
-#: inc/countries.php:96
+#: inc/addressfield.json.php:680 inc/countries.php:96
 msgid "French Guiana"
 msgstr "Französisch-Guayana"
 
-#: inc/countries.php:95
+#: inc/addressfield.json.php:674 inc/countries.php:95
 msgid "France"
 msgstr "Frankreich"
 
-#: inc/countries.php:94
+#: inc/addressfield.json.php:668 inc/countries.php:94
 msgid "Finland"
 msgstr "Finnland"
 
-#: inc/countries.php:93
+#: inc/addressfield.json.php:662 inc/countries.php:93
 msgid "Fiji"
 msgstr "Fidschi"
 
-#: inc/countries.php:92
+#: inc/addressfield.json.php:656 inc/countries.php:92
 msgid "Faroe Islands"
 msgstr "Faroer Inseln"
 
-#: inc/countries.php:91
+#: inc/addressfield.json.php:650 inc/countries.php:91
 msgid "Falkland Islands"
 msgstr "Falkland Inseln"
 
-#: inc/countries.php:90
+#: inc/addressfield.json.php:644 inc/countries.php:90
 msgid "Ethiopia"
 msgstr "Äthopien"
 
-#: inc/countries.php:89
+#: inc/addressfield.json.php:638 inc/countries.php:89
 msgid "Estonia"
 msgstr "Estland"
 
-#: inc/countries.php:88
+#: inc/addressfield.json.php:633 inc/countries.php:88
 msgid "Eritrea"
 msgstr "Eritrea"
 
-#: inc/countries.php:87
+#: inc/addressfield.json.php:628 inc/countries.php:87
 msgid "Equatorial Guinea"
 msgstr "Äquatorial Guinea"
 
-#: inc/countries.php:86
+#: inc/addressfield.json.php:621 inc/countries.php:86
 msgid "El Salvador"
 msgstr "El Salvador"
 
@@ -1528,31 +1883,31 @@ msgstr "El Salvador"
 msgid "Egypt"
 msgstr "Ägypten"
 
-#: inc/countries.php:84
+#: inc/addressfield.json.php:577 inc/countries.php:84
 msgid "Ecuador"
 msgstr "Ecuador"
 
-#: inc/countries.php:83
+#: inc/addressfield.json.php:570 inc/countries.php:83
 msgid "Dominican Republic"
 msgstr "Dominikanische Republik"
 
-#: inc/countries.php:82
+#: inc/addressfield.json.php:565 inc/countries.php:82
 msgid "Dominica"
 msgstr "Dominica"
 
-#: inc/countries.php:81
+#: inc/addressfield.json.php:560 inc/countries.php:81
 msgid "Djibouti"
 msgstr "Djibouti"
 
-#: inc/countries.php:80
+#: inc/addressfield.json.php:554 inc/countries.php:80
 msgid "Denmark"
 msgstr "Dänemark"
 
-#: inc/countries.php:79
+#: inc/addressfield.json.php:548 inc/countries.php:79
 msgid "Czech Republic"
 msgstr "Tschechische Republik"
 
-#: inc/countries.php:78
+#: inc/addressfield.json.php:542 inc/countries.php:78
 msgid "Cyprus"
 msgstr "Zypern"
 
@@ -1560,15 +1915,15 @@ msgstr "Zypern"
 msgid "Cura&Ccedil;ao"
 msgstr "Curacao"
 
-#: inc/countries.php:76
+#: inc/addressfield.json.php:524 inc/countries.php:76
 msgid "Cuba"
 msgstr "Kuba"
 
-#: inc/countries.php:75
+#: inc/addressfield.json.php:530 inc/countries.php:75
 msgid "Croatia"
 msgstr "Kroatien"
 
-#: inc/countries.php:74
+#: inc/addressfield.json.php:518 inc/countries.php:74
 msgid "Costa Rica"
 msgstr "Costa Rica"
 
@@ -1576,99 +1931,99 @@ msgstr "Costa Rica"
 msgid "Cook Islands"
 msgstr "Cook Inseln"
 
-#: inc/countries.php:72
+#: inc/addressfield.json.php:506 inc/countries.php:72
 msgid "Congo (Kinshasa)"
 msgstr "Kongo (Kinshasa)"
 
-#: inc/countries.php:71
+#: inc/addressfield.json.php:501 inc/countries.php:71
 msgid "Congo (Brazzaville)"
 msgstr "Kongo (Brazzaville)"
 
-#: inc/countries.php:70
+#: inc/addressfield.json.php:496 inc/countries.php:70
 msgid "Comoros"
 msgstr "Komoren"
 
-#: inc/countries.php:69
+#: inc/addressfield.json.php:491 inc/countries.php:69
 msgid "Colombia"
 msgstr "Kolumbien"
 
-#: inc/countries.php:68
+#: inc/addressfield.json.php:484 inc/countries.php:68
 msgid "Cocos (Keeling) Islands"
 msgstr "Kokosinseln"
 
-#: inc/countries.php:67
+#: inc/addressfield.json.php:477 inc/countries.php:67
 msgid "Christmas Island"
 msgstr "Weihnachtsinsel"
 
-#: inc/countries.php:66
+#: inc/addressfield.json.php:435 inc/countries.php:66
 msgid "China"
 msgstr "China"
 
-#: inc/countries.php:65
+#: inc/addressfield.json.php:409 inc/countries.php:65
 msgid "Chile"
 msgstr "Chile"
 
-#: inc/countries.php:64
+#: inc/addressfield.json.php:404 inc/countries.php:64
 msgid "Chad"
 msgstr "Tschad"
 
-#: inc/countries.php:63
+#: inc/addressfield.json.php:399 inc/countries.php:63
 msgid "Central African Republic"
 msgstr "Zentralafrikanische Republik"
 
-#: inc/countries.php:62
+#: inc/addressfield.json.php:392 inc/countries.php:62
 msgid "Cayman Islands"
 msgstr "Kaimaninseln"
 
-#: inc/countries.php:61
+#: inc/addressfield.json.php:385 inc/countries.php:61
 msgid "Cape Verde"
 msgstr "Kap Verde"
 
-#: inc/countries.php:60
+#: inc/addressfield.json.php:357 inc/countries.php:60
 msgid "Cameroon"
 msgstr "Kamerun"
 
-#: inc/countries.php:59
+#: inc/addressfield.json.php:351 inc/countries.php:59
 msgid "Cambodia"
 msgstr "Kambodscha"
 
-#: inc/countries.php:58
+#: inc/addressfield.json.php:346 inc/countries.php:58
 msgid "Burundi"
 msgstr "Burundi"
 
-#: inc/countries.php:57
+#: inc/addressfield.json.php:340 inc/countries.php:57
 msgid "Burkina Faso"
 msgstr "Burkina Faso"
 
-#: inc/countries.php:56
+#: inc/addressfield.json.php:334 inc/countries.php:56
 msgid "Bulgaria"
 msgstr "Bulgarien"
 
-#: inc/countries.php:55
+#: inc/addressfield.json.php:328 inc/countries.php:55
 msgid "Brunei"
 msgstr "Brunei"
 
-#: inc/countries.php:54
+#: inc/addressfield.json.php:322 inc/countries.php:54
 msgid "British Virgin Islands"
 msgstr "Britische Jungferninseln"
 
-#: inc/countries.php:53
+#: inc/addressfield.json.php:316 inc/countries.php:53
 msgid "British Indian Ocean Territory"
 msgstr "Britisches Territorium im Indischen Ozean"
 
-#: inc/countries.php:52
+#: inc/addressfield.json.php:279 inc/countries.php:52
 msgid "Brazil"
 msgstr "Brasilien"
 
-#: inc/countries.php:51
+#: inc/addressfield.json.php:273 inc/countries.php:51
 msgid "Bouvet Island"
 msgstr "Bouvetinsel"
 
-#: inc/countries.php:50
+#: inc/addressfield.json.php:268 inc/countries.php:50
 msgid "Botswana"
 msgstr "Botswana"
 
-#: inc/countries.php:49
+#: inc/addressfield.json.php:262 inc/countries.php:49
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnien und Herzegowina"
 
@@ -1676,23 +2031,23 @@ msgstr "Bosnien und Herzegowina"
 msgid "Bonaire, Saint Eustatius and Saba"
 msgstr "Bonaire, St. Eustatius und Saba"
 
-#: inc/countries.php:47
+#: inc/addressfield.json.php:257 inc/countries.php:47
 msgid "Bolivia"
 msgstr "Bolivien"
 
-#: inc/countries.php:46
+#: inc/addressfield.json.php:251 inc/countries.php:46
 msgid "Bhutan"
 msgstr "Bhutan"
 
-#: inc/countries.php:45
+#: inc/addressfield.json.php:245 inc/countries.php:45
 msgid "Bermuda"
 msgstr "Bermuda"
 
-#: inc/countries.php:44
+#: inc/addressfield.json.php:240 inc/countries.php:44
 msgid "Benin"
 msgstr "Benin"
 
-#: inc/countries.php:43
+#: inc/addressfield.json.php:234 inc/countries.php:43
 msgid "Belize"
 msgstr "Belize"
 
@@ -1700,47 +2055,47 @@ msgstr "Belize"
 msgid "Belau"
 msgstr "Belau (Palau)"
 
-#: inc/countries.php:41
+#: inc/addressfield.json.php:228 inc/countries.php:41
 msgid "Belgium"
 msgstr "Belgien"
 
-#: inc/countries.php:40
+#: inc/addressfield.json.php:221 inc/countries.php:40
 msgid "Belarus"
 msgstr "Weißrussland"
 
-#: inc/countries.php:39
+#: inc/addressfield.json.php:215 inc/countries.php:39
 msgid "Barbados"
 msgstr "Barbados"
 
-#: inc/countries.php:38
+#: inc/addressfield.json.php:209 inc/countries.php:38
 msgid "Bangladesh"
 msgstr "Bangladesh"
 
-#: inc/countries.php:37
+#: inc/addressfield.json.php:203 inc/countries.php:37
 msgid "Bahrain"
 msgstr "Bahrain"
 
-#: inc/countries.php:36
+#: inc/addressfield.json.php:196 inc/countries.php:36
 msgid "Bahamas"
 msgstr "Bahamas"
 
-#: inc/countries.php:35
+#: inc/addressfield.json.php:190 inc/countries.php:35
 msgid "Azerbaijan"
 msgstr "Aserbaidschan"
 
-#: inc/countries.php:34
+#: inc/addressfield.json.php:184 inc/countries.php:34
 msgid "Austria"
 msgstr "Österreich"
 
-#: inc/countries.php:32
+#: inc/addressfield.json.php:160 inc/countries.php:32
 msgid "Aruba"
 msgstr "Aruba"
 
-#: inc/countries.php:31
+#: inc/addressfield.json.php:153 inc/countries.php:31
 msgid "Armenia"
 msgstr "Armenien"
 
-#: inc/countries.php:30
+#: inc/addressfield.json.php:119 inc/countries.php:30
 msgid "Argentina"
 msgstr "Argentinien"
 
@@ -1748,27 +2103,27 @@ msgstr "Argentinien"
 msgid "Antigua and Barbuda"
 msgstr "Antigua und Barbados"
 
-#: inc/countries.php:28
+#: inc/addressfield.json.php:108 inc/countries.php:28
 msgid "Antarctica"
 msgstr "Antarktis"
 
-#: inc/countries.php:27
+#: inc/addressfield.json.php:102 inc/countries.php:27
 msgid "Anguilla"
 msgstr "Anguilla"
 
-#: inc/countries.php:26
+#: inc/addressfield.json.php:97 inc/countries.php:26
 msgid "Angola"
 msgstr "Angola"
 
-#: inc/countries.php:25
+#: inc/addressfield.json.php:91 inc/countries.php:25
 msgid "Andorra"
 msgstr "Andorra"
 
-#: inc/countries.php:24
+#: inc/addressfield.json.php:78 inc/countries.php:24
 msgid "Algeria"
 msgstr "Algerien"
 
-#: inc/countries.php:23
+#: inc/addressfield.json.php:73 inc/countries.php:23
 msgid "Albania"
 msgstr "Albanien"
 
@@ -1776,15 +2131,15 @@ msgstr "Albanien"
 msgid "&#197;land Islands"
 msgstr "&#197;land Inseln"
 
-#: inc/countries.php:21
+#: inc/addressfield.json.php:61 inc/countries.php:21
 msgid "Afghanistan"
 msgstr "Afghanistan"
 
-#: inc/countries.php:19
+#: inc/addressfield.json.php:166 inc/countries.php:19
 msgid "Australia"
 msgstr "Australien"
 
-#: inc/countries.php:18
+#: inc/addressfield.json.php:362 inc/countries.php:18
 msgid "Canada"
 msgstr "Kanada"
 
@@ -1807,7 +2162,7 @@ msgstr "Listenansicht"
 #. translators: 1: month name, 2: 4-digit year
 #: inc/class-vfb-list-table.php:590
 msgid "%1$s %2$d"
-msgstr "%1$ %2$"
+msgstr "%1$s %2$d"
 
 #: inc/class-vfb-list-table.php:577
 msgid "All dates"
@@ -1833,13 +2188,13 @@ msgstr "Mehrfachaktion auswählen"
 msgid "No items found."
 msgstr "Keine Elemente gefunden."
 
-#: inc/class-preview-email.php:103 public/class-templating.php:85
+#: inc/class-preview-email.php:108 public/class-templating.php:90
 msgid "This email was built and sent using <a href=\"http://vfbpro.com\">VFB Pro</a>."
 msgstr "Diese E-Mail wurde mit <a href=\"http://vfbpro.com\">VFB Pro</a> generiert und gesendet."
 
 #: inc/class-premailer.php:99
 msgid "Access forbidden"
-msgstr "Zugriff verweigert!"
+msgstr "Zugriff verweigert"
 
 #: inc/class-premailer.php:95
 msgid "Content missing"
@@ -1881,248 +2236,249 @@ msgstr "Das Übertragen ihrer vorhandenen Daten aus Visual Form Builder auf die 
 msgid "Migrate your forms to VFB Pro"
 msgstr "Migrieren Sie Ihre Formulare zu VFB Pro"
 
-#: inc/class-form-builder.php:776
+#: inc/class-form-builder.php:792
 msgid "US Virgin Islands"
 msgstr "Amerikanische Jungferninseln"
 
-#: inc/class-form-builder.php:775
+#: inc/class-form-builder.php:791
 msgid "US Minor Outlying Islands"
 msgstr "Kleinere Inselbesitzungen der Vereinigten Staaten"
 
-#: inc/class-form-builder.php:774
+#: inc/addressfield.json.php:1738 inc/class-form-builder.php:790
 msgid "Puerto Rico"
 msgstr "Puerto Rico"
 
-#: inc/class-form-builder.php:773
+#: inc/addressfield.json.php:1614 inc/class-form-builder.php:789
 msgid "Northern Mariana Islands"
 msgstr "Nördliche Marianen"
 
-#: inc/class-form-builder.php:772
+#: inc/addressfield.json.php:755 inc/class-form-builder.php:788
 msgid "Guam"
 msgstr "Guam"
 
-#: inc/class-form-builder.php:771 inc/countries.php:33
+#: inc/addressfield.json.php:84 inc/class-form-builder.php:787
+#: inc/countries.php:33
 msgid "American Samoa"
 msgstr "Amerikanisch-Samoa"
 
-#: inc/class-form-builder.php:770
+#: inc/class-form-builder.php:786
 msgid "Armed Forces (AP)"
 msgstr "Streikräfte (AP)"
 
-#: inc/class-form-builder.php:769
+#: inc/class-form-builder.php:785
 msgid "Armed Forces (AE)"
 msgstr "Streikräfte (AE)"
 
-#: inc/class-form-builder.php:768
+#: inc/class-form-builder.php:784
 msgid "Armed Forces (AA)"
 msgstr "Streikräfte (AA)"
 
-#: inc/class-form-builder.php:767
+#: inc/class-form-builder.php:783
 msgid "Wyoming"
 msgstr "Wyoming"
 
-#: inc/class-form-builder.php:766
+#: inc/class-form-builder.php:782
 msgid "Wisconsin"
 msgstr "Wisconsin"
 
-#: inc/class-form-builder.php:765
+#: inc/class-form-builder.php:781
 msgid "West Virginia"
 msgstr "West Virginia"
 
-#: inc/class-form-builder.php:764
+#: inc/class-form-builder.php:780
 msgid "Washington"
 msgstr "Washington"
 
-#: inc/class-form-builder.php:763
+#: inc/class-form-builder.php:779
 msgid "Virginia"
 msgstr "Virginia"
 
-#: inc/class-form-builder.php:762
+#: inc/class-form-builder.php:778
 msgid "Vermont"
 msgstr "Vermont"
 
-#: inc/class-form-builder.php:761
+#: inc/class-form-builder.php:777
 msgid "Utah"
 msgstr "Utah"
 
-#: inc/class-form-builder.php:760
+#: inc/class-form-builder.php:776
 msgid "Texas"
 msgstr "Texas"
 
-#: inc/class-form-builder.php:759
+#: inc/class-form-builder.php:775
 msgid "Tennessee"
 msgstr "Tennessee"
 
-#: inc/class-form-builder.php:758
+#: inc/class-form-builder.php:774
 msgid "South Dakota"
 msgstr "South Dakota"
 
-#: inc/class-form-builder.php:757
+#: inc/class-form-builder.php:773
 msgid "South Carolina"
 msgstr "South Carolina"
 
-#: inc/class-form-builder.php:756
+#: inc/class-form-builder.php:772
 msgid "Rhode Island"
 msgstr "Rhode Island"
 
-#: inc/class-form-builder.php:755
+#: inc/class-form-builder.php:771
 msgid "Pennsylvania"
 msgstr "Pennsylvania"
 
-#: inc/class-form-builder.php:754
+#: inc/class-form-builder.php:770
 msgid "Oregon"
 msgstr "Oregon"
 
-#: inc/class-form-builder.php:753
+#: inc/class-form-builder.php:769
 msgid "Oklahoma"
 msgstr "Oklahoma"
 
-#: inc/class-form-builder.php:752
+#: inc/class-form-builder.php:768
 msgid "Ohio"
 msgstr "Ohio"
 
-#: inc/class-form-builder.php:751
+#: inc/class-form-builder.php:767
 msgid "North Dakota"
 msgstr "North Dakota"
 
-#: inc/class-form-builder.php:750
+#: inc/class-form-builder.php:766
 msgid "North Carolina"
 msgstr "North Carolina"
 
-#: inc/class-form-builder.php:749
+#: inc/class-form-builder.php:765
 msgid "New York"
 msgstr "New York"
 
-#: inc/class-form-builder.php:748
+#: inc/class-form-builder.php:764
 msgid "New Mexico"
 msgstr "New Mexico"
 
-#: inc/class-form-builder.php:747
+#: inc/class-form-builder.php:763
 msgid "New Jersey"
 msgstr "New Jersey"
 
-#: inc/class-form-builder.php:746
+#: inc/class-form-builder.php:762
 msgid "New Hampshire"
 msgstr "New Hampshire"
 
-#: inc/class-form-builder.php:745
+#: inc/class-form-builder.php:761
 msgid "Nevada"
 msgstr "Nevada"
 
-#: inc/class-form-builder.php:744
+#: inc/class-form-builder.php:760
 msgid "Nebraska"
 msgstr "Nebraska"
 
-#: inc/class-form-builder.php:743
+#: inc/class-form-builder.php:759
 msgid "Montana"
 msgstr "Montana"
 
-#: inc/class-form-builder.php:742
+#: inc/class-form-builder.php:758
 msgid "Missouri"
 msgstr "Missouri"
 
-#: inc/class-form-builder.php:741
+#: inc/class-form-builder.php:757
 msgid "Mississippi"
 msgstr "Mississippi"
 
-#: inc/class-form-builder.php:740
+#: inc/class-form-builder.php:756
 msgid "Minnesota"
 msgstr "Minnesota"
 
-#: inc/class-form-builder.php:739
+#: inc/class-form-builder.php:755
 msgid "Michigan"
 msgstr "Michigan"
 
-#: inc/class-form-builder.php:738
+#: inc/class-form-builder.php:754
 msgid "Massachusetts"
 msgstr "Massachusetts"
 
-#: inc/class-form-builder.php:737
+#: inc/class-form-builder.php:753
 msgid "Maryland"
 msgstr "Maryland"
 
-#: inc/class-form-builder.php:736
+#: inc/class-form-builder.php:752
 msgid "Maine"
 msgstr "Maine"
 
-#: inc/class-form-builder.php:735
+#: inc/class-form-builder.php:751
 msgid "Louisiana"
 msgstr "Louisiana"
 
-#: inc/class-form-builder.php:734
+#: inc/class-form-builder.php:750
 msgid "Kentucky"
 msgstr "Kentucky"
 
-#: inc/class-form-builder.php:733
+#: inc/class-form-builder.php:749
 msgid "Kansas"
 msgstr "Kansas"
 
-#: inc/class-form-builder.php:732
+#: inc/class-form-builder.php:748
 msgid "Iowa"
 msgstr "Iowa"
 
-#: inc/class-form-builder.php:731
+#: inc/class-form-builder.php:747
 msgid "Indiana"
 msgstr "Indiana"
 
-#: inc/class-form-builder.php:730
+#: inc/class-form-builder.php:746
 msgid "Illinois"
 msgstr "Illinois"
 
-#: inc/class-form-builder.php:729
+#: inc/class-form-builder.php:745
 msgid "Idaho"
 msgstr "Idaho"
 
-#: inc/class-form-builder.php:728
+#: inc/class-form-builder.php:744
 msgid "Hawaii"
 msgstr "Hawaii"
 
-#: inc/class-form-builder.php:727
+#: inc/class-form-builder.php:743
 msgctxt "US state of Georgia"
 msgid "Georgia"
 msgstr "Georgia (Georgia)"
 
-#: inc/class-form-builder.php:726
+#: inc/class-form-builder.php:742
 msgid "Florida"
 msgstr "Florida"
 
-#: inc/class-form-builder.php:725
+#: inc/class-form-builder.php:741
 msgid "District Of Columbia"
 msgstr "District of Columbia"
 
-#: inc/class-form-builder.php:724
+#: inc/class-form-builder.php:740
 msgid "Delaware"
 msgstr "Delaware"
 
-#: inc/class-form-builder.php:723
+#: inc/class-form-builder.php:739
 msgid "Connecticut"
 msgstr "Connecticut"
 
-#: inc/class-form-builder.php:722
+#: inc/class-form-builder.php:738
 msgid "Colorado"
 msgstr "Colorado"
 
-#: inc/class-form-builder.php:721
+#: inc/class-form-builder.php:737
 msgid "California"
 msgstr "Kalifornien"
 
-#: inc/class-form-builder.php:720
+#: inc/class-form-builder.php:736
 msgid "Arkansas"
 msgstr "Arkansas"
 
-#: inc/class-form-builder.php:719
+#: inc/class-form-builder.php:735
 msgid "Arizona"
 msgstr "Arizona"
 
-#: inc/class-form-builder.php:718
+#: inc/class-form-builder.php:734
 msgid "Alaska"
 msgstr "Alaska"
 
-#: inc/class-form-builder.php:717
+#: inc/class-form-builder.php:733
 msgid "Alabama"
 msgstr "Alabama"
 
-#: inc/class-form-builder.php:326
+#: inc/class-form-builder.php:332
 msgid "If you are human, leave this field blank."
 msgstr "Wenn Sie ein Mensch sind, lassen Sie dieses Feld leer."
 
@@ -2207,61 +2563,61 @@ msgstr "Neuer Titel"
 msgid "VFB Pro Widget"
 msgstr "VFB Pro Widget"
 
-#: admin/class-template-tags.php:133
+#: admin/class-template-tags.php:158
 msgid "The date that the entry was created."
 msgstr "Das Datum, an dem der Eintrag erstellt wurde."
 
-#: admin/class-template-tags.php:128
+#: admin/class-template-tags.php:153
 msgid "The entry ID."
-msgstr "Eintrags ID"
+msgstr "Die Eintrags ID."
 
-#: admin/class-template-tags.php:124
+#: admin/class-template-tags.php:149
 msgid "Entry data, that's the data the user typed into the form, will replace the Entry Template tags."
 msgstr "Eintragsdaten sind die Daten die ein Benutzer in das Formular eingegeben hat, diese Daten werden die Eintragsvorlagen ersetzen."
 
-#: admin/class-template-tags.php:123
+#: admin/class-template-tags.php:148
 msgid "Entry Templates"
 msgstr "Eintragsvorlagen"
 
-#: admin/class-template-tags.php:119
+#: admin/class-template-tags.php:144
 msgid "Show your appreciation by linking back to VFB Pro."
 msgstr "Zeigen Sie Ihre Anerkennung und verlinken Sie auf VFB Pro."
 
-#: admin/class-template-tags.php:109
+#: admin/class-template-tags.php:119
 msgid "Paragraph text font size."
 msgstr "Absatz Schriftgröße."
 
-#: admin/class-template-tags.php:104
+#: admin/class-template-tags.php:114
 msgid "Paragraph text color."
 msgstr "Absatz Textfarbe."
 
-#: admin/class-template-tags.php:99
+#: admin/class-template-tags.php:109
 msgid "Heading 3 font size."
-msgstr "Überschrift 3 Schriftgröße"
+msgstr "Überschrift 3 Schriftgröße."
+
+#: admin/class-template-tags.php:104
+msgid "Heading 3 color."
+msgstr "Überschrift 3 Farbe."
+
+#: admin/class-template-tags.php:99
+msgid "Heading 2 font size."
+msgstr "Überschrift 2 Schriftgröße."
 
 #: admin/class-template-tags.php:94
-msgid "Heading 3 color."
-msgstr "Überschrift 3 Farbe"
+msgid "Heading 2 color."
+msgstr "Überschrift 2 Farbe."
 
 #: admin/class-template-tags.php:89
-msgid "Heading 2 font size."
-msgstr "Überschrift 2 Schriftgröße"
+msgid "Heading 1 font size."
+msgstr "Überschrift 1 Schriftgröße."
 
 #: admin/class-template-tags.php:84
-msgid "Heading 2 color."
-msgstr "Überschrift 2 Farbe"
+msgid "Heading 1 color."
+msgstr "Überschrift 1 Farbe."
 
 #: admin/class-template-tags.php:79
-msgid "Heading 1 font size."
-msgstr "Überschrift 1 Schriftgröße"
-
-#: admin/class-template-tags.php:74
-msgid "Heading 1 color."
-msgstr "Überschrift 1 Farbe"
-
-#: admin/class-template-tags.php:69
 msgid "Link color."
-msgstr "Link-Farbe"
+msgstr "Link-Farbe."
 
 #: admin/class-template-tags.php:64
 msgid "Background color."
@@ -2307,45 +2663,45 @@ msgstr "Vorlagen Einstellungen"
 msgid "Forms per page"
 msgstr "Formulare pro Seite"
 
-#: admin/class-rules.php:383 admin/class-rules.php:434
+#: admin/class-rules.php:391 admin/class-rules.php:450
 msgid "Delete Condition"
 msgstr "Bedingung löschen"
 
-#: admin/class-rules.php:379 admin/class-rules.php:430
+#: admin/class-rules.php:387 admin/class-rules.php:446
 msgid "Add Condition"
 msgstr "Bedingung hinzufügen"
 
-#: admin/class-rules.php:373 admin/class-rules.php:424
+#: admin/class-rules.php:381 admin/class-rules.php:440
 msgid "email"
 msgstr "E-Mail an"
 
-#: admin/class-rules.php:366 admin/class-rules.php:417
+#: admin/class-rules.php:367 admin/class-rules.php:426
 msgid "ends with"
 msgstr "endet mit"
 
-#: admin/class-rules.php:365 admin/class-rules.php:416
+#: admin/class-rules.php:366 admin/class-rules.php:425
 msgid "begins with"
 msgstr "beginnt mit"
 
-#: admin/class-rules.php:364 admin/class-rules.php:415
+#: admin/class-rules.php:365 admin/class-rules.php:424
 msgid "does not contain"
 msgstr "enthält nicht"
 
-#: admin/class-rules.php:363 admin/class-rules.php:414
+#: admin/class-rules.php:364 admin/class-rules.php:423
 msgid "contains"
 msgstr "enthält"
 
-#: admin/class-rules.php:362 admin/class-rules.php:413
+#: admin/class-rules.php:363 admin/class-rules.php:422
 msgid "is not"
 msgstr "ist nicht"
 
-#: admin/class-rules.php:361 admin/class-rules.php:412
+#: admin/class-rules.php:362 admin/class-rules.php:421
 msgid "is"
 msgstr "ist"
 
-#: admin/class-rules.php:351 admin/class-rules.php:402
+#: admin/class-rules.php:351 admin/class-rules.php:410
 msgid "If"
-msgstr "wenn"
+msgstr "Wenn"
 
 #: admin/class-rules.php:285 admin/class-rules.php:319
 msgid "of the following rules."
@@ -2411,365 +2767,359 @@ msgstr "Anzeigen oder Ausblenden von Feldern auf Grundlage dieser Regeln."
 msgid "Field Rules"
 msgstr "Feldregeln"
 
-#: admin/class-page-settings.php:720
+#: admin/class-page-settings.php:760
 msgid "SMTP Debug Output"
 msgstr "SMTP-Debug-Ausgabe"
 
-#: admin/class-page-settings.php:716
+#: admin/class-page-settings.php:756
 msgid "Email Result"
 msgstr "E-Mail Ergebnis"
 
-#: admin/class-page-settings.php:704
+#: admin/class-page-settings.php:726
 msgid "This is a test email generated by VFB Pro."
 msgstr "Diese Test E-Mail wurde von VFB Pro erzeugt."
 
-#: admin/class-page-settings.php:703
+#: admin/class-page-settings.php:725
 msgid "Test mail to "
-msgstr "Test E-Mail an"
+msgstr "Test E-Mail an "
 
-#: admin/class-page-settings.php:618
+#: admin/class-page-settings.php:627
 msgid "Uninstall"
 msgstr "Deinstallieren"
 
-#: admin/class-page-settings.php:615
+#: admin/class-page-settings.php:624
 msgid "Running this uninstall process will delete all VFB Pro data and deactivate your license for this site. This process cannot be reversed."
 msgstr "Die Deinstallation wird alle VFB Pro Daten löschen und Ihre Lizenz für diese Seite deaktivieren. Dieser Vorgang kann nicht rückgängig gemacht werden."
 
-#: admin/class-page-settings.php:614
+#: admin/class-page-settings.php:623
 msgid "Uninstall VFB Pro"
 msgstr "VFB deinstallieren"
 
-#: admin/class-page-settings.php:565
+#: admin/class-page-settings.php:574
 msgid "Words Range"
 msgstr "Wörter-Bereich"
 
-#: admin/class-page-settings.php:556
+#: admin/class-page-settings.php:565
 msgid "Max Words"
 msgstr "Max. Wörter"
 
-#: admin/class-page-settings.php:547
+#: admin/class-page-settings.php:556
 msgid "Min Words"
 msgstr "Min. Wörter"
 
-#: admin/class-page-settings.php:430
+#: admin/class-page-settings.php:439
 msgid "Not Blank"
 msgstr "Nicht leer"
 
-#: admin/class-page-settings.php:367
+#: admin/class-page-settings.php:376
 msgid "Default Message"
 msgstr "Standardnachricht"
 
-#: admin/class-page-settings.php:357
+#: admin/class-page-settings.php:366
 msgid "Use Custom Validation Messages"
 msgstr "Verwende die benutzerdefinierten Überprüfungsmeldungen in den Formularen"
 
-#: admin/class-page-settings.php:352
+#: admin/class-page-settings.php:361
 msgid "Custom Validation Messages"
 msgstr "Benutzerdefinierte Überprüfungsmeldungen"
 
-#: admin/class-page-settings.php:347
+#: admin/class-page-settings.php:356
 msgid "Customize the JS validation messages. These messages are displayed when validation fails a certain rule."
 msgstr "Passen Sie die JS Mitteilungen für Gültigkeitsüberprüfungen an. Diese Meldungen werden angezeigt, wenn die Überprüfung auf eine bestimmten Regel fehlschlägt."
 
-#: admin/class-page-settings.php:346
+#: admin/class-page-settings.php:355
 msgid "Validation Message Settings"
-msgstr "Einstellungen Überprüfungsnachricht "
+msgstr "Einstellungen Überprüfungsnachricht"
 
-#: admin/class-page-settings.php:320
+#: admin/class-page-settings.php:331
 msgid "Enter an email address and click the Send Test button to test your SMTP settings. A debug log will appear below with the results."
 msgstr "Gib eine E-Mail Adresse ein und klicke auf die \"Test senden\" Schaltfläche, um deine SMTP-Einstellungen zu testen. Ein Debug-Protokoll wird unten mit den Ergebnissen angezeigt."
 
-#: admin/class-page-settings.php:314
+#: admin/class-page-settings.php:325
 msgid "Send Test"
 msgstr "Test senden"
 
-#: admin/class-page-settings.php:308
+#: admin/class-page-settings.php:319
 msgid "Test Email To"
 msgstr "Test E-Mail Empfänger"
 
-#: admin/class-page-settings.php:303
+#: admin/class-page-settings.php:314
 msgid "This option sets the \"From\" email."
 msgstr "Diese Option setzt die E-Mail-Adresse im \"Von\" Feld."
 
-#: admin/class-page-settings.php:290
+#: admin/class-page-settings.php:301
 msgid "Test From Email"
 msgstr "Test E-Mail Absender"
 
-#: admin/class-page-settings.php:285
+#: admin/class-page-settings.php:296
 msgid "This option sets the \"From\" name."
 msgstr "Diese Option setzt den Klartextnamen im \"Von\" Feld."
 
-#: admin/class-page-settings.php:284
+#: admin/class-page-settings.php:295
 msgid "WordPress"
 msgstr "WordPress"
 
-#: admin/class-page-settings.php:281
+#: admin/class-page-settings.php:292
 msgid "Test From Name"
 msgstr "Name Test Formular"
 
-#: admin/class-page-settings.php:276
+#: admin/class-page-settings.php:287
 msgid "Click the Send Test button to test your SMTP settings. A debug log will appear below with the results."
 msgstr "Klicken Sie auf 'Test-E-Mail senden' um die SMTP Einstellungen zu prüfen. Ein Protokoll mit den Ergebnissen wird unten angezeigt."
 
-#: admin/class-page-settings.php:275
+#: admin/class-page-settings.php:286
 msgid "Enter a \"From\" name, \"From\" email address, and an email address to receive the test."
 msgstr "Geben Sie für das \"Von\" Feld einen Klartextnamen des Absenders sowie eine gültige E-Mail-Adresse ein um den Test durchführen zu können."
 
-#: admin/class-page-settings.php:274
+#: admin/class-page-settings.php:285
 msgid "Send Test Email"
 msgstr "Test-E-Mail senden"
 
-#: admin/class-page-settings.php:265
+#: admin/class-page-settings.php:276
 msgid "Password"
 msgstr "Passwort"
 
-#: admin/class-page-settings.php:256
+#: admin/class-page-settings.php:267
 msgid "Username"
 msgstr "Benutzername"
 
-#: admin/class-page-settings.php:247
+#: admin/class-page-settings.php:258
 msgid "Use SMTP Authentication"
 msgstr "SMTP Authentifizierung verwenden"
 
-#: admin/class-page-settings.php:242
+#: admin/class-page-settings.php:253
 msgid "Authentication"
 msgstr "Identifizierung"
 
-#: admin/class-page-settings.php:234
+#: admin/class-page-settings.php:245
 msgid "TLS"
 msgstr "TLS"
 
-#: admin/class-page-settings.php:230
+#: admin/class-page-settings.php:241
 msgid "SSL (recommended)"
 msgstr "SSL (empfohlen)"
 
-#: admin/class-page-settings.php:221
+#: admin/class-page-settings.php:232
 msgid "Encryption"
 msgstr "Verschlüsselung"
 
-#: admin/class-page-settings.php:214
+#: admin/class-page-settings.php:225
 msgid "Port"
 msgstr "Port"
 
-#: admin/class-page-settings.php:210
+#: admin/class-page-settings.php:221
 msgid "SMTP Host"
 msgstr "SMTP Host"
 
-#: admin/class-page-settings.php:205
+#: admin/class-page-settings.php:216
 msgid "These settings will reconfigure VFB Pro to send emails through your web host's SMTP email server instead of using wp_mail()."
 msgstr "Diese Einstellung veranlasst VFB Pro den SMTP Dienst ihres Webanbieters zur Versendung von E-Mails zu nutzen. Ansonsten wird die Funktion wp_mail() verwendet."
 
-#: admin/class-page-settings.php:204
+#: admin/class-page-settings.php:215
 msgid "SMTP Settings"
 msgstr "SMTP Einstellungen"
 
-#: admin/class-page-settings.php:192
+#: admin/class-page-settings.php:203
 msgid "Secret Key"
 msgstr "Geheimer Schlüssel"
 
-#: admin/class-page-settings.php:183
+#: admin/class-page-settings.php:194
 msgid "Site Key"
 msgstr "Websiteschlüssel"
 
-#: admin/class-page-settings.php:178
+#: admin/class-page-settings.php:172
 msgid "Sign up for Google's reCAPTCHA"
 msgstr "Melden Sie sich für Googles reCAPTCHA an"
 
-#: admin/class-page-settings.php:177
+#: admin/class-fields.php:2290 admin/class-page-settings.php:171
 msgid "reCAPTCHA Settings"
 msgstr "reCAPTCHA Einstellungen"
 
-#: admin/class-page-settings.php:164
+#: admin/class-page-settings.php:158
 msgid "Deactivate"
 msgstr "Deaktivieren"
 
-#: admin/class-page-settings.php:159
+#: admin/class-page-settings.php:153
 msgid "Verify License"
 msgstr "Lizenz überprüfen"
 
-#: admin/class-page-settings.php:151
+#: admin/class-page-settings.php:145
 msgid "License Status"
 msgstr "Lizenz-Status"
 
-#: admin/class-page-settings.php:145
+#: admin/class-page-settings.php:139
 msgid "This is the email where you received your VFB Pro downloads. Both license key and email are required."
 msgstr "Die E-Mail in der Sie die Informationen zum herunterladen von VFB Pro erhalten haben enthält den Lizenzschlüssel zusätzlich benötigen Sie die mit der Bestellung einhergehende E-Mail Adresse."
 
-#: admin/class-page-settings.php:141
+#: admin/class-page-settings.php:135
 msgid "License Email"
 msgstr "Lizenz E-Mail"
 
-#: admin/class-page-settings.php:135
+#: admin/class-page-settings.php:129
 msgid "Your license key is your order number. You must validate your order before VFB Pro will function."
 msgstr "Ihr Lizenzschlüssel ist Ihre Bestellnummer. Sie müssen Ihre Bestellung bestätigt haben damit VFB Pro funktioniert."
 
-#: admin/class-page-settings.php:131
+#: admin/class-page-settings.php:125
 msgid "License Key"
 msgstr "Lizenzschlüssel"
 
-#: admin/class-page-settings.php:117
+#: inc/validation-messages.php:42
 msgid "This value should be less or equal."
 msgstr "Dieser Wert muss kleiner oder gleich sein."
 
-#: admin/class-page-settings.php:116
+#: inc/validation-messages.php:41
 msgid "This value should be less."
 msgstr "Dieser Wert muss kleiner sein."
 
-#: admin/class-page-settings.php:115
+#: inc/validation-messages.php:40
 msgid "This value should be greater or equal."
 msgstr "Dieser Wert muss grösser oder gleich sein."
 
-#: admin/class-page-settings.php:114
+#: inc/validation-messages.php:39
 msgid "This value should be greater."
 msgstr "Dieser Wert muss grösser sein."
 
-#: admin/class-page-settings.php:113
+#: inc/validation-messages.php:38
 msgid "This value length is invalid. It should be between %s and %s words long."
 msgstr "Die Länge des Wertes ist ungültig. Sie sollte zwischen %s und %s Wörter lang sein."
 
-#: admin/class-page-settings.php:112
+#: inc/validation-messages.php:37
 msgid "This value is too long. It should have %s words or fewer."
 msgstr "Dieser Wert ist zu lang. Er sollte %s Worte oder weniger haben."
 
-#: admin/class-page-settings.php:111
+#: inc/validation-messages.php:36
 msgid "This value is too short. It should have %s words or more."
 msgstr "Dieser Wert ist zu kurz. Er sollte %s Wörter oder mehr haben."
 
-#: admin/class-page-settings.php:110
+#: inc/validation-messages.php:35
 msgid "This value should be the same."
 msgstr "Dieser Wert sollte übereinstimmen."
 
-#: admin/class-page-settings.php:109
+#: inc/validation-messages.php:34
 msgid "You must select between %s and %s choices."
 msgstr "Sie müssen aus %s und %s Möglichkeiten wählen."
 
-#: admin/class-page-settings.php:108
+#: inc/validation-messages.php:33
 msgid "You must select %s choices or fewer."
 msgstr "Sie müssen %s Werte oder weniger auswählen."
 
-#: admin/class-page-settings.php:107
+#: inc/validation-messages.php:32
 msgid "You must select at least %s choices."
 msgstr "Sie müssen mindestens %s Wert(e) auswählen."
 
-#: admin/class-page-settings.php:106
+#: inc/validation-messages.php:31
 msgid "This value length is invalid. It should be between %s and %s characters long."
 msgstr "Die Länge des Wertes ist ungültig. Sie sollte zwischen %s und %s Zeichen lang sein."
 
-#: admin/class-page-settings.php:105
+#: inc/validation-messages.php:30
 msgid "This value is too long. It should have %s characters or fewer."
 msgstr "Der eingegebene Wert ist zu lang. Er darf maximal %s Zeichen oder weniger haben."
 
-#: admin/class-page-settings.php:104
+#: inc/validation-messages.php:29
 msgid "This value is too short. It should have %s characters or more."
 msgstr "Der eingegebene Wert ist zu kurz. Er muss mindestens %s Zeichen oder mehr haben."
 
-#: admin/class-page-settings.php:103
+#: inc/validation-messages.php:28
 msgid "This value should be between %s and %s."
 msgstr "Der eingegebene Wert sollte zwischen %s und %s sein."
 
-#: admin/class-page-settings.php:102
+#: inc/validation-messages.php:27
 msgid "This value should be lower than or equal to %s."
 msgstr "Der eingegebene Wert sollte kleiner oder gleich %s sein."
 
-#: admin/class-page-settings.php:101
+#: inc/validation-messages.php:26
 msgid "This value should be greater than or equal to %s."
 msgstr "Der eingegebene Wert sollte grösser oder gleich %s sein."
 
-#: admin/class-page-settings.php:99
+#: inc/validation-messages.php:24
 msgid "This value is required"
-msgstr "Dies ist ein Pflichtfeld."
+msgstr "Dies ist ein Pflichtfeld"
 
-#: admin/class-page-settings.php:98
+#: inc/validation-messages.php:23
 msgid "This value should not be blank."
 msgstr "Dieses Feld sollte nicht leer sein."
 
-#: admin/class-page-settings.php:97
+#: inc/validation-messages.php:22
 msgid "This value should be alphanumeric."
 msgstr "Dieser Wert sollte alphanumerisch sein."
 
-#: admin/class-page-settings.php:96
+#: inc/validation-messages.php:21
 msgid "This value should be digits."
 msgstr "Sie sollten hier gültige Ziffern eingeben."
 
-#: admin/class-page-settings.php:95
+#: inc/validation-messages.php:20
 msgid "This value should be a valid integer."
 msgstr "Dieser Wert muss eine gültige Ganzzahl sein."
 
-#: admin/class-page-settings.php:94
+#: inc/validation-messages.php:19
 msgid "This value should be a valid number."
 msgstr "Sie sollten hier ein gültige Nummer eingeben."
 
-#: admin/class-page-settings.php:93
+#: inc/validation-messages.php:18
 msgid "This value should be a valid url."
 msgstr "Sie sollten hier eine gültige URL eingeben."
 
-#: admin/class-page-settings.php:92
+#: inc/validation-messages.php:17
 msgid "This value should be a valid email."
 msgstr "Sie sollten hier eine gültige E-Mail Adresse eingeben."
 
-#: admin/class-page-settings.php:91 admin/class-page-settings.php:100
+#: inc/validation-messages.php:16 inc/validation-messages.php:25
 msgid "This value seems to be invalid."
 msgstr "Diese Eingabe scheint ungültig zu sein."
 
-#: admin/class-page-settings.php:80
+#: admin/class-page-settings.php:73
 msgid "UNVERIFIED"
 msgstr "NICHT ÜBERPRÜFT"
 
-#: admin/class-page-addons.php:143
+#: admin/class-page-help.php:305
 msgid "Connect your forms with a number of third-party services such as MailChimp, Campaign Monitor, Highrise, and FreshBooks after new form submissions. You can even send SMS to your phone!"
 msgstr "Verbinden Sie Ihre Formulare mit einer Reihe von Drittanbieter-Diensten wie MailChimp, Campaign Monitor, Highrise, und FreshBooks. Sie können sich sogar bei Formulareinreichungen über eine SMS an Ihr Handy darüber informieren lassen!"
 
-#: admin/class-page-addons.php:139
+#: admin/class-page-help.php:301
 msgid "Notifications"
 msgstr "Benachrichtigungen"
 
-#: admin/class-page-addons.php:127
+#: admin/class-page-help.php:285
 msgid "Quickly and easily customize the design of your form without writing any CSS. Create a custom design based on your settings."
 msgstr "Schnell und einfach das Design Ihrer Formulare anpassen, ohne CSS schreiben zu müssen. Erstellen Sie ein individuelles Design basierend auf Ihren Einstellungen."
 
-#: admin/class-page-addons.php:123
+#: admin/class-page-help.php:281
 msgid "Form Designer"
 msgstr "Formular Designer"
 
-#: admin/class-page-addons.php:111
+#: admin/class-page-help.php:265
 msgid "Looking to sell more than one item? The Payments add-on allows you to sell multiple items, subscriptions, and even display a running total of your cart. PayPal Standard only (for now)."
 msgstr "Möchten Sie über ein Formular einen oder mehrere Artikel verkaufen? Die Zahlungserweiterung ermöglicht es Ihnen, eine laufende Summe in einem Warenkorb für einen oder mehrere Artikel oder Abonnements etc. anzuzeigen. Derzeitig unterstützte Zahlungsoption ist PayPal."
 
-#: admin/class-page-addons.php:107
+#: admin/class-page-help.php:261
 msgid "Payments"
 msgstr "Zahlungen"
 
-#: admin/class-page-addons.php:93
+#: admin/class-page-help.php:243
 msgid "With the Display Entries add-on you can now show off your entries with the ease of checking a few boxes. Build tables that are fully sortable, filterable, and searchable."
 msgstr "Mit der Einträge Darstellen Erweiterung können Sie jetzt Formular Eingaben mit Leichtigkeit und Kontrolliert mit ein paar Klicks anzeigen lassen. Erstellen Sie Tabellen, die vollständig sortierbar, filterbar und durchsuchbar sind."
 
-#: admin/class-page-addons.php:89
+#: admin/class-page-help.php:239
 msgid "Display Entries"
 msgstr "Einträge anzeigen"
 
-#: admin/class-page-addons.php:77
+#: admin/class-page-help.php:223
 msgid "Easily create a WordPress post with your forms. Gain access to six new field items: Title, Content, Excerpt, Category, Tag, and Custom Field."
 msgstr "Generieren Sie ein Formular über dass Sie einen WordPress Beitrag erstellen können. Sie haben Zugriff auf die folgenden 6 Felder: Titel, Inhalt, Auszug, Kategorie, Tags und benutzerdefinierte Felder."
 
-#: admin/class-page-addons.php:73
+#: admin/class-page-help.php:219
 msgid "Create Post"
 msgstr "Beitrag erstellen"
 
-#: admin/class-page-addons.php:65 admin/class-page-addons.php:81
-#: admin/class-page-addons.php:97 admin/class-page-addons.php:115
-#: admin/class-page-addons.php:131 admin/class-page-addons.php:147
-msgid "Learn More"
-msgstr "Erfahre mehr"
-
-#: admin/class-page-addons.php:61
+#: admin/class-page-help.php:203
 msgid "Wish you could go ahead and create a WordPress user when someone submits a form? Create a form and watch as user sign-ups are now a piece of cake."
 msgstr "Haben Sie sich schon einmal gewünscht Sie könnten nachdem ein Benutzer ein Formular ausgefüllt hat einen WordPress-Benutzer aus übermittelten Daten erstellen? Erstellen Sie nun eigene Formulare und lassen Sie daraus kinderleicht einen Benutzer registrieren."
 
-#: admin/class-page-addons.php:57
+#: admin/class-page-help.php:199
 msgid "Create User"
 msgstr "Benutzer erstellen"
 
-#: admin/class-page-addons.php:28
+#: admin/class-page-help.php:45
 msgid "Available Add-Ons"
 msgstr "Verfügbare Erweiterungen"
 
@@ -2799,7 +3149,7 @@ msgstr "Sie benötigen mindestens eine Bedingung."
 
 #: admin/class-load-css-js.php:53
 msgid "Yes. Delete this field."
-msgstr "Ja. Lösche dieses Feld"
+msgstr "Ja. Lösche dieses Feld."
 
 #: admin/class-load-css-js.php:52
 msgid "Deleting a field means that <strong>all data collected by the field will be deleted immediately</strong>. Because this action <strong>cannot</strong> be undone, you might want to consider exporting your data first."
@@ -2893,16 +3243,16 @@ msgstr "Formularname"
 
 #: admin/class-forms-list.php:764
 msgid "Go to the last page"
-msgstr "zur letzten Seite wechseln"
+msgstr "Zur letzten Seite wechseln"
 
 #: admin/class-forms-list.php:756
 msgid "Go to the next page"
-msgstr "zur nächsten Seite wechseln"
+msgstr "Zur nächsten Seite wechseln"
 
-#: admin/class-forms-list.php:752 inc/class-vfb-list-table.php:813
+#: admin/class-forms-list.php:752 inc/class-vfb-list-table.php:816
 msgctxt "paging"
 msgid "%1$s of %2$s"
-msgstr "%1$ von %2$"
+msgstr "%1$s von %2$s"
 
 #: admin/class-forms-list.php:746
 msgid "Current page"
@@ -2986,104 +3336,104 @@ msgstr "Formular Einstellungen"
 msgid "Edit Fields"
 msgstr "Felder bearbeiten"
 
-#: admin/class-forms-edit-settings.php:240
+#: admin/class-forms-edit-settings.php:256
 msgid "Hides the Page Break numbers."
 msgstr "Seitentrenner Zahlen verbergen."
 
-#: admin/class-forms-edit-settings.php:233
+#: admin/class-forms-edit-settings.php:249
 msgid "Hide Page Numbers"
 msgstr "Seitenzahlen verbergen"
 
-#: admin/class-forms-edit-settings.php:225
+#: admin/class-forms-edit-settings.php:241
 msgid "Prevents user from clicking on Page Break titles to advance the page."
 msgstr "Verhindert, das durch einen Klick auf den Seitentrenner Titel, auf die jeweilige Seite gewechselt werden kann."
 
-#: admin/class-forms-edit-settings.php:218
+#: admin/class-forms-edit-settings.php:234
 msgid "Prevent Page Title Clicks"
 msgstr "Seitentitel anklickbar"
 
-#: admin/class-forms-edit-settings.php:210
+#: admin/class-forms-edit-settings.php:226
 msgid "Hides the Page Break titles."
 msgstr "Seitentrenner Titel verbergen."
 
-#: admin/class-forms-edit-settings.php:203
+#: admin/class-forms-edit-settings.php:219
 msgid "Hide Page Titles"
 msgstr "Seitentitel verbergen"
 
-#: admin/class-forms-edit-settings.php:197
+#: admin/class-forms-edit-settings.php:213
 msgid "Page Break Options"
 msgstr "Seitentrenner Optionen"
 
-#: admin/class-forms-edit-settings.php:184
+#: admin/class-forms-edit-settings.php:200
 msgid "Expiration Message"
 msgstr "Nachricht bei Erreichen des Ablaufdatum"
 
-#: admin/class-forms-edit-settings.php:178
+#: admin/class-forms-edit-settings.php:194
 msgid "Set a date and time to deactivate your form. Leave this blank if you want your form to always be active."
 msgstr "Legen Sie ein Datum und eine Uhrzeit fest an dem das Formular deaktiviert werden soll. Lassen Sie dieses Feld leer, wenn Ihr Formular nicht ablaufen soll."
 
-#: admin/class-forms-edit-settings.php:174
+#: admin/class-forms-edit-settings.php:190
 msgid "Expiration Date"
 msgstr "Ablaufdatum"
 
-#: admin/class-forms-edit-settings.php:165
+#: admin/class-forms-edit-settings.php:181
 msgid "Limit Message"
 msgstr "Nachricht bei Erreichen der Anzahl"
 
-#: admin/class-forms-edit-settings.php:159
+#: admin/class-forms-edit-settings.php:175
 msgid "Set the total number of entries you want your form to accept. Leave this blank if you want unlimited entries."
 msgstr "Legen Sie die Anzahl an Einträgen fest, die Ihr Formular akzeptieren soll. Lassen Sie dieses Feld leer, wenn Sie unbegrenzte Einträge wollen."
 
-#: admin/class-forms-edit-settings.php:155
+#: admin/class-forms-edit-settings.php:171
 msgid "Limit Entries"
 msgstr "Anzahl an Einreichungen"
 
-#: admin/class-forms-edit-settings.php:149
+#: admin/class-forms-edit-settings.php:165
 msgid "Submission Limits"
 msgstr "Formular Nutzung Limitieren"
 
-#: admin/class-forms-edit-settings.php:112
+#: admin/class-forms-edit-settings.php:113
 msgid "Saves data entered inside form fields locally and restores it in case the page is refreshed accidentally."
 msgstr "Speichert den aktuellen Zustand der Formularfelder und stellt diese wieder her sollte die Seite aus versehen neu geladen werden."
 
-#: admin/class-forms-edit-settings.php:106
+#: admin/class-forms-edit-settings.php:107
 msgid "Save Form State"
 msgstr "Formular Zustand speichern"
 
-#: admin/class-forms-edit-settings.php:100
+#: admin/class-forms-edit-settings.php:101
 msgid "Align labels either on top of the inputs or off to the side."
 msgstr "Feldbeschriftungen Horizontal (seitlich) oder Vertikal (über) den Eingabefeldern platzieren."
 
-#: admin/class-forms-edit-settings.php:98
+#: admin/class-forms-edit-settings.php:99
 msgid "Horizontal"
 msgstr "Horizontal"
 
-#: admin/class-forms-edit-settings.php:93
+#: admin/class-forms-edit-settings.php:94
 msgid "Label Alignment"
 msgstr "Beschriftungsausrichtung"
 
-#: admin/class-forms-edit-settings.php:87
+#: admin/class-forms-edit-settings.php:88
 msgid "Change the status from Published to Draft to prevent form output without removing the shortcode."
 msgstr "Ändern Sie den Status von Veröffentlicht zu Entwurf, um das Formular zu deaktivieren, ohne den Shortcode entfernen zu müssen."
 
-#: admin/class-forms-edit-settings.php:85 admin/class-forms-list.php:99
+#: admin/class-forms-edit-settings.php:86 admin/class-forms-list.php:99
 #: admin/class-forms-new.php:53
 msgid "Draft"
 msgstr "Entwurf"
 
-#: admin/class-forms-edit-settings.php:84 admin/class-forms-new.php:52
+#: admin/class-forms-edit-settings.php:85 admin/class-forms-new.php:52
 msgid "Published"
 msgstr "Veröffentlicht"
 
-#: admin/class-forms-edit-settings.php:80 admin/class-forms-new.php:48
+#: admin/class-forms-edit-settings.php:81 admin/class-forms-new.php:48
 msgid "Form Status"
 msgstr "Formularstatus"
 
-#: admin/class-forms-edit-settings.php:71
+#: admin/class-forms-edit-settings.php:72
 msgid "Form Name"
 msgstr "Formular Name"
 
-#: admin/class-forms-edit-settings.php:65 admin/class-forms-new.php:29
+#: admin/class-forms-edit-settings.php:66 admin/class-forms-new.php:29
 msgid "General Form Settings"
 msgstr "Allgemeine Formular Einstellungen"
 
@@ -3132,7 +3482,7 @@ msgstr "Kopie der Benutzereingaben hinzufügen"
 msgid "Append Entry"
 msgstr "Eintrag anhängen"
 
-#: admin/class-forms-edit-email.php:308
+#: admin/class-email-design.php:120 admin/class-forms-edit-email.php:308
 msgid "Message"
 msgstr "Nachricht"
 
@@ -3216,48 +3566,48 @@ msgstr "Erhalten Sie eine E-Mail der übermittelten Daten, wenn jemand ein Formu
 msgid "Notification"
 msgstr "Benachrichtigung"
 
-#: admin/class-forms-edit-confirmation.php:139
+#: admin/class-forms-edit-confirmation.php:160
 msgid "Redirect URL"
 msgstr "Weiterleitungs-URL"
 
-#: admin/class-forms-edit-confirmation.php:128
+#: admin/class-forms-edit-confirmation.php:130
 msgid "Select a Page"
 msgstr "Eine Seite auswählen"
 
-#: admin/class-forms-edit-confirmation.php:94
+#: admin/class-forms-edit-confirmation.php:96
 msgid "Display the Success Text above a blank form."
 msgstr "Zeige die Erfolgsmeldung oberhalb eines leeren Formulars an."
 
-#: admin/class-forms-edit-confirmation.php:88
+#: admin/class-forms-edit-confirmation.php:90
 msgid "Show Form After Submission"
 msgstr "Zeige Formular nach dem Absenden"
 
-#: admin/class-forms-edit-confirmation.php:79
+#: admin/class-forms-edit-confirmation.php:81
 msgid "Success Text"
 msgstr "Erfolgsmeldung"
 
-#: admin/class-forms-edit-confirmation.php:70
+#: admin/class-forms-edit-confirmation.php:72
 msgid "Redirect"
 msgstr "Weiterleitung"
 
-#: admin/class-forms-edit-confirmation.php:69
-#: admin/class-forms-edit-confirmation.php:119
+#: admin/class-forms-edit-confirmation.php:71
+#: admin/class-forms-edit-confirmation.php:121
 msgid "WordPress Page"
 msgstr "WordPress Seite"
 
-#: admin/class-forms-edit-confirmation.php:68
+#: admin/class-forms-edit-confirmation.php:70
 msgid "Text"
 msgstr "Text"
 
-#: admin/class-forms-edit-confirmation.php:64
+#: admin/class-forms-edit-confirmation.php:66 admin/class-page-settings.php:177
 msgid "Type"
 msgstr "Typ"
 
-#: admin/class-forms-edit-confirmation.php:58
+#: admin/class-forms-edit-confirmation.php:60
 msgid "By default, it is a message but you can send them to another WordPress Page or a custom URL."
 msgstr "Standardmäßig wird eine Nachricht angezeigt, Sie können jedoch auch auf eine andere WordPress Seite oder eine benutzerdefinierte URL umleiten."
 
-#: admin/class-forms-edit-confirmation.php:57
+#: admin/class-forms-edit-confirmation.php:59
 msgid "After someone submits a form, you can control what is displayed."
 msgstr "Nachdem jemand ein Formular übermittelt hat, können Sie steuern, was angezeigt wird."
 
@@ -3297,1587 +3647,1587 @@ msgstr "Element bearbeiten"
 msgid "Field ID:"
 msgstr "Feld-ID:"
 
-#: admin/class-fields-settings.php:2583
+#: admin/class-fields-settings.php:2601
 msgid "Validates that the value is less than or equal to another field's one.  Enter the VFB field ID number."
 msgstr "Überprüft, ob der eingegebene Wert gleich oder kleiner ist, als der Wert eines anderen Feldes.  Die VFB-Feld-ID eingeben."
 
-#: admin/class-fields-settings.php:2583
+#: admin/class-fields-settings.php:2601
 msgid "About Less Than Equal To"
 msgstr "Über das Kleiner als oder gleich"
 
-#: admin/class-fields-settings.php:2580 admin/class-page-settings.php:601
+#: admin/class-fields-settings.php:2598 admin/class-page-settings.php:610
 msgid "Less Than Equal To"
 msgstr "Kleiner als oder gleich"
 
-#: admin/class-fields-settings.php:2571
+#: admin/class-fields-settings.php:2589
 msgid "Validates that the value is less than another field's one.  Enter the VFB field ID number."
 msgstr "Überprüft, ob der eingegebene Wert kleiner ist, als der Wert eines anderen Feldes.  Die VFB-Feld-ID eingeben."
 
-#: admin/class-fields-settings.php:2571
+#: admin/class-fields-settings.php:2589
 msgid "About Less Than"
 msgstr "Über das Kleiner als"
 
-#: admin/class-fields-settings.php:2568 admin/class-page-settings.php:592
+#: admin/class-fields-settings.php:2586 admin/class-page-settings.php:601
 msgid "Less Than"
 msgstr "Kleiner als"
 
-#: admin/class-fields-settings.php:2559
+#: admin/class-fields-settings.php:2577
 msgid "Validates that the value is greater than or equal to another field's one.  Enter the VFB field ID number."
 msgstr "Überprüft, ob der eingegebene Wert gleich oder größer ist, als der Wert eines anderen Feldes.  Die VFB-Feld-ID eingeben."
 
-#: admin/class-fields-settings.php:2559
+#: admin/class-fields-settings.php:2577
 msgid "About Greater Than Equal To"
 msgstr "Über das Größer als oder gleich"
 
-#: admin/class-fields-settings.php:2556 admin/class-page-settings.php:583
+#: admin/class-fields-settings.php:2574 admin/class-page-settings.php:592
 msgid "Greater Than Equal To"
 msgstr "Größer als oder gleich"
 
-#: admin/class-fields-settings.php:2547
+#: admin/class-fields-settings.php:2565
 msgid "Validates that the value is greater than another field's one.  Enter the VFB field ID number."
 msgstr "Überprüft, ob der eingegebene Wert größer ist, als der Wert eines anderen Feldes.  Die VFB-Feld-ID eingeben."
 
-#: admin/class-fields-settings.php:2547
+#: admin/class-fields-settings.php:2565
 msgid "About Greater Than"
 msgstr "Über das Größer als"
 
-#: admin/class-fields-settings.php:2544 admin/class-page-settings.php:574
+#: admin/class-fields-settings.php:2562 admin/class-page-settings.php:583
 msgid "Greater Than"
 msgstr "Größer als"
 
-#: admin/class-fields-settings.php:2535
+#: admin/class-fields-settings.php:2553
 msgid "Validates that the number of checked checkboxes in a group is within a certain range. Must be entered as two integers separated by a comma. Example: 6,10"
 msgstr "Überprüft, ob die Anzahl der aktivierten Kontrollkästchen in einer Gruppe, innerhalb eines bestimmten Wertebereich liegt. Zwei Ganzzahlen erwartet, die durch ein Komma getrennt eingegeben werden. Beispiel: 6,10"
 
-#: admin/class-fields-settings.php:2535
+#: admin/class-fields-settings.php:2553
 msgid "About Check Range"
 msgstr "Über die Bereich Prüfung"
 
-#: admin/class-fields-settings.php:2532
+#: admin/class-fields-settings.php:2550
 msgid "Check Range"
 msgstr "Bereich Prüfung"
 
-#: admin/class-fields-settings.php:2523
+#: admin/class-fields-settings.php:2541
 msgid "Validates that a certain maximum number of checkboxes in a group are checked. Integers only."
 msgstr "Überprüft, ob die maximale Anzahl von Kontrollkästchen in einer Gruppe ausgewählt wurde. Nur Ganzzahlen."
 
-#: admin/class-fields-settings.php:2523
+#: admin/class-fields-settings.php:2541
 msgid "About Max Check"
 msgstr "Über die Max. Prüfung"
 
-#: admin/class-fields-settings.php:2520 admin/class-page-settings.php:520
+#: admin/class-fields-settings.php:2538 admin/class-page-settings.php:529
 msgid "Max Check"
 msgstr "Max. Prüfung"
 
-#: admin/class-fields-settings.php:2511
+#: admin/class-fields-settings.php:2529
 msgid "Validates that a certain minimum number of checkboxes in a group are checked. Integers only."
 msgstr "Überprüft, ob eine bestimmte Mindestanzahl von Kontrollkästchen in einer Gruppe ausgewählt wurden. Nur Ganzzahlen."
 
-#: admin/class-fields-settings.php:2511
+#: admin/class-fields-settings.php:2529
 msgid "About Min Check"
 msgstr "Über die Min. Prüfung"
 
-#: admin/class-fields-settings.php:2508 admin/class-page-settings.php:511
+#: admin/class-fields-settings.php:2526 admin/class-page-settings.php:520
 msgid "Min Check"
 msgstr "Min. Prüfung"
 
-#: admin/class-fields-settings.php:2499
+#: admin/class-fields-settings.php:2517
 msgid "Validates that a given number is between some minimum and maximum number. Must be entered as two integers separated by a comma. Example: 6,10"
 msgstr "Überprüft, ob eine angegebene Zahl innerhalb des angegeben minimalen und maximalen Zahlenwertes liegt. Zwei Ganzzahlen erwartet, die durch ein Komma getrennt eingegeben werden. Beispiel: 6,10"
 
-#: admin/class-fields-settings.php:2499
+#: admin/class-fields-settings.php:2517
 msgid "About Range"
 msgstr "Über den Bereich"
 
-#: admin/class-fields-settings.php:2496 admin/class-page-settings.php:475
+#: admin/class-fields-settings.php:2514 admin/class-page-settings.php:484
 msgid "Range"
 msgstr "Bereich"
 
-#: admin/class-fields-settings.php:2487
+#: admin/class-fields-settings.php:2505
 msgid "Validates that a given number is less than some maximum number. Integers only."
 msgstr "Überprüft, ob die eingegebene Zahl kleiner als die maximale Zahl ist. Nur Ganzzahlen."
 
-#: admin/class-fields-settings.php:2484 admin/class-page-settings.php:466
+#: admin/class-fields-settings.php:2502 admin/class-page-settings.php:475
 msgid "Max"
 msgstr "Max."
 
-#: admin/class-fields-settings.php:2475
+#: admin/class-fields-settings.php:2493
 msgid "Validates that a given number is greater than some minimum number. Integers only."
 msgstr "Überprüft, ob die eingegebene Zahl größer als die minimale Zahl ist. Nur Ganzzahlen."
 
-#: admin/class-fields-settings.php:2475
+#: admin/class-fields-settings.php:2493
 msgid "About Min"
 msgstr "Über Min."
 
-#: admin/class-fields-settings.php:2472 admin/class-page-settings.php:457
+#: admin/class-fields-settings.php:2490 admin/class-page-settings.php:466
 msgid "Min"
-msgstr "Min."
+msgstr "Min"
 
-#: admin/class-fields-settings.php:2463
+#: admin/class-fields-settings.php:2481
 msgid "Validates that a given string length is between some minimum and maximum value. Must be entered as two integers separated by a comma. Example: 6,10"
 msgstr "Überprüft, ob eine angegebene Zeichenkette innerhalb des angegeben minimalen und maximalen Wert liegt. Zwei Ganzzahlen erwartet, die durch ein Komma getrennt eingegeben werden. Beispiel: 6,10"
 
-#: admin/class-fields-settings.php:2463
+#: admin/class-fields-settings.php:2481
 msgid "About Length"
 msgstr "Über die Länge"
 
-#: admin/class-fields-settings.php:2460 admin/class-page-settings.php:502
+#: admin/class-fields-settings.php:2478 admin/class-page-settings.php:511
 msgid "Length"
 msgstr "Länge"
 
-#: admin/class-fields-settings.php:2451
+#: admin/class-fields-settings.php:2469
 msgid "Validates that the length of a string is not larger than the given limit. Integers only."
 msgstr "Überprüft, ob die Länge einer Zeichenkette nicht größer ist als es die Vorgabe erwartet. Nur Ganzzahlen."
 
-#: admin/class-fields-settings.php:2451 admin/class-fields-settings.php:2487
+#: admin/class-fields-settings.php:2469 admin/class-fields-settings.php:2505
 msgid "About Max Length"
 msgstr "Über die max. Länge"
 
-#: admin/class-fields-settings.php:2448 admin/class-page-settings.php:493
+#: admin/class-fields-settings.php:2466 admin/class-page-settings.php:502
 msgid "Max Length"
 msgstr "Max. Länge"
 
-#: admin/class-fields-settings.php:2439
+#: admin/class-fields-settings.php:2457
 msgid "Validates that the length of a string is at least as long as the given limit. Integers only."
 msgstr "Überprüft, ob die Länge einer Zeichenkette mindestens so lang ist wie es die Vorgabe erwartet. Nur Ganzzahlen."
 
-#: admin/class-fields-settings.php:2439
+#: admin/class-fields-settings.php:2457
 msgid "About Min Length"
 msgstr "Über die min. Länge"
 
-#: admin/class-fields-settings.php:2436 admin/class-page-settings.php:484
+#: admin/class-fields-settings.php:2454 admin/class-page-settings.php:493
 msgid "Min Length"
 msgstr "Min. Länge"
 
-#: admin/class-fields-settings.php:2427
+#: admin/class-fields-settings.php:2445
 msgid "Validates that the value is identical to another field value (useful for password confirmation check). Enter the VFB field ID number."
 msgstr "Überprüft, ob der Wert mit einem anderen Feldwert übereinstimmt (nützlich für Kennwortüberprüfungen). Geben Sie die VFB-Feld-ID ein."
 
-#: admin/class-fields-settings.php:2427
+#: admin/class-fields-settings.php:2445
 msgid "About Equal To"
 msgstr "Über die Entsprechung"
 
-#: admin/class-fields-settings.php:2424 admin/class-page-settings.php:538
+#: admin/class-fields-settings.php:2442 admin/class-page-settings.php:547
 msgid "Equal To"
 msgstr "Entsprechung"
 
-#: admin/class-fields-settings.php:2415
+#: admin/class-fields-settings.php:2433
 msgid "Validates that a value matches a specific regular expression (regex)."
 msgstr "Überprüft, ob ein Wert einem bestimmten regulären Ausdruck (Regex) entspricht."
 
-#: admin/class-fields-settings.php:2415
+#: admin/class-fields-settings.php:2433
 msgid "About Regex Pattern"
 msgstr "Über Regex-Muster"
 
-#: admin/class-fields-settings.php:2412 admin/class-page-settings.php:448
+#: admin/class-fields-settings.php:2430 admin/class-page-settings.php:457
 msgid "Regex Pattern"
 msgstr "Regex-Muster"
 
-#: admin/class-fields-settings.php:2404 admin/class-page-settings.php:385
+#: admin/class-fields-settings.php:2422 admin/class-page-settings.php:394
 msgid "URL"
 msgstr "URL"
 
-#: admin/class-fields-settings.php:2403 admin/class-page-settings.php:421
+#: admin/class-fields-settings.php:2421 admin/class-page-settings.php:430
 msgid "Alphanumeric"
 msgstr "Alphanumerisch"
 
-#: admin/class-fields-settings.php:2402 admin/class-page-settings.php:412
+#: admin/class-fields-settings.php:2420 admin/class-page-settings.php:421
 msgid "Digits"
 msgstr "Ziffern"
 
-#: admin/class-fields-settings.php:2401 admin/class-page-settings.php:403
+#: admin/class-fields-settings.php:2419 admin/class-page-settings.php:412
 msgid "Integer"
 msgstr "Ganzzahl"
 
-#: admin/class-fields-settings.php:2400 admin/class-page-settings.php:394
+#: admin/class-fields-settings.php:2418 admin/class-page-settings.php:403
 msgid "Number"
 msgstr "Nummer"
 
-#: admin/class-fields-settings.php:2399 admin/class-page-settings.php:376
+#: admin/class-fields-settings.php:2417 admin/class-page-settings.php:385
 msgid "Email"
 msgstr "E-Mail"
 
-#: admin/class-fields-settings.php:2395
+#: admin/class-fields-settings.php:2413
 msgid "Set the validation type."
-msgstr "Setzt den Überprüfungstyp"
+msgstr "Setzt den Überprüfungstyp."
 
-#: admin/class-fields-settings.php:2395
+#: admin/class-fields-settings.php:2413
 msgid "About Validation Type"
 msgstr "Über Überprüfungstypen"
 
-#: admin/class-fields-settings.php:2392
+#: admin/class-fields-settings.php:2410
 msgid "Validation Type"
 msgstr "Überprüfungstyp"
 
-#: admin/class-fields-settings.php:2170
+#: admin/class-fields-settings.php:2188
 msgid "Set sliders step. Always > 0. Could be fractional."
 msgstr "Setzt die Schieberegler Schrittweite. Immer > 0. Teilschritte möglich."
 
-#: admin/class-fields-settings.php:2170
+#: admin/class-fields-settings.php:2188
 msgid "About Slider Step"
 msgstr "Über den Schieberegler Schritt"
 
-#: admin/class-fields-settings.php:2167
+#: admin/class-fields-settings.php:2185
 msgid "Slider Step"
 msgstr "Schieberegler Schritt"
 
-#: admin/class-fields-settings.php:2158
+#: admin/class-fields-settings.php:2176
 msgid "Set start position for right handle."
 msgstr "Legt die Startposition des rechten Schiebereglers fest."
 
-#: admin/class-fields-settings.php:2158
+#: admin/class-fields-settings.php:2176
 msgid "About Slider To"
 msgstr "Über das Schieberegler Bis"
 
-#: admin/class-fields-settings.php:2155
+#: admin/class-fields-settings.php:2173
 msgid "Slider To"
 msgstr "Schieberegler Bis"
 
-#: admin/class-fields-settings.php:2146
+#: admin/class-fields-settings.php:2164
 msgid "Set start position for left handle (or for single handle)."
 msgstr "Legt die Startposition des linken Schiebereglers fest (bzw. die des Einfachen Schiebereglers)."
 
-#: admin/class-fields-settings.php:2146
+#: admin/class-fields-settings.php:2164
 msgid "About Slider From"
 msgstr "Über das Schieberegler Von"
 
-#: admin/class-fields-settings.php:2143
+#: admin/class-fields-settings.php:2161
 msgid "Slider From"
 msgstr "Schieberegler Von"
 
-#: admin/class-fields-settings.php:2134
+#: admin/class-fields-settings.php:2152
 msgid "Set slider maximum value. Default is 100."
 msgstr "Maximalen Wert des Schiebereglers einstellen. Standardwert ist 100."
 
-#: admin/class-fields-settings.php:2134
+#: admin/class-fields-settings.php:2152
 msgid "About Slider Max"
 msgstr "Über das Schieberegler Max"
 
-#: admin/class-fields-settings.php:2131
+#: admin/class-fields-settings.php:2149
 msgid "Slider Max"
 msgstr "Schieberegler Max"
 
-#: admin/class-fields-settings.php:2122
+#: admin/class-fields-settings.php:2140
 msgid "Set slider minimum value. Default is 10."
 msgstr "Minimalen Wert des Schiebereglers einstellen. Standard ist 10."
 
-#: admin/class-fields-settings.php:2122
+#: admin/class-fields-settings.php:2140
 msgid "About Slider Min"
 msgstr "Über das Schieberegler Min"
 
-#: admin/class-fields-settings.php:2119
+#: admin/class-fields-settings.php:2137
 msgid "Slider Min"
 msgstr "Schieberegler Min"
 
-#: admin/class-fields-settings.php:2111
+#: admin/class-fields-settings.php:2129
 msgid "Double"
 msgstr "Beidseitig"
 
-#: admin/class-fields-settings.php:2110
+#: admin/class-fields-settings.php:2128
 msgid "Single"
 msgstr "Einfach"
 
-#: admin/class-fields-settings.php:2107
+#: admin/class-fields-settings.php:2125
 msgid "Choose the slider type: either single, for one handle, or double, for two handles. Default is Single."
 msgstr "Wählen Sie den Schieberegler Typ: Einfach, für einen einseitigen Regler, oder Beidseitig, für einen doppelseitigen Regler. Standard ist Einfach."
 
-#: admin/class-fields-settings.php:2107
+#: admin/class-fields-settings.php:2125
 msgid "About Slider Type"
 msgstr "Über den Schieberegler Typ"
 
-#: admin/class-fields-settings.php:2104
+#: admin/class-fields-settings.php:2122
 msgid "Slider Type"
 msgstr "Schieberegler Typ"
 
-#: admin/class-fields-settings.php:2039
+#: admin/class-fields-settings.php:2057
 msgid "Choose the language for the reCAPTCHA text. Default is English."
 msgstr "Legt die Sprache für das reCAPTCHA fest. Standard ist Englisch."
 
-#: admin/class-fields-settings.php:2039
+#: admin/class-fields-settings.php:2057
 msgid "About reCAPTCHA Language"
 msgstr "Über die reCAPTCHA Sprache"
 
-#: admin/class-fields-settings.php:2036
+#: admin/class-fields-settings.php:2054
 msgid "reCAPTCHA Language"
 msgstr "reCAPTCHA Sprache"
 
-#: admin/class-fields-settings.php:2028
+#: admin/class-fields-settings.php:2046
 msgid "Audio"
 msgstr "Audio"
 
-#: admin/class-fields-settings.php:2027
+#: admin/class-fields-settings.php:2045
 msgid "Image"
 msgstr "Bild"
 
-#: admin/class-fields-settings.php:2024
+#: admin/class-fields-settings.php:2042
 msgid "Choose the type of reCAPTCHA to server. Default is Image."
 msgstr "Legt den reCaptcha Typ fest. Standard ist Bild."
 
-#: admin/class-fields-settings.php:2024
+#: admin/class-fields-settings.php:2042
 msgid "About reCAPTCHA Type"
 msgstr "Über den reCaptcha Typ"
 
-#: admin/class-fields-settings.php:2021
+#: admin/class-fields-settings.php:2039
 msgid "reCAPTCHA Type"
 msgstr "reCaptcha Typ"
 
-#: admin/class-fields-settings.php:2013
+#: admin/class-fields-settings.php:2031
 msgid "Dark"
-msgstr "dunkel"
+msgstr "Dunkel"
 
-#: admin/class-fields-settings.php:2012
+#: admin/class-fields-settings.php:2030
 msgid "Light"
-msgstr "hell"
+msgstr "Hell"
 
-#: admin/class-fields-settings.php:2009
+#: admin/class-fields-settings.php:2027
 msgid "Choose the color theme you of the reCAPTCHA widget. Default is Light."
 msgstr "Legt den Farbstil des reCAPTCHA fest. Standard ist hell."
 
-#: admin/class-fields-settings.php:2009
+#: admin/class-fields-settings.php:2027
 msgid "About reCAPTCHA Theme"
 msgstr "Über den reCAPTCHA Stil"
 
-#: admin/class-fields-settings.php:2006
+#: admin/class-fields-settings.php:2024
 msgid "reCAPTCHA Theme"
 msgstr "reCAPTCHA Stil"
 
-#: admin/class-fields-settings.php:1977
+#: admin/class-fields-settings.php:1980
 msgid "The display text for a password that scores a 5 out of 5 on the scale of password strength. Default is 'Strong'."
 msgstr "Zeigt den Text für eine Grad 5 Beurteilung eines Passwortes an, der Grad 5 entspricht einer 5 auf einer Skala bis 5. Standard ist 'stark'."
 
-#: admin/class-fields-settings.php:1977
+#: admin/class-fields-settings.php:1980
 msgid "About Verdict Score 5 Text"
 msgstr "Über den Grad 5 Beurteilungstext"
 
-#: admin/class-fields-settings.php:1974
+#: admin/class-fields-settings.php:1977
 msgid "Verdict Score 5 Text"
 msgstr "Grad 5 Beurteilungstext"
 
-#: admin/class-fields-settings.php:1965
+#: admin/class-fields-settings.php:1968
 msgid "The display text for a password that scores a 4 out of 5 on the scale of password strength. Default is 'Medium'."
 msgstr "Zeigt den Text für eine Grad 4 Beurteilung eines Passwortes an, der Grad 4 entspricht einer 4 auf einer Skala bis 5. Standard ist 'mittel'."
 
-#: admin/class-fields-settings.php:1965
+#: admin/class-fields-settings.php:1968
 msgid "About Verdict Score 4 Text"
 msgstr "Über den Grad 4 Beurteilungstext"
 
-#: admin/class-fields-settings.php:1962
+#: admin/class-fields-settings.php:1965
 msgid "Verdict Score 4 Text"
 msgstr "Grad 4 Beurteilungstext"
 
-#: admin/class-fields-settings.php:1953
+#: admin/class-fields-settings.php:1956
 msgid "The display text for a password that scores a 3 out of 5 on the scale of password strength. Default is 'Weak'."
 msgstr "Zeigt den Text für eine Grad 3 Beurteilung eines Passwortes an, der Grad 3 entspricht einer 3 auf einer Skala bis 5. Standard ist 'schwach'."
 
-#: admin/class-fields-settings.php:1953
+#: admin/class-fields-settings.php:1956
 msgid "About Verdict Score 3 Text"
 msgstr "Über den Grad 3 Beurteilungstext"
 
-#: admin/class-fields-settings.php:1950
+#: admin/class-fields-settings.php:1953
 msgid "Verdict Score 3 Text"
 msgstr "Grad 3 Beurteilungstext"
 
-#: admin/class-fields-settings.php:1941
+#: admin/class-fields-settings.php:1944
 msgid "The display text for a password that scores a 2 out of 5 on the scale of password strength. Default is 'Very Weak'."
 msgstr "Zeigt den Text für eine Grad 2 Beurteilung eines Passwortes an, der Grad 2 entspricht einer 2 auf einer Skala bis 5. Standard ist 'sehr schwach'."
 
-#: admin/class-fields-settings.php:1941
+#: admin/class-fields-settings.php:1944
 msgid "About Verdict Score 2 Text"
 msgstr "Über den Grad 2 Beurteilungstext"
 
-#: admin/class-fields-settings.php:1938
+#: admin/class-fields-settings.php:1941
 msgid "Verdict Score 2 Text"
 msgstr "Grad 2 Beurteilungstext"
 
-#: admin/class-fields-settings.php:1929
+#: admin/class-fields-settings.php:1932
 msgid "The display text for a password that scores a 1 out of 5 on the scale of password strength. Default is 'Too Short'."
 msgstr "Zeigt den Text für eine Grad 1 Beurteilung eines Passwortes an, der Grad 1 entspricht einer 1 auf einer Skala bis 5. Standard ist 'zu kurz'."
 
-#: admin/class-fields-settings.php:1929
+#: admin/class-fields-settings.php:1932
 msgid "About Verdict Score 1 Text"
 msgstr "Über den Grad 1 Beurteilungstext"
 
-#: admin/class-fields-settings.php:1926
+#: admin/class-fields-settings.php:1929
 msgid "Verdict Score 1 Text"
 msgstr "Grad 1 Beurteilungstext"
 
-#: admin/class-fields-settings.php:1919
+#: admin/class-fields-settings.php:1922
 msgid "If checked, this will move the verdict text inside the strength bar instead of below the bar."
 msgstr "Falls aktiv wird der Beurteilungstext innerhalb des Stärke-Indikators angezeigt anstelle unterhalb des Balkens."
 
-#: admin/class-fields-settings.php:1919
+#: admin/class-fields-settings.php:1922
 msgid "About Verdict Inside Bar"
 msgstr "Über Beurteilungstext innerhalb des Balkens"
 
-#: admin/class-fields-settings.php:1916
+#: admin/class-fields-settings.php:1919
 msgid "Verdict Inside Bar"
 msgstr "Beurteilungstext innerhalb des Balkens"
 
-#: admin/class-fields-settings.php:1908
+#: admin/class-fields-settings.php:1911
 msgid "If checked, this will hide the verdict text."
 msgstr "Falls aktiviert wird kein Beurteilungstext angezeigt."
 
-#: admin/class-fields-settings.php:1908
+#: admin/class-fields-settings.php:1911
 msgid "About Hide Verdict Text"
 msgstr "Über das Beurteilungstext verbergen"
 
-#: admin/class-fields-settings.php:1905
+#: admin/class-fields-settings.php:1908
 msgid "Hide Verdict Text"
 msgstr "Beurteilungstext verbergen"
 
-#: admin/class-fields-settings.php:1897
+#: admin/class-fields-settings.php:1900
 msgid "If checked, this will hide the visual strength bar."
 msgstr "Falls aktiviert wird der Stärke-Indikator nicht angezeigt."
 
-#: admin/class-fields-settings.php:1897
+#: admin/class-fields-settings.php:1900
 msgid "About Hide Strength Bar"
 msgstr "Über das Stärke-Indikator verbergen"
 
-#: admin/class-fields-settings.php:1894
+#: admin/class-fields-settings.php:1897
 msgid "Hide Strength Bar"
 msgstr "Stärke-Indikator verbergen"
 
-#: admin/class-fields-settings.php:1866
+#: admin/class-fields-settings.php:1869
 msgid "If checked, this will hide the Suffix part of the Name field"
-msgstr "Falls aktiv wird das Suffix im Namenfeld nicht angezeigt."
+msgstr "Falls aktiv, wird das Suffix im Namenfeld verborgen"
 
-#: admin/class-fields-settings.php:1866
+#: admin/class-fields-settings.php:1869
 msgid "About Hide Suffix"
 msgstr "Über das Suffix ausblenden"
 
-#: admin/class-fields-settings.php:1863
+#: admin/class-fields-settings.php:1866
 msgid "Hide Suffix"
 msgstr "Suffix ausblenden"
 
-#: admin/class-fields-settings.php:1855
+#: admin/class-fields-settings.php:1858
 msgid "If checked, this will hide the Title part of the Name field."
 msgstr "Falls aktiv wird der Titel im Namenfeld nicht angezeigt."
 
-#: admin/class-fields-settings.php:1855
+#: admin/class-fields-settings.php:1858
 msgid "About Hide Title"
 msgstr "Über den Titel ausblenden"
 
-#: admin/class-fields-settings.php:1852
+#: admin/class-fields-settings.php:1855
 msgid "Hide Title"
 msgstr "Titel ausblenden"
 
-#: admin/class-fields-settings.php:1822
+#: admin/class-fields-settings.php:1825
 msgid "By default once you set a value it remains set and you can only change it by another. Add text to display a link that will clear the selection."
 msgstr "Standardmäßig wird ein gesetzter Wert nur dann geändert, wenn man ihn durch einen anderen Wert ersetzt. Fügen Sie einen Text ein der für eine Schaltfläche zum entfernen der Werte genutzt wird."
 
-#: admin/class-fields-settings.php:1822
+#: admin/class-fields-settings.php:1825
 msgid "About Remove Text"
 msgstr "Über Text entfernen"
 
-#: admin/class-fields-settings.php:1819
+#: admin/class-fields-settings.php:1822
 msgid "Remove Text"
 msgstr "Text entfernen"
 
-#: admin/class-fields-settings.php:1811
+#: admin/class-fields-settings.php:1814
 msgid "Close (v2)"
 msgstr "Schließen (V2)"
 
-#: admin/class-fields-settings.php:1810
+#: admin/class-fields-settings.php:1813
 msgid "Close (v1)"
 msgstr "Schließen (V1)"
 
-#: admin/class-fields-settings.php:1806
+#: admin/class-fields-settings.php:1809
 msgid "Choose the icon you wish to display if a Remove link is set."
 msgstr "Wählen Sie das Symbol, das Sie anzeigen möchten, wenn der Entfernen-Link aktiv ist."
 
-#: admin/class-fields-settings.php:1806
+#: admin/class-fields-settings.php:1809
 msgid "About Remove Icon"
 msgstr "Über das Symbol entfernen"
 
-#: admin/class-fields-settings.php:1803
+#: admin/class-fields-settings.php:1806
 msgid "Remove Icon"
 msgstr "Symbol entfernen"
 
-#: admin/class-fields-settings.php:1795
+#: admin/class-fields-settings.php:1798
 msgid "Flag"
 msgstr "Fahne"
 
-#: admin/class-fields-settings.php:1794 admin/class-page-settings.php:529
+#: admin/class-fields-settings.php:1797 admin/class-page-settings.php:538
 msgid "Check"
 msgstr "Häkchen"
 
-#: admin/class-fields-settings.php:1793
+#: admin/class-fields-settings.php:1796
 msgid "Heart (v2)"
 msgstr "Herz (V2)"
 
-#: admin/class-fields-settings.php:1792
+#: admin/class-fields-settings.php:1795
 msgid "Heart (v1)"
 msgstr "Herz (V1)"
 
-#: admin/class-fields-settings.php:1791
+#: admin/class-fields-settings.php:1794
 msgid "Star (v2)"
 msgstr "Stern (V2)"
 
-#: admin/class-fields-settings.php:1790
+#: admin/class-fields-settings.php:1793
 msgid "Star (v1)"
 msgstr "Stern (V1)"
 
-#: admin/class-fields-settings.php:1787
+#: admin/class-fields-settings.php:1790
 msgid "Choose the icon you wish to display as the rating."
 msgstr "Wählen Sie das Symbol, das als Bewertung angezeigt werden soll."
 
-#: admin/class-fields-settings.php:1787
+#: admin/class-fields-settings.php:1790
 msgid "About Icon"
 msgstr "Über das Symbol"
 
-#: admin/class-fields-settings.php:1784
+#: admin/class-fields-settings.php:1787
 msgid "Icon"
 msgstr "Symbol"
 
-#: admin/class-fields-settings.php:1775
+#: admin/class-fields-settings.php:1778
 msgid "The value that indicates an empty rating. Defaults to 0."
 msgstr "Der Wert der auf eine leere Bewertung hindeutet. Standard ist 0."
 
-#: admin/class-fields-settings.php:1775
+#: admin/class-fields-settings.php:1778
 msgid "About Empty Rating"
 msgstr "Über die Leere Bewertung"
 
-#: admin/class-fields-settings.php:1772
+#: admin/class-fields-settings.php:1775
 msgid "Empty Rating"
 msgstr "Leere Bewertung"
 
-#: admin/class-fields-settings.php:1763
+#: admin/class-fields-settings.php:1766
 msgid "The maximum rating value to end with. Defaults to 5."
 msgstr "Der erlaubte Maximalwert bei einer Bewertung. Standard ist 5."
 
-#: admin/class-fields-settings.php:1763
+#: admin/class-fields-settings.php:1766
 msgid "About Maximum Rating"
 msgstr "Über die Maximale Bewertung"
 
-#: admin/class-fields-settings.php:1760
+#: admin/class-fields-settings.php:1763
 msgid "Maximum Rating"
 msgstr "Maximale Bewertung"
 
-#: admin/class-fields-settings.php:1751
+#: admin/class-fields-settings.php:1754
 msgid "The minimum rating value to start with. Defaults to 0."
 msgstr "Der Mindestwert mit dem eine Bewertung beginnen soll. Standard ist 0."
 
-#: admin/class-fields-settings.php:1751
+#: admin/class-fields-settings.php:1754
 msgid "About Minimum Rating"
 msgstr "Über die Minimum Bewertung"
 
-#: admin/class-fields-settings.php:1748
+#: admin/class-fields-settings.php:1751
 msgid "Minimum Rating"
 msgstr "Minimum Bewertung"
 
-#: admin/class-fields-settings.php:1721
+#: admin/class-fields-settings.php:1724
 msgid "If checked, this will multiple files to be uploaded from a single file input."
 msgstr "Falls aktiv ist es erlaubt mehrere Dateien beim Dialog Datei hochladen auswählen zu können."
 
-#: admin/class-fields-settings.php:1721
+#: admin/class-fields-settings.php:1724
 msgid "About Allow Multiple Uploads"
 msgstr "Über das Erlaube Mehrfach Hochladen"
 
-#: admin/class-fields-settings.php:1718
+#: admin/class-fields-settings.php:1721
 msgid "Allow Multiple Uploads"
 msgstr "Erlaube Mehrfach Hochladen"
 
-#: admin/class-fields-settings.php:1710
+#: admin/class-fields-settings.php:1713
 msgid "If checked, this will display the Upload button. This will default to a submit button."
 msgstr "Falls aktiv wird eine Schaltfläche zum Hochladen einer Datei angezeigt. Standardmäßig ist dies die „Senden“-Schaltfläche."
 
-#: admin/class-fields-settings.php:1710
+#: admin/class-fields-settings.php:1713
 msgid "About Show Upload Button"
 msgstr "Über die Zeige Hochladen Schaltfläche"
 
-#: admin/class-fields-settings.php:1707
+#: admin/class-fields-settings.php:1710
 msgid "Show Upload Button"
 msgstr "Zeige Hochladen Schaltfläche"
 
-#: admin/class-fields-settings.php:1699
+#: admin/class-fields-settings.php:1702
 msgid "If checked, this will hide the file caption or file name."
 msgstr "Wenn diese Option aktiviert ist, wird diese die Dateibeschreibung oder den Dateinamen verbergen."
 
-#: admin/class-fields-settings.php:1699
+#: admin/class-fields-settings.php:1702
 msgid "About Hide Caption"
 msgstr "Über das Beschriftung verbergen"
 
-#: admin/class-fields-settings.php:1696
+#: admin/class-fields-settings.php:1699
 msgid "Hide Caption"
 msgstr "Beschriftung verbergen"
 
-#: admin/class-fields-settings.php:1688
+#: admin/class-fields-settings.php:1691
 msgid "If checked, this will hide the Remove/Clear button."
 msgstr "Wenn diese Option aktiviert, wird dies die Entfernen/Löschen-Schaltfläche ausblenden."
 
-#: admin/class-fields-settings.php:1688
+#: admin/class-fields-settings.php:1691
 msgid "About Hide Remove Button"
 msgstr "Über das Entfernen Schaltfläche verbergen"
 
-#: admin/class-fields-settings.php:1685
+#: admin/class-fields-settings.php:1688
 msgid "Hide Remove Button"
 msgstr "Entfernen Schaltfläche verbergen"
 
-#: admin/class-fields-settings.php:1677
+#: admin/class-fields-settings.php:1680
 msgid "If checked, this will hide the file preview."
 msgstr "Wenn ausgewählt, wird die Datei Vorschau ausgeblendet."
 
-#: admin/class-fields-settings.php:1677
+#: admin/class-fields-settings.php:1680
 msgid "About Hide Preview"
 msgstr "Über das Vorschau verbergen"
 
-#: admin/class-fields-settings.php:1674
+#: admin/class-fields-settings.php:1677
 msgid "Hide Preview"
 msgstr "Vorschau verbergen"
 
-#: admin/class-fields-settings.php:1664
+#: admin/class-fields-settings.php:1667
 msgid "The label to display for the file upload button. Defaults to Upload."
 msgstr "Die Beschriftung die angezeigt werden soll für die Schaltfläche zum Hochladen von Dateien. Standard ist Hochladen."
 
-#: admin/class-fields-settings.php:1664
+#: admin/class-fields-settings.php:1667
 msgid "About Upload Label"
 msgstr "Über die Hochladen Beschriftung"
 
-#: admin/class-fields-settings.php:1661
+#: admin/class-fields-settings.php:1664
 msgid "Upload Label"
 msgstr "Hochladen Beschriftung"
 
-#: admin/class-fields-settings.php:1652
+#: admin/class-fields-settings.php:1655
 msgid "The label to display for the file remove button. Defaults to Remove."
 msgstr "Die Beschriftung die angezeigt werden soll für die Schaltfläche zum Entfernen von Dateien. Standard ist Entfernen."
 
-#: admin/class-fields-settings.php:1652
+#: admin/class-fields-settings.php:1655
 msgid "About Remove Label"
 msgstr "Über die Entfernen Beschriftung"
 
-#: admin/class-fields-settings.php:1649
+#: admin/class-fields-settings.php:1652
 msgid "Remove Label"
 msgstr "Entfernen Beschriftung"
 
-#: admin/class-fields-settings.php:1640
+#: admin/class-fields-settings.php:1643
 msgid "The label to display for the file picker/browse button. Defaults to Browse."
 msgstr "Die Beschriftung zur Anzeige der Dateisuche/Auswahl Schaltfläche. Standard Durchsuchen."
 
-#: admin/class-fields-settings.php:1640
+#: admin/class-fields-settings.php:1643
 msgid "About Browse Label"
 msgstr "Über die Durchsuchen Beschriftung"
 
-#: admin/class-fields-settings.php:1637
+#: admin/class-fields-settings.php:1640
 msgid "Browse Label"
 msgstr "Durchsuchen Beschriftung"
 
-#: admin/class-fields-settings.php:1628
+#: admin/class-fields-settings.php:1631
 msgid "A comma-separated list of allowed file extensions for upload. By default, it is set to null and allows all file extensions."
 msgstr "Eine durch Kommata getrennte Liste der erlaubten Dateierweiterungen für den Upload. Standard ist 0, das heißt alle Dateiendungen sind erlaubt."
 
-#: admin/class-fields-settings.php:1628
+#: admin/class-fields-settings.php:1631
 msgid "About Allowed File Extensions"
 msgstr "Über die erlaubten Dateitypen (Dateierweiterungen)"
 
-#: admin/class-fields-settings.php:1625
+#: admin/class-fields-settings.php:1628
 msgid "Allowed File Extensions"
 msgstr "Erlaubte Dateitypen (Dateierweiterungen)"
 
-#: admin/class-fields-settings.php:1616
+#: admin/class-fields-settings.php:1619
 msgid "A comma-separated list of allowed file types for upload. By default, it is set to null and allows all file types. Available values: 'image', 'html', 'text', 'video', 'audio', 'flash', 'object'."
 msgstr "Eine durch Kommata getrennte Liste der erlaubten Dateitypen für den Upload. Standard ist 0, das heißt alle Dateitypen sind erlaubt. Verfügbare Werte: 'image', 'html', 'text', 'video', 'audio', 'flash', 'object'."
 
-#: admin/class-fields-settings.php:1616
+#: admin/class-fields-settings.php:1619
 msgid "About Allowed File Types"
 msgstr "Über die erlaubten Dateitypen"
 
-#: admin/class-fields-settings.php:1613
+#: admin/class-fields-settings.php:1616
 msgid "Allowed File Types"
 msgstr "Erlaubte Dateitypen"
 
-#: admin/class-fields-settings.php:1604
+#: admin/class-fields-settings.php:1607
 msgid "The maximum number of files allowed for upload. If set to 0, it means the number of files allowed is unlimited. Defaults to 0."
 msgstr "Die maximale Anzahl an Dateien für einen Upload. Wenn der Wert auf 0 gesetzt ist, bedeutet es, dass eine unbegrenzte Anzahl von Dateien erlaubt ist. Der Standardwert ist 0."
 
-#: admin/class-fields-settings.php:1604
+#: admin/class-fields-settings.php:1607
 msgid "About Max File Count"
 msgstr "Über die Maximale Anzahl von Dateien"
 
-#: admin/class-fields-settings.php:1601
+#: admin/class-fields-settings.php:1604
 msgid "Max File Count"
 msgstr "Maximale Anzahl von Dateien"
 
-#: admin/class-fields-settings.php:1592
+#: admin/class-fields-settings.php:1595
 msgid "The maximum file size for upload in KB. If set to 0, it means the size allowed is unlimited. Defaults to 0."
 msgstr "Die maximale Dateigröße für den Upload in KB. Wenn auf 0 gesetzt, bedeutet dies, dass die zulässige Größe unbegrenzt ist. Der Standardwert ist 0."
 
-#: admin/class-fields-settings.php:1592
+#: admin/class-fields-settings.php:1595
 msgid "About Max File Size"
 msgstr "Über die maximale Dateigröße"
 
-#: admin/class-fields-settings.php:1589
+#: admin/class-fields-settings.php:1592
 msgid "Max File Size"
 msgstr "Maximale Dateigröße"
 
-#: admin/class-fields-settings.php:1562
+#: admin/class-fields-settings.php:1565
 msgid "If there is just a dial code in the input: remove it on blur, and re-add it on focus. This is to prevent just a dial code getting submitted with the form."
 msgstr "Falls nur ein Ländercode eingegeben wird, wird dieser beim Verlassen des Feldes inaktiv dargestellt und beim betreten des Feldes zur weiteren Eingabe wieder aktiv. Dies verhindert eine Übertragung unvollständiger Eingaben."
 
-#: admin/class-fields-settings.php:1562
+#: admin/class-fields-settings.php:1565
 msgid "About Auto Hide Country Code"
 msgstr "Über den Ländercode automatisch verbergen"
 
-#: admin/class-fields-settings.php:1559
+#: admin/class-fields-settings.php:1562
 msgid "Auto Hide Country Code"
 msgstr "Ländercode automatisch verbergen"
 
-#: admin/class-fields-settings.php:1551
+#: admin/class-fields-settings.php:1554
 msgid "If checked, this allows users to enter national numbers and not have to think about entering country codes."
 msgstr "Falls ausgewählt, erlaubt diese Einstellung dem Besucher eine nationale Nummer einzugeben ohne die Landesvorwahl zusätzlich auswählen zu müssen."
 
-#: admin/class-fields-settings.php:1551
+#: admin/class-fields-settings.php:1554
 msgid "About National Mode"
 msgstr "Über den Nationalen Modus"
 
-#: admin/class-fields-settings.php:1548
+#: admin/class-fields-settings.php:1551
 msgid "National Mode"
 msgstr "Nationaler Modus"
 
-#: admin/class-fields-settings.php:1540
+#: admin/class-fields-settings.php:1543
 msgid "If checked, this removes the flags dropdown."
 msgstr "Falls aktiv wird die Fahnenauswahl nicht angezeigt."
 
-#: admin/class-fields-settings.php:1540
+#: admin/class-fields-settings.php:1543
 msgid "About Hide Flags Dropdown"
 msgstr "Über das Fahnenauswahl verbergen"
 
-#: admin/class-fields-settings.php:1537
+#: admin/class-fields-settings.php:1540
 msgid "Hide Flags Dropdown"
 msgstr "Fahnenauswahl verbergen"
 
-#: admin/class-fields-settings.php:1528
+#: admin/class-fields-settings.php:1531
 msgid "Voicemail"
 msgstr "Anrufbeantworter"
 
-#: admin/class-fields-settings.php:1527
+#: admin/class-fields-settings.php:1530
 msgid "Universal Access Numbers"
 msgstr "Universell erreichbare Rufnummer"
 
-#: admin/class-fields-settings.php:1526
+#: admin/class-fields-settings.php:1529
 msgid "Pager"
 msgstr "Funkrufempfänger (Pager)"
 
-#: admin/class-fields-settings.php:1525
+#: admin/class-fields-settings.php:1528
 msgid "VOIP"
 msgstr "VOIP"
 
-#: admin/class-fields-settings.php:1524
+#: admin/class-fields-settings.php:1527
 msgid "Shared Cost"
-msgstr "kostenanteilige Rufnummer"
+msgstr "Kostenanteilige Rufnummer"
 
-#: admin/class-fields-settings.php:1523
+#: admin/class-fields-settings.php:1526
 msgid "Premium Rate"
-msgstr "kostenpflichtiger Premiumdienst"
+msgstr "Kostenpflichtiger Premiumdienst"
 
-#: admin/class-fields-settings.php:1522
+#: admin/class-fields-settings.php:1525
 msgid "Toll Free"
-msgstr "gebührenfreie Telefonnummer"
+msgstr "Gebührenfreie Telefonnummer"
 
-#: admin/class-fields-settings.php:1521
+#: admin/class-fields-settings.php:1524
 msgid "Land Line"
 msgstr "Festnetzanschluss"
 
-#: admin/class-fields-settings.php:1520
+#: admin/class-fields-settings.php:1523
 msgid "Mobile (recommended)"
 msgstr "Mobilnummer (empfohlen)"
 
-#: admin/class-fields-settings.php:1516
+#: admin/class-fields-settings.php:1519
 msgid "Tells the plugin what type of phone number to expect. Currently, this only sets the placeholder to the right type of number."
 msgstr "Weist das Plugin darauf hin welche Art von Telefonnummer erwartet wird. Derzeit wird nur der Platzhalter für den richtigen Typ gesetzt."
 
-#: admin/class-fields-settings.php:1516
+#: admin/class-fields-settings.php:1519
 msgid "About Number Type"
 msgstr "Über den Nummern Typ"
 
-#: admin/class-fields-settings.php:1513
+#: admin/class-fields-settings.php:1516
 msgid "Number Type"
 msgstr "Nummern Typ"
 
-#: admin/class-fields-settings.php:1502
+#: admin/class-fields-settings.php:1505
 msgid "Set the default country by the country code. If no country is selected, US will be the default."
 msgstr "Setze das Standard Land mittels ISO Ländercode, falls keine Auswahl getroffen wird, wird standardmäßig US vorgewählt."
 
-#: admin/class-fields-settings.php:1464
+#: admin/class-fields-settings.php:1467
 msgid "Set the default selected country in the Address block."
 msgstr "Legt das vorausgewählte Standard Land im Adressblock fest."
 
-#: admin/class-fields-settings.php:1464 admin/class-fields-settings.php:1502
+#: admin/class-fields-settings.php:1467 admin/class-fields-settings.php:1505
 msgid "About Default Country"
 msgstr "Über das Standard Land"
 
-#: admin/class-fields-settings.php:1461 admin/class-fields-settings.php:1499
+#: admin/class-fields-settings.php:1464 admin/class-fields-settings.php:1502
 msgid "Default Country"
 msgstr "Standard Land"
 
-#: admin/class-fields-settings.php:1430
+#: admin/class-fields-settings.php:1433
 msgid "If checked, this removes the Zip Code field from the Address block."
 msgstr "Falls ausgewählt, wird die Postleitzahl im Adressblock nicht angezeigt."
 
-#: admin/class-fields-settings.php:1427
+#: admin/class-fields-settings.php:1430
 msgid "Hide Zip Code"
 msgstr "Postleitzahl verbergen"
 
-#: admin/class-fields-settings.php:1419
+#: admin/class-fields-settings.php:1422
 msgid "If checked, this removes the State field from the Address block."
 msgstr "Falls ausgewählt wird das Feld Bundesstaat, Provinz, Region nicht angezeigt."
 
-#: admin/class-fields-settings.php:1419
+#: admin/class-fields-settings.php:1422
 msgid "About Hide State"
 msgstr "Über das Bundesstaat, Provinz, Region verbergen"
 
-#: admin/class-fields-settings.php:1416
+#: admin/class-fields-settings.php:1419
 msgid "Hide State"
 msgstr "Bundesstaat, Provinz, Region verbergen"
 
-#: admin/class-fields-settings.php:1408
+#: admin/class-fields-settings.php:1411
 msgid "If checked, this removes the City field from the Address block."
 msgstr "Falls ausgewählt, wird das Feld Stadt im Adressblock nicht angezeigt."
 
-#: admin/class-fields-settings.php:1408
+#: admin/class-fields-settings.php:1411
 msgid "About Hide City"
 msgstr "Über das Stadt verbergen"
 
-#: admin/class-fields-settings.php:1405
+#: admin/class-fields-settings.php:1408
 msgid "Hide City"
 msgstr "Stadt verbergen"
 
-#: admin/class-fields-settings.php:1397
+#: admin/class-fields-settings.php:1400
 msgid "If checked, this removes the Country field from the Address block. NOTE: removing this field will disable the country-specific configurations."
 msgstr "Falls ausgewählt, wird das Feld Land im Adressblock nicht angezeigt. Hinweis: wenn dieses Feld nicht angezeigt wird, werden die länderspezifischen Einstellungen ebenfalls ausser Kraft gesetzt."
 
-#: admin/class-fields-settings.php:1397 admin/class-fields-settings.php:1430
+#: admin/class-fields-settings.php:1400 admin/class-fields-settings.php:1433
 msgid "About Hide Country"
 msgstr "Über das Land verbergen"
 
-#: admin/class-fields-settings.php:1394
+#: admin/class-fields-settings.php:1397
 msgid "Hide Country"
 msgstr "Land verbergen"
 
-#: admin/class-fields-settings.php:1386
+#: admin/class-fields-settings.php:1389
 msgid "If checked, this removes the Address Line 2 field from the Address block."
 msgstr "Falls aktiv wird die Adresszeile 2 im Adressblock nicht angezeigt."
 
-#: admin/class-fields-settings.php:1386
+#: admin/class-fields-settings.php:1389
 msgid "About Hide Address Line 2"
 msgstr "Über das Adresszeile 2 verbergen"
 
-#: admin/class-fields-settings.php:1383
+#: admin/class-fields-settings.php:1386
 msgid "Hide Address Line 2"
 msgstr "Adresszeile 2 verbergen"
 
-#: admin/class-fields-settings.php:1353
+#: admin/class-fields-settings.php:1356
 msgid "Currency symbol"
 msgstr "Währungssymbol"
 
-#: admin/class-fields-settings.php:1352
+#: admin/class-fields-settings.php:1355
 msgid "Zero value (0)"
 msgstr "Nullwert (0)"
 
-#: admin/class-fields-settings.php:1348
+#: admin/class-fields-settings.php:1351
 msgid "Controls the what is initially displayed in the currency input."
 msgstr "Steuert was ursprünglich bei der Währungseingabe angezeigt werden soll."
 
-#: admin/class-fields-settings.php:1348
+#: admin/class-fields-settings.php:1351
 msgid "About Input Display"
 msgstr "Über die Eingabe Darstellung"
 
-#: admin/class-fields-settings.php:1345
+#: admin/class-fields-settings.php:1348
 msgid "Input Display"
 msgstr "Eingabe Darstellung"
 
-#: admin/class-fields-settings.php:1337
+#: admin/class-fields-settings.php:1340
 msgid "Right"
 msgstr "Rechts"
 
-#: admin/class-fields-settings.php:1336
+#: admin/class-fields-settings.php:1339
 msgid "Left"
 msgstr "Links"
 
-#: admin/class-fields-settings.php:1333
+#: admin/class-fields-settings.php:1336
 msgid "Controls the placement of the currency symbol. Default is to the left."
 msgstr "Steuert die Platzierung des Währungssymbol. Standard ist Links."
 
-#: admin/class-fields-settings.php:1333
+#: admin/class-fields-settings.php:1336
 msgid "About Currency Symbol Placement"
 msgstr "Über die Währungssymbol Platzierung"
 
-#: admin/class-fields-settings.php:1330
+#: admin/class-fields-settings.php:1333
 msgid "Currency Symbol Placement"
 msgstr "Währungssymbol Platzierung"
 
-#: admin/class-fields-settings.php:1321
+#: admin/class-fields-settings.php:1324
 msgid "Symbols, text, and spacing are allowed. NOTE: cannot contain apostrophe, comma, or numeric character."
 msgstr "Symbole, Text und Abstände (Leerzeichen, Tabs) sind erlaubt. HINWEIS: Nicht möglich sind Apostroph, Komma oder numerischen Zeichen."
 
-#: admin/class-fields-settings.php:1321
+#: admin/class-fields-settings.php:1324
 msgid "About Currency Symbol"
 msgstr "Über das Währungssymbol"
 
-#: admin/class-fields-settings.php:1318
+#: admin/class-fields-settings.php:1321
 msgid "Currency Symbol"
 msgstr "Währungssymbol"
 
-#: admin/class-fields-settings.php:1306
+#: admin/class-fields-settings.php:1309
 msgid "Controls the character used for the decimal separator. Default is a . (period)."
 msgstr "Kontrolliert das Zeichen mit dem Dezimalstellen gekennzeichnet werden sollen. Standard ist der . (Punkt). HINWEIS: Dezimal Trennzeichen und Tausender Trennzeichen dürfen nicht identisch sein."
 
-#: admin/class-fields-settings.php:1306
+#: admin/class-fields-settings.php:1309
 msgid "About Decimal Separator"
 msgstr "Über das Dezimal Trennzeiechen"
 
-#: admin/class-fields-settings.php:1303
+#: admin/class-fields-settings.php:1306
 msgid "Decimal Separator"
 msgstr "Dezimal Trennzeiechen"
 
-#: admin/class-fields-settings.php:1295
+#: admin/class-fields-settings.php:1298
 msgid "4 (4,4444,4444)"
 msgstr "4 (4,4444,4444)"
 
-#: admin/class-fields-settings.php:1294
+#: admin/class-fields-settings.php:1297
 msgid "2 (22,22,22,333)"
 msgstr "2 (22,22,22,333)"
 
-#: admin/class-fields-settings.php:1293
+#: admin/class-fields-settings.php:1296
 msgid "3 (333,333,333)"
 msgstr "3 (333,333,333)"
 
-#: admin/class-fields-settings.php:1290
+#: admin/class-fields-settings.php:1293
 msgid "Controls the placement of the Thousand Separator character. Default is 3."
 msgstr "Kontrolliert die Platzierung des Tausender Trennzeichens. Standard ist 3."
 
-#: admin/class-fields-settings.php:1290
+#: admin/class-fields-settings.php:1293
 msgid "About Thousand Separator Placement"
 msgstr "Über die Tausender Trennzeichen Platzierung"
 
-#: admin/class-fields-settings.php:1287
+#: admin/class-fields-settings.php:1290
 msgid "Thousand Separator Placement"
 msgstr "Tausender Trennzeichen Platzierung"
 
-#: admin/class-fields-settings.php:1279
+#: admin/class-fields-settings.php:1282
 msgid "(none)"
 msgstr "(Keine)"
 
-#: admin/class-fields-settings.php:1278
+#: admin/class-fields-settings.php:1281
 msgid " (space)"
 msgstr " (Leerzeichen)"
 
-#: admin/class-fields-settings.php:1277 admin/class-fields-settings.php:1309
+#: admin/class-fields-settings.php:1280 admin/class-fields-settings.php:1312
 msgid ". (period)"
 msgstr ". (Punkt)"
 
-#: admin/class-fields-settings.php:1276
+#: admin/class-fields-settings.php:1279
 msgid "\\ (slash)"
 msgstr "\\ (Schrägstrich)"
 
-#: admin/class-fields-settings.php:1275 admin/class-fields-settings.php:1310
+#: admin/class-fields-settings.php:1278 admin/class-fields-settings.php:1313
 msgid ", (comma)"
 msgstr ", (Komma)"
 
-#: admin/class-fields-settings.php:1272
+#: admin/class-fields-settings.php:1275
 msgid "Controls the character used for the thousand separator. Default is a , (comma). NOTE: the Thousand and Decimal separators cannot be the same."
 msgstr "Kontrolliert das Zeichen mit dem die Tausenderstellen gekennzeichnet werden sollen. HINWEIS: Tausender Trennzeichen und Dezimal Trennzeichen dürfen nicht identisch sein."
 
-#: admin/class-fields-settings.php:1272
+#: admin/class-fields-settings.php:1275
 msgid "About Thousand Separator"
 msgstr "Über das Tausender Trennzeichen"
 
-#: admin/class-fields-settings.php:1269
+#: admin/class-fields-settings.php:1272
 msgid "Thousand Separator"
 msgstr "Tausender Trennzeichen"
 
-#: admin/class-fields-settings.php:1241
+#: admin/class-fields-settings.php:1244
 msgid "Enables twelve hour mode with AM and PM buttons."
 msgstr "Aktiviert den Zwölf Stunden Modus mit dem AM und PM Schalter angezeigt werden."
 
-#: admin/class-fields-settings.php:1241
+#: admin/class-fields-settings.php:1244
 msgid "About Twelve Hour"
 msgstr "Über den Zwölf Stunden Modus"
 
-#: admin/class-fields-settings.php:1238
+#: admin/class-fields-settings.php:1241
 msgid "Twelve Hour"
 msgstr "Zwölf Stunden Modus"
 
-#: admin/class-fields-settings.php:1230
+#: admin/class-fields-settings.php:1233
 msgid "Whether or not to close the clockpicker immediately when a minute is selected."
 msgstr "Legt fest ob nach der Auswahl einer Uhrzeit der Auswahldialog geschlossen wird oder geöffnet bleibt."
 
-#: admin/class-fields-settings.php:1211
+#: admin/class-fields-settings.php:1214
 msgid "Allows for alignment of the arrow on the picker popup."
 msgstr "Erlaubt die Ausrichtung des Zeigers für den Auswahldialog."
 
-#: admin/class-fields-settings.php:1211
+#: admin/class-fields-settings.php:1214
 msgid "About Arrow Alignment"
 msgstr "Über die Zeigerausrichtung"
 
-#: admin/class-fields-settings.php:1208
+#: admin/class-fields-settings.php:1211
 msgid "Arrow Alignment"
 msgstr "Zeigerausrichtung"
 
-#: admin/class-fields-settings.php:1200 admin/class-fields-settings.php:1216
+#: admin/class-fields-settings.php:1203 admin/class-fields-settings.php:1219
 msgid "right"
 msgstr "rechts"
 
-#: admin/class-fields-settings.php:1199 admin/class-fields-settings.php:1215
+#: admin/class-fields-settings.php:1202 admin/class-fields-settings.php:1218
 msgid "left"
 msgstr "links"
 
-#: admin/class-fields-settings.php:1198 admin/class-fields-settings.php:1218
+#: admin/class-fields-settings.php:1201 admin/class-fields-settings.php:1221
 msgid "top"
 msgstr "oben"
 
-#: admin/class-fields-settings.php:1197 admin/class-fields-settings.php:1217
+#: admin/class-fields-settings.php:1200 admin/class-fields-settings.php:1220
 msgid "bottom"
 msgstr "unten"
 
-#: admin/class-fields-settings.php:1181
+#: admin/class-fields-settings.php:1184
 msgid "The text displayed on the button to close the clockpicker."
 msgstr "Legt den Text fest der auf der Schaltfläche zum schließen der Uhrzeitauswahl angezeigt werden soll."
 
-#: admin/class-fields-settings.php:1181
+#: admin/class-fields-settings.php:1184
 msgid "About Close Text"
 msgstr "Über das Text Schließen"
 
-#: admin/class-fields-settings.php:1178
+#: admin/class-fields-settings.php:1181
 msgid "Close Text"
 msgstr "Text Schließen"
 
-#: admin/class-fields-settings.php:1151
+#: admin/class-fields-settings.php:1154
 msgid "If true, highlights the current date."
 msgstr "Falls aktiviert wird das heutige Datum in der Ansicht hervorgehoben."
 
-#: admin/class-fields-settings.php:1151
+#: admin/class-fields-settings.php:1154
 msgid "About Today Highlight"
 msgstr "Über das Heute hervorheben"
 
-#: admin/class-fields-settings.php:1148
+#: admin/class-fields-settings.php:1151
 msgid "Today Highlight"
 msgstr "Heute hervorheben"
 
-#: admin/class-fields-settings.php:1140
+#: admin/class-fields-settings.php:1143
 msgid "Whether or not to show week numbers to the left of week rows."
 msgstr "Erlaubt es die Anzeige von Kalenderwochen links vor den Wochenzeilen ein oder auszuschalten."
 
-#: admin/class-fields-settings.php:1140
+#: admin/class-fields-settings.php:1143
 msgid "About Calendar Weeks"
 msgstr "Über die Kalenderwochen"
 
-#: admin/class-fields-settings.php:1137
+#: admin/class-fields-settings.php:1140
 msgid "Calendar Weeks"
 msgstr "Kalenderwochen"
 
-#: admin/class-fields-settings.php:1129
+#: admin/class-fields-settings.php:1132
 msgid "Whether or not to close the datepicker immediately when a date is selected."
 msgstr "Falls ein Datum ausgewählt wurde wird die Datumsauswahl automatisch geschlossen oder bleibt offen."
 
-#: admin/class-fields-settings.php:1129 admin/class-fields-settings.php:1230
+#: admin/class-fields-settings.php:1132 admin/class-fields-settings.php:1233
 msgid "About Autoclose"
 msgstr "Über das Automatisch Schließen"
 
-#: admin/class-fields-settings.php:1126 admin/class-fields-settings.php:1227
+#: admin/class-fields-settings.php:1129 admin/class-fields-settings.php:1230
 msgid "Autoclose"
 msgstr "Automatisch Schließen"
 
-#: admin/class-fields-settings.php:1117
+#: admin/class-fields-settings.php:1120
 msgid "bottom right"
 msgstr "unten rechts"
 
-#: admin/class-fields-settings.php:1116
+#: admin/class-fields-settings.php:1119
 msgid "top right"
 msgstr "oben rechts"
 
-#: admin/class-fields-settings.php:1115
+#: admin/class-fields-settings.php:1118
 msgid "auto right"
 msgstr "automatisch rechts"
 
-#: admin/class-fields-settings.php:1114
+#: admin/class-fields-settings.php:1117
 msgid "bottom left"
 msgstr "unten links"
 
-#: admin/class-fields-settings.php:1113
+#: admin/class-fields-settings.php:1116
 msgid "top left"
 msgstr "oben links"
 
-#: admin/class-fields-settings.php:1112
+#: admin/class-fields-settings.php:1115
 msgid "auto left"
 msgstr "automatisch links"
 
-#: admin/class-fields-settings.php:1111
+#: admin/class-fields-settings.php:1114
 msgid "bottom auto"
 msgstr "automatisch unten"
 
-#: admin/class-fields-settings.php:1110
+#: admin/class-fields-settings.php:1113
 msgid "top auto"
 msgstr "automatisch oben"
 
-#: admin/class-fields-settings.php:1109
+#: admin/class-fields-settings.php:1112
 msgid "auto"
 msgstr "automatisch"
 
-#: admin/class-fields-settings.php:1105 admin/class-fields-settings.php:1193
+#: admin/class-fields-settings.php:1108 admin/class-fields-settings.php:1196
 msgid "Allows for fixed placement of the picker popup."
 msgstr "Die Option erlaubt die fixierte Ausrichtung für die Datumsauswahl."
 
-#: admin/class-fields-settings.php:1105 admin/class-fields-settings.php:1193
+#: admin/class-fields-settings.php:1108 admin/class-fields-settings.php:1196
 msgid "About Orientation"
 msgstr "Über die Ausrichtung"
 
-#: admin/class-fields-settings.php:1102 admin/class-fields-settings.php:1190
+#: admin/class-fields-settings.php:1105 admin/class-fields-settings.php:1193
 msgid "Orientation"
 msgstr "Ausrichtung"
 
-#: admin/class-fields-settings.php:1039
+#: admin/class-fields-settings.php:1042
 msgid "The language to use for month and day names."
 msgstr "Die Sprache in der Monats und Tagesnamen angezeigt werden sollen."
 
-#: admin/class-fields-settings.php:1039
+#: admin/class-fields-settings.php:1042
 msgid "About Language"
 msgstr "Über die Sprache"
 
-#: admin/class-fields-settings.php:1036
+#: admin/class-fields-settings.php:1039
 msgid "Language"
 msgstr "Sprache"
 
-#: admin/class-fields-settings.php:1028
+#: admin/class-fields-settings.php:1031
 msgid "linked"
 msgstr "verknüpft"
 
-#: admin/class-fields-settings.php:1027
+#: admin/class-fields-settings.php:1030
 msgid "enabled (unlinked)"
 msgstr "aktiviert (nicht verknüpft)"
 
-#: admin/class-fields-settings.php:1026
+#: admin/class-fields-settings.php:1029
 msgid "disabled"
 msgstr "deaktiviert"
 
-#: admin/class-fields-settings.php:1022
+#: admin/class-fields-settings.php:1025
 msgid "If true or 'linked', displays a 'Today' button at the bottom of the datepicker to select the current date. If true, the 'Today' button will only move the current date into view; if 'linked', the current date will also be selected."
 msgstr "Falls verknüpft oder aktiviert, wird eine \"Heute\" Schaltfläche im unteren Bereich der Datumswahl angezeigt um das aktuelle Datum auswählen zu können. Wenn 'aktiviert' ausgewählt ist wird ein klick auf 'Heute' nur die Ansicht aktualisieren, wenn 'verknüpft' aktiv ist wird das heute Datum gleichzeitig gesetzt."
 
-#: admin/class-fields-settings.php:1022
+#: admin/class-fields-settings.php:1025
 msgid "About Today Button"
 msgstr "Über das Aktuelle Datum"
 
-#: admin/class-fields-settings.php:1019
+#: admin/class-fields-settings.php:1022
 msgid "Today Button"
 msgstr "Aktuelles Datum"
 
-#: admin/class-fields-settings.php:1005
+#: admin/class-fields-settings.php:1008
 msgid "Set a limit for the view mode. Accepts: 'days' or 0, 'months' or 1, and 'years' or 2. Gives the ability to pick only a month or an year. The day is set to the 1st for 'months', and the month is set to January for 'years'."
 msgstr "Limitieren Sie den Anzeigemodus. Akzeptiert werden: 0 für Tage, 1 für Monate und 2 für Jahre. Ermöglicht nur ein Monat oder Jahr auszuwählen. Der Tag wird auf den ersten Tag im Monat und der Monat bei einer Jahresauswahl auf Januar gesetzt."
 
-#: admin/class-fields-settings.php:1005
+#: admin/class-fields-settings.php:1008
 msgid "About Min View Mode"
 msgstr "Über den Min Anzeigemodus"
 
-#: admin/class-fields-settings.php:1002
+#: admin/class-fields-settings.php:1005
 msgid "Min View Mode"
 msgstr "Min Anzeigemodus"
 
-#: admin/class-fields-settings.php:988
+#: admin/class-fields-settings.php:991
 msgid "The view that the datepicker should show when it is opened. Accepts values of 0 or 'month' for month view (the default), 1 or 'year' for the 12-month overview, and 2 or 'decade' for the 10-year overview. Useful for date-of-birth datepickers."
 msgstr "Die Ansicht in der sich die Datumsauswahl beim Öffnen präsentieren soll. Gültige Werte sind 0 für 'Monatsübersicht' (Standard), 1 für 'Jahresübersicht' mit 12 Monaten und 2 für 'Dekaden' mit einer 10 Jahresübersicht nützlich bei Abfragen des Geburtsdatums."
 
-#: admin/class-fields-settings.php:988
+#: admin/class-fields-settings.php:991
 msgid "About Start View"
 msgstr "Über die Startansicht"
 
-#: admin/class-fields-settings.php:985
+#: admin/class-fields-settings.php:988
 msgid "Start View"
 msgstr "Startansicht"
 
-#: admin/class-fields-settings.php:967
+#: admin/class-fields-settings.php:970
 msgid "Day of the week start. 0 (Sunday) to 6 (Saturday)."
 msgstr "Tag an dem die Woche beginnen soll. Werte 0 (Sonntag) bis 6 (Samstag)"
 
-#: admin/class-fields-settings.php:967
+#: admin/class-fields-settings.php:970
 msgid "About Week Start"
 msgstr "Über den Wochenanfang"
 
-#: admin/class-fields-settings.php:964
+#: admin/class-fields-settings.php:967
 msgid "Week Start"
 msgstr "Wochenanfang"
 
-#: admin/class-fields-settings.php:955
+#: admin/class-fields-settings.php:958
 msgid "The latest date that may be selected; all later dates will be disabled. Must match Date Format format."
 msgstr "Legen Sie fest welches Datum spätestens ausgewählt werden kann; spätere Datumsangaben werden deaktiviert. Das Format muss dem Datumsformat entsprechen."
 
-#: admin/class-fields-settings.php:955
+#: admin/class-fields-settings.php:958
 msgid "About End Date"
 msgstr "Über das Enddatum"
 
-#: admin/class-fields-settings.php:952
+#: admin/class-fields-settings.php:955
 msgid "End Date"
 msgstr "Enddatum"
 
-#: admin/class-fields-settings.php:943
+#: admin/class-fields-settings.php:946
 msgid "The earliest date that may be selected; all earlier dates will be disabled. Must match Date Format format."
 msgstr "Legen Sie fest welches Datum frühestens ausgewählt werden kann; frühere Datumsangaben werden deaktiviert. Das Format muss dem Datumsformat entsprechen."
 
-#: admin/class-fields-settings.php:943
+#: admin/class-fields-settings.php:946
 msgid "About Start Date"
 msgstr "Über das Startdatum"
 
-#: admin/class-fields-settings.php:940
+#: admin/class-fields-settings.php:943
 msgid "Start Date"
 msgstr "Startdatum"
 
-#: admin/class-fields-settings.php:931
+#: admin/class-fields-settings.php:934
 msgid "Days of the week that should be disabled. Values are 0 (Sunday) to 6 (Saturday). Multiple values should be comma-separated."
 msgstr "Legen Sie fest ob bestimmte Wochentage deaktiviert werden sollen. Werte sind 0 (Sonntag) bis 6 (Samstag), mehrere Werte sollten durch Kommas getrennt werden."
 
-#: admin/class-fields-settings.php:931
+#: admin/class-fields-settings.php:934
 msgid "About Days of Week Disabled"
 msgstr "Über die Deaktivierung von Wochentagen"
 
-#: admin/class-fields-settings.php:928
+#: admin/class-fields-settings.php:931
 msgid "Days of Week Disabled"
 msgstr "Deaktivierung Wochentage"
 
-#: admin/class-fields-settings.php:919
+#: admin/class-fields-settings.php:922
 msgid "Default: 'mm/dd/yyyy'. The date format, combination of d, dd, D, DD, m, mm, M, MM, yy, yyyy."
 msgstr "Standardformat: 'mm/dd/yyyy'. Das Datumsformat kombiniert aus d, dd, D, DD, m, mm, M, MM, yy, yyyy."
 
-#: admin/class-fields-settings.php:919
+#: admin/class-fields-settings.php:922
 msgid "About Date Format"
 msgstr "Über das Datumsformat"
 
-#: admin/class-fields-settings.php:916
+#: admin/class-fields-settings.php:919
 msgid "Date Format"
 msgstr "Datumsformat"
 
-#: admin/class-fields-settings.php:891
+#: admin/class-fields-settings.php:894
 msgid "Enter a new or existing meta key. Data entered will be inserted as a Custom Field into the post created."
 msgstr "Geben Sie einen neuen oder vorhandenen Meta-Schlüssel ein. Eingegebene Werte werden als benutzerdefiniertes Feld im neu erstellten Beitrag eingefügt."
 
-#: admin/class-fields-settings.php:891
+#: admin/class-fields-settings.php:894
 msgid "About Create Post - Meta Key"
 msgstr "Über das Erstellen eines Meta Schlüssels für einen Beitrag"
 
-#: admin/class-fields-settings.php:888
+#: admin/class-fields-settings.php:891
 msgid "Create Post - Meta Key"
 msgstr "Erstelle Meta Schlüssel für Beitrag"
 
-#: admin/class-fields-settings.php:863
+#: admin/class-fields-settings.php:866
 msgid "Set the number of steps to add by for the Sequential Number option. Default is 1."
 msgstr "Legen Sie die Schrittweite für die fortlaufende Nummer fest. Standard ist 1."
 
-#: admin/class-fields-settings.php:863
+#: admin/class-fields-settings.php:866
 msgid "About Sequential Number Steps"
 msgstr "Über die fortlaufende Nummern Schritte"
 
-#: admin/class-fields-settings.php:860
+#: admin/class-fields-settings.php:863
 msgid "Number Steps"
 msgstr "Nummern Schritte"
 
-#: admin/class-fields-settings.php:844
+#: admin/class-fields-settings.php:847
 msgid "Set the starting value for the Sequential Number option. Default is 1000."
 msgstr "Legen Sie den Startwert für die fortlaufende Nummer Option fest. Standard ist 1000."
 
-#: admin/class-fields-settings.php:844
+#: admin/class-fields-settings.php:847
 msgid "About Sequential Starting Number"
 msgstr "Über die fortlaufende Sartnummer"
 
-#: admin/class-fields-settings.php:841
+#: admin/class-fields-settings.php:844
 msgid "Starting Number"
 msgstr "Startnummer"
 
-#: admin/class-fields-settings.php:825
+#: admin/class-fields-settings.php:828
 msgid "Set a custom, static value to populate the hidden field's value."
 msgstr "Legen Sie einen benutzerdefinierten Wert fest der statisch als Wert für das versteckte Feld gelten soll."
 
-#: admin/class-fields-settings.php:825
+#: admin/class-fields-settings.php:828
 msgid "About Custom Value"
 msgstr "Über den Benutzerdefinierten Wert"
 
-#: admin/class-fields-settings.php:822
+#: admin/class-fields-settings.php:825
 msgid "Custom Value"
 msgstr "Benutzerdefinierter Wert"
 
-#: admin/class-fields-settings.php:808
+#: admin/class-fields-settings.php:811
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
-#: admin/class-fields-settings.php:805
+#: admin/class-fields-settings.php:808
 msgid "Current User - Email"
 msgstr "Aktuelle Benutzer - E-Mail"
 
-#: admin/class-fields-settings.php:804
+#: admin/class-fields-settings.php:807
 msgid "Current User - Username"
 msgstr "Aktuelle Benutzer - Benutzername"
 
-#: admin/class-fields-settings.php:803
+#: admin/class-fields-settings.php:806
 msgid "Current User - Display Name"
 msgstr "Aktuelle Benutzer - Anzeigename"
 
-#: admin/class-fields-settings.php:802
+#: admin/class-fields-settings.php:805
 msgid "Current User - ID"
 msgstr "Aktuelle Benutzer - ID"
 
-#: admin/class-fields-settings.php:801
+#: admin/class-fields-settings.php:804
 msgid "WordPress user"
 msgstr "WordPress Benutzer"
 
-#: admin/class-fields-settings.php:798
+#: admin/class-fields-settings.php:801
 msgid "Post/Page URL"
 msgstr "Beitrags/Seiten URL"
 
-#: admin/class-fields-settings.php:797
+#: admin/class-fields-settings.php:800
 msgid "Post/Page Title"
 msgstr "Beitrags/Seiten Titel"
 
-#: admin/class-fields-settings.php:796
+#: admin/class-fields-settings.php:799
 msgid "Post/Page ID"
 msgstr "Beitrags/Seiten ID"
 
-#: admin/class-fields-settings.php:795
+#: admin/class-fields-settings.php:798
 msgid "WordPress content"
 msgstr "WordPress Inhalt"
 
-#: admin/class-fields-settings.php:790
+#: admin/class-fields-settings.php:792
 msgid "Sequential Order Number"
 msgstr "Fortlaufende Nummer"
 
-#: admin/class-fields-settings.php:789
+#: admin/class-fields-settings.php:791
 msgid "Unique ID"
-msgstr "eindeutige ID"
+msgstr "Eindeutige ID"
 
-#: admin/class-fields-settings.php:788
+#: admin/class-fields-settings.php:790
 msgid "IP Address"
 msgstr "IP Address"
 
-#: admin/class-fields-settings.php:787
+#: admin/class-fields-settings.php:789
 msgid "Server"
 msgstr "Server"
 
-#: admin/class-fields-settings.php:784
+#: admin/class-fields-settings.php:786
 msgid "Form Title"
 msgstr "Formular Titel"
 
-#: admin/class-fields-settings.php:783 admin/class-forms-list.php:273
+#: admin/class-fields-settings.php:785 admin/class-forms-list.php:273
 msgid "Form ID"
 msgstr "Formular ID"
 
-#: admin/class-fields-settings.php:780 admin/class-page-settings.php:226
+#: admin/class-fields-settings.php:782 admin/class-page-settings.php:237
 msgid "None"
 msgstr "Keine"
 
-#: admin/class-fields-settings.php:777
+#: admin/class-fields-settings.php:779
 msgid "Set the option to populate the hidden field's value."
 msgstr "Legen sie die Option fest mit der ein verstecktes Feld gefüllt werden soll."
 
-#: admin/class-fields-settings.php:777
+#: admin/class-fields-settings.php:779
 msgid "About Hidden Option"
 msgstr "Über die Versteckte Option"
 
-#: admin/class-fields-settings.php:774
+#: admin/class-fields-settings.php:776
 msgid "Hidden Option"
 msgstr "Versteckte Option"
 
-#: admin/class-fields-settings.php:750
+#: admin/class-fields-settings.php:752
 msgid "Create a list of labels to be placed on the top side of the matrix. Separate each new option with a new line."
 msgstr "Legen Sie eine Liste von Beschriftungen an die in der Matrix oben angezeigt werden. Jede Beschriftung benötigt eine neue Zeile."
 
-#: admin/class-fields-settings.php:750
+#: admin/class-fields-settings.php:752
 msgid "About Likert Columns"
 msgstr "Über die Likert-Matrix Spalten"
 
-#: admin/class-fields-settings.php:747
+#: admin/class-fields-settings.php:749
 msgid "Likert Columns"
 msgstr "Likert-Matrix Spalten"
 
-#: admin/class-fields-settings.php:727
+#: admin/class-fields-settings.php:729
 msgid "Create a list of labels to be placed on the left side of the matrix. Separate each new option with a new line."
 msgstr "Legen Sie eine Liste von Beschriftungen an die in der Matrix links angezeigt werden. Jede Beschriftung benötigt eine neue Zeile."
 
-#: admin/class-fields-settings.php:727
+#: admin/class-fields-settings.php:729
 msgid "About Likert Rows"
 msgstr "Über die Likert-Matrix Zeilen"
 
-#: admin/class-fields-settings.php:724
+#: admin/class-fields-settings.php:726
 msgid "Likert Rows"
 msgstr "Likert-Matrix Zeilen"
 
-#: admin/class-fields-settings.php:706
+#: admin/class-fields-settings.php:708
 msgid "If checked, only alphanumeric characters plus these: &lt;code&gt;_ .-*@&lt;/code&gt; are returned."
 msgstr "Falls aktiviert werden nur alphanumerische Zeichen sowie zusätzlich: &lt;code&gt;_ .-*@&lt;/code&gt; akzeptiert."
 
-#: admin/class-fields-settings.php:706
+#: admin/class-fields-settings.php:708
 msgid "About Enable Strict Mode"
 msgstr "Über den Strengen Modus aktivieren"
 
-#: admin/class-fields-settings.php:703
+#: admin/class-fields-settings.php:705
 msgid "Enable Strict Mode"
 msgstr "Strenger Modus aktivieren"
 
-#: admin/class-fields-settings.php:668
+#: admin/class-fields-settings.php:670
 msgid "&lt;h6&gt;"
 msgstr "&lt;h6&gt;"
 
-#: admin/class-fields-settings.php:667
+#: admin/class-fields-settings.php:669
 msgid "&lt;h5&gt;"
 msgstr "&lt;h5&gt;"
 
-#: admin/class-fields-settings.php:666
+#: admin/class-fields-settings.php:668
 msgid "&lt;h4&gt;"
 msgstr "&lt;h4&gt;"
 
-#: admin/class-fields-settings.php:665
+#: admin/class-fields-settings.php:667
 msgid "&lt;h3&gt;"
 msgstr "&lt;h3&gt;"
 
-#: admin/class-fields-settings.php:664
+#: admin/class-fields-settings.php:666
 msgid "&lt;h2&gt;"
 msgstr "&lt;h2&gt;"
 
-#: admin/class-fields-settings.php:663
+#: admin/class-fields-settings.php:665
 msgid "&lt;h1&gt;"
 msgstr "&lt;h1&gt;"
 
-#: admin/class-fields-settings.php:662
+#: admin/class-fields-settings.php:664
 msgid "&lt;p&gt;"
 msgstr "&lt;p&gt;"
 
-#: admin/class-fields-settings.php:661
+#: admin/class-fields-settings.php:663
 msgid "&lt;div&gt;"
 msgstr "&lt;div&gt;"
 
-#: admin/class-fields-settings.php:658
+#: admin/class-fields-settings.php:660
 msgid "Set the element's wrapper for the heading field."
 msgstr "Legen Sie für die Überschrift den HTML/CSS Typ fest."
 
-#: admin/class-fields-settings.php:658
+#: admin/class-fields-settings.php:660
 msgid "About Heading Type"
 msgstr "Über den Überschriften Typ"
 
-#: admin/class-fields-settings.php:655
+#: admin/class-fields-settings.php:657
 msgid "Heading Type"
 msgstr "Überschriften Typ"
 
-#: admin/class-fields-settings.php:631
+#: admin/class-fields-settings.php:633
 msgid "Set a maximum number that must be entered."
 msgstr "Legen Sie einen Wert für die Zahl an die höchstens eingetragen werden darf."
 
-#: admin/class-fields-settings.php:631
+#: admin/class-fields-settings.php:633
 msgid "About Maximum Number"
 msgstr "Über die Höchstzahl"
 
-#: admin/class-fields-settings.php:628
+#: admin/class-fields-settings.php:630
 msgid "Maximum Number"
 msgstr "Höchstzahl"
 
-#: admin/class-fields-settings.php:608
+#: admin/class-fields-settings.php:610
 msgid "Set a minimum number that must be entered."
 msgstr "Legen Sie einen Wert für die Zahl an die mindestens eingegeben werden muss."
 
-#: admin/class-fields-settings.php:608
+#: admin/class-fields-settings.php:610
 msgid "About Minimum Number"
 msgstr "Über die Mindestzahl"
 
-#: admin/class-fields-settings.php:605
+#: admin/class-fields-settings.php:607
 msgid "Minimum Number"
 msgstr "Mindestzahl"
 
-#: admin/class-fields-settings.php:585
+#: admin/class-fields-settings.php:587
 msgid "Set the number of rows to determine a Textarea's height. The larger the number, the taller this field will appear. Default is 10."
 msgstr "Legen Sie eine Anzahl von Zeilen fest die die Höhe des Textfelds bestimmt. Je höher die Zahl desto höher wird das Eingabefeld angezeigt. Standard ist 10."
 
-#: admin/class-fields-settings.php:585
+#: admin/class-fields-settings.php:587
 msgid "About Textarea Rows"
 msgstr "Über die Textfeld Zeilen"
 
-#: admin/class-fields-settings.php:582
+#: admin/class-fields-settings.php:584
 msgid "Textarea Rows"
 msgstr "Textfeld Zeilen"
 
-#: admin/class-fields-settings.php:562
+#: admin/class-fields-settings.php:564
 msgid "Set an maximum number of words allowed to be entered. For an unlimited number, leave blank or set to 0."
 msgstr "Legen Sie eine maximale Anzahl an Wörtern fest die eingegeben werden dürfen um eine Fehlermeldung zu vermeiden. Um kein Maximum zu setzen lassen Sie Angabe hier leer oder setzen Sie eine 0."
 
-#: admin/class-fields-settings.php:562
+#: admin/class-fields-settings.php:564
 msgid "About Maximum Words"
 msgstr "Über die Maximalanzahl von Worten"
 
-#: admin/class-fields-settings.php:559
+#: admin/class-fields-settings.php:561
 msgid "Maximum Words"
 msgstr "Maximalanzahl von Worten"
 
-#: admin/class-fields-settings.php:539
+#: admin/class-fields-settings.php:541
 msgid "Set an minimum number of words allowed to be entered. For an unlimited number, leave blank or set to 0."
 msgstr "Legen Sie eine minimale Anzahl an Wörtern fest die eingegeben werden müssen um eine Fehlermeldung zu vermeiden. Um kein Minimum zu setzen lassen Sie Angabe hier leer oder setzen Sie eine 0."
 
-#: admin/class-fields-settings.php:539
+#: admin/class-fields-settings.php:541
 msgid "About Minimum Words"
 msgstr "Über die Mindestanzahl von Worten"
 
-#: admin/class-fields-settings.php:536
+#: admin/class-fields-settings.php:538
 msgid "Minimum Words"
 msgstr "Mindestanzahl von Worten"
 
-#: admin/class-fields-settings.php:518
+#: admin/class-fields-settings.php:520
 msgid "Other"
 msgstr "Andere"
 
-#: admin/class-fields-settings.php:515
+#: admin/class-fields-settings.php:517
 msgid "Check this option if you would like the last choice in your multiple choice field to have a text field for additional input."
 msgstr "Aktivieren Sie diese Option damit in einer Mehrfachauswahl als letzte Option die Eingabe von benutzerdefinierten Inhalten ermöglicht wird."
 
-#: admin/class-fields-settings.php:515
+#: admin/class-fields-settings.php:517
 msgid "About Allow Other"
 msgstr "Über Erlaube Andere"
 
-#: admin/class-fields-settings.php:512
+#: admin/class-fields-settings.php:514
 msgid "Allow Other"
 msgstr "Erlaube Andere"
 
-#: admin/class-fields-settings.php:489
+#: admin/class-fields-settings.php:491
 msgid "Add Options"
 msgstr "Optionen hinzufügen"
 
-#: admin/class-fields-settings.php:426
+#: admin/class-fields-settings.php:428
 msgid "Add to your field"
-msgstr "Fügen sie die Stapel-Optionen aus der aktiven Kategorie Ihrem Feld hinzu, indem Sie auf „Optionen hinzufügen“ klicken."
+msgstr "Ihrem Feld hinzufügen"
 
-#: admin/class-fields-settings.php:425
+#: admin/class-fields-settings.php:427
 msgid "If needed, customize the options. Place each option on a new line."
 msgstr "Falls notwendig, können Sie die Optionen anpassen. Jede Option muss in einer eignen neuen Zeile stehen."
 
-#: admin/class-fields-settings.php:424
+#: admin/class-fields-settings.php:426
 msgid "Select from the predefined categories"
 msgstr "Wählen Sie die gewünschten Stapel-Optionen aus einer der vordefinierten Kategorien aus"
 
-#: admin/class-fields-settings.php:397
+#: admin/class-fields-settings.php:399
 msgid "Add Option"
 msgstr "Option hinzufügen"
 
-#: admin/class-fields-settings.php:393 admin/class-fields-settings.php:422
+#: admin/class-fields-settings.php:395 admin/class-fields-settings.php:424
 msgid "Bulk Add Options"
 msgstr "Stapel-Optionen hinzufügen"
 
-#: admin/class-fields-settings.php:356 admin/class-fields-settings.php:379
+#: admin/class-fields-settings.php:358 admin/class-fields-settings.php:381
 msgid "Drag and Drop to Sort Options"
 msgstr "Drag & Drop für Sortierung"
 
-#: admin/class-fields-settings.php:353 admin/class-fields-settings.php:376
+#: admin/class-fields-settings.php:355 admin/class-fields-settings.php:378
 msgid "Delete Option"
 msgstr "Option löschen"
 
-#: admin/class-fields-settings.php:325
+#: admin/class-fields-settings.php:327
 msgid "This property allows you to set predefined options to be selected by the user. At least one option must exist."
 msgstr "Mit dieser Eigenschaft können Sie vordefinierte Optionen festlegen die später vom Benutzer ausgewählt werden können. Mindestens eine Option muss vorhanden sein."
 
-#: admin/class-fields-settings.php:325
+#: admin/class-fields-settings.php:327
 msgid "About Options"
 msgstr "Über die Optionen"
 
-#: admin/class-fields-settings.php:322
+#: admin/class-fields-settings.php:324
 msgid "Options"
 msgstr "Optionen"
 
-#: admin/class-fields-settings.php:300
+#: admin/class-fields-settings.php:302
 msgid "Inline"
 msgstr "Inline"
 
-#: admin/class-fields-settings.php:299 admin/class-forms-edit-settings.php:97
+#: admin/class-forms-edit-settings.php:98
 msgid "Vertical"
 msgstr "Vertikal"
 
@@ -4935,7 +5285,7 @@ msgstr "Legt fest ob es sich beim Eingabefeld um ein Pflichtfeld handeln soll. E
 msgid "About Required"
 msgstr "Über das Pflichtfeld"
 
-#: admin/class-fields-settings.php:204 admin/class-page-settings.php:439
+#: admin/class-fields-settings.php:204 admin/class-page-settings.php:448
 msgid "Required"
 msgstr "Pflichtfeld"
 
@@ -5015,13 +5365,13 @@ msgstr "Der Feldname ist der sichtbarste und direkteste Weg zu beschreiben für 
 msgid "About Name"
 msgstr "Über den Namen"
 
-#: admin/class-fields-settings.php:41 admin/class-fields-settings.php:331
+#: admin/class-fields-settings.php:41 admin/class-fields-settings.php:333
 msgid "Name"
 msgstr "Name"
 
-#: admin/class-export.php:542
+#: admin/class-export.php:547
 msgid "No entries."
-msgstr "Keine Einträge"
+msgstr "Keine Einträge."
 
 #: admin/class-export.php:129
 msgid "Download Export File"
@@ -5031,7 +5381,7 @@ msgstr "Export Datei herunterladen"
 msgid "Unselect All"
 msgstr "Alle abwählen"
 
-#: admin/class-export.php:120 inc/class-vfb-list-table.php:1057
+#: admin/class-export.php:120 inc/class-vfb-list-table.php:1062
 msgid "Select All"
 msgstr "Alle auswählen"
 
@@ -5099,51 +5449,51 @@ msgstr "Nachdem eine Sicherung durchgeführt wurde können die Visual Form Build
 msgid "Backup and save some or all of your Visual Form Builder Pro data."
 msgstr "Datensicherung von Visual Form Builder Pro Daten."
 
-#: admin/class-entries.php:1058 admin/class-widget.php:87
+#: admin/class-entries.php:1074 admin/class-widget.php:87
 msgid "Select a Form"
-msgstr "wähle ein Formular"
+msgstr "Wähle ein Formular"
 
-#: admin/class-entries.php:846
+#: admin/class-entries.php:862
 msgid "Excerpt"
 msgstr "Auszug"
 
-#: admin/class-entries.php:790 admin/class-entries.php:791
+#: admin/class-entries.php:806 admin/class-entries.php:807
 msgid "Update"
-msgstr "aktualisieren"
+msgstr "Aktualisieren"
 
-#: admin/class-entries.php:785
+#: admin/class-entries.php:801
 msgid "Print"
 msgstr "Drucken"
 
-#: admin/class-entries.php:775 admin/class-forms-list.php:452
+#: admin/class-entries.php:791 admin/class-forms-list.php:452
 msgid "Move to Trash"
 msgstr "In den Papierkorb verschieben"
 
-#: admin/class-entries.php:764
+#: admin/class-entries.php:780
 msgid "Submitted by"
 msgstr "Hinzugefügt von"
 
-#: admin/class-entries.php:754
+#: admin/class-entries.php:770
 msgid "Updated on: <b>%1$s</b>"
 msgstr "Aktualisiert am: <b>%1$s</b>"
 
-#: admin/class-entries.php:747
+#: admin/class-entries.php:763
 msgid "Submitted on: <b>%1$s</b>"
 msgstr "Gesendet am: <strong>%1$s</strong>"
 
-#: admin/class-entries.php:746
+#: admin/class-entries.php:762
 msgid "M j, Y @ G:i"
 msgstr "M j, Y @ G:i"
 
-#: admin/class-entries.php:614
+#: admin/class-entries.php:630
 msgid "Entry Notes"
 msgstr "Eintragsnotizen"
 
-#: admin/class-entries.php:611
+#: admin/class-entries.php:627
 msgid "Entry Details"
 msgstr "Eintrags Details"
 
-#: admin/class-entries.php:603 admin/class-entries.php:607
+#: admin/class-entries.php:619 admin/class-entries.php:623
 msgid "Entry Data"
 msgstr "Eintragsdaten"
 
@@ -5153,7 +5503,7 @@ msgstr "Alle"
 
 #: admin/class-entries.php:412 admin/class-forms-edit-fields.php:132
 msgid "Select"
-msgstr "auswählen"
+msgstr "Auswählen"
 
 #: admin/class-entries.php:407
 msgid "Select a form to view entries"
@@ -5163,7 +5513,7 @@ msgstr "Wähle ein Formular, um Einträge zu sehen"
 msgid "Y/m/d g:i:s A"
 msgstr "Y/m/d g:i:s A"
 
-#: admin/class-entries.php:330 admin/class-entries.php:775
+#: admin/class-entries.php:330 admin/class-entries.php:791
 #: admin/class-forms-list.php:174 admin/class-forms-list.php:456
 msgid "Delete Permanently"
 msgstr "Endgültig löschen"
@@ -5182,7 +5532,7 @@ msgid "Restore"
 msgstr "Wiederherstellen"
 
 #: admin/class-entries.php:281 admin/class-entries.php:434
-#: admin/class-fields-settings.php:1809 admin/class-forms-edit-fields.php:152
+#: admin/class-fields-settings.php:1812 admin/class-forms-edit-fields.php:152
 #: admin/class-forms-edit-fields.php:195 admin/class-forms-list.php:151
 msgid "Trash"
 msgstr "Papierkorb"
@@ -5200,175 +5550,177 @@ msgid "View"
 msgstr "Ansehen"
 
 #: admin/class-entries.php:154 admin/class-export.php:352
-#: admin/class-export.php:411
+#: admin/class-export.php:414
 msgid "Entry Date"
 msgstr "Start Datum"
 
 #: admin/class-entries.php:129 admin/class-export.php:344
-#: admin/class-export.php:403
+#: admin/class-export.php:406
 msgid "Entry ID"
 msgstr "Eintrags ID"
 
-#: admin/class-email-design.php:326 inc/countries.php:163
+#: admin/class-email-design.php:379 inc/addressfield.json.php:1473
+#: inc/countries.php:163
 msgid "Monaco"
 msgstr "Monaco"
 
-#: admin/class-email-design.php:325
+#: admin/class-email-design.php:378
 msgid "Lucida Sans Typewriter"
 msgstr "Lucida Sans Typewriter"
 
-#: admin/class-email-design.php:324
+#: admin/class-email-design.php:377
 msgid "Lucida Console"
 msgstr "Lucida Console"
 
-#: admin/class-email-design.php:323
+#: admin/class-email-design.php:376
 msgid "Courier New"
 msgstr "Courier New"
 
-#: admin/class-email-design.php:322
+#: admin/class-email-design.php:375
 msgid "Consolas"
 msgstr "Consolas"
 
-#: admin/class-email-design.php:321
+#: admin/class-email-design.php:374
 msgid "Monospaced Web Safe Fonts"
 msgstr "Monospaced Web-Safe-Fonts"
 
-#: admin/class-email-design.php:318
+#: admin/class-email-design.php:371
 msgid "Times New Roman"
 msgstr "Times New Roman"
 
-#: admin/class-email-design.php:317
+#: admin/class-email-design.php:370
 msgid "Palatino"
 msgstr "Palatino"
 
-#: admin/class-email-design.php:316
+#: admin/class-email-design.php:369
 msgid "Lucida Bright"
 msgstr "Lucida Bright"
 
-#: admin/class-email-design.php:315
+#: admin/class-email-design.php:368
 msgid "Goudy Old Style"
 msgstr "Goudy Old Style"
 
-#: admin/class-email-design.php:314 inc/countries.php:101
+#: admin/class-email-design.php:367 inc/addressfield.json.php:710
+#: inc/countries.php:101
 msgid "Georgia"
 msgstr "Georgia"
 
-#: admin/class-email-design.php:313
+#: admin/class-email-design.php:366
 msgid "Garamond"
 msgstr "Garamond"
 
-#: admin/class-email-design.php:312
+#: admin/class-email-design.php:365
 msgid "Cambria"
 msgstr "Cambria"
 
-#: admin/class-email-design.php:311
+#: admin/class-email-design.php:364
 msgid "Serif Web Safe Fonts"
 msgstr "Serif Web Safe Fonts"
 
-#: admin/class-email-design.php:308
+#: admin/class-email-design.php:361
 msgid "Verdana"
 msgstr "Verdana"
 
-#: admin/class-email-design.php:307
+#: admin/class-email-design.php:360
 msgid "Trebuchet MS"
 msgstr "Trebuchet MS"
 
-#: admin/class-email-design.php:306
+#: admin/class-email-design.php:359
 msgid "Tahoma"
 msgstr "Tahoma"
 
-#: admin/class-email-design.php:305
+#: admin/class-email-design.php:358
 msgid "Lucida Grande"
 msgstr "Lucida Grande"
 
-#: admin/class-email-design.php:304
+#: admin/class-email-design.php:357
 msgid "Helvetica"
 msgstr "Helvetica"
 
-#: admin/class-email-design.php:303
+#: admin/class-email-design.php:356
 msgid "Geneva"
 msgstr "Geneva"
 
-#: admin/class-email-design.php:302
+#: admin/class-email-design.php:355
 msgid "Century Gothic"
 msgstr "Century Gothic"
 
-#: admin/class-email-design.php:301
+#: admin/class-email-design.php:354
 msgid "Arial Black"
 msgstr "Arial Black"
 
-#: admin/class-email-design.php:300
+#: admin/class-email-design.php:353
 msgid "Arial"
 msgstr "Arial"
 
-#: admin/class-email-design.php:299
+#: admin/class-email-design.php:352
 msgid "Sans Serif Web Safe Fonts"
 msgstr "Sans Serif Web Safe Fonts"
 
-#: admin/class-email-design.php:267 admin/class-forms-edit-confirmation.php:107
+#: admin/class-email-design.php:320 admin/class-forms-edit-confirmation.php:109
 #: admin/class-forms-edit-email.php:232
 msgid " View Template Options"
-msgstr "Vorlagen Optionen anzeigen"
+msgstr " Vorlagen Optionen anzeigen"
 
-#: admin/class-email-design.php:265 admin/class-forms-edit-confirmation.php:105
+#: admin/class-email-design.php:318 admin/class-forms-edit-confirmation.php:107
 #: admin/class-forms-edit-email.php:230
 msgid "Templating is a way to dynamically replace specially formatted variables with data submitted from the form."
 msgstr "Vorlagen-Tags bieten die Möglichkeit, speziell formatierte Variablen dynamisch mit Text aus dem Formular zu ersetzen."
 
-#: admin/class-email-design.php:262 admin/class-forms-edit-confirmation.php:102
+#: admin/class-email-design.php:315 admin/class-forms-edit-confirmation.php:104
 #: admin/class-forms-edit-email.php:227
 msgid "Template Tags"
 msgstr "Vorlagen-Tags"
 
-#: admin/class-email-design.php:252
+#: admin/class-email-design.php:305
 msgid "Hide fields in email that have no data."
 msgstr "Felder ohne Werte in E-Mail verbergen."
 
-#: admin/class-email-design.php:246
+#: admin/class-email-design.php:299
 msgid "Skip Empty Fields"
-msgstr "leere Felder überspringen"
+msgstr "Leere Felder überspringen"
 
-#: admin/class-email-design.php:226
+#: admin/class-email-design.php:279
 msgid "Save changes to update the email preview."
 msgstr "Speichere die Änderungen, um die E-Mail-Vorschau zu aktualisieren."
 
-#: admin/class-email-design.php:221
+#: admin/class-email-design.php:274
 msgid "Email Template"
 msgstr "E-Mail Vorlage"
 
-#: admin/class-email-design.php:162
+#: admin/class-email-design.php:215
 msgid "Normal Text"
 msgstr "Normaler Text"
 
-#: admin/class-email-design.php:149
+#: admin/class-email-design.php:202
 msgid "Heading 3"
 msgstr "Überschrift 3"
 
-#: admin/class-email-design.php:136
+#: admin/class-email-design.php:189
 msgid "Heading 2"
 msgstr "Überschrift 2"
 
-#: admin/class-email-design.php:123
+#: admin/class-email-design.php:176
 msgid "Heading 1"
 msgstr "Überschrift 1"
 
-#: admin/class-email-design.php:114
+#: admin/class-email-design.php:167
 msgid "Link Color"
 msgstr "Link Farbe"
 
-#: admin/class-email-design.php:105 admin/class-fields-settings.php:2337
+#: admin/class-email-design.php:140 admin/class-fields-settings.php:2355
 msgid "Background Color"
 msgstr "Hintergrundfarbe"
 
-#: admin/class-email-design.php:97
+#: admin/class-email-design.php:102
 msgid "Plain Text"
 msgstr "Reiner Text"
 
-#: admin/class-email-design.php:96
+#: admin/class-email-design.php:101
 msgid "HTML"
 msgstr "HTML"
 
-#: admin/class-email-design.php:92
+#: admin/class-email-design.php:97
 msgid "Format"
 msgstr "Format"
 
@@ -5382,7 +5734,7 @@ msgstr "M jS"
 
 #: admin/class-dashboard-widgets.php:114
 msgid "Tomorrow"
-msgstr "morgen"
+msgstr "Morgen"
 
 #: admin/class-dashboard-widgets.php:112 admin/class-forms-list.php:247
 msgid "Today"
@@ -5400,100 +5752,99 @@ msgstr "Kürzlich eingetragen"
 msgid "VFB Pro Activity"
 msgstr "VFB Pro Aktivität"
 
-#: admin/class-admin-toolbar.php:113 admin/class-forms-new.php:21
+#: admin/class-admin-toolbar.php:116 admin/class-forms-new.php:21
 msgid "Add New Form"
 msgstr "Neues Formular"
 
-#: admin/class-admin-toolbar.php:67
+#: admin/class-admin-toolbar.php:70
 msgid "Edit Form"
 msgstr "Formular bearbeiten"
 
-#: admin/class-admin-notices.php:249
+#: admin/class-admin-notices.php:259
 msgid "Item permanently deleted."
 msgstr "Element dauerhaft gelöscht."
 
-#: admin/class-admin-notices.php:233
+#: admin/class-admin-notices.php:243
 msgid "Item restored from the Trash."
 msgstr "Element aus dem Papierkorb wiederhergestellt."
 
-#: admin/class-admin-notices.php:217
+#: admin/class-admin-notices.php:227
 msgid "Item successfully duplicated."
 msgstr "Element erfolgreich dupliziert."
 
-#: admin/class-admin-notices.php:201
+#: admin/class-admin-notices.php:211
 msgid "Item moved to the trash."
 msgstr "Element in den Papierkorb verschoben."
 
-#: admin/class-admin-notices.php:199
+#: admin/class-admin-notices.php:209
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: admin/class-admin-notices.php:172
+#: admin/class-admin-notices.php:182
 msgid "Settings saved."
-msgstr "Einstellungen gespeichert"
+msgstr "Einstellungen gespeichert."
 
-#: admin/class-admin-notices.php:168
+#: admin/class-admin-notices.php:178
 msgid "VFB Pro has been successfully uninstalled."
 msgstr "VFB Pro wurde erfolgreich deinstalliert."
 
-#: admin/class-admin-notices.php:150
+#: admin/class-admin-notices.php:160
 msgid "Add-on settings saved."
-msgstr "Erweiterungs- Einstellungen gespeichert"
+msgstr "Erweiterungs- Einstellungen gespeichert."
 
-#: admin/class-admin-notices.php:134
+#: admin/class-admin-notices.php:144
 msgid "Rules settings saved."
 msgstr "Regel Einstellungen gespeichert."
 
-#: admin/class-admin-notices.php:118
+#: admin/class-admin-notices.php:128
 msgid "Email Design settings saved."
 msgstr "E-Mail Design Einstellungen gespeichert."
 
-#: admin/class-admin-notices.php:102
+#: admin/class-admin-notices.php:112
 msgid "Confirmation settings saved."
 msgstr "Einstellungen gespeichert."
 
-#: admin/class-admin-notices.php:86
+#: admin/class-admin-notices.php:96
 msgid "Email settings saved."
 msgstr "E-Mail Einstellungen gespeichert."
 
-#: admin/class-admin-notices.php:70
+#: admin/class-admin-notices.php:80
 msgid "Form settings saved."
 msgstr "Formular Einstellungen gespeichert."
 
-#: admin/class-admin-notices.php:54
+#: admin/class-admin-notices.php:63
 msgid "Field settings saved."
-msgstr "Feld Einstellungen gespeichert"
+msgstr "Feld Einstellungen gespeichert."
 
 #: admin/class-admin-menu.php:194
 msgid "Search results for \"%s\""
 msgstr "Suchergebnisse für \"%s\""
 
-#: admin/class-admin-menu.php:176 public/class-form-display.php:316
+#: admin/class-admin-menu.php:176 public/class-form-display.php:324
 msgid "Your VFB Pro license is UNVERIFIED. You must <a href=\"%s\">enter your license</a> information before VFB Pro can fully function."
 msgstr "Ihre VFB Pro Lizenz ist nicht VERIFIZIERT. Sie müssen <a href=\"%s\">Ihre Lizenz eingeben</a> bevor VFB Pro vollständig funktionieren kann."
 
-#: admin/class-admin-menu.php:97 admin/class-admin-menu.php:98
-#: admin/class-admin-toolbar.php:168 admin/class-forms-edit.php:51
+#: admin/class-forms-edit.php:51
 msgid "Add-ons"
 msgstr "Erweiterungen"
 
 #: admin/class-admin-menu.php:88 admin/class-admin-menu.php:89
-#: admin/class-admin-toolbar.php:157
+#: admin/class-admin-toolbar.php:160
 msgid "Settings"
 msgstr "Einstellungen"
 
 #: admin/class-admin-menu.php:79 admin/class-admin-menu.php:80
-#: admin/class-admin-toolbar.php:146 admin/class-export.php:51
+#: admin/class-admin-toolbar.php:149 admin/class-export.php:51
 msgid "Export"
 msgstr "Exportieren"
 
 #: admin/class-admin-menu.php:70 admin/class-admin-menu.php:71
-#: admin/class-admin-toolbar.php:135 admin/class-import.php:39
+#: admin/class-admin-toolbar.php:138 admin/class-import.php:39
 msgid "Import"
 msgstr "Importieren"
 
 #: admin/class-admin-menu.php:62 admin/class-admin-menu.php:63
-#: admin/class-admin-toolbar.php:124 admin/class-export.php:72
+#: admin/class-admin-toolbar.php:127 admin/class-export.php:72
 #: admin/class-forms-list.php:274
 msgid "Entries"
 msgstr "Einträge"
@@ -5503,19 +5854,25 @@ msgstr "Einträge"
 msgid "Add New"
 msgstr "Neues Formular"
 
-#: admin/class-admin-menu.php:45
+#: admin/class-admin-menu.php:45 admin/class-admin-toolbar.php:105
 msgid "All Forms"
 msgstr "Alle Formulare"
 
+#. #-#-#-#-#  vfb-pro.pot (VFB Pro 3.4.1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
+#: admin/class-admin-menu.php:35 admin/class-admin-menu.php:44
+#: admin/class-admin-menu.php:183 admin/class-admin-toolbar.php:94
+#: admin/class-email-design.php:63 admin/class-fields-settings.php:784
+#: admin/class-media-button.php:42 admin/class-widget.php:26
+#: inc/class-preview-email.php:103 public/class-templating.php:85
 msgid "VFB Pro"
 msgstr "VFB Pro"
 
-#: admin/class-addons.php:145 admin/class-email-design.php:281
-#: admin/class-forms-edit-confirmation.php:152
+#: admin/class-addons.php:145 admin/class-email-design.php:334
+#: admin/class-forms-edit-confirmation.php:192
 #: admin/class-forms-edit-email.php:335 admin/class-forms-edit-fields.php:170
 #: admin/class-forms-edit-fields.php:213
-#: admin/class-forms-edit-settings.php:252 admin/class-page-settings.php:629
+#: admin/class-forms-edit-settings.php:268 admin/class-page-settings.php:638
 #: admin/class-rules.php:243
 msgid "Save Changes"
 msgstr "Änderungen speichern"

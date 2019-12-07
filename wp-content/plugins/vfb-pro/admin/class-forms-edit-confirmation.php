@@ -39,11 +39,13 @@ class VFB_Pro_Forms_Edit_Confirmation {
 		$vfbdb = new VFB_Pro_Data();
 		$data  = $vfbdb->get_confirmation_settings( $this->id );
 
-		$type     = isset( $data['confirmation-type'] ) ? $data['confirmation-type'] : '';
-		$message  = isset( $data['text-message'] ) ? $data['text-message'] : '';
-		$prepend  = isset( $data['text-prepend'] ) ? $data['text-prepend'] : '';
-		$page     = isset( $data['wp-page'] ) ? $data['wp-page'] : '';
-		$redirect = isset( $data['redirect'] ) ? $data['redirect'] : '';
+		$type                = isset( $data['confirmation-type'] ) ? $data['confirmation-type'] : '';
+		$message             = isset( $data['text-message'] ) ? $data['text-message'] : '';
+		$prepend             = isset( $data['text-prepend'] ) ? $data['text-prepend'] : '';
+		$page                = isset( $data['wp-page'] ) ? $data['wp-page'] : '';
+		$redirect            = isset( $data['redirect'] ) ? $data['redirect'] : '';
+		$query_vars_page     = isset( $data['wp-page-query-vars'] ) ? $data['wp-page-query-vars'] : '';
+		$query_vars_redirect = isset( $data['redirect-query-vars'] ) ? $data['redirect-query-vars'] : '';
 	?>
 	<form method="post" id="vfbp-confirmation-settings" action="">
 		<input name="_vfbp_action" type="hidden" value="save-confirmation-settings" />
@@ -131,6 +133,25 @@ class VFB_Pro_Forms_Edit_Confirmation {
 		                    ?>
 							</td>
 						</tr>
+
+						<tr valign="top">
+							<th scope="row">
+								<label for="wp-page-query-vars"><?php esc_html_e( 'Add GET Query Variables', 'vfb-pro' ); ?></label>
+							</th>
+							<td>
+								<fieldset>
+									<label>
+										<input type="hidden" name="settings[wp-page-query-vars]" value="0" /> <!-- This sends an unchecked value to the meta table -->
+										<input type="checkbox" name="settings[wp-page-query-vars]" id="wp-page-query-vars" value="1"<?php checked( $query_vars_page, 1 ); ?> /> <?php _e( "Append submitted form data to the URL.", 'vfb-pro' ); ?>
+									</label>
+								</fieldset>
+								<p class="description">
+									<?php _e( 'This option will add the form variable IDs and their respecitve values to URL for use in PHP through the $_GET method.', 'vfb-pro' ); ?><br />
+									<?php _e( 'For example: <code>?vfb-field-1=valueA&vfb-field-2=valueB</code>', 'vfb-pro' ); ?><br />
+									<?php _e( 'Please note that some data such as file uploads will not be available through this feature.', 'vfb-pro' ); ?>
+								</p>
+							</td>
+						</tr>
 					</tbody> <!-- #vfb-confirmation-page -->
 
 					<tbody id="vfb-confirmation-redirect" class="vfb-confirmation-type<?php echo 'redirect' == $type ? ' active' : ''; ?>">
@@ -140,6 +161,25 @@ class VFB_Pro_Forms_Edit_Confirmation {
 							</th>
 							<td>
 								<input type="url" name="settings[redirect]" id="redirect" class="regular-text" placeholder="http://" value="<?php esc_html_e( $redirect ); ?>" maxlength="255" />
+							</td>
+						</tr>
+
+						<tr valign="top">
+							<th scope="row">
+								<label for="redirect-query-vars"><?php esc_html_e( 'Add GET Query Variables', 'vfb-pro' ); ?></label>
+							</th>
+							<td>
+								<fieldset>
+									<label>
+										<input type="hidden" name="settings[redirect-query-vars]" value="0" /> <!-- This sends an unchecked value to the meta table -->
+										<input type="checkbox" name="settings[redirect-query-vars]" id="redirect-query-vars" value="1"<?php checked( $query_vars_redirect, 1 ); ?> /> <?php _e( "Append submitted form data to the URL.", 'vfb-pro' ); ?>
+									</label>
+								</fieldset>
+								<p class="description">
+									<?php _e( 'This option will add the form variable IDs and their respecitve values to URL for use in PHP through the $_GET method.', 'vfb-pro' ); ?><br />
+									<?php _e( 'For example: <code>?vfb-field-1=valueA&vfb-field-2=valueB</code>', 'vfb-pro' ); ?><br />
+									<?php _e( 'Please note that some data such as file uploads will not be available through this feature.', 'vfb-pro' ); ?>
+								</p>
 							</td>
 						</tr>
 					</tbody> <!-- #vfb-confirmation-redirect -->

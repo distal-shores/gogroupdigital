@@ -99,6 +99,13 @@ class VFB_Pro_Admin_Save {
 
 		check_admin_referer( 'vfbp_fields_settings' );
 
+		// Get max post vars, if available. Otherwise set to 1000
+		$max_post_vars = ini_get( 'max_input_vars' ) ? intval( ini_get( 'max_input_vars' ) ) : 1000;
+
+		// Skip saving if over the limit
+		if ( count( $_POST, COUNT_RECURSIVE ) > $max_post_vars )
+			return;
+
 		$form_id = absint( $_POST['_vfbp_form_id'] );
 
 		$vfbdb  = new VFB_Pro_Data();

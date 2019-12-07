@@ -16,7 +16,7 @@ class VFB_Pro_Scripts_Loader {
 	 * @return void
 	 */
 	public function add_css() {
-		wp_enqueue_style( 'vfb-pro', VFB_PLUGIN_URL . "public/assets/css/vfb-style.min.css", array(), '2015.11.29' );
+		wp_enqueue_style( 'vfb-pro', VFB_PLUGIN_URL . "public/assets/css/vfb-style.min.css", array(), '2019.05.10' );
 	}
 
 	/**
@@ -26,15 +26,14 @@ class VFB_Pro_Scripts_Loader {
 	 * @return void
 	 */
 	public function add_js() {
-		wp_register_script( 'vfbp-js', VFB_PLUGIN_URL . "public/assets/js/vfb-js.min.js", array( 'jquery' ), '2018.05.22', true );
-		wp_register_script( 'parsley-js', VFB_PLUGIN_URL . "public/assets/js/vendors/parsley.min.js", array( 'jquery' ), '2.0.5', true );
+		wp_register_script( 'vfbp-js', VFB_PLUGIN_URL . "public/assets/js/vfb-js.min.js", array( 'jquery' ), '2019.08.19', true );
+		wp_register_script( 'parsley-js', VFB_PLUGIN_URL . "public/assets/js/vendors/parsley.min.js", array( 'jquery' ), '2.8.1', true );
 		wp_register_script( 'parsley-js-custom', VFB_PLUGIN_URL . "public/assets/js/vendors/parsley-custom.min.js", array( 'parsley-js' ), '1.0', true );
 		wp_register_script( 'jquery-phoenix', VFB_PLUGIN_URL . "public/assets/js/vendors/jquery.phoenix.min.js", array( 'jquery' ), '1.2.3', true );
 		wp_register_script( 'jquery-mask', VFB_PLUGIN_URL . "public/assets/js/vendors/jquery.mask.min.js", array( 'jquery' ), '1.10.12', true );
 		wp_register_script( 'jquery-datepicker', VFB_PLUGIN_URL . "public/assets/js/vendors/datepicker.min.js", array( 'jquery' ), '1.3.0', true );
 		wp_register_script( 'jquery-clockpicker', VFB_PLUGIN_URL . "public/assets/js/vendors/clockpicker.min.js", array( 'jquery' ), '0.0.7', true );
 		wp_register_script( 'jquery-addressfield', VFB_PLUGIN_URL . "public/assets/js/vendors/addressfield.min.js", array( 'jquery' ), '0.2.1', true );
-		wp_register_script( 'jquery-addressfield-json', VFB_PLUGIN_URL . "public/assets/js/vendors/addressfield.min.json", array( 'jquery-addressfield' ), '2018.02.14', true );
 		wp_register_script( 'jquery-autonumeric', VFB_PLUGIN_URL . "public/assets/js/vendors/autoNumeric.min.js", array( 'jquery' ), '1.9.26', true );
 		wp_register_script( 'jquery-intl-tel', VFB_PLUGIN_URL . "public/assets/js/vendors/intl-tel-input.min.js", array( 'jquery' ), '3.7.1', true );
 		wp_localize_script( 'jquery-intl-tel', 'vfbp_phone_format', array( 'vfbp_phone_url' => VFB_PLUGIN_URL . "public/assets/js/vendors/phone-format.min.js" ) );

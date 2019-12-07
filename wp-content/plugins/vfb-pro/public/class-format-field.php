@@ -55,7 +55,7 @@ class VFB_Pro_Format {
 				break;
 
 			case 'signature' :
-				return sprintf( '<img src="%s"', $value );
+				return $this->signature_to_img( $value, $form_id, $field_id );
 				break;
 
 			default :
@@ -281,6 +281,34 @@ class VFB_Pro_Format {
 		}
 
 		return $value;
+	}
+
+	/**
+	 * Convert the base64 signature into an image
+	 * @param  [type] $data     [description]
+	 * @param  [type] $form_id  [description]
+	 * @param  [type] $field_id [description]
+	 * @return [type]           [description]
+	 */
+	public function signature_to_img( $data, $form_id, $field_id ) {
+		$filename   = "vfb-pro-signature.{$form_id}.{$field_id}." . date( 'Y-m-d-Hi' ) . '.jpg';
+		$upload_dir = wp_upload_dir();
+		$file_path  = trailingslashit( $upload_dir['path'] ) . $filename;
+		$base_64    = explode( ',', $data );
+
+		// If successful decoding base64, convert to image and upload
+		if ( isset( $base_64[1] ) && !empty( $base_64[1] ) ) {
+			$file = fopen( $file_path, 'wb' );
+
+			fwrite( $file, base64_decode( $base_64[1] ) );
+    		fclose( $file );
+
+			return sprintf( '<img src="%s" />', $upload_dir['url'] . '/' . basename( $file_path ) );
+		}
+		// If not successful, return the base64 as a backup
+		else {
+			return sprintf( '<img src="%s" />', $data );
+		}
 	}
 
 	/**

@@ -381,6 +381,9 @@ class VFB_Pro_Export {
 		// Reads file in uploads folder and writes to output buffer
 		readfile( $file_path );
 
+		// Delete export file
+		wp_delete_file( $file_path );
+
 		exit();
 	}
 
@@ -521,6 +524,9 @@ class VFB_Pro_Export {
 
 		// Reads file in uploads folder and writes to output buffer
 		readfile( $file_path );
+
+		// Delete export file
+		wp_delete_file( $file_path );
 
 		exit();
 	}

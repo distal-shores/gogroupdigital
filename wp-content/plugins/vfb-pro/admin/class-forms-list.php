@@ -725,7 +725,7 @@ class VFB_Pro_Forms_List extends VFB_List_Table {
 			$disable_last = ' disabled';
 
 		$page_links[] = sprintf( "<a class='%s' title='%s' href='%s'>%s</a>",
-			'first-page' . $disable_first,
+			'first-page button' . $disable_first,
 			esc_attr__( 'Go to the first page' ),
 			esc_url( remove_query_arg( 'paged', $current_url ) ),
 			'&laquo;'
@@ -733,7 +733,7 @@ class VFB_Pro_Forms_List extends VFB_List_Table {
 
 		// Modified the add_query_args to include my custom dropdowns
 		$page_links[] = sprintf( "<a class='%s' title='%s' href='%s'>%s</a>",
-			'prev-page' . $disable_first,
+			'prev-page button' . $disable_first,
 			esc_attr__( 'Go to the previous page' ),
 			esc_url( add_query_arg( array( 'paged' => max( 1, $current-1 ), 'm' => $m, 'form-filter' => $this->current_filter_action() ), $current_url ) ),
 			'&lsaquo;'
@@ -752,7 +752,7 @@ class VFB_Pro_Forms_List extends VFB_List_Table {
 		$page_links[] = '<span class="paging-input">' . sprintf( _x( '%1$s of %2$s', 'paging' ), $html_current_page, $html_total_pages ) . '</span>';
 
 		$page_links[] = sprintf( "<a class='%s' title='%s' href='%s'>%s</a>",
-			'next-page' . $disable_last,
+			'next-page button' . $disable_last,
 			esc_attr__( 'Go to the next page' ),
 			esc_url( add_query_arg( array( 'paged' => min( $total_pages, $current+1 ), 'm' => $m, 'form-filter' => $this->current_filter_action() ), $current_url ) ),
 			'&rsaquo;'
@@ -760,7 +760,7 @@ class VFB_Pro_Forms_List extends VFB_List_Table {
 
 		// Modified the add_query_args to include my custom dropdowns
 		$page_links[] = sprintf( "<a class='%s' title='%s' href='%s'>%s</a>",
-			'last-page' . $disable_last,
+			'last-page button' . $disable_last,
 			esc_attr__( 'Go to the last page' ),
 			esc_url( add_query_arg( array( 'paged' => $total_pages, 'm' => $m, 'form-filter' => $this->current_filter_action() ), $current_url ) ),
 			'&raquo;'

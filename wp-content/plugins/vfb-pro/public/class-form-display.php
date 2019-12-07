@@ -69,8 +69,8 @@ class VFB_Pro_Form_Display {
 			add_action( 'wp_enqueue_scripts', array( self::$instance, 'css' ) );
 			add_action( 'wp_enqueue_scripts', array( self::$instance, 'js' ) );
 			add_action( 'init', array( self::$instance, 'process_email' ) );
-			add_action( 'vfbp_after_email', array( self::$instance, 'process_redirect' ), 10, 2 );
-			add_action( 'vfbp_after_email', array( self::$instance, 'process_confirmation' ), 10, 2 );
+			add_action( 'vfbp_after_disable_save_entry', array( self::$instance, 'process_redirect' ), 10, 2 );
+			add_action( 'vfbp_after_disable_save_entry', array( self::$instance, 'process_confirmation' ), 10, 2 );
 		}
 
 		return self::$instance;
@@ -112,19 +112,27 @@ class VFB_Pro_Form_Display {
 
 		// reCAPTCHA check
 		if ( true !== $security->recaptcha_check() )
-			wp_die( $security->recaptcha_check() );
+			wp_die( $security->recaptcha_check(), __( 'VFB Pro Security Check - 1', 'vfb-pro' ), array( 'back_link' => true ) );
+
+		// Simple CAPTCHA check
+		if ( true !== $security->simple_captcha_check() )
+			wp_die( $security->simple_captcha_check(), __( 'VFB Pro Security Check - 2', 'vfb-pro' ), array( 'back_link' => true ) );
 
 		// SPAM Bot check
 		if ( true !== $security->bot_check() )
-			wp_die( $security->bot_check() );
+			wp_die( $security->bot_check(), __( 'VFB Pro Security Check - 3', 'vfb-pro' ), array( 'back_link' => true ) );
 
 		// Honeypot check
 		if ( true !== $security->honeypot_check() )
-			wp_die( $security->honeypot_check() );
+			wp_die( $security->honeypot_check(), __( 'VFB Pro Security Check - 4', 'vfb-pro' ), array( 'back_link' => true ) );
+
+		// Timestamp check
+		if ( true !== $security->timestamp_check() )
+			wp_die( $security->timestamp_check(), __( 'VFB Pro Security Check - 5', 'vfb-pro' ), array( 'back_link' => true ) );
 
 		// CSRF check
 		if ( true !== $security->csrf_check() )
-			wp_die( $security->csrf_check() );
+			wp_die( $security->csrf_check(), __( 'VFB Pro Security Check - 6', 'vfb-pro' ), array( 'back_link' => true ) );
 	}
 
 	/**
@@ -373,7 +381,38 @@ class VFB_Pro_Form_Display {
 		}
 
 		// Load custom ParsleyJS validation messages
-		$validation_settings = get_option( 'vfbp_settings' );
+		$validation_settings    = get_option( 'vfbp_settings' );
+		$default_validation_msg = include( VFB_PLUGIN_DIR . '/inc/validation-messages.php' );
+		$validation_messages = array(
+			'defaultMsg'    => $default_validation_msg['default'],
+			'email'         => $default_validation_msg['email'],
+			'url'           => $default_validation_msg['url'],
+			'number'        => $default_validation_msg['number'],
+			'integer'       => $default_validation_msg['integer'],
+			'digits'        => $default_validation_msg['digits'],
+			'alphanum'      => $default_validation_msg['alphanum'],
+			'notblank'      => $default_validation_msg['notblank'],
+			'required'      => $default_validation_msg['required'],
+			'pattern'       => $default_validation_msg['pattern'],
+			'min'           => $default_validation_msg['min'],
+			'max'           => $default_validation_msg['max'],
+			'range'         => $default_validation_msg['range'],
+			'minlength'     => $default_validation_msg['minlength'],
+			'maxlength'     => $default_validation_msg['maxlength'],
+			'lengthMsg'     => $default_validation_msg['length'],
+			'mincheck'      => $default_validation_msg['mincheck'],
+			'maxcheck'      => $default_validation_msg['maxcheck'],
+			'check'         => $default_validation_msg['check'],
+			'equalto'       => $default_validation_msg['equalto'],
+			'minwords'      => $default_validation_msg['minwords'],
+			'maxwords'      => $default_validation_msg['maxwords'],
+			'words'         => $default_validation_msg['words'],
+			'gt'            => $default_validation_msg['gt'],
+			'gte'           => $default_validation_msg['gte'],
+			'lt'            => $default_validation_msg['lt'],
+			'lte'           => $default_validation_msg['lte'],
+		);
+
 		if ( isset( $validation_settings['custom-validation-msgs'] ) && 1 == $validation_settings['custom-validation-msgs'] ) {
 			$validation_messages = array(
 				'defaultMsg'    => $validation_settings['validation-msg-default'],
@@ -404,10 +443,10 @@ class VFB_Pro_Form_Display {
 				'lt'            => $validation_settings['validation-msg-lt'],
 				'lte'           => $validation_settings['validation-msg-lte'],
 			);
-
-			wp_enqueue_script( 'parsley-js-custom' );
-			wp_localize_script( 'parsley-js-custom', 'vfbp_validation_custom', array( 'vfbp_messages' => $validation_messages ) );
 		}
+
+		wp_enqueue_script( 'parsley-js-custom' );
+		wp_localize_script( 'parsley-js-custom', 'vfbp_validation_custom', array( 'vfbp_messages' => $validation_messages ) );
 
 		// Form Expiration
 		$current_time = current_time( 'timestamp' );
@@ -821,11 +860,34 @@ class VFB_Pro_Form_Display {
 						if ( !empty( $desc_position ) && 'before' == $desc_position )
 							$output .= $desc_output;
 
-						// Inline wrapper open
-						if ( !empty( $cols_options ) )
-							$output .= $builder->elem_open( array( 'class' => 'vfb-inline-group' ) );
+						// Inline wrapper or column row <div>
+						$number_of_cols = '';
+						$grid_num       = 12;
+						if ( !empty( $cols_options ) ) {
+							switch ( $cols_options ) {
+								case 'inline' :
+									$output .= $builder->elem_open( array( 'class' => 'vfb-inline-group' ) );
+									break;
+
+								case 2 :
+									$number_of_cols = 2;
+									$grid_num       = 6;
+									$output .= $builder->elem_open( array( 'class' => 'vfb-row' ) );
+									break;
+
+								case 3 :
+									$number_of_cols = 3;
+									$grid_num       = 4;
+									$output .= $builder->elem_open( array( 'class' => 'vfb-row' ) );
+									break;
+							}
+						}
 
 						if ( is_array( $radio_options ) && !empty( $radio_options ) ) {
+							$count         = 0;
+							$count_options = count( $radio_options );
+							$num_options   = !empty( $number_of_cols ) ? ceil( $count_options / $number_of_cols ) : 0;
+
 							foreach ( $radio_options as $index => $radio ) {
 								$label            = isset( $radio['label'] ) ? $radio['label'] : '';
 								$checked          = isset( $radio['default'] ) ? true : false;
@@ -838,6 +900,13 @@ class VFB_Pro_Form_Display {
 									if ( !empty( $required ) )
 										$options['required'] = 'required';
 								}
+
+								// Options column <div> open
+								if ( !empty( $number_of_cols ) ) {
+									if ( $count % $num_options == 0 )
+										$output .= $builder->elem_open( array( 'class' => sprintf( 'vfb-col-%d', $grid_num ) ) );
+								}
+
 								// Open <div>
 								$output .= $builder->elem_open( array( 'class' => 'vfb-radio' ) );
 
@@ -852,6 +921,14 @@ class VFB_Pro_Form_Display {
 								// Close </div>
 								$output .= $builder->elem_close();
 
+								// Options column <div> close
+								if ( !empty( $number_of_cols ) ) {
+									$count++;
+									if ( $count % $num_options == 0 || $count == $count_options )
+										$output .= $builder->elem_close();
+
+								}
+
 								// Unset extra options so they aren't added to the remaining checks
 								unset( $options['required'] );
 							}
@@ -861,6 +938,12 @@ class VFB_Pro_Form_Display {
 							$options['class']  = str_replace( 'vfb-form-control', '', $options['class'] );
 							$options['id']     = "{$name}-" . ++$index;
 							$allow_other_input = isset( $field['data']['allow-other-input'] ) ? $field['data']['allow-other-input'] : '';
+
+							// Options column <div> open
+							if ( !empty( $number_of_cols ) ) {
+								$output .= '<div class="vfb-clearfix"></div>';
+								$output .= $builder->elem_open( array( 'class' => 'vfb-col-12' ) );
+							}
 
 							// Open <div>
 							$output .= $builder->elem_open( array( 'class' => 'vfb-radio' ) );
@@ -877,6 +960,11 @@ class VFB_Pro_Form_Display {
 
 							// Close </div>
 							$output .= $builder->elem_close();
+
+							// Options column close </div>
+							if ( !empty( $number_of_cols ) )
+								$output .= $builder->elem_close();
+
 						}
 
 						// Inline wrapper close
@@ -905,8 +993,8 @@ class VFB_Pro_Form_Display {
 					unset( $options['required'] );
 
 					// Set a Parsley validation indentifier
-					// There's a bug with ParsleyJS where it won't use the namespace, so fallback to using Parsley
-					$options['data-parsley-multiple'] = 'vfb-field-' . $field['id'];
+					// There's a bug with ParsleyJS where it won't use the namespace, so fallback to using Parsley (fixed in 3.3.7)
+					$options['data-vfb-multiple'] = 'vfb-field-' . $field['id'];
 
 					// Label
 					$output .= $builder->label( $name, $label, $label_opts );
@@ -918,11 +1006,34 @@ class VFB_Pro_Form_Display {
 						if ( !empty( $desc_position ) && 'before' == $desc_position )
 							$output .= $desc_output;
 
-						// Inline wrapper open
-						if ( !empty( $cols_options ) )
-							$output .= $builder->elem_open( array( 'class' => 'vfb-inline-group' ) );
+						// Inline wrapper or column row <div>
+						$number_of_cols = '';
+						$grid_num       = 12;
+						if ( !empty( $cols_options ) ) {
+							switch ( $cols_options ) {
+								case 'inline' :
+									$output .= $builder->elem_open( array( 'class' => 'vfb-inline-group' ) );
+									break;
+
+								case 2 :
+									$number_of_cols = 2;
+									$grid_num       = 6;
+									$output .= $builder->elem_open( array( 'class' => 'vfb-row' ) );
+									break;
+
+								case 3 :
+									$number_of_cols = 3;
+									$grid_num       = 4;
+									$output .= $builder->elem_open( array( 'class' => 'vfb-row' ) );
+									break;
+							}
+						}
 
 						if ( is_array( $check_options ) && !empty( $check_options ) ) {
+							$count         = 0;
+							$count_options = count( $check_options );
+							$num_options   = !empty( $number_of_cols ) ? ceil( $count_options / $number_of_cols ) : 0;
+
 							foreach ( $check_options as $index => $check ) {
 								$label            = isset( $check['label'] ) ? $check['label'] : '';
 								$checked          = isset( $check['default'] ) ? true : false;
@@ -950,6 +1061,12 @@ class VFB_Pro_Form_Display {
 									$check_validations = false;
 								}
 
+								// Options column <div> open
+								if ( !empty( $number_of_cols ) ) {
+									if ( $count % $num_options == 0 )
+										$output .= $builder->elem_open( array( 'class' => sprintf( 'vfb-col-%d', $grid_num ) ) );
+								}
+
 								// Open <div>
 								$output .= $builder->elem_open( array( 'class' => 'vfb-checkbox' ) );
 
@@ -963,6 +1080,13 @@ class VFB_Pro_Form_Display {
 
 								// Close </div>
 								$output .= $builder->elem_close();
+
+								// Options column close </div>
+								if ( !empty( $number_of_cols ) ) {
+									$count++;
+									if ( $count % $num_options == 0 || $count == $count_options )
+										$output .= $builder->elem_close();
+								}
 
 								// Unset extra options so they aren't added to the remaining checks
 								unset( $options['required'] );
@@ -1035,8 +1159,9 @@ class VFB_Pro_Form_Display {
 				// !Address
 				//////////////////
 				case 'address' :
+					$address_config = include( VFB_PLUGIN_DIR . '/inc/addressfield.json.php' );
 					wp_enqueue_script( 'jquery-addressfield' );
-					wp_enqueue_script( 'jquery-addressfield-json' );
+					wp_localize_script( 'jquery-addressfield', 'vfbp_address_config', array( 'vfbp_addresses' => $address_config ) );
 
 					$hide_addr_2  = isset( $address_settings['hide-addr-2'] )  ? $address_settings['hide-addr-2']  : '';
 					$hide_country = isset( $address_settings['hide-country'] ) ? $address_settings['hide-country'] : '';
@@ -1650,7 +1775,7 @@ class VFB_Pro_Form_Display {
 						// Open <div>
 						$output .= $builder->elem_open( $horizontal_opts );
 
-							$desc_output = wpautop( wptexturize( $desc_output ) );
+							$desc_output = wpautop( wptexturize( $description ) );
 
 							// Description
 							$output .= do_shortcode( $desc_output );
@@ -1802,6 +1927,10 @@ class VFB_Pro_Form_Display {
 
 							case 'current-time' :
 								$hidden_value = date_i18n( get_option( 'time_format' ), current_time( 'timestamp' ) );
+								break;
+
+							case 'referer' :
+								$hidden_value = wp_get_referer();
 								break;
 
 							case 'post_id' :
@@ -2292,8 +2421,8 @@ class VFB_Pro_Form_Display {
 					}
 
 					// Set a Parsley validation indentifier
-					// There's a bug with ParsleyJS where it won't use the namespace, so fallback to using Parsley
-					$options['data-parsley-multiple'] = 'vfb-field-' . $field['id'];
+					// There's a bug with ParsleyJS where it won't use the namespace, so fallback to using Parsley (fixed in 3.3.7)
+					$options['data-vfb-multiple'] = 'vfb-field-' . $field['id'];
 
 					// Open <div>
 					$output .= $builder->elem_open( array( 'class' => 'vfb-form-group' ) );
@@ -2453,6 +2582,11 @@ class VFB_Pro_Form_Display {
 								$output .= sprintf( '<a href="#" class="btn btn-primary">%s</a>', __( 'Reset Signature', 'vfb-pro' ) );
 							$output .= $builder->elem_close();
 
+							// Display a custom error message when Signature is required
+							if ( !empty( $required ) ) {
+								$output .= sprintf( '<div class="vfb-has-error vfb-signature-error"><span class="vfb-help-block">%s</span></div>', __( 'Signature is required.', 'vfb-pro' ) );
+							}
+
 							// Description (after input)
 							if ( empty( $desc_position ) )
 								$output .= $desc_output;
@@ -2469,12 +2603,25 @@ class VFB_Pro_Form_Display {
 				// !Captcha
 				//////////////////
 				case 'captcha' :
-					$captcha_theme = isset( $captcha_settings['theme'] ) ? $captcha_settings['theme'] : '';
-					$captcha_type  = isset( $captcha_settings['type'] ) ? $captcha_settings['type'] : '';
-					$captcha_lang  = isset( $captcha_settings['lang'] ) ? $captcha_settings['lang'] : 'en';
+					$captcha_option = isset( $captcha_settings['option'] ) ? $captcha_settings['option'] : '';
+					$captcha_theme  = isset( $captcha_settings['theme'] ) ? $captcha_settings['theme'] : '';
+					$captcha_type   = isset( $captcha_settings['type'] ) ? $captcha_settings['type']   : '';
+					$captcha_lang   = isset( $captcha_settings['lang'] ) ? $captcha_settings['lang']   : 'en';
 
-					$vfb_settings  = get_option( 'vfbp_settings' );
-					$public_key    = $vfb_settings['recaptcha-public-key'];
+					$vfb_settings      = get_option( 'vfbp_settings' );
+					$public_key        = $vfb_settings['recaptcha-public-key'];
+					$recaptcha_version = isset( $vfb_settings['recaptcha-version'] ) ? $vfb_settings['recaptcha-version'] : 'v2';
+
+					/**
+					 * Filter the Google reCAPTCHA Public Key
+					 *
+					 * Changing this value will alter the public key used by
+					 * Google reCAPTCHA.
+					 *
+					 * @since 3.4
+					 *
+					 */
+					$public_key   = apply_filters( 'vfbp_recaptcha_public_key', $public_key );
 
 					$captcha_opts = array(
 						'class'        => 'g-recaptcha',
@@ -2487,13 +2634,30 @@ class VFB_Pro_Form_Display {
 					if ( !empty( $captcha_type ) )
 						$captcha_opts['data-type'] = $captcha_type;
 
-					wp_enqueue_script( 'google-recaptcha-v2?hl=' . $captcha_lang );
+					// reCAPTCHA option selected
+					if ( empty( $captcha_option ) ) {
+						if ( 'v3' == $recaptcha_version && !is_user_logged_in() ) {
+							$captcha_opts['class'] = 'g-recaptcha-v3';
+							wp_enqueue_script( 'google-recaptcha-v2?render=' . $public_key );
+						}
+						else {
+							wp_enqueue_script( 'google-recaptcha-v2?hl=' . $captcha_lang );
+						}
+					}
+
+					// Simple CAPTCHA - display a default description if one does not exist
+					if ( !empty( $captcha_option ) && empty( $description ) && !is_user_logged_in() ) {
+						$random_digit = rand( 10, 99 );
+						$desc_output  = $builder->description( sprintf( __( 'For security verification, please enter any random two digit number. For example: %d', 'vfb-pro' ), $random_digit ), array( 'class' => 'vfb-help-block' ) );
+					}
 
 					// Open <div>
 					$output .= $builder->elem_open( array( 'class' => 'vfb-form-group' ) );
 
-						// Label
-						$output .= $builder->label( $name, $label, $label_opts );
+						// Label (only display if not using reCAPTCHA v3)
+						if ( 'v2' == $recaptcha_version ) {
+							$output .= $builder->label( $name, $label, $label_opts );
+						}
 
 						// Open <div>
 						$output .= $builder->elem_open( $horizontal_opts );
@@ -2502,17 +2666,52 @@ class VFB_Pro_Form_Display {
 							if ( !empty( $desc_position ) && 'before' == $desc_position )
 								$output .= $desc_output;
 
-							// Output error message if Public Key isn't set
-							if ( empty( $public_key ) ) {
-								$output .= __( 'reCAPTCHA Public Key not found. Both Public and Private keys must be set in order for reCAPTCHA to function.', 'vfb-pro' );
+							// If user is logged in, don't display the captcha
+							if ( is_user_logged_in() ) {
+								$current_user = wp_get_current_user();
+								$user_name    = $current_user instanceof WP_User ? $current_user->display_name : '';
+
+								$output .= sprintf( __( 'You are logged in as <a href="%1$s">%2$s</a>. CAPTCHA verification not required.', 'vfb-pro' ), admin_url( 'profile.php' ), $user_name );
 							}
 							else {
-								// reCaptcha
-								$output .= $builder->elem_open( $captcha_opts );
-								$output .= $builder->elem_close();
+								switch ( $captcha_option ) {
+									case 'simple' :
+										$output .= $builder->elem_open();
+										$output .= $builder->elem_close();
 
-								// Hidden field used during security check
-								$output .= $builder->hidden( '_vfb_recaptcha_enabled', 1 );
+										// Hidden field used during security check
+										$output .= $builder->hidden( '_vfb_captcha_simple_enabled', 1 );
+
+										// Simple JS validation
+										$options['data-vfb-required']  = true;
+										$options['data-vfb-type']      = 'integer';
+										$options['data-vfb-minlength'] = 2;
+										$options['data-vfb-maxlength'] = 2;
+
+										// Input
+										$output .= $builder->text( '_vfb_captcha_simple-' . $form_id, $default, $options );
+
+										break;
+
+									case '' :
+									default :
+										// Output error message if Public Key isn't set
+										if ( empty( $public_key ) ) {
+											$output .= __( 'reCAPTCHA Public Key not found. Both Public and Private keys must be set in order for reCAPTCHA to function.', 'vfb-pro' );
+										}
+										else {
+											// reCaptcha
+											$output .= $builder->elem_open( $captcha_opts );
+											$output .= $builder->elem_close();
+
+											// Hidden field used during security check
+											$output .= $builder->hidden( '_vfb_recaptcha_enabled', 1 );
+
+											// Display a custom error message when reCAPTCHA has not been checked
+											$output .= sprintf( '<div class="vfb-has-error" id="vfb-recaptcha-error"><span class="vfb-help-block">%s</span></div>', __( 'reCAPTCHA is required.', 'vfb-pro' ) );
+										}
+										break;
+								}
 							}
 
 							// Description (after input)

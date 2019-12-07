@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
 	if ( $.fn.phoenix ) {
-		$( '.vfb-form-control' ).phoenix();
+		$( '.vfbp-form :input:not(".vfb-file-input")' ).phoenix();
 	}
 });

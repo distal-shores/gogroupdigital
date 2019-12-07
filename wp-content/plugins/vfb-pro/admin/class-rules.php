@@ -358,12 +358,20 @@ class VFB_Pro_Edit_Rules {
 
 		<td>
 			<select name="settings[<?php echo $type; ?>][<?php echo $x;?>][conditions][<?php echo $y;?>][filter]" class="vfb-rules-select vfb-rules-select-condition">
-				<option value="is"<?php selected( $filter, 'is' ); ?>><?php _e( 'is', 'vfb-pro' ); ?></option>
-				<option value="is not"<?php selected( $filter, 'is not' ); ?>><?php _e( 'is not', 'vfb-pro' ); ?></option>
-				<option value="contains"<?php selected( $filter, 'contains' ); ?>><?php _e( 'contains', 'vfb-pro' ); ?></option>
-				<option value="does not contain"<?php selected( $filter, 'does not contain' ); ?>><?php _e( 'does not contain', 'vfb-pro' ); ?></option>
-				<option value="begins with"<?php selected( $filter, 'begins with' ); ?>><?php _e( 'begins with', 'vfb-pro' ); ?></option>
-				<option value="ends with"<?php selected( $filter, 'ends with' ); ?>><?php _e( 'ends with', 'vfb-pro' ); ?></option>
+				<optgroup label="<?php _e( 'Keyword match', 'vfb-pro' ); ?>">
+					<option value="is"<?php selected( $filter, 'is' ); ?>><?php _e( 'is', 'vfb-pro' ); ?></option>
+					<option value="is not"<?php selected( $filter, 'is not' ); ?>><?php _e( 'is not', 'vfb-pro' ); ?></option>
+					<option value="contains"<?php selected( $filter, 'contains' ); ?>><?php _e( 'contains', 'vfb-pro' ); ?></option>
+					<option value="does not contain"<?php selected( $filter, 'does not contain' ); ?>><?php _e( 'does not contain', 'vfb-pro' ); ?></option>
+					<option value="begins with"<?php selected( $filter, 'begins with' ); ?>><?php _e( 'begins with', 'vfb-pro' ); ?></option>
+					<option value="ends with"<?php selected( $filter, 'ends with' ); ?>><?php _e( 'ends with', 'vfb-pro' ); ?></option>
+				</optgroup>
+				<optgroup label="<?php _e( 'Number match', 'vfb-pro' ); ?>">
+					<option value="is equal to"<?php selected( $filter, 'is equal to' ); ?>><?php _e( 'is equal to', 'vfb-pro' ); ?></option>
+					<option value="is not equal to"<?php selected( $filter, 'is not equal to' ); ?>><?php _e( 'is not equal to', 'vfb-pro' ); ?></option>
+					<option value="is greater than"<?php selected( $filter, 'is greater than' ); ?>><?php _e( 'is greater than', 'vfb-pro' ); ?></option>
+					<option value="is less than"<?php selected( $filter, 'is less than' ); ?>><?php _e( 'is less than', 'vfb-pro' ); ?></option>
+				</optgroup>
 			</select>
 		</td>
 
@@ -409,12 +417,20 @@ class VFB_Pro_Edit_Rules {
 
 		<td>
 			<select name="settings[<?php echo $type; ?>][0][conditions][0][filter]" class="vfb-rules-select vfb-rules-select-condition">
-				<option value="is"><?php _e( 'is', 'vfb-pro' ); ?></option>
-				<option value="is not"><?php _e( 'is not', 'vfb-pro' ); ?></option>
-				<option value="contains"><?php _e( 'contains', 'vfb-pro' ); ?></option>
-				<option value="does not contain"><?php _e( 'does not contain', 'vfb-pro' ); ?></option>
-				<option value="begins with"><?php _e( 'begins with', 'vfb-pro' ); ?></option>
-				<option value="ends with"><?php _e( 'ends with', 'vfb-pro' ); ?></option>
+				<optgroup label="<?php _e( 'Keyword match', 'vfb-pro' ); ?>">
+					<option value="is"><?php _e( 'is', 'vfb-pro' ); ?></option>
+					<option value="is not"><?php _e( 'is not', 'vfb-pro' ); ?></option>
+					<option value="contains"><?php _e( 'contains', 'vfb-pro' ); ?></option>
+					<option value="does not contain"><?php _e( 'does not contain', 'vfb-pro' ); ?></option>
+					<option value="begins with"><?php _e( 'begins with', 'vfb-pro' ); ?></option>
+					<option value="ends with"><?php _e( 'ends with', 'vfb-pro' ); ?></option>
+				</optgroup>
+				<optgroup label="<?php _e( 'Number match', 'vfb-pro' ); ?>">
+					<option value="is equal to"><?php _e( 'is equal to', 'vfb-pro' ); ?></option>
+					<option value="is not equal to"><?php _e( 'is not equal to', 'vfb-pro' ); ?></option>
+					<option value="is greater than"><?php _e( 'is greater than', 'vfb-pro' ); ?></option>
+					<option value="is less than"><?php _e( 'is less than', 'vfb-pro' ); ?></option>
+				</optgroup>
 			</select>
 		</td>
 

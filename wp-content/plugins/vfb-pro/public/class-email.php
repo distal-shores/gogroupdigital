@@ -52,9 +52,6 @@ class VFB_Pro_Email {
 	 */
 	public function __construct() {
 		$this->no_reply = $this->set_no_reply();
-
-		// Setup phpmailer if SMTP is enabled in Settings
-		add_action( 'phpmailer_init', array( $this, 'phpmailer' ) );
 	}
 
 	/**
@@ -122,8 +119,28 @@ class VFB_Pro_Email {
 		$disable_save_entry = isset( $form_settings['data']['disable-save-entry']  ) ? $form_settings['data']['disable-save-entry']  : '';
 		$disable_save_entry = apply_filters( 'vfbp_disable_save_entry', $disable_save_entry, $entry_id, $form_id );
 		if ( !empty( $disable_save_entry ) ) {
-			wp_delete_post( $entry_id, true );
+			/**
+			 * Filter that changes whether to bypass trash and force deletion
+			 *
+			 * Passes the delete bool, Entry ID and Form ID
+			 *
+			 * @since 3.4.1
+			 *
+			 */
+			$force_delete = apply_filters( 'vfbp_disable_save_entry_force_delete', true, $entry_id, $form_id );
+
+			wp_delete_post( $entry_id, $force_delete );
 		}
+
+		/**
+		 * Action that fires after disable save entry
+		 *
+		 * Passes the Entry ID and Form ID
+		 *
+		 * @since 3.4.1
+		 *
+		 */
+		do_action( 'vfbp_after_disable_save_entry', $entry_id, $form_id );
 	}
 
 	/**
@@ -235,6 +252,9 @@ class VFB_Pro_Email {
 		if ( apply_filters( 'vfbp_skip_notification', false, $form_id, $entry_id ) )
 			return;
 
+		// Setup phpmailer if SMTP is enabled in Settings
+		add_action( 'phpmailer_init', array( $this, 'phpmailer' ) );
+
 		// Get attachments to optionally inlude with email
 		$attachments = !empty( $send_attachments ) ? $this->get_attachments( $entry_id ) : '';
 
@@ -292,6 +312,11 @@ class VFB_Pro_Email {
 		// Set content type to either HTML or Plain Text
 		$content_type = 'html' == $format ? 'text/html' : 'text/plain';
 
+		// Wrap message content in paragraph tags if format is HTML
+		if ( 'html' == $format ) {
+			$message = wpautop( $message );
+		}
+
 		// Process HTML and CSS through Premailer
 		if ( $use_premailer && 'html' == $format ) {
 			$premailer = VFB_Pro_Premailer::html( $message );
@@ -332,6 +357,9 @@ class VFB_Pro_Email {
 		 */
 		if ( apply_filters( 'vfbp_skip_autoresponder', false, $form_id, $entry_id ) )
 			return;
+
+		// Setup phpmailer if SMTP is enabled in Settings
+		add_action( 'phpmailer_init', array( $this, 'phpmailer_autoresponder' ) );
 
 		wp_mail( $email_to, $subject, $message, $headers );
 	}
@@ -677,6 +705,87 @@ class VFB_Pro_Email {
 	    if ( !empty( $from_name ) && !empty( $from_email ) ) {
 		    $phpmailer->setFrom( $from_email, $from_name );
 	    }
+
+		// Always unhook PHPMailer setup at the end
+    	remove_action( 'phpmailer_init', __function__ );
+	}
+
+	/**
+	 * Use PHPMail for the Autoresponder with different settings
+	 * @param  [type] $phpmailer [description]
+	 * @return [type]            [description]
+	 */
+	public function phpmailer_autoresponder( $phpmailer ) {
+		$templating     = new VFB_Pro_Templating();
+		$vfb_settings   = $this->get_vfb_settings();
+		$email_settings = $this->get_email_settings( $this->form_id );
+
+		$smtp_host         = isset( $vfb_settings['smtp-host']       ) ? $vfb_settings['smtp-host']       : '';
+		$smtp_port         = isset( $vfb_settings['smtp-port']       ) ? $vfb_settings['smtp-port']       : '';
+		$smtp_encryption   = isset( $vfb_settings['smtp-encryption'] ) ? $vfb_settings['smtp-encryption'] : '';
+		$smtp_auth         = isset( $vfb_settings['smtp-auth']       ) ? $vfb_settings['smtp-auth']       : '';
+		$smtp_username     = isset( $vfb_settings['smtp-username']   ) ? $vfb_settings['smtp-username']   : '';
+		$smtp_password     = isset( $vfb_settings['smtp-password']   ) ? $vfb_settings['smtp-password']   : '';
+
+		$notify_name         = isset( $email_settings['notify-name']     ) ? $email_settings['notify-name']       : '';
+		$notify_email        = isset( $email_settings['notify-email']    ) ? $email_settings['notify-email']      : '';
+		$notify_email_to     = isset( $email_settings['notify-email-to'] ) ? $email_settings['notify-email-to']   : '';
+
+		// Exit if Host and Port aren't set
+		if ( empty( $smtp_host ) && empty( $smtp_port ) )
+			return;
+
+		// Tell the PHPMailer class to use SMTP
+		$phpmailer->isSMTP();
+
+		// Explicitly set the Mailer to smtp, which is done by the isSMTP() call above
+		$phpmailer->Mailer = 'smtp';
+
+		// Set the Host and Port number
+	    $phpmailer->Host = $smtp_host;
+	    $phpmailer->Port = $smtp_port;
+
+		// If we're using smtp auth, set the username & password
+	    if ( $smtp_auth ) {
+		    // Set the SMTPSecure value, if set to none, leave this blank
+			if ( 'none' == $smtp_encryption ) {
+				$phpmailer->SMTPSecure  = '';
+				$phpmailer->SMTPAutoTLS = false;
+			}
+			else {
+				$phpmailer->SMTPSecure = $smtp_encryption;
+				$phpmailer->SMTPAuth   = true;
+			}
+
+		    $phpmailer->Username   = $smtp_username;
+		    $phpmailer->Password   = $smtp_password;
+	    }
+
+		// If no email is set, don't bother trying to send
+		if ( empty( $notify_email_to ) )
+			return;
+
+		// Set Email To var by checking $_POST + field ID
+		if ( !empty( $notify_email_to ) ) {
+			$email_data      = isset( $_POST[ 'vfb-field-' . $notify_email_to ] ) ? $_POST[ 'vfb-field-' . $notify_email_to ] : '';
+			$notify_email_to = sanitize_email( esc_html( $email_data ) );
+		}
+
+	    // Process template tags for From Name
+		$notify_name = $templating->general( $notify_name, $this->entry_id, $this->form_id );
+
+	    // Set a From Email to match domain if SMTP is not set and From Email is empty
+		$use_no_reply = $this->use_no_reply( $vfb_settings );
+		if ( $use_no_reply || empty( $notify_email ) )
+			$notify_email = $this->no_reply;
+
+	    // Set the From email and name header
+	    if ( !empty( $notify_name ) && !empty( $notify_email ) ) {
+		    $phpmailer->setFrom( $notify_email, $notify_name );
+	    }
+
+		// Always unhook PHPMailer setup at the end
+    	remove_action( 'phpmailer_init', __function__ );
 	}
 
 	/**

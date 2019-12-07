@@ -77,15 +77,16 @@ class VFB_Pro_Form_Builder {
 
 		// Default form attributes
 		$defaults = array(
-			'action'       => $action,
-			'method'       => 'post',
-			'enctype'      => 'multipart/form-data',
-			'class'        => array(),
-			'id'           => '',
-			'onSubmit'     => '',
-			'novalidate'   => false,
-			'add_honeypot' => true,
-			'add_submit'   => true
+			'action'        => $action,
+			'method'        => 'post',
+			'enctype'       => 'multipart/form-data',
+			'class'         => array(),
+			'id'            => '',
+			'onSubmit'      => '',
+			'novalidate'    => false,
+			'add_honeypot'  => true,
+			'add_timestamp' => true,
+			'add_submit'    => true
 		);
 
 		$settings = $defaults;
@@ -188,6 +189,7 @@ class VFB_Pro_Form_Builder {
 
 			case 'novalidate':
 			case 'add_honeypot':
+			case 'add_timestamp':
 			case 'add_submit':
 				if ( !is_bool( $val ) )
 					return false;
@@ -230,6 +232,10 @@ class VFB_Pro_Form_Builder {
 		// Add honeypot
 		if ( $this->form['add_honeypot'] )
 			$appendage .= $this->honeypot();
+
+		// Add timestamp
+		if ( $this->form['add_timestamp'] )
+			$appendage .= $this->timestamp();
 
 		// Add the form ID hidden field
 		$appendage .= $this->form_id();
@@ -323,11 +329,21 @@ class VFB_Pro_Form_Builder {
 	 */
 	public function honeypot() {
 		$output = '<div style="display:none;">';
-			$output .= $this->label( 'vfbp-spam', __( 'If you are human, leave this field blank.', 'vfb-pro' ) );
-			$output .= $this->text( 'vfbp-spam', '', array( 'size' => 25, 'autocomplete' => 'off' ) );
+			$output .= $this->label( 'vfbp-EMAIL-AN8fuQyoDLXem', __( 'If you are human, leave this field blank.', 'vfb-pro' ) );
+			$output .= $this->text( 'vfbp-EMAIL-AN8fuQyoDLXem', '', array( 'size' => 25, 'autocomplete' => 'off' ) );
 		$output .= '</div>';
 
 		return $output;
+	}
+
+	/**
+	 * Generate a hidden timestamp field.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function timestamp() {
+		return $this->input( 'hidden', '_vfb-timestamp-' . $this->form_id, current_time( 'timestamp' ) );
 	}
 
 	/**

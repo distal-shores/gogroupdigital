@@ -26,6 +26,9 @@ class VFB_Pro_Admin_Toolbar {
 	 * @return void
 	 */
 	public function icon() {
+		if ( !is_user_logged_in() )
+			return;
+
 		$css = '<style type="text/css">';
 		$css .= '#wpadminbar #wp-admin-bar-vfbp-toolbar-edit-form > .ab-item:before {content: "\f175";top: 2px;}';
 		$css .= '#wpadminbar #wp-admin-bar-vfbp-admin-toolbar > .ab-item:before {content: "\f175";top: 2px;}';
@@ -88,7 +91,7 @@ class VFB_Pro_Admin_Toolbar {
 		if ( current_user_can( 'vfb_edit_forms' ) ) {
 			$wp_admin_bar->add_node( array(
 				'id' 		=> 'vfbp-admin-toolbar',
-				'title'		=> 'VFB Pro',
+				'title'		=> __( 'VFB Pro', 'vfb-pro' ),
 				'parent'	=> false,
 				'href'		=> admin_url( 'admin.php?page=vfb-pro' ),
 				)
@@ -99,7 +102,7 @@ class VFB_Pro_Admin_Toolbar {
 		if ( current_user_can( 'vfb_edit_forms' ) ) {
 			$wp_admin_bar->add_node( array(
 				'id' 		=> 'vfbp-admin-toolbar-all',
-				'title'		=> 'All Forms',
+				'title'		=> __( 'All Forms', 'vfb-pro' ),
 				'parent'	=> 'vfbp-admin-toolbar',
 				'href'		=> admin_url( 'admin.php?page=vfb-pro' ),
 				)
@@ -164,10 +167,10 @@ class VFB_Pro_Admin_Toolbar {
 		// Add-ons
 		if ( current_user_can( 'vfb_edit_forms' ) ) {
 			$wp_admin_bar->add_node( array(
-				'id' 		=> 'vfbp-admin-toolbar-addons',
-				'title'		=> __( 'Add-ons', 'vfb-pro' ),
+				'id' 		=> 'vfbp-admin-toolbar-help',
+				'title'		=> __( 'Help', 'vfb-pro' ),
 				'parent'	=> 'vfbp-admin-toolbar',
-				'href'		=> admin_url( 'admin.php?page=vfbp-addons' )
+				'href'		=> admin_url( 'admin.php?page=vfbp-help' )
 				)
 			);
 		}

@@ -52,6 +52,10 @@ class VFB_Pro_Save_Entry {
 			if ( substr( $key, 0, 1 ) != '_' )
 				$data[ $key ] = $val;
 
+			// Remove the honeypot dummy field
+			if ( 'vfbp-EMAIL-AN8fuQyoDLXem' == $key )
+				unset( $data[ $key ] );
+
 			// Special case to handle Radio "Other" option
 			if ( strpos( $key, '-other' ) !== false ) {
 				// If "Other" text input is not empty

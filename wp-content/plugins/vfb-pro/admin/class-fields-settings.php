@@ -296,7 +296,9 @@ class VFB_Pro_Admin_Fields_Settings {
 			<span class="vfb-tooltip vfb-pull-right" data-title="<?php esc_attr_e( 'About Options Columns', 'vfb-pro' ); ?>" data-content="<?php esc_attr_e( "Control the layout of Radio or Checkbox options. By default, options are arranged in a single column.", 'vfb-pro' ); ?>"><i class="vfb-icon-question"></i></span>
 
 			<select name="vfb-field-<?php echo $id; ?>[cols-options]" class="vfb-form-control" id="vfb-edit-cols-options<?php echo $id; ?>">
-				<option value=""<?php selected( $value, '' ); ?>><?php _e( 'Vertical', 'vfb-pro' ); ?></option>
+				<option value=""<?php selected( $value, '' ); ?>><?php _e( 'One Column', 'vfb-pro' ); ?></option>
+				<option value="2"<?php selected( $value, '2' ); ?>><?php _e( 'Two Columns', 'vfb-pro' ); ?></option>
+				<option value="3"<?php selected( $value, '3' ); ?>><?php _e( 'Three Columns', 'vfb-pro' ); ?></option>
 				<option value="inline"<?php selected( $value, 'inline' ); ?>><?php _e( 'Inline', 'vfb-pro' ); ?></option>
 			</select>
 
@@ -790,6 +792,7 @@ class VFB_Pro_Admin_Fields_Settings {
 		                <option value="sequential-num"<?php selected( $value, 'sequential-num' ); ?>><?php _e( 'Sequential Order Number', 'vfb-pro' ); ?></option>
 		                <option value="date-today"<?php selected( $value, 'date-today' ); ?>><?php _e( "Today's Date", 'vfb-pro' ); ?></option>
 		                <option value="current-time"<?php selected( $value, 'current-time' ); ?>><?php _e( 'Current Time', 'vfb-pro' ); ?></option>
+						<option value="referer"<?php selected( $value, 'referer' ); ?>><?php _e( 'Referer URL', 'vfb-pro' ); ?></option>
 	                </optgroup>
 
 	                <optgroup label="<?php esc_attr_e( 'WordPress content', 'vfb-pro' ); ?>">
@@ -1283,7 +1286,7 @@ class VFB_Pro_Admin_Fields_Settings {
 
 			case 'group' :
 				?>
-				<label for="vfb-edit-currency-<?php echo "{$type}-{$id}"; ?>">
+				<label for="vfb-edit-currency-<?php echo "{$type}-{$id}"; ?>" class="vfb-letterspacing">
 					<?php esc_html_e( 'Thousand Separator Placement', 'vfb-pro' ); ?>
 				</label>
 
@@ -2000,6 +2003,21 @@ class VFB_Pro_Admin_Fields_Settings {
 		<div class="vfb-form-group">
 	<?php
 		switch ( $type ) :
+			case 'option' :
+				?>
+				<label for="vfb-edit-captcha-<?php echo "{$type}-{$id}"; ?>">
+					<?php esc_html_e( 'CAPTCHA Option', 'vfb-pro' ); ?>
+				</label>
+
+				<span class="vfb-tooltip vfb-pull-right" data-title="<?php esc_attr_e( 'About CAPTCHA Option', 'vfb-pro' ); ?>" data-content="<?php esc_attr_e( "Select the type of CAPTCHA to display. By default, Google's reCAPTCHA is selected but you can choose display a Simple version instead.", 'vfb-pro' ); ?>"><i class="vfb-icon-question"></i></span>
+
+				<select name="vfb-field-<?php echo $id; ?>[captcha][<?php echo $type; ?>]" class="vfb-form-control" id="vfb-edit-captcha-<?php echo "{$type}-{$id}"; ?>">
+				    <option value=""<?php selected( $value, '' ); ?>><?php _e( 'reCAPTCHA', 'vfb-pro' ); ?></option>
+				    <option value="simple"<?php selected( $value, 'simple' ); ?>><?php _e( 'Simple', 'vfb-pro' ); ?></option>
+				</select>
+				<?php
+				break;
+
 			case 'theme' :
 				?>
 				<label for="vfb-edit-captcha-<?php echo "{$type}-{$id}"; ?>">
@@ -2552,7 +2570,7 @@ class VFB_Pro_Admin_Fields_Settings {
 
 			case 'gte' :
 				?>
-				<label for="vfb-edit-validation-<?php echo "{$type}-{$id}"; ?>">
+				<label for="vfb-edit-validation-<?php echo "{$type}-{$id}"; ?>" class="vfb-letterspacing">
 					<?php esc_html_e( 'Greater Than Equal To', 'vfb-pro' ); ?>
 				</label>
 

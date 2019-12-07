@@ -120,7 +120,7 @@
 
 			this.isHidden = this.isFieldHidden( field );
 
-			if ( !this.isHidden) {
+			if ( !this.isHidden ) {
 				value = this.getInputValue( fieldType, field );
 	        }
 
@@ -194,11 +194,11 @@
 	    getInputValue: function( fieldType, field ) {
 		    var value = '';
 	        switch ( fieldType ) {
-	            case'checkbox':
+	            case 'checkbox' :
 	                value = this.getCheckboxInputValue( field );
 	                break;
 
-	            case'radio':
+	            case 'radio' :
 	                value = this.getRadioInputValue( field );
 	                break;
 
@@ -262,6 +262,22 @@
 				case 'ends with' :
 					value = this.endsWith( conditionValue, fieldValue );
 					break;
+
+				case 'is equal to' :
+					value = this.isEqualTo( this.toNumber( conditionValue ), this.toNumber( fieldValue ) );
+					break;
+
+				case 'is not equal to' :
+					value = this.isNotEqualTo( this.toNumber( conditionValue ), this.toNumber( fieldValue ) );
+					break;
+
+				case 'is greater than' :
+					value = this.isGreaterThan( this.toNumber( conditionValue ), this.toNumber( fieldValue ) );
+					break;
+
+				case 'is less than' :
+					value = this.isLessThan( this.toNumber( conditionValue ), this.toNumber( fieldValue ) );
+					break;
 			}
 
 			return value;
@@ -309,6 +325,44 @@
 		    var d = haystack.length - needle.length;
 	        return ( d >= 0 && String( haystack ).lastIndexOf( needle ) === d );
 	    },
+		isEqualTo: function( needle, haystack ) {
+			return this.is( needle, haystack );
+		},
+		isNotEqualTo: function( needle, haystack ) {
+		    return this.isNot( needle, haystack );
+	    },
+		isGreaterThan: function( needle, haystack ) {
+            if ( haystack !== '' ) {
+                needle   = Number( needle );
+                haystack = Number( haystack );
+
+                if ( haystack > needle ) {
+                    return true;
+                }
+				else {
+                    return false;
+                }
+            }
+			else {
+                return false;
+            }
+        },
+		isLessThan: function( needle, haystack ) {
+            if ( haystack !== '' ) {
+                needle   = Number( needle );
+                haystack = Number( haystack );
+
+                if ( haystack < needle ) {
+                    return true;
+                }
+				else {
+                    return false;
+                }
+            }
+			else {
+                return false;
+            }
+        },
 		cleanForComparison: function( string ) {
             return this.trim( this.stripTags( String( string ) ).toLowerCase() );
         },
@@ -317,7 +371,17 @@
         },
         stripTags: function( string ) {
 	        return $( '<div></div>' ).html( string ).text();
-	    }
+	    },
+		toNumber: function( numAsString ) {
+            if ( typeof numAsString === 'undefined' ) {
+                numAsString = '0';
+            }
+
+            var num = Number( numAsString );
+            num = ( isNaN( num ) ) ? 0.00 : num;
+
+            return num;
+        }
 	};
 
 	window.VFBProRuleLogic = new VFBProRuleLogic();

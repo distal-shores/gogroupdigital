@@ -42,6 +42,10 @@
 		font-weight: normal;
 		font-style: italic;
 		color: $color-gray-darker;
+
+		&.vfb-letterspacing {
+			letter-spacing: -0.5px;
+		}
 	}
 }
 

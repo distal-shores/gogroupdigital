@@ -42,22 +42,27 @@ class VFB_Pro_Edit_Email_Design {
 		$vfbdb = new VFB_Pro_Data();
 		$data  = $vfbdb->get_email_design_settings( $this->id );
 
-		$format     = isset( $data['email-format'] ) ? $data['email-format'] : '';
-		$template   = isset( $data['email-template'] ) ? $data['email-template'] : $this->html_template();
-		$premailer  = isset( $data['email-premailer']  ) ? $data['email-premailer']  : '';
-		$color_bg   = isset( $data['email-design']['color-bg']   ) ? $data['email-design']['color-bg']   : '#fbfbfb';
-		$color_link = isset( $data['email-design']['color-link'] ) ? $data['email-design']['color-link'] : '#41637e';
-		$color_h1   = isset( $data['email-design']['color-h1']   ) ? $data['email-design']['color-h1']   : '#565656';
-		$font_h1    = isset( $data['email-design']['font-h1']    ) ? $data['email-design']['font-h1']    : 'Arial';
-		$color_h2   = isset( $data['email-design']['color-h2']   ) ? $data['email-design']['color-h2']   : '#555555';
-		$font_h2    = isset( $data['email-design']['font-h2']    ) ? $data['email-design']['font-h2']    : 'Georgia';
-		$color_h3   = isset( $data['email-design']['color-h3']   ) ? $data['email-design']['color-h3']   : '#555555';
-		$font_h3    = isset( $data['email-design']['font-h3']    ) ? $data['email-design']['font-h3']    : 'Georgia';
-		$color_text = isset( $data['email-design']['color-text'] ) ? $data['email-design']['color-text'] : '#565656';
-		$font_text  = isset( $data['email-design']['font-text']  ) ? $data['email-design']['font-text']  : 'Georgia';
-		$link_love  = isset( $data['email-design']['link-love']  ) ? $data['email-design']['link-love']  : '';
-		$skip_empty = isset( $data['email-design']['skip-empty'] ) ? $data['email-design']['skip-empty'] : '';
-		$header_img = isset( $data['email-design']['header-img'] ) ? $data['email-design']['header-img'] : '';
+		$format              = isset( $data['email-format'] ) ? $data['email-format'] : '';
+		$template            = isset( $data['email-template'] ) ? $data['email-template'] : $this->html_template();
+		$premailer           = isset( $data['email-premailer'] ) ? $data['email-premailer'] : '';
+		$color_bg            = isset( $data['email-design']['color-bg'] ) ? $data['email-design']['color-bg'] : '#fbfbfb';
+		$color_headings_bg   = isset( $data['email-design']['color-headings-bg'] ) ? $data['email-design']['color-headings-bg'] : '#348eda';
+		$color_headings_text = isset( $data['email-design']['color-headings-text'] ) ? $data['email-design']['color-headings-text'] : '#ffffff';
+		$color_link          = isset( $data['email-design']['color-link'] ) ? $data['email-design']['color-link'] : '#41637e';
+		$color_h1            = isset( $data['email-design']['color-h1'] ) ? $data['email-design']['color-h1'] : '#565656';
+		$font_h1             = isset( $data['email-design']['font-h1'] ) ? $data['email-design']['font-h1'] : 'Arial';
+		$color_h2            = isset( $data['email-design']['color-h2'] ) ? $data['email-design']['color-h2'] : '#555555';
+		$font_h2             = isset( $data['email-design']['font-h2'] ) ? $data['email-design']['font-h2'] : 'Georgia';
+		$color_h3            = isset( $data['email-design']['color-h3'] ) ? $data['email-design']['color-h3'] : '#555555';
+		$font_h3             = isset( $data['email-design']['font-h3'] ) ? $data['email-design']['font-h3'] : 'Georgia';
+		$color_text          = isset( $data['email-design']['color-text'] ) ? $data['email-design']['color-text'] : '#565656';
+		$font_text           = isset( $data['email-design']['font-text'] ) ? $data['email-design']['font-text'] : 'Georgia';
+		$link_love           = isset( $data['email-design']['link-love'] ) ? $data['email-design']['link-love'] : '';
+		$skip_empty          = isset( $data['email-design']['skip-empty'] ) ? $data['email-design']['skip-empty'] : '';
+		$header_img          = isset( $data['email-design']['header-img'] ) ? $data['email-design']['header-img'] : '';
+		$title               = isset( $data['email-design']['title'] ) ? $data['email-design']['title'] : __( 'VFB Pro', 'vfb-pro' );
+		$message             = isset( $data['email-design']['message'] ) ? $data['email-design']['message'] : __( 'Your submission has been processed.', 'vfb-pro' );
+		$address             = isset( $data['email-design']['address'] ) ? $data['email-design']['address'] : __( 'Acme Inc. 123 Van Ness, San Francisco 94102', 'vfb-pro' );
 
 		$header_img_src = wp_get_attachment_image_src( $header_img, 'full' );
 
@@ -99,6 +104,36 @@ class VFB_Pro_Edit_Email_Design {
 							</td>
 						</tr>
 					</tbody>
+
+					<tbody>
+						<tr valign="top">
+							<th scope="row">
+								<label for="title"><?php _e( 'Title' , 'vfb-pro'); ?></label>
+							</th>
+							<td>
+								<input type="text" name="settings[email-design][title]" id="title" class="regular-text" value="<?php esc_attr_e( $title ); ?>" />
+							</td>
+						</tr>
+
+						<tr valign="top">
+							<th scope="row">
+								<label for="message"><?php _e( 'Message' , 'vfb-pro'); ?></label>
+							</th>
+							<td>
+								<input type="text" name="settings[email-design][message]" id="message" class="regular-text" value="<?php esc_attr_e( $message ); ?>" />
+							</td>
+						</tr>
+
+						<tr valign="top">
+							<th scope="row">
+								<label for="address"><?php _e( 'Address' , 'vfb-pro'); ?></label>
+							</th>
+							<td>
+								<input type="text" name="settings[email-design][address]" id="address" class="regular-text" value="<?php esc_attr_e( $address ); ?>" />
+							</td>
+						</tr>
+					</tbody>
+
 					<tbody id="vfb-email-html" class="vfb-email-type<?php echo 'html' == $format || empty( $format ) ? ' active' : ''; ?>">
 						<tr valign="top">
 							<th scope="row">
@@ -106,6 +141,24 @@ class VFB_Pro_Edit_Email_Design {
 							</th>
 							<td>
 								<input type="text" name="settings[email-design][color-bg]" id="color-bg" class="vfb-color-picker" value="<?php esc_attr_e( $color_bg ); ?>" data-default-color="#fbfbfb" />
+							</td>
+						</tr>
+
+						<tr valign="top">
+							<th scope="row">
+								<label for="color-headings-bg"><?php _e( 'Headings Background Color' , 'vfb-pro'); ?></label>
+							</th>
+							<td>
+								<input type="text" name="settings[email-design][color-headings-bg]" id="color-headings-bg" class="vfb-color-picker" value="<?php esc_attr_e( $color_headings_bg ); ?>" data-default-color="#348eda" />
+							</td>
+						</tr>
+
+						<tr valign="top">
+							<th scope="row">
+								<label for="color-headings-text"><?php _e( 'Headings Text Color' , 'vfb-pro'); ?></label>
+							</th>
+							<td>
+								<input type="text" name="settings[email-design][color-headings-text]" id="color-headings-text" class="vfb-color-picker" value="<?php esc_attr_e( $color_headings_text ); ?>" data-default-color="#ffffff" />
 							</td>
 						</tr>
 

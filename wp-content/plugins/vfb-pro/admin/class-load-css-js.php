@@ -20,7 +20,7 @@ class VFB_Pro_Admin_Scripts_Loader {
 	public function add_css() {
 		wp_enqueue_style( 'thickbox' );
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_style( 'vfb-admin', VFB_PLUGIN_URL . "admin/assets/css/vfb-admin.min.css", array(), '2018.03.05' );
+		wp_enqueue_style( 'vfb-admin', VFB_PLUGIN_URL . "admin/assets/css/vfb-admin.min.css", array(), '2019.05.30' );
 	}
 
 	/**
@@ -38,7 +38,7 @@ class VFB_Pro_Admin_Scripts_Loader {
 		wp_enqueue_script( 'wp-color-picker' );
 		wp_enqueue_media();
 
-		wp_enqueue_script( 'vfb-admin', VFB_PLUGIN_URL . "admin/assets/js/vfb-admin.min.js", array( 'jquery' ), '2018.02.13', true );
+		wp_enqueue_script( 'vfb-admin', VFB_PLUGIN_URL . "admin/assets/js/vfb-admin.min.js", array( 'jquery' ), '2019.08.06', true );
 		wp_enqueue_script( 'jquery-datetime-picker', VFB_PLUGIN_URL . "admin/assets/js/datetimepicker.min.js", array( 'jquery' ), '2.4.0', true );
 		wp_enqueue_script( 'jquery-token-field', VFB_PLUGIN_URL . "admin/assets/js/token-field.min.js", array( 'jquery' ), '1.3.3', true );
 		wp_enqueue_script( 'jquery-confirm', VFB_PLUGIN_URL . "admin/assets/js/confirm.min.js", array(), '2.3.1', true );

@@ -67,19 +67,24 @@ class VFB_Pro_Templating {
 	 * @return void
 	 */
 	public function css( $template, $settings ) {
-		$color_bg     = isset( $settings['email-design']['color-bg']   ) ? $settings['email-design']['color-bg']   : '#fbfbfb';
-		$color_link   = isset( $settings['email-design']['color-link'] ) ? $settings['email-design']['color-link'] : '#41637e';
-		$color_h1     = isset( $settings['email-design']['color-h1']   ) ? $settings['email-design']['color-h1']   : '#565656';
-		$font_h1      = isset( $settings['email-design']['font-h1']    ) ? $settings['email-design']['font-h1']    : 'Arial';
-		$color_h2     = isset( $settings['email-design']['color-h2']   ) ? $settings['email-design']['color-h2']   : '#555555';
-		$font_h2      = isset( $settings['email-design']['font-h2']    ) ? $settings['email-design']['font-h2']    : 'Georgia';
-		$color_h3     = isset( $settings['email-design']['color-h3']   ) ? $settings['email-design']['color-h3']   : '#555555';
-		$font_h3      = isset( $settings['email-design']['font-h3']    ) ? $settings['email-design']['font-h3']    : 'Georgia';
-		$color_text   = isset( $settings['email-design']['color-text'] ) ? $settings['email-design']['color-text'] : '#565656';
-		$font_text    = isset( $settings['email-design']['font-text']  ) ? $settings['email-design']['font-text']  : 'Georgia';
-		$font_family  = $this->font_family( $font_text );
-		$header_img   = isset( $settings['email-design']['header-img'] ) ? $settings['email-design']['header-img'] : '';
-		$link_love    = isset( $settings['email-design']['link-love']  ) ? $settings['email-design']['link-love']   : '';
+		$color_bg            = isset( $settings['email-design']['color-bg'] ) ? $settings['email-design']['color-bg'] : '#fbfbfb';
+		$color_headings_bg   = isset( $settings['email-design']['color-headings-bg'] ) ? $settings['email-design']['color-headings-bg'] : '#348eda';
+		$color_headings_text = isset( $settings['email-design']['color-headings-text'] ) ? $settings['email-design']['color-headings-text'] : '#ffffff';
+		$color_link          = isset( $settings['email-design']['color-link'] ) ? $settings['email-design']['color-link'] : '#41637e';
+		$color_h1            = isset( $settings['email-design']['color-h1'] ) ? $settings['email-design']['color-h1'] : '#565656';
+		$font_h1             = isset( $settings['email-design']['font-h1'] ) ? $settings['email-design']['font-h1'] : 'Arial';
+		$color_h2            = isset( $settings['email-design']['color-h2'] ) ? $settings['email-design']['color-h2'] : '#555555';
+		$font_h2             = isset( $settings['email-design']['font-h2'] ) ? $settings['email-design']['font-h2'] : 'Georgia';
+		$color_h3            = isset( $settings['email-design']['color-h3'] ) ? $settings['email-design']['color-h3'] : '#555555';
+		$font_h3             = isset( $settings['email-design']['font-h3'] ) ? $settings['email-design']['font-h3'] : 'Georgia';
+		$color_text          = isset( $settings['email-design']['color-text'] ) ? $settings['email-design']['color-text'] : '#565656';
+		$font_text           = isset( $settings['email-design']['font-text'] ) ? $settings['email-design']['font-text'] : 'Georgia';
+		$font_family         = $this->font_family( $font_text );
+		$header_img          = isset( $settings['email-design']['header-img'] ) ? $settings['email-design']['header-img'] : '';
+		$link_love           = isset( $settings['email-design']['link-love'] ) ? $settings['email-design']['link-love'] : '';
+		$title               = isset( $settings['email-design']['title'] ) ? $settings['email-design']['title'] : __( 'VFB Pro', 'vfb-pro' );
+		$message             = isset( $settings['email-design']['message'] ) ? $settings['email-design']['message'] : __( 'Your submission has been processed.', 'vfb-pro' );
+		$address             = isset( $settings['email-design']['address'] ) ? $settings['email-design']['address'] : __( 'Acme Inc. 123 Van Ness, San Francisco 94102', 'vfb-pro' );
 
 		// Hide the Link Love text, if setting is checked
 		$link_love_text = 1 == $link_love ? '' : __( 'This email was built and sent using <a href="http://vfbpro.com">VFB Pro</a>.', 'vfb-pro' );
@@ -88,18 +93,23 @@ class VFB_Pro_Templating {
 		$header_img_src = $this->get_header_image( $header_img );
 
 		$defaults = array(
-			'color-bg'      => $color_bg,
-			'color-link'    => $color_link,
-			'color-h1'      => $color_h1,
-			'font-h1'       => $font_h1,
-			'color-h2'      => $color_h2,
-			'font-h2'       => $font_h2,
-			'color-h3'      => $color_h3,
-			'font-h3'       => $font_h3,
-			'color-text'    => $color_text,
-			'font-text'     => $font_text,
-			'header-img'    => $header_img_src,
-			'vfb-link-love' => $link_love_text,
+			'color-bg'            => $color_bg,
+			'color-headings-bg'   => $color_headings_bg,
+			'color-headings-text' => $color_headings_text,
+			'color-link'          => $color_link,
+			'color-h1'            => $color_h1,
+			'font-h1'             => $font_h1,
+			'color-h2'            => $color_h2,
+			'font-h2'             => $font_h2,
+			'color-h3'            => $color_h3,
+			'font-h3'             => $font_h3,
+			'color-text'          => $color_text,
+			'font-text'           => $font_text,
+			'header-img'          => $header_img_src,
+			'vfb-link-love'       => $link_love_text,
+			'title'               => $title,
+			'message'             => $message,
+			'address'             => $address,
 		);
 
 		$search = preg_match_all( '/\[(.*?)\]/', $template, $matches );
@@ -133,6 +143,7 @@ class VFB_Pro_Templating {
 
 		foreach ( $fields as $field ) {
 			$label    = isset( $field['data']['label'] ) ? $field['data']['label'] : '';
+			$desc     = isset( $field['data']['description'] ) ? $field['data']['description'] : '';
 			$field_id = $field['id'];
 			$meta_key = '_vfb_field-' . $field_id;
 			$value    = $vfbdb->get_entry_meta_by_id( $entry_id, $meta_key );
@@ -159,9 +170,28 @@ class VFB_Pro_Templating {
 				// If value is empty, add a non-breaking space so it doesn't mess with table
 				$value = !empty( $value ) ? $value : '&nbsp;';
 
-				$output .= '<tr>';
-					$output .= sprintf( '<td>%s</td>', $label );
-		            $output .= sprintf( '<td class="align right">%s</td>', $value );
+				switch ( $field['field_type'] ) {
+					case 'heading' :
+						$output .= '<tr class="field-headings">';
+						$output .= sprintf( '<td colspan="2">%s</td>', $label );
+
+						break;
+
+					case 'instructions' :
+						$output .= '<tr class="field-instructions">';
+						$output .= sprintf( '<td>%s</td>', $label );
+						$output .= sprintf( '<td class="align right">%s</td>', $desc );
+
+						break;
+
+					default :
+						$output .= '<tr>';
+						$output .= sprintf( '<td>%s</td>', $label );
+						$output .= sprintf( '<td class="align right">%s</td>', $value );
+
+						break;
+				}
+
 	            $output .= '</tr>';
             }
             else {

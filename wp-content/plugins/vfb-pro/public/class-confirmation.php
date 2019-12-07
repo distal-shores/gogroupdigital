@@ -74,13 +74,15 @@ class VFB_Pro_Confirmation {
 	public function wp_page() {
 		$data = $this->get_settings();
 
-		$type     = isset( $data['confirmation-type'] ) ? $data['confirmation-type'] : 'text';
-		$page     = isset( $data['wp-page'] ) ? $data['wp-page'] : '';
+		$type       = isset( $data['confirmation-type'] ) ? $data['confirmation-type'] : 'text';
+		$page       = isset( $data['wp-page'] ) ? $data['wp-page'] : '';
+		$query_vars = isset( $data['wp-page-query-vars'] ) ? $data['wp-page-query-vars'] : '';
 
 		if ( 'wp-page' !== $type )
 			return;
 
-		$permalink = get_permalink( $page );
+		$data      = $this->form_data();
+		$permalink = !empty( $query_vars ) ? add_query_arg( $data, $permalink ) : get_permalink( $page );
 		wp_redirect( esc_url_raw( $permalink ) );
 
 		exit();
@@ -96,15 +98,54 @@ class VFB_Pro_Confirmation {
 	public function redirect() {
 		$data = $this->get_settings();
 
-		$type     = isset( $data['confirmation-type'] ) ? $data['confirmation-type'] : 'text';
-		$redirect = isset( $data['redirect'] ) ? $data['redirect'] : '';
+		$type       = isset( $data['confirmation-type'] ) ? $data['confirmation-type'] : 'text';
+		$redirect   = isset( $data['redirect'] ) ? $data['redirect'] : '';
+		$query_vars = isset( $data['redirect-query-vars'] ) ? $data['redirect-query-vars'] : '';
 
 		if ( 'redirect' !== $type )
 			return;
 
-		wp_redirect( esc_url_raw( $redirect ) );
+		$data = $this->form_data();
+		$url  = !empty( $query_vars ) ? add_query_arg( $data, $redirect ) : $redirect;
+		wp_redirect( esc_url_raw( $url ) );
 
 		exit();
+	}
+
+	/**
+	 * Build an array of the submitted $_POST form data
+	 *
+	 * @return $data
+	 */
+	public function form_data() {
+		// Build array from $_POST
+		$data = array();
+		foreach ( $_POST as $key => $val ) {
+			// Remove special form fields that begin with an underscore
+			if ( substr( $key, 0, 1 ) != '_' )
+				$data[ $key ] = $val;
+
+			// Remove the honeypot dummy field
+			if ( 'vfbp-EMAIL-AN8fuQyoDLXem' == $key )
+				unset( $data[ $key ] );
+
+			// Special case to handle Radio "Other" option
+			if ( strpos( $key, '-other' ) !== false ) {
+				// If "Other" text input is not empty
+				if ( !empty( $val ) ) {
+					// Get the "non-Other" name attr
+					$temp_key = preg_replace( '/(.*?)-other/', '$1', $key );
+
+					// Replace the vfb-field-{xx} value with the "Other" input
+					$data[ $temp_key ] = $val;
+				}
+
+				// Remove "Other" radio value from entry
+				unset( $data[ $key ] );
+			}
+		}
+
+		return $data;
 	}
 
 	/**

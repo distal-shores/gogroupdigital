@@ -17,15 +17,11 @@ class VFB_Pro_Page_Settings {
 		$current_tab = $this->get_current_tab();
 
 		$settings_url    = esc_url( add_query_arg( array( 'vfb-tab' => 'settings' ), admin_url( 'admin.php?page=vfbp-settings' ) ) );
-		$diagnostics_url = esc_url( add_query_arg( array( 'vfb-tab' => 'diagnostics' ), admin_url( 'admin.php?page=vfbp-settings' ) ) );
 	?>
 	<div class="wrap">
 		<h2 class="nav-tab-wrapper">
 			<a href="<?php echo $settings_url; ?>" class="nav-tab<?php echo 'settings' == $current_tab ? ' nav-tab-active' : ''; ?>">
 				<?php esc_html_e( 'General Settings', 'vfb-pro' ); ?>
-			</a>
-			<a href="<?php echo $diagnostics_url; ?>" class="nav-tab<?php echo 'diagnostics' == $current_tab ? ' nav-tab-active' : ''; ?>">
-				<?php esc_html_e( 'Diagnostics', 'vfb-pro' ); ?>
 			</a>
 		</h2>
 
@@ -34,10 +30,6 @@ class VFB_Pro_Page_Settings {
 			switch( $current_tab ) :
 				case 'settings' :
 					$this->settings();
-					break;
-
-				case 'diagnostics' :
-					$this->diagnostics();
 					break;
 			endswitch;
 		?>
@@ -63,6 +55,7 @@ class VFB_Pro_Page_Settings {
 
 		$license           = isset( $data['license-key'] ) ? $data['license-key'] : '';
 		$license_email     = isset( $data['license-email'] ) ? $data['license-email'] : '';
+		$recaptcha_version = isset( $data['recaptcha-version'] ) ? $data['recaptcha-version'] : 'v2';
 		$recaptcha_public  = isset( $data['recaptcha-public-key'] ) ? $data['recaptcha-public-key'] : '';
 		$recaptcha_private = isset( $data['recaptcha-private-key'] ) ? $data['recaptcha-private-key'] : '';
 		$smtp_host         = isset( $data['smtp-host'] ) ? $data['smtp-host'] : '';
@@ -87,37 +80,38 @@ class VFB_Pro_Page_Settings {
 
 		$enable_validation_msgs      = isset( $data['custom-validation-msgs'] ) ? $data['custom-validation-msgs'] : '';
 
-		$validation_msg = array();
-		$validation_msg['default']   = isset( $data['validation-msg-default']   ) ? $data['validation-msg-default']   : __( 'This value seems to be invalid.', 'vfb-pro' );
-		$validation_msg['email']     = isset( $data['validation-msg-email']     ) ? $data['validation-msg-email']     : __( 'This value should be a valid email.', 'vfb-pro' );
-		$validation_msg['url']       = isset( $data['validation-msg-url']       ) ? $data['validation-msg-url']       : __( 'This value should be a valid url.', 'vfb-pro' );
-		$validation_msg['number']    = isset( $data['validation-msg-number']    ) ? $data['validation-msg-number']    : __( 'This value should be a valid number.', 'vfb-pro' );
-		$validation_msg['integer']   = isset( $data['validation-msg-integer']   ) ? $data['validation-msg-integer']   : __( 'This value should be a valid integer.', 'vfb-pro' );
-		$validation_msg['digits']    = isset( $data['validation-msg-digits']    ) ? $data['validation-msg-digits']    : __( 'This value should be digits.', 'vfb-pro' );
-		$validation_msg['alphanum']  = isset( $data['validation-msg-alphanum']  ) ? $data['validation-msg-alphanum']  : __( 'This value should be alphanumeric.', 'vfb-pro' );
-		$validation_msg['notblank']  = isset( $data['validation-msg-notblank']  ) ? $data['validation-msg-notblank']  : __( 'This value should not be blank.', 'vfb-pro' );
-		$validation_msg['required']  = isset( $data['validation-msg-required']  ) ? $data['validation-msg-required']  : __( 'This value is required', 'vfb-pro' );
-		$validation_msg['pattern']   = isset( $data['validation-msg-pattern']   ) ? $data['validation-msg-pattern']   : __( 'This value seems to be invalid.', 'vfb-pro' );
-		$validation_msg['min']       = isset( $data['validation-msg-min']       ) ? $data['validation-msg-min']       : __( 'This value should be greater than or equal to %s.', 'vfb-pro' );
-		$validation_msg['max']       = isset( $data['validation-msg-max']       ) ? $data['validation-msg-max']       : __( 'This value should be lower than or equal to %s.', 'vfb-pro' );
-		$validation_msg['range']     = isset( $data['validation-msg-range']     ) ? $data['validation-msg-range']     : __( 'This value should be between %s and %s.', 'vfb-pro' );
-		$validation_msg['minlength'] = isset( $data['validation-msg-minlength'] ) ? $data['validation-msg-minlength'] : __( 'This value is too short. It should have %s characters or more.', 'vfb-pro' );
-		$validation_msg['maxlength'] = isset( $data['validation-msg-maxlength'] ) ? $data['validation-msg-maxlength'] : __( 'This value is too long. It should have %s characters or fewer.', 'vfb-pro' );
-		$validation_msg['length']    = isset( $data['validation-msg-length']    ) ? $data['validation-msg-length']    : __( 'This value length is invalid. It should be between %s and %s characters long.', 'vfb-pro' );
-		$validation_msg['mincheck']  = isset( $data['validation-msg-mincheck']  ) ? $data['validation-msg-mincheck']  : __( 'You must select at least %s choices.', 'vfb-pro' );
-		$validation_msg['maxcheck']  = isset( $data['validation-msg-maxcheck']  ) ? $data['validation-msg-maxcheck']  : __( 'You must select %s choices or fewer.', 'vfb-pro' );
-		$validation_msg['check']     = isset( $data['validation-msg-check']     ) ? $data['validation-msg-check']     : __( 'You must select between %s and %s choices.', 'vfb-pro' );
-		$validation_msg['equalto']   = isset( $data['validation-msg-equalto']   ) ? $data['validation-msg-equalto']   : __( 'This value should be the same.', 'vfb-pro' );
-		$validation_msg['minwords']  = isset( $data['validation-msg-minwords']  ) ? $data['validation-msg-minwords']  : __( 'This value is too short. It should have %s words or more.', 'vfb-pro' );
-		$validation_msg['maxwords']  = isset( $data['validation-msg-maxwords']  ) ? $data['validation-msg-maxwords']  : __( 'This value is too long. It should have %s words or fewer.', 'vfb-pro' );
-		$validation_msg['words']     = isset( $data['validation-msg-words']     ) ? $data['validation-msg-words']     : __( 'This value length is invalid. It should be between %s and %s words long.', 'vfb-pro' );
-		$validation_msg['gt']        = isset( $data['validation-msg-gt']        ) ? $data['validation-msg-gt']        : __( 'This value should be greater.', 'vfb-pro' );
-		$validation_msg['gte']       = isset( $data['validation-msg-gte']       ) ? $data['validation-msg-gte']       : __( 'This value should be greater or equal.', 'vfb-pro' );
-		$validation_msg['lt']        = isset( $data['validation-msg-lt']        ) ? $data['validation-msg-lt']        : __( 'This value should be less.', 'vfb-pro' );
-		$validation_msg['lte']       = isset( $data['validation-msg-lte']       ) ? $data['validation-msg-lte']       : __( 'This value should be less or equal.', 'vfb-pro' );
+		$validation_msg         = array();
+		$default_validation_msg = include( VFB_PLUGIN_DIR . '/inc/validation-messages.php' );
+		$validation_msg['default']   = isset( $data['validation-msg-default']   ) ? $data['validation-msg-default']   : $default_validation_msg['default'];
+		$validation_msg['email']     = isset( $data['validation-msg-email']     ) ? $data['validation-msg-email']     : $default_validation_msg['email'];
+		$validation_msg['url']       = isset( $data['validation-msg-url']       ) ? $data['validation-msg-url']       : $default_validation_msg['url'];
+		$validation_msg['number']    = isset( $data['validation-msg-number']    ) ? $data['validation-msg-number']    : $default_validation_msg['number'];
+		$validation_msg['integer']   = isset( $data['validation-msg-integer']   ) ? $data['validation-msg-integer']   : $default_validation_msg['integer'];
+		$validation_msg['digits']    = isset( $data['validation-msg-digits']    ) ? $data['validation-msg-digits']    : $default_validation_msg['digits'];
+		$validation_msg['alphanum']  = isset( $data['validation-msg-alphanum']  ) ? $data['validation-msg-alphanum']  : $default_validation_msg['alphanum'];
+		$validation_msg['notblank']  = isset( $data['validation-msg-notblank']  ) ? $data['validation-msg-notblank']  : $default_validation_msg['notblank'];
+		$validation_msg['required']  = isset( $data['validation-msg-required']  ) ? $data['validation-msg-required']  : $default_validation_msg['required'];
+		$validation_msg['pattern']   = isset( $data['validation-msg-pattern']   ) ? $data['validation-msg-pattern']   : $default_validation_msg['pattern'];
+		$validation_msg['min']       = isset( $data['validation-msg-min']       ) ? $data['validation-msg-min']       : $default_validation_msg['min'];
+		$validation_msg['max']       = isset( $data['validation-msg-max']       ) ? $data['validation-msg-max']       : $default_validation_msg['max'];
+		$validation_msg['range']     = isset( $data['validation-msg-range']     ) ? $data['validation-msg-range']     : $default_validation_msg['range'];
+		$validation_msg['minlength'] = isset( $data['validation-msg-minlength'] ) ? $data['validation-msg-minlength'] : $default_validation_msg['minlength'];
+		$validation_msg['maxlength'] = isset( $data['validation-msg-maxlength'] ) ? $data['validation-msg-maxlength'] : $default_validation_msg['maxlength'];
+		$validation_msg['length']    = isset( $data['validation-msg-length']    ) ? $data['validation-msg-length']    : $default_validation_msg['length'];
+		$validation_msg['mincheck']  = isset( $data['validation-msg-mincheck']  ) ? $data['validation-msg-mincheck']  : $default_validation_msg['mincheck'];
+		$validation_msg['maxcheck']  = isset( $data['validation-msg-maxcheck']  ) ? $data['validation-msg-maxcheck']  : $default_validation_msg['maxcheck'];
+		$validation_msg['check']     = isset( $data['validation-msg-check']     ) ? $data['validation-msg-check']     : $default_validation_msg['check'];
+		$validation_msg['equalto']   = isset( $data['validation-msg-equalto']   ) ? $data['validation-msg-equalto']   : $default_validation_msg['equalto'];
+		$validation_msg['minwords']  = isset( $data['validation-msg-minwords']  ) ? $data['validation-msg-minwords']  : $default_validation_msg['minwords'];
+		$validation_msg['maxwords']  = isset( $data['validation-msg-maxwords']  ) ? $data['validation-msg-maxwords']  : $default_validation_msg['maxwords'];
+		$validation_msg['words']     = isset( $data['validation-msg-words']     ) ? $data['validation-msg-words']     : $default_validation_msg['words'];
+		$validation_msg['gt']        = isset( $data['validation-msg-gt']        ) ? $data['validation-msg-gt']        : $default_validation_msg['gt'];
+		$validation_msg['gte']       = isset( $data['validation-msg-gte']       ) ? $data['validation-msg-gte']       : $default_validation_msg['gte'];
+		$validation_msg['lt']        = isset( $data['validation-msg-lt']        ) ? $data['validation-msg-lt']        : $default_validation_msg['lt'];
+		$validation_msg['lte']       = isset( $data['validation-msg-lte']       ) ? $data['validation-msg-lte']       : $default_validation_msg['lte'];
 	?>
 	<div class="wrap">
-		<form method="post" id="vfbp-settings" action="">
+		<form method="post" id="vfbp-settings" action="" autocomplete="off">
 			<input name="_vfbp_action" type="hidden" value="save-settings" />
 			<?php
 				wp_nonce_field( 'vfbp_settings' );
@@ -180,6 +174,23 @@ class VFB_Pro_Page_Settings {
 					<table class="form-table">
 						<tr valign="top">
 							<th scope="row">
+								<label for="recaptcha-version"><?php esc_html_e( 'Type', 'vfb-pro' ); ?></label>
+							</th>
+							<td id="recaptcha-version">
+								<fieldset>
+									<label>
+										<input type="radio" name="settings[recaptcha-version]" id="recaptcha-version-v2" value="v2"<?php checked( $recaptcha_version, 'v2' ); ?> /> <?php _e( 'v2 (Checkbox)', 'vfb-pro' ); ?>
+									</label>
+									<br />
+									<label>
+										<input type="radio" name="settings[recaptcha-version]" id="recaptcha-version-v3" value="v3"<?php checked( $recaptcha_version, 'v3' ); ?> /> <?php _e( 'v3 (Invisible)', 'vfb-pro' ); ?>
+									</label>
+								</fieldset>
+							</td>
+						</tr>
+
+						<tr valign="top">
+							<th scope="row">
 								<label for="recaptcha-public-key"><?php esc_html_e( 'Site Key', 'vfb-pro' ); ?></label>
 							</th>
 							<td>
@@ -212,7 +223,7 @@ class VFB_Pro_Page_Settings {
 							<td>
 								<input type="text" name="settings[smtp-host]" id="smtp-host" value="<?php esc_html_e( $smtp_host ); ?>" class="regular-text" />
 								<label for="smtp-port"><?php esc_html_e( 'Port', 'vfb-pro' ); ?></label>
-								<input type="text" name="settings[smtp-port]" id="smtp-port" value="<?php esc_html_e( $smtp_port ); ?>" class="small-text" />
+								<input type="number" name="settings[smtp-port]" id="smtp-port" value="<?php esc_html_e( $smtp_port ); ?>" class="small-text" />
 							</td>
 						</tr>
 
@@ -220,18 +231,18 @@ class VFB_Pro_Page_Settings {
 							<th scope="row">
 								<label for="smtp-encryption"><?php esc_html_e( 'Encryption', 'vfb-pro' ); ?></label>
 							</th>
-							<td>
+							<td id="smtp-encryption">
 								<fieldset>
 									<label>
-										<input type="radio" name="settings[smtp-encryption]" id="smtp-encryption" value="none"<?php checked( $smtp_encryption, 'none' ); ?> /> <?php _e( 'None', 'vfb-pro' ); ?>
+										<input type="radio" name="settings[smtp-encryption]" id="smtp-encryption-none" value="none"<?php checked( $smtp_encryption, 'none' ); ?> /> <?php _e( 'None', 'vfb-pro' ); ?>
 									</label>
 									<br />
 									<label>
-										<input type="radio" name="settings[smtp-encryption]" id="smtp-encryption" value="ssl"<?php checked( $smtp_encryption, 'ssl' ); ?> /> <?php _e( 'SSL (recommended)', 'vfb-pro' ); ?>
+										<input type="radio" name="settings[smtp-encryption]" id="smtp-encryption-ssl" value="ssl"<?php checked( $smtp_encryption, 'ssl' ); ?> /> <?php _e( 'SSL (recommended)', 'vfb-pro' ); ?>
 									</label>
 									<br />
 									<label>
-										<input type="radio" name="settings[smtp-encryption]" id="smtp-encryption" value="tls"<?php checked( $smtp_encryption, 'tls' ); ?> /> <?php _e( 'TLS', 'vfb-pro' ); ?>
+										<input type="radio" name="settings[smtp-encryption]" id="smtp-encryption-tls" value="tls"<?php checked( $smtp_encryption, 'tls' ); ?> /> <?php _e( 'TLS', 'vfb-pro' ); ?>
 									</label>
 								</fieldset>
 							</td>
@@ -326,10 +337,8 @@ class VFB_Pro_Page_Settings {
 							<th scope="row">
 							</th>
 							<td>
-								<div class="vfb-notices vfb-notice-warning">
+								<div class="vfb-notices vfb-notice-warning" style="overflow-wrap: break-word; word-wrap: break-word; max-width: 800px;">
 								<?php
-									add_action( 'phpmailer_init', array( $this, 'smtp_test_init' ) );
-
 									$email = isset( $_POST['vfb-smtp-test-email'] ) ? sanitize_email( $_POST['vfb-smtp-test-email'] ) : '';
 									$this->smtp_test( $email );
 								?>
@@ -660,6 +669,9 @@ class VFB_Pro_Page_Settings {
 		// Set SMTPDebug to true
 		$phpmailer->SMTPDebug = 2;
 
+		// Output escaped, line breaks converted to <br>, appropriate for browser output
+		$phpmailer->Debugoutput = 'html';
+
 		// Tell the PHPMailer class to use SMTP
 		$phpmailer->isSMTP();
 
@@ -690,6 +702,9 @@ class VFB_Pro_Page_Settings {
 	    if ( !empty( $from_name ) && !empty( $from_email ) ) {
 		    $phpmailer->setFrom( $from_email, $from_name );
 	    }
+
+		// Always unhook PHPMailer setup at the end
+    	remove_action( 'phpmailer_init', __function__ );
 	}
 
 	/**
@@ -700,16 +715,39 @@ class VFB_Pro_Page_Settings {
 	 * @return void
 	 */
 	public function smtp_test( $email ) {
+		add_action( 'phpmailer_init', array( $this, 'smtp_test_init' ) );
+
+		$from_name  = isset( $_POST['vfb-smtp-test-from-name']     ) ? $_POST['vfb-smtp-test-from-name']     : '';
+		$from_email = isset( $_POST['vfb-smtp-test-from-email']    ) ? $_POST['vfb-smtp-test-from-email']    : '';
+
 		// Set up the mail variables
 		$to      = $email;
 		$subject = 'VFB Pro SMTP: ' . __( 'Test mail to ', 'vfb-pro') . $to;
 		$message = __( 'This is a test email generated by VFB Pro.', 'vfb-pro' );
 
+		// Set a default From name if none set during test
+		if ( empty( $from_name ) )
+			$from_name = 'WordPress';
+
+		$sitename = strtolower( $_SERVER['SERVER_NAME'] );
+		if ( substr( $sitename, 0, 4 ) == 'www.' ) {
+			$sitename = substr( $sitename, 4 );
+		}
+
+		$test_from_email = 'wordpress@' . $sitename;
+
+		// Set a From Email to match domain if SMTP is not set and From Email is empty
+		if ( empty( $from_email ) )
+			$from_email = $test_from_email;
+
+		$headers[] = "From: $from_name <$from_email>";
+		$headers[] = "X-Mailer-Type:VFBPro/SMTP/Test";
+
 		// Start output buffering to grab smtp debugging output
 		ob_start();
 
 		// Send the test mail
-		$result = wp_mail( $to, $subject, $message );
+		$result = wp_mail( $to, $subject, $message, $headers );
 
 		// Grab the smtp debugging output
 		$smtp_debug = ob_get_clean();
@@ -721,17 +759,6 @@ class VFB_Pro_Page_Settings {
 		// SMTP debug log
 		printf( '<h3>%s</h3>', __( 'SMTP Debug Output', 'vfb-pro' ) );
 		echo '<pre>'; print_r( $smtp_debug ); echo '</pre>';
-	}
-
-	/**
-	 * Display the Diagnostics tab
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public function diagnostics() {
-		$diagnostics = new VFB_Pro_Admin_Diagnostics();
-		$diagnostics->display();
 	}
 
 	/**

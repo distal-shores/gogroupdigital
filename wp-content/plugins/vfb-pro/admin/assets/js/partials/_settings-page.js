@@ -3,6 +3,20 @@ jQuery(document).ready(function($) {
 		$( '#smtp-auth-details' ).toggle( $( this ).prop( 'checked' ) );
 	});
 
+	$( '#smtp-encryption input' ).change( function () {
+		var smtp_port = $( '#smtp-port' );
+
+		if ( 'tls' === $( this ).val() ) {
+			smtp_port.val( '587' );
+		}
+		else if ( 'ssl' === $( this ).val() ) {
+			smtp_port.val( '465' );
+		}
+		else {
+			smtp_port.val( '25' );
+		}
+	} );
+
 	$( '#custom-validation-msgs' ).change( function() {
 		$( '#vfb-validation-msgs' ).toggle( $( this ).prop( 'checked' ) );
 	});

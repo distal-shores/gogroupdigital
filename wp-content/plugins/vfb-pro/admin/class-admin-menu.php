@@ -92,13 +92,13 @@ class VFB_Pro_Admin_Menu {
 			array( $this, 'settings' )
 		);
 
-		$addons = add_submenu_page(
+		$help = add_submenu_page(
 			'vfb-pro',
-			__( 'Add-ons', 'vfb-pro' ),
-			'<span class="vfb-menu-item-addons">' . __( 'Add-ons', 'vfb-pro' ) . '</span>',
+			__( 'Help', 'vfb-pro' ),
+			__( 'Help', 'vfb-pro' ),
 			'vfb_edit_forms',
-			'vfbp-addons',
-			array( $this, 'add_ons' )
+			'vfbp-help',
+			array( $this, 'help' )
 		);
 
 		$scripts = new VFB_Pro_Admin_Scripts_Loader();
@@ -114,8 +114,8 @@ class VFB_Pro_Admin_Menu {
 		add_action( 'load-' . $settings, array( $scripts, 'add_css' ) );
 		add_action( 'load-' . $settings, array( $scripts, 'add_js' ) );
 
-		add_action( 'load-' . $addons, array( $scripts, 'add_css' ) );
-		add_action( 'load-' . $addons, array( $scripts, 'add_js' ) );
+		add_action( 'load-' . $help, array( $scripts, 'add_css' ) );
+		add_action( 'load-' . $help, array( $scripts, 'add_js' ) );
 
 		if ( ( $pagenow == 'edit.php' ) || $typenow == 'vfb_entry' ) {
 			add_action( 'admin_print_styles', array( $scripts, 'add_css' ) );
@@ -141,7 +141,7 @@ class VFB_Pro_Admin_Menu {
 			remove_submenu_page( 'vfb-pro', 'edit.php?post_type=vfb_entry' );
 			remove_submenu_page( 'vfb-pro', 'vfbp-import' );
 			remove_submenu_page( 'vfb-pro', 'vfbp-export' );
-			remove_submenu_page( 'vfb-pro', 'vfbp-addons' );
+			remove_submenu_page( 'vfb-pro', 'vfbp-help' );
 		}
 	}
 
@@ -271,15 +271,15 @@ class VFB_Pro_Admin_Menu {
 	}
 
 	/**
-	 * View for the Add-ons page
+	 * View for the Help page
 	 *
 	 * @since  3.0
 	 * @access public
 	 * @return void
 	 */
-	public function add_ons() {
-		$addons = new VFB_Pro_Page_AddOns();
-		$addons->display();
+	public function help() {
+		$help = new VFB_Pro_Page_Help();
+		$help->display();
 	}
 
 	/**

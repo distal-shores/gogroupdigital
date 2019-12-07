@@ -360,7 +360,7 @@ class VFB_Pro_Entries {
 					$url_output = '';
 
 					foreach ( $urls as $url ) {
-						$url_output .= sprintf( '<a href="%1$s">%1$s</a><br />', $url );
+						$url_output .= sprintf( '<a href="%1$s">%1$s</a><br />', esc_url( $url ) );
 					}
 
 					$value = $url_output;
@@ -541,6 +541,22 @@ class VFB_Pro_Entries {
 			if ( is_array( $hidden_columns ) ) {
 				return $hidden_columns;
 			}
+			// If Screen Options have not been used yet, only display minimal info
+			else {
+				$default_columns = array();
+				$safe_columns    = array( 'cb', 'id', 'entry-date' );
+				$columns         = $this->sortable_columns();
+
+				if ( is_array( $columns ) && !empty( $columns ) ) {
+					foreach ( $columns as $slug => $c ) {
+						if ( !in_array( $slug, $safe_columns ) ) {
+							$default_columns[] = $slug;
+						}
+					}
+				}
+
+				return $default_columns;
+			}
 		}
 
 		return $hidden;
@@ -643,7 +659,7 @@ class VFB_Pro_Entries {
 						$url_output = '';
 
 						foreach ( $urls as $url ) {
-							$url_output .= sprintf( '<a href="%1$s">%1$s</a><br />', $url );
+							$url_output .= sprintf( '<a href="%1$s">%1$s</a><br />', esc_url( $url ) );
 						}
 
 						$value = $url_output;

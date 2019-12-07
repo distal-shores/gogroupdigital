@@ -46,10 +46,10 @@ class VFB_Pro_Security {
 	 * @return void
 	 */
 	public function honeypot_check() {
-		if ( !isset( $_POST['vfbp-spam'] ) )
+		if ( !isset( $_POST['vfbp-EMAIL-AN8fuQyoDLXem'] ) )
 			return true;
 
-		if ( isset( $_POST['vfbp-spam'] ) && !empty( $_POST['vfbp-spam'] ) )
+		if ( isset( $_POST['vfbp-EMAIL-AN8fuQyoDLXem'] ) && !empty( $_POST['vfbp-EMAIL-AN8fuQyoDLXem'] ) )
 			return __( 'Security check: you filled out a form field that was created to stop spam bots and should be left blank. If you think this is an error, please email the site owner.', 'vfb-pro' );
 
 		return true;
@@ -64,6 +64,17 @@ class VFB_Pro_Security {
 	public function recaptcha_check() {
 		$vfb_settings  = get_option( 'vfbp_settings' );
 		$private_key   = $vfb_settings['recaptcha-private-key'];
+
+		/**
+		 * Filter the Google reCAPTCHA Private Key
+		 *
+		 * Changing this value will alter the private key used by
+		 * Google reCAPTCHA.
+		 *
+		 * @since 3.4
+		 *
+		 */
+		$private_key   = apply_filters( 'vfbp_recaptcha_private_key', $private_key );
 
 		if ( !isset( $_POST['_vfb_recaptcha_enabled'] ) )
 			return true;
@@ -111,6 +122,30 @@ class VFB_Pro_Security {
 	}
 
 	/**
+	 * Simple two digit captcha check
+	 * @return [type] [description]
+	 */
+	public function simple_captcha_check() {
+		$form_id = isset( $_POST['_vfb-form-id'] ) ? absint( $_POST['_vfb-form-id'] ) : 0;
+
+		if ( !isset( $_POST['_vfb_captcha_simple_enabled'] ) )
+			return true;
+
+		if ( 1 !== absint( $_POST['_vfb_captcha_simple_enabled'] ) )
+			return __( 'Security check: Captcha verification has been tampered with. If you think this is an error, please email the site owner.', 'vfb-pro' );
+
+		if ( !isset( $_POST['_vfb_captcha_simple-' . $form_id] ) )
+			return true;
+
+		$captcha_value = $_POST['_vfb_captcha_simple-' . $form_id];
+
+		if ( !is_numeric( $captcha_value ) || strlen( $captcha_value ) !== 2 )
+			return __( 'Security check: It appears you have failed to properly answer the security Captcha question. Please go back and try again.', 'vfb-pro' );
+
+		return true;
+	}
+
+	/**
 	 * Make sure the User Agent string is not a SPAM bot.
 	 *
 	 * Returns true if NOT a SPAM bot
@@ -133,6 +168,35 @@ class VFB_Pro_Security {
 			if ( stripos( $user_agent, $bot ) !== false )
 				return __( 'Security check: looks like you are a SPAM bot. If you think this is an error, please email the site owner.' , 'vfb-pro' );
 		}
+
+		return true;
+	}
+
+	 /**
+ 	 * Checks the form was not submitted too quickly or too slowly.
+ 	 *
+ 	 * @access public
+ 	 * @return void
+ 	 */
+	public function timestamp_check() {
+		$form_id = isset( $_POST['_vfb-form-id'] ) ? absint( $_POST['_vfb-form-id'] ) : 0;
+
+		if ( !isset( $_POST['_vfb-timestamp-' . $form_id] ) )
+			return true;
+
+		$min_time  = apply_filters( 'vfbp_timestamp_min', 3 ); 		// 3 seconds
+		$max_time  = apply_filters( 'vfbp_timestamp_max', 43200 );	// 12 hours
+		$now       = current_time( 'timestamp' );
+		$timestamp = wp_unslash( $_POST['_vfb-timestamp-' . $form_id] );
+		$time      = $now - $timestamp;
+
+		if ( $time < $min_time ) {
+			return __( 'Security check: the form was submitted too fast and looks like a SPAM bot. Please wait a few seconds before sending. If you think this is an error, please email the site owner.' , 'vfb-pro' );
+		}
+
+		// if ( $time > $max_time ) {
+		// 	return __( 'Security check: the form was submitted too slow and looks like a SPAM bot. Please wait a few seconds before sending. If you think this is an error, please email the site owner.' , 'vfb-pro' );
+		// }
 
 		return true;
 	}

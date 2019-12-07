@@ -5,210 +5,234 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title></title>
         <style type="text/css">
-	        /* GLOBAL */
+			/* GLOBAL */
 			* {
-			  margin: 0;
-			  padding: 0;
-			  font-family: [font-text];
-			  box-sizing: border-box;
-			  font-size: 14px;
+				font-family: [font-text];
+				font-size: 14px;
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
 			}
 
 			img {
-			  max-width: 100%;
+				max-width: 100%;
 			}
 
 			body {
-			  -webkit-font-smoothing: antialiased;
-			  -webkit-text-size-adjust: none;
-			  width: 100% !important;
-			  height: 100%;
-			  line-height: 1.6;
+				line-height: 1.6;
+				width: 100% !important;
+				height: 100%;
+
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-size-adjust: none;
 			}
 
 			/* Make sure all tables have defaults */
 			table td {
-			  vertical-align: top;
+				vertical-align: top;
 			}
 
 			/* BODY & CONTAINER */
 			body {
-			  background-color: [color-bg];
+				background-color: [color-bg];
 			}
 
 			.body-wrap {
-			  background-color: [color-bg];
-			  width: 100%;
+				width: 100%;
+				background-color: [color-bg];
 			}
 
 			.container {
-			  display: block !important;
-			  max-width: 600px !important;
-			  margin: 0 auto !important;
-			  /* makes it centered */
-			  clear: both !important;
+				display: block !important;
+				/* makes it centered */
+				clear: both !important;
+				max-width: 700px !important;
+				margin: 0 auto !important;
 			}
 
 			.content {
-			  max-width: 600px;
-			  margin: 0 auto;
-			  display: block;
-			  padding: 20px;
+				display: block;
+				max-width: 700px;
+				margin: 0 auto;
+				padding: 20px;
 			}
 
 			/* HEADER, FOOTER, MAIN */
 			.main {
-			  background: #fff;
-			  border: 1px solid #e9e9e9;
-			  border-radius: 3px;
+				border: 1px solid #e9e9e9;
+				border-radius: 3px;
+				background: #ffffff;
 			}
 
 			.content-wrap {
-			  padding: 20px;
+				padding: 20px;
 			}
 
 			.content-block {
-			  padding: 0 0 20px;
+				padding: 0 0 20px;
 			}
 
 			.header {
-			  width: 100%;
-			  margin-bottom: 20px;
+				width: 100%;
+				margin-bottom: 20px;
 			}
 
 			.footer {
-			  width: 100%;
-			  clear: both;
-			  color: #999;
-			  padding: 20px;
+				clear: both;
+				width: 100%;
+				padding: 20px;
+				color: #999999;
 			}
 
 			.footer a {
-			  color: [color-link];
+				color: [color-link];
 			}
 
-			.footer p, .footer a, .footer unsubscribe, .footer td {
-			  font-size: 12px;
+			.footer p,
+			.footer a,
+			.footer unsubscribe,
+			.footer td {
+				font-size: 12px;
 			}
 
 			/* TYPOGRAPHY */
-			h1, h2, h3 {
-			  margin: 40px 0 0;
-			  line-height: 1.2;
-			  font-weight: 400;
+			h1,
+			h2,
+			h3 {
+				font-weight: 400;
+				line-height: 1.2;
+				margin: 40px 0 0;
 			}
 
 			h1 {
-			  font-family: [font-h1];
-			  font-size: 32px;
-			  font-weight: 500;
-			  color: [color-h1];
+				font-family: [font-h1];
+				font-size: 32px;
+				font-weight: 500;
+				color: [color-h1];
 			}
 
 			h2 {
-			  font-family: [font-h2];
-			  font-size: 24px;
-			  color: [color-h2];
+				font-family: [font-h2];
+				font-size: 24px;
+				color: [color-h2];
 			}
 
 			h3 {
-			  font-family: [font-h3];
-			  font-size: 18px;
-			  color: [color-h3];
+				font-family: [font-h3];
+				font-size: 18px;
+				color: [color-h3];
 			}
 
-			p, ul, ol {
-			  font-family: [font-text];
-			  margin-bottom: 10px;
-			  font-weight: normal;
-			  color: [color-text];
+			p,
+			ul,
+			ol {
+				font-family: [font-text];
+				font-weight: normal;
+				margin-bottom: 10px;
+				color: [color-text];
 			}
 
-			p li, ul li, ol li {
-			  margin-left: 5px;
-			  list-style-position: inside;
+			p li,
+			ul li,
+			ol li {
+				margin-left: 5px;
+				list-style-position: inside;
 			}
 
 			/* LINKS */
 			a {
-			  color: [color-link];
-			  text-decoration: underline;
+				text-decoration: underline;
+				color: [color-link];
 			}
 
 			/* OTHER STYLES THAT MIGHT BE USEFUL */
 			.last {
-			  margin-bottom: 0;
+				margin-bottom: 0;
 			}
 
 			.first {
-			  margin-top: 0;
+				margin-top: 0;
 			}
 
 			.aligncenter {
-			  text-align: center;
+				text-align: center;
 			}
 
 			.alignright {
-			  text-align: right;
+				text-align: right;
 			}
 
 			.alignleft {
-			  text-align: left;
+				text-align: left;
 			}
 
 			.clear {
-			  clear: both;
+				clear: both;
 			}
 
 			/* FIELDS LIST */
 			.fields {
-			  margin: 40px auto;
-			  text-align: left;
-			  width: 80%;
+				width: 80%;
+				margin: 40px auto;
+				text-align: left;
 			}
 
 			.fields td {
-			  padding: 5px 0;
+				padding: 5px 0;
 			}
 
 			.fields .field-items {
-			  width: 100%;
+				width: 100%;
 			}
 
 			.fields .field-items td {
-			  border-top: #eee 1px solid;
+				border-top: #eeeeee 1px solid;
+			}
+
+			.fields .field-headings {
+				color: [color-headings-text];
+				background-color: [color-headings-bg];
+			}
+
+			.fields .field-headings td {
+				font-weight: 600;
+				padding: 5px;
 			}
 
 			/* RESPONSIVE AND MOBILE FRIENDLY STYLES */
 			@media only screen and (max-width: 640px) {
-			  h1, h2, h3, h4 {
-			    font-weight: 600 !important;
-			    margin: 20px 0 5px !important;
-			  }
+				h1,
+				h2,
+				h3,
+				h4 {
+					font-weight: 600 !important;
+					margin: 20px 0 5px !important;
+				}
 
-			  h1 {
-			    font-size: 22px !important;
-			  }
+				h1 {
+					font-size: 22px !important;
+				}
 
-			  h2 {
-			    font-size: 18px !important;
-			  }
+				h2 {
+					font-size: 18px !important;
+				}
 
-			  h3 {
-			    font-size: 16px !important;
-			  }
+				h3 {
+					font-size: 16px !important;
+				}
 
-			  .container {
-			    width: 100% !important;
-			  }
+				.container {
+					width: 100% !important;
+				}
 
-			  .content, .content-wrap {
-			    padding: 10px !important;
-			  }
+				.content,
+				.content-wrap {
+					padding: 10px !important;
+				}
 
-			  .fields {
-			    width: 100% !important;
-			  }
+				.fields {
+					width: 100% !important;
+				}
 			}
         </style>
     </head>
@@ -216,16 +240,16 @@
         <table class="body-wrap">
             <tr>
                 <td></td>
-                <td class="container" width="600">
+                <td class="container" width="700">
                     <div class="content">
                         <table class="main" width="100%" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td class="content-wrap aligncenter">
                                     <table width="100%" cellpadding="0" cellspacing="0">
                                         <tr>
-                                            <td class="content-block">
+                                            <td class="content-block" align="center">
                                                 <h1>
-                                                    VFB Pro
+                                                    [title]
                                                 </h1>
                                             </td> <!-- .content-block -->
                                         </tr>
@@ -235,9 +259,9 @@
 											</td> <!-- .content-block -->
 										</tr>
                                         <tr>
-                                            <td class="content-block">
+                                            <td class="content-block" align="center">
                                                 <h2>
-                                                    Your submission has been processed.
+                                                    [message]
                                                 </h2>
                                             </td> <!-- .content-block -->
                                         </tr>
@@ -255,7 +279,9 @@
                                             </td> <!-- .content-block -->
                                         </tr>
                                         <tr>
-                                            <td class="content-block">Acme Inc. 123 Van Ness, San Francisco 94102</td> <!-- .content-block -->
+                                            <td class="content-block" align="center">
+												[address]
+											</td> <!-- .content-block -->
                                         </tr>
                                     </table>
                                 </td> <!-- .content-wrap -->

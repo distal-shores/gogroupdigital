@@ -65,6 +65,16 @@ class VFB_Pro_Template_Tags {
 			</tr>
 
 			<tr>
+				<td class="vfb-template-tag">[color-headings-bg]</td>
+				<td><?php _e( 'Headings field background color.', 'vfb-pro' ); ?></td>
+			</tr>
+
+			<tr>
+				<td class="vfb-template-tag">[color-headings-text]</td>
+				<td><?php _e( 'Headings field text color.', 'vfb-pro' ); ?></td>
+			</tr>
+
+			<tr>
 				<td class="vfb-template-tag">[color-link]</td>
 				<td><?php _e( 'Link color.', 'vfb-pro' ); ?></td>
 			</tr>
@@ -112,6 +122,21 @@ class VFB_Pro_Template_Tags {
 			<tr>
 				<td class="vfb-template-tag">[header-img]</td>
 				<td><?php _e( 'Custom header image.', 'vfb-pro' ); ?></td>
+			</tr>
+
+			<tr>
+				<td class="vfb-template-tag">[title]</td>
+				<td><?php _e( 'The title heading of the email.', 'vfb-pro' ); ?></td>
+			</tr>
+
+			<tr>
+				<td class="vfb-template-tag">[message]</td>
+				<td><?php _e( 'A short message displayed above the fields table and below the title heading.', 'vfb-pro' ); ?></td>
+			</tr>
+
+			<tr>
+				<td class="vfb-template-tag">[address]</td>
+				<td><?php _e( 'Your address or other text displayed in the footer of the email.', 'vfb-pro' ); ?></td>
 			</tr>
 
 			<tr>

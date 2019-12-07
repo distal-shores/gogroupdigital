@@ -2234,17 +2234,23 @@ class VFB_Pro_Admin_Fields {
 		</div> <!-- .vfb-row -->
 
 		<div class="vfb-row">
-			<div class="vfb-col-4">
+			<div class="vfb-col-6">
 				<?php $setting->css( $field ); ?>
-			</div> <!-- .vfb-col-4 -->
+			</div> <!-- .vfb-col-6 -->
 
-			<div class="vfb-col-4">
+			<div class="vfb-col-3">
 				<?php $setting->description_position( $field ); ?>
-			</div> <!-- .vfb-col-4 -->
+			</div> <!-- .vfb-col-3 -->
 
-			<div class="vfb-col-4">
+			<div class="vfb-col-3">
+				<?php $setting->required( $field ); ?>
+			</div> <!-- .vfb-col-3 -->
+		</div>
+
+		<div class="vfb-row">
+			<div class="vfb-col-6">
 				<?php $setting->layout( $field ); ?>
-			</div> <!-- .vfb-col-4 -->
+			</div> <!-- .vfb-col-6 -->
 
 		</div> <!-- .vfb-row -->
 	<?php
@@ -2280,17 +2286,29 @@ class VFB_Pro_Admin_Fields {
 		</div> <!-- .vfb-row -->
 
 		<div class="vfb-row">
-			<div class="vfb-col-3">
-				<?php $setting->captcha_settings( $field, 'theme' ); ?>
-			</div> <!-- .vfb-col-3 -->
-
-			<div class="vfb-col-3">
-				<?php $setting->captcha_settings( $field, 'type' ); ?>
-			</div> <!-- .vfb-col-3 -->
-
 			<div class="vfb-col-6">
-				<?php $setting->captcha_settings( $field, 'lang' ); ?>
-			</div> <!-- .vfb-col-6 -->
+				<?php $setting->captcha_settings( $field, 'option' ); ?>
+			</div> <!-- .vfb-col-3 -->
+		</div> <!-- .vfb-row -->
+
+		<div class="vfb-row vfb-field-adv-container">
+			<div class="vfb-col-12">
+				<a href="#" id="vfb-adv-settings-<?php echo $field['id']; ?>" class="vfb-field-adv-settings-link"><?php _e( 'reCAPTCHA Settings', 'vfb-pro' ); ?><span class="dashicons dashicons-arrow-down"></span></a>
+			</div> <!-- .vfb-col-12 -->
+
+			<div class="vfb-field-adv-settings">
+				<div class="vfb-col-3">
+					<?php $setting->captcha_settings( $field, 'theme' ); ?>
+				</div> <!-- .vfb-col-3 -->
+
+				<div class="vfb-col-3">
+					<?php $setting->captcha_settings( $field, 'type' ); ?>
+				</div> <!-- .vfb-col-3 -->
+
+				<div class="vfb-col-6">
+					<?php $setting->captcha_settings( $field, 'lang' ); ?>
+				</div> <!-- .vfb-col-6 -->
+			</div> <!-- .vfb-field-adv-settings -->
 		</div> <!-- .vfb-row -->
 	<?php
 	}

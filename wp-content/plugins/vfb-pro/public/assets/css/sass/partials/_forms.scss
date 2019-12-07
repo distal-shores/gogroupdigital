@@ -304,6 +304,10 @@
 		.vfb-form-group:last-child div[class*='vfb-col-'] {
 			padding-right: 0;
 		}
+
+		input[class*='vfb-namepart-'] {
+			margin-bottom: 5px;
+		}
 	}
 
 	.vfb-rule-hide {

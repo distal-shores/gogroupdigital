@@ -1,77 +1,80 @@
-/* !Colors */
+// Colors
 @import 'modules/colors';
 
-/* !Mixins */
+// Mixins
 @import 'modules/mixins';
 
-/* !Grid */
+// Grid
 @import 'partials/grid';
 
-/* !Font Icons */
+// Font Icons
 @import 'partials/font-icons';
 
-/* !Datetime picker */
+// Datetime picker
 @import 'partials/datetimepicker';
 
-/* !Token Field */
+// Token Field
 @import 'partials/token-field';
 
-/* !Accordions */
+// Accordions
 @import 'partials/accordions';
 
-/* !Confirm Dialog */
+// Confirm Dialog
 @import 'partials/confirm-dialog';
 
-/* !List Tables */
+// List Tables
 @import 'partials/list-tables';
 
-/* !Edit Tabs */
+// Edit Tabs
 @import 'partials/edit-tabs';
 
-/* !Edit Fields */
+// Edit Fields
 @import 'partials/edit-fields';
 
-/* !VFB Form Items */
+// VFB Form Items
 @import 'partials/form-items';
 
-/* !Form Styles */
+// Form Styles
 @import 'partials/form-styles';
 
-/* !Bulk Add Options */
+// Bulk Add Options
 @import 'partials/bulk-add-options';
 
-/* !Tooltip Popups */
+// Tooltip Popups
 @import 'partials/tooltip-popup';
 
-/* !Notice Boxes */
+// Notice Boxes
 @import 'partials/notice-boxes';
 
-/* !Email Design */
+// Email Design
 @import 'partials/email-design';
 
-/* !Rules */
+// Rules
 @import 'partials/rules';
 
-/* !Add-ons Tab */
+// Add-ons Tab
 @import 'partials/addons-tab';
 
-/* !Settings Page */
+// Settings Page
 @import 'partials/settings-page';
 
-/* !Add-ons Page */
+// Add-ons ad boxes (now in the Help page)
 @import 'partials/addons-page';
 
-/* !Template Tags */
+// Help Page
+@import 'partials/help-page';
+
+// Template Tags
 @import 'partials/template-tags';
 
-/* !Entries */
+// Entries
 @import 'partials/entries';
 
-/* !Export */
+// Export
 @import 'partials/export';
 
-/* Print Styles */
+// Print Styles
 @import 'partials/print';
 
-/* RTL Support */
+// RTL Support
 @import 'partials/rtl';

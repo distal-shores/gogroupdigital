@@ -5,8 +5,8 @@ $grid-gutter-width:         30px !default;
 
 // Creates a wrapper for a series of columns
 @mixin make-row($gutter: $grid-gutter-width) {
-	//margin-left:  ($gutter / -2);
-	//margin-right: ($gutter / -2);
+	margin-left:  ($gutter / -2);
+	margin-right: ($gutter / -2);
 
 	@include clearfix();
 }
@@ -340,4 +340,3 @@ $grid-gutter-width:         30px !default;
 		@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $color-rgba);
 	}
 }
-

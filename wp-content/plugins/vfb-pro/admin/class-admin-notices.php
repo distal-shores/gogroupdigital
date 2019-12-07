@@ -51,7 +51,17 @@ class VFB_Pro_Admin_Notices {
 		if ( 'save-fields' !== $_POST['_vfbp_action'] )
 			return;
 
-		echo sprintf( '<div id="message" class="updated"><p>%s%s</p></div>', __( 'Field settings saved.' , 'vfb-pro' ), $this->form_preview_link() );
+		// Get max post vars, if available. Otherwise set to 1000
+		$max_post_vars = ini_get( 'max_input_vars' ) ? intval( ini_get( 'max_input_vars' ) ) : 1000;
+
+		// Set a message to be displayed if we've reached a limit to max_input_vars
+		if ( count( $_POST, COUNT_RECURSIVE ) > $max_post_vars ) {
+			$max_input_error = sprintf( __( 'Error saving form. The maximum amount of data allowed by your server has been reached. Please update <a href="%s" target="_blank">max_input_vars</a> in your php.ini file to allow more data to be saved. The current limit is <strong>%d</strong>', 'vfb-pro' ), 'http://www.php.net/manual/en/info.configuration.php#ini.max-input-vars', $max_post_vars );
+			echo sprintf( '<div class="notice notice-error is-dismissible"><p>%s</p></div>', $max_input_error );
+		}
+		else {
+			echo sprintf( '<div id="message" class="updated"><p>%s%s</p></div>', __( 'Field settings saved.' , 'vfb-pro' ), $this->form_preview_link() );
+		}
 	}
 
 	/**
