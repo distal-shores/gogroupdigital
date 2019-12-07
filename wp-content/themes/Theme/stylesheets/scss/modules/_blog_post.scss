@@ -111,10 +111,6 @@
 			width: 100vw;
 			height: auto;
 			margin-left: calc(50% - 50vw);
-			max-height: 210px;
-			object-fit: cover;
-			object-position: center;
-			max-width: none;
 		}
 		ul {
 			&:not(.blog-post__blog-content__categories) {
@@ -454,10 +450,8 @@
 			}
 			.size-full {
 				max-width: 1110px;
-				max-height: 625px;
-				margin: 30px 0 20px 50%;
-				transform: translateX(-50%);
-				object-fit: cover;
+				transform: translate(-50%);
+				margin-left: 50%;
 			}
 		}
 		.related-articles {
