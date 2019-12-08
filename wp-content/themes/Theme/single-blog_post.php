@@ -72,8 +72,8 @@
 				if ( in_array_any($privilege_levels, (array) $user->roles) || empty($privilege_levels) || in_array('administrator', $user->roles)) {
 					the_content();
 				} else {
-					echo '<p style="text-align:left">This content is reserved for GO Partners. Please contact <a href="mailto:info@gogroupdigital.com">info@gogroupdigital.com</a> to learn about exclusive access.
-					</p>'; 
+					$mailtoSubject = str_replace(' ', '%20', the_title('', ' Access', false));
+					echo "<p style=\"text-align:left\">This content is reserved for GO Partners. Please contact <a href=\"mailto:info@gogroupdigital.com?subject=$mailtoSubject\">info@gogroupdigital.com</a> to learn about exclusive access.</p>";
 				}
 			?>
 			<?php echo !$marketing_page ? do_shortcode('[social-shares]') : '' ?>
