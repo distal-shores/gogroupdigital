@@ -19,9 +19,23 @@ jQuery(window).on('load', function () {
 		});
 	};
 
+	const hashMatchesContact = function () {
+		return window.location.hash === '#contact';
+	};
+
+	window.addEventListener('hashchange', function () {
+		if (hashMatchesContact()) {
+			showContactForm();
+		}
+	}, false);
+
+	// If hitting close
+	jQuery('.contact-form__form__close').click(function () {
+		hideContactForm();
+	});
+
 	// Check if the url has `#contact` and show the contact form if it does
-	const currentUrlFragment = window.location.hash;
-	if (currentUrlFragment === '#contact') {
+	if (hashMatchesContact()) {
 		if (window.location.pathname.includes('thank-you')) {
 			hideContactForm();
 		} else {
@@ -29,12 +43,4 @@ jQuery(window).on('load', function () {
 		}
 	}
 
-	jQuery('.contact-button, .primary-nav__item--contact, .footer-nav__item--contact').click(function () {
-		showContactForm();
-	});
-
-	// If hitting close
-	jQuery('.contact-form__form__close').click(function () {
-		hideContactForm();
-	});
 });

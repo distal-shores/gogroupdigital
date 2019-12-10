@@ -73,7 +73,7 @@
 					the_content();
 				} else {
 					$mailtoSubject = str_replace(' ', '%20', the_title('', ' Access', false));
-					echo "<p style=\"text-align:left\">This content is reserved for GO Partners. Please contact <a href=\"mailto:info@gogroupdigital.com?subject=$mailtoSubject\">info@gogroupdigital.com</a> to learn about exclusive access.</p>";
+					echo "<p style=\"text-align:left\">This content is reserved for GO Partners. Please <a href=\"#contact\">contact us</a> to learn about exclusive access.</p>";
 				}
 			?>
 			<?php echo !$marketing_page ? do_shortcode('[social-shares]') : '' ?>
