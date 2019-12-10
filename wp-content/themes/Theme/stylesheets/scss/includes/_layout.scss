@@ -5,7 +5,10 @@
 .l-container { 
 	position: relative;
 	margin: 0px auto; 
-	padding: $column-padding;
+	padding: $column-padding-mobile;
+	@media screen and (min-width: 800px) {
+		padding: $column-padding;
+	}
 	max-width: $container-size;
 	width: 100%;
 	@include box-sizing(border-box);

@@ -24,7 +24,7 @@ body {
 	font-size: $font-size-body + px;
 	color: $color-base;
 	background-color: $color-canvas;
-	overflow-x: hidden;
+	overflow: hidden;
 	text-align: center;
 	position: relative;
 	&.contact-active {
