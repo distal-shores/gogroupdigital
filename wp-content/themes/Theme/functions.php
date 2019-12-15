@@ -83,14 +83,7 @@ function my_enqueue_scripts()
 {
     wp_enqueue_script('ajax-fetch',  get_stylesheet_directory_uri() . '/js/ajax-fetch.js', array('jquery'), '1.0', true);
     wp_enqueue_script('footnote-append',  get_stylesheet_directory_uri() . '/js/footnote-append.js', array('jquery'), '1.0', true);
-}
 
-add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
-
-add_action('init', 'localize_ajax');
-
-function localize_ajax()
-{
     $post__not_in = array();
     if (isset($featured_post)) {
         array_push($post__not_in, $featured_post->ID);
@@ -115,6 +108,8 @@ function localize_ajax()
         'query_vars' => json_encode($loop->query)
     ));
 }
+
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
 add_action('wp_ajax_nopriv_ajax_fetch', 'my_ajax_fetch');
 add_action('wp_ajax_ajax_fetch', 'my_ajax_fetch');
