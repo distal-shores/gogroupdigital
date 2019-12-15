@@ -12,7 +12,6 @@
 		endif;
 	$blog_content = get_field('content');
 	$blog_content_truncated = wp_trim_words( $blog_content, $num_words = 25, $more = '...' ); 
-	$featured_post_blog_content_truncated = wp_trim_words( get_field('content', $featured_post), $num_words = 25, $more = '...' ); 
 
 	// Get Categories
 	$blog_categories_array = get_the_terms( get_the_ID(), 'category' );
