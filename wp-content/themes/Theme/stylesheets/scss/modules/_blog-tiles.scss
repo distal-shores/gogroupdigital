@@ -11,13 +11,19 @@
 	padding: 0;
 	@media screen and (min-width: 800px) {
 		display: flex;
+
+		& .blog-tile__content__read-more {
+			margin: auto 0 0;
+		}
 	}
+	@media screen and (max-width: 800px) {
 	.blog-tile:last-of-type {
 		margin-bottom: 50px;
 
 		& .blog-tile__content__read-more {
 			margin-bottom: 50px;
 		}
+	}
 	}
 	&#featured-post-list {
 		margin-top: 0;
@@ -84,9 +90,9 @@
 						height: 160px;
 						flex-direction: column;
 				}
-				&__content__read-more {
-					margin: auto 0 0;
-				}
+				// &__content__read-more {
+				// 	margin: auto 0 0;
+				// }
 			}
 		}
 	}
