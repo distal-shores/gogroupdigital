@@ -77,10 +77,19 @@
 				}
 			?>
 			<?php echo !$marketing_page ? do_shortcode('[social-shares]') : '' ?>
-			<?php if($contributing_authors && !$marketing_page): ?>
+			<?php if(!$marketing_page && ($contributing_authors || $byline_authors)): ?>
 				<h4 class="blog-post__authors__header">Contributing Author(s)</h4>
+				<?php
+					$authors = array();
+					if ($byline_authors) {
+						$authors = array_merge($authors, $byline_authors);
+					}
+					if ($contributing_authors) {
+						$authors = array_merge($authors, $contributing_authors);
+					}
+				?>
 				<ul class="blog-post__authors">
-					<?php foreach( $contributing_authors as $a ): ?>
+					<?php foreach( $authors as $a ): ?>
 						<li>
 							<img class="blog-post__authors__headshot" src="<?= get_field('profile_image', $a->ID)["url"]; ?>">
 							<div class="blog-post__authors__details">

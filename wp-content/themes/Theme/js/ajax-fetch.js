@@ -102,7 +102,6 @@
             },
             success: function( html, status) {
                 if(html != '') {
-                    console.log('hi');    
                     $('#more-go-content').append(html);
                     $('#more-go-content .blog-tile').each(function( index ) {
                         postsNotIn.push($( this ).attr('data-post-id'));
