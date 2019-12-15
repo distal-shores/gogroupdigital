@@ -2,7 +2,7 @@
 
 // Template functions. If order is important, replace this and require each file separately.
 foreach (glob(dirname(__FILE__) . '/includes/template_functions/*.php') as $filename) {
-	require_once($filename);
+    require_once($filename);
 }
 
 // Includes
@@ -31,61 +31,77 @@ include_once 'includes/sub_menu.php'; // Expand sub menu functionality
 include_once 'includes/theme_setup.php'; // stylesheet_uri, after_setup_theme, cleanup head
 
 // Allow for the USC plugin to work for custom posts of the type Blog Posts
-add_filter('USC_allowed_post_types','usc_filter_post_types');
-function usc_filter_post_types($types){
+add_filter('USC_allowed_post_types', 'usc_filter_post_types');
+function usc_filter_post_types($types)
+{
     $types[] = 'blog_post';
     return $types;
 }
 
 // Simple function to return a user's role
-function get_user_role( $user_id = 0 ) {
-    $user = ( $user_id ) ? get_userdata( $user_id ) : wp_get_current_user();
-    return current( $user->roles );
+function get_user_role($user_id = 0)
+{
+    $user = ($user_id) ? get_userdata($user_id) : wp_get_current_user();
+    return current($user->roles);
 }
 
 // Prevent 'Go Members' from accessing the WP dashboard
-add_action( 'init', 'blockusers_init');
+add_action('init', 'blockusers_init');
 
-function blockusers_init() {
-    if ( is_admin() && get_user_role() != 'administrator' && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
-        wp_redirect( home_url() );
+function blockusers_init()
+{
+    if (is_admin() && get_user_role() != 'administrator' && !(defined('DOING_AJAX') && DOING_AJAX)) {
+        wp_redirect(home_url());
         exit;
     }
 }
 
 add_action('after_setup_theme', 'remove_admin_bar');
- 
-function remove_admin_bar() {
+
+function remove_admin_bar()
+{
     if (!current_user_can('administrator') && !is_admin()) {
         show_admin_bar(false);
     }
 }
 
 // Simple function for checking multiple user role types at once
-function in_array_any($needles, $haystack) {
+function in_array_any($needles, $haystack)
+{
     return !!array_intersect($needles, $haystack);
 }
 
-function admin_default_page() {
+function admin_default_page()
+{
     $url = home_url() . '/insights';
     return $url;
 }
 
 add_filter('login_redirect', 'admin_default_page');
 
-wp_enqueue_script( 'ajax-fetch',  get_stylesheet_directory_uri() . '/js/ajax-fetch.js', array( 'jquery' ), '1.0', true );
-wp_enqueue_script( 'footnote-append',  get_stylesheet_directory_uri() . '/js/footnote-append.js', array( 'jquery' ), '1.0', true );
+function my_enqueue_scripts()
+{
+    wp_enqueue_script('ajax-fetch',  get_stylesheet_directory_uri() . '/js/ajax-fetch.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('footnote-append',  get_stylesheet_directory_uri() . '/js/footnote-append.js', array('jquery'), '1.0', true);
+}
 
-add_action('init','localize_ajax');
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
-function localize_ajax(){
+add_action('init', 'localize_ajax');
+
+function localize_ajax()
+{
+    $post__not_in = array();
+    if (isset($featured_post)) {
+        array_push($post__not_in, $featured_post->ID);
+    }
     $args = array(
         'post_type' => 'blog_post',
-        'orderby'=> 'date',
+        'orderby' => 'date',
         'order' => 'DESC',
         'posts_per_page' => 3,
-        'post__not_in' => array($featured_post->ID),
-        'tax_query' => array( 
+        'post__not_in' => $post__not_in,
+        'tax_query' => array(
             array(
                 'taxonomy' => 'category', // Taxonomy, in my case I need default post categories
                 'field'    => 'slug',
@@ -93,25 +109,25 @@ function localize_ajax(){
             ),
         )
     );
-    $loop = new WP_Query( $args );
-    wp_localize_script( 'ajax-fetch', 'ajaxfetch', array(
-        'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        'query_vars' => json_encode( $loop->query )
+    $loop = new WP_Query($args);
+    wp_localize_script('ajax-fetch', 'ajaxfetch', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'query_vars' => json_encode($loop->query)
     ));
 }
 
-add_action( 'wp_ajax_nopriv_ajax_fetch', 'my_ajax_fetch' );
-add_action( 'wp_ajax_ajax_fetch', 'my_ajax_fetch' );
+add_action('wp_ajax_nopriv_ajax_fetch', 'my_ajax_fetch');
+add_action('wp_ajax_ajax_fetch', 'my_ajax_fetch');
 
-function my_ajax_fetch() {
-    $query_vars = json_decode( stripslashes( $_POST['query_vars'] ), true );
-    $posts = new WP_Query( $query_vars );
+function my_ajax_fetch()
+{
+    $query_vars = json_decode(stripslashes($_POST['query_vars']), true);
+    $posts = new WP_Query($query_vars);
     $GLOBALS['wp_query'] = $posts;
-    if( ! $posts->have_posts() ) { 
-        get_template_part( 'content', 'none' );
-    }
-    else {
-        while ( $posts->have_posts() ) { 
+    if (!$posts->have_posts()) {
+        get_template_part('content', 'none');
+    } else {
+        while ($posts->have_posts()) {
             $posts->the_post();
             include(locate_template('partials/listing-index.php', false, false));
         }
