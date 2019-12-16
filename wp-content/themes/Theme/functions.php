@@ -81,32 +81,35 @@ add_filter('login_redirect', 'admin_default_page');
 
 function my_enqueue_scripts()
 {
-    wp_enqueue_script('ajax-fetch',  get_stylesheet_directory_uri() . '/js/ajax-fetch.js', array('jquery'), '1.0', true);
     wp_enqueue_script('footnote-append',  get_stylesheet_directory_uri() . '/js/footnote-append.js', array('jquery'), '1.0', true);
 
-    $post__not_in = array();
-    if (isset($featured_post)) {
-        array_push($post__not_in, $featured_post->ID);
+    if (is_page('insights')) {
+        wp_enqueue_script('ajax-fetch',  get_stylesheet_directory_uri() . '/js/ajax-fetch.js', array('jquery'), '1.0', true);
+
+        $post__not_in = array();
+        if (isset($featured_post)) {
+            array_push($post__not_in, $featured_post->ID);
+        }
+        $args = array(
+            'post_type' => 'blog_post',
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'posts_per_page' => 3,
+            'post__not_in' => $post__not_in,
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'category', // Taxonomy, in my case I need default post categories
+                    'field'    => 'slug',
+                    'terms'    => 'groupx', // Your category slug (I have a category 'interior')
+                ),
+            )
+        );
+        $loop = new WP_Query($args);
+        wp_localize_script('ajax-fetch', 'ajaxfetch', array(
+            'ajaxurl' => admin_url('admin-ajax.php'),
+            'query_vars' => json_encode($loop->query)
+        ));
     }
-    $args = array(
-        'post_type' => 'blog_post',
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'posts_per_page' => 3,
-        'post__not_in' => $post__not_in,
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'category', // Taxonomy, in my case I need default post categories
-                'field'    => 'slug',
-                'terms'    => 'groupx', // Your category slug (I have a category 'interior')
-            ),
-        )
-    );
-    $loop = new WP_Query($args);
-    wp_localize_script('ajax-fetch', 'ajaxfetch', array(
-        'ajaxurl' => admin_url('admin-ajax.php'),
-        'query_vars' => json_encode($loop->query)
-    ));
 }
 
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');

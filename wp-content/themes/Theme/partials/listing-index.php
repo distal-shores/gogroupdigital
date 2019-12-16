@@ -19,7 +19,7 @@
 	if ( $blog_categories_array && ! is_wp_error( $blog_categories_array )): 
 		$blog_categories = array();
 		foreach ( $blog_categories_array as $blog_category ) {
-			$blog_categories[] = $blog_category->name;
+			$blog_categories[] = '<span>' . $blog_category->name . '</span>';
 		}
 		$blog_categories_list = join( ", ", $blog_categories);
 		$blog_category_class = seoUrl($blog_categories[0]);
@@ -32,7 +32,7 @@
 		<a href="<?php the_permalink(); ?>"></a>
 	</div>
 		<div class="blog-tile__content-container">
-			<span class="blog-tile__category"><?php echo $blog_categories_list; ?></span>
+			<div class="blog-tile__category"><?php echo $blog_categories_list; ?></div>
 			<a href="<?php the_permalink(); ?>"><h2 class="blog-tile__content__title"><?php echo $blog_title; ?></h2></a>
 			<a class="blog-tile__content__read-more" href="<?php the_permalink(); ?>">Read More</a>
 		</div>

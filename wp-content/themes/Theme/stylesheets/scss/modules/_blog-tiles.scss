@@ -140,6 +140,10 @@
 			font-size: 14px;
 			text-transform: uppercase;
 			letter-spacing: 1px;
+
+			span:hover {
+				cursor: pointer;
+			}
 		}
 		&__thumbnail {
 			height: 250px;
