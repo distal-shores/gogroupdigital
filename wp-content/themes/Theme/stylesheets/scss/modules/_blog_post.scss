@@ -27,8 +27,8 @@
 		}
 	}
 	figcaption {
-		font-family: 'Avenir Book', sans-serif;
-		font-size: 16px;
+		font-family: 'Avenir', sans-serif;
+		font-size: 18px;
 		color: #5C5C5C;
 		line-height: 24px;
 		@media screen and (min-width: 800px) {
@@ -45,10 +45,30 @@
 		}
 	}
 	.blog-content {
-		figure img {
-			width: 100%;
-			height: auto;
-		}
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    img.aligncenter {
+      margin: 0 auto;
+      display: block;
+    }
+    figure {
+      width: 100% !important;
+      display: flex;
+
+      figcaption {
+        margin-top: 20px;
+      }
+
+      &.aligncenter img {
+        margin: 0 auto;
+      }
+
+      img.size-full {
+        width: 100%;
+      }
+    }
 		blockquote {
 			margin: 50px 0;
 			padding-left: 40px;
@@ -85,9 +105,9 @@
 			}
 		}
 		p {
-			color: #333333;
+			color: #000;
 			font-family: 'Avenir', Arial, sans-serif;
-			font-size: 16px;
+			font-size: 18px;
 			line-height: 26px;
 		}
 		img.alignright {
@@ -447,7 +467,6 @@
 					left: 65px;
 				}
 			}
-			p, 
 			.sidebar-topic ul li {
 				font-size: 18px;
 				max-width: 635px;

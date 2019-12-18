@@ -3,3 +3,4 @@ package-lock.json
 wp-content/debug.log
 .htaccess
 *.swp
+.idea/
