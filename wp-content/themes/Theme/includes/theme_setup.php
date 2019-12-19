@@ -35,7 +35,8 @@ function theme_theme_setup() {
  * @internal only called as `stylesheet_uri` filter
  *
  */
-function theme_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri){
+function theme_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri)
+{
 	return $stylesheet_dir_uri . '/stylesheets/css/style.css';
 }
 
@@ -49,8 +50,9 @@ function theme_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri){
  * @internal the '15' in the add_action forces the file to load after the other styles in wp_head().
  *
  */
-function theme_enqueue_styles() {
-    wp_enqueue_style('theme-stylesheet',  get_bloginfo( 'stylesheet_url' ), array(), filemtime( get_stylesheet_directory() . '/style.css' ));
+function theme_enqueue_styles()
+{
+    wp_enqueue_style('theme-stylesheet',  get_bloginfo( 'stylesheet_url' ), array(), filemtime( theme_stylesheet_uri(null, get_stylesheet_directory()) ));
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles', 15 );
 
