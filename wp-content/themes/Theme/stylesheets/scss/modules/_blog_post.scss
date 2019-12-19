@@ -46,7 +46,7 @@
 	}
 	.blog-content {
     > img,
-   figure img {
+    figure img {
       max-width: 100%;
       height: auto;
     }
@@ -238,8 +238,8 @@
 			margin: 0 0 10px;
 		}
 		&__headshot {
-			height: 80px;
-			width: 80px;
+			height: 80px !important;
+			width: 80px !important;
 			object-fit: cover;
 			object-position: center;
 			border-radius: 50%;
