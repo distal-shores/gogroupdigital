@@ -55,11 +55,11 @@
 	<div class="page-content">
 		<div class="l-container blog-content">
 			<?php if(!$marketing_page): ?>
-				<ul class="blog-post__blog-content__categories">
+				<div class="blog-post__blog-content__categories">
 					<?php foreach((get_the_category()) as $category) { 
-						echo "<li>{$category->cat_name}</li>";
+						echo "<span>{$category->cat_name}</span>";
 					} ?>
-				</ul>
+				</div>
 			<?php endif; ?>
 			<?php if($subtitle): ?>
 				<h2 class="blog-post__subtitle">
@@ -116,40 +116,38 @@
 			?>
 		</div>
 	</div>
-	<div class="related-articles">
-		<div class="related-articles__wrapper">
-			<?php 
-				$args = array(
-					'post_type' => 'blog_post',
-					'post_status' => 'publish',
-					'orderby'=> 'date',
-					'order' => 'DESC',
-					'posts_per_page' => 3,
-					'post__not_in' => $excluded_posts,
-					'tax_query' => array(
-						array(
-	                        'taxonomy' => 'category',
-	                        'field' => 'slug',
-	                        'terms' => $categories,
-	                    )
-	                ),
-				);
-				$loop = new WP_Query( $args );
-			?>
-			<?php if ( $loop->have_posts() ): ?>
-			<h2>Related Articles</h2>
-			<ul id="recent-articles-list" class="blog-tiles">
-				<?php while ( $loop->have_posts() ) : $loop->the_post();
+	<?php 
+		$args = array(
+			'post_type' => 'blog_post',
+			'post_status' => 'publish',
+			'orderby'=> 'date',
+			'order' => 'DESC',
+			'posts_per_page' => 3,
+			'post__not_in' => $excluded_posts,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'slug',
+					'terms' => $categories,
+				)
+			),
+		);
+		$loop = new WP_Query( $args );
+	?>
+	<?php if ( $loop->have_posts() ): ?>
+		<div class="related-articles">
+			<div class="related-articles__wrapper">
+				<h2>Related Articles</h2>
+				<ul id="recent-articles-list" class="blog-tiles">
+					<?php
+					while ( $loop->have_posts() ) : $loop->the_post();
 						include(locate_template('partials/listing-index.php', false, false));
 					endwhile;
-				endif;
-				wp_reset_postdata();
-				?>
-			</ul>
+					?>
+				</ul>
+			</div>
 		</div>
-	</div>
-
-
+	<?php endif; wp_reset_postdata(); ?>
 </div>
 
 <?php get_footer(); ?>

@@ -5,7 +5,11 @@ function generate_sidebar_topic( $atts, $content = null ) {
 		'title' => '',
 	), $atts );
 
+	// $content = trim($content);
 	$content = strip_tags($content, '<ul><li><p><img><br><strong>');
+	$content = force_balance_tags($content);
+	$content = preg_replace("#<p>\s*</p>#i", '', $content);
+	// strip empty p tags
 
 	ob_start();
 	?>
