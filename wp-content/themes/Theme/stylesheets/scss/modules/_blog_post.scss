@@ -330,16 +330,21 @@ $color-text-dark: #000;
             margin-top: 25px;
             margin-bottom: 0;
         }
+        > h2 + p,
         > h3 + p {
             margin-top: 30px;
             margin-bottom: 0;
         }
         > h3,
         > h4,
+        > p + h2,
         > blockquote,
         > blockquote + p,
+        > .pullquote,
+        > .pullquote + p,
         > .sidebar-topic,
         > .sidebar-topic + p,
+        > .sidebar-topic + h2,
         > img,
         > figure,
         > figure:not(.alignleft):not(.alignright) + p,
@@ -525,7 +530,7 @@ $color-text-dark: #000;
             margin-bottom: 15px;
             font-size: 24px;
             @media #{$mobile-screen} {
-                font-size: 21px;
+                font-size: 21px; 
             }
         }
         a {
