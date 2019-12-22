@@ -76,21 +76,29 @@ $color-text-dark: #000;
         flex-direction: column;
         justify-content: center;
         height: 600px;
-        padding: 30px 10px;
         @media #{$mobile-screen} {
             justify-content: flex-end;
             height: 500px;
+            padding: 30px 10px;
         }
         z-index: 100;
         position: relative;
         max-width: 730px;
         margin: 0 auto;
 
+        &__date,
+        &__title,
+        &__byline {
+            text-shadow: 1px 1px 0 $color-text;
+        }
+
         &__date {
             font-family: "Avenir Heavy", Arial, sans-serif;
             text-transform: uppercase;
+            margin: 0;
             font-size: 18px;
             line-height: 34px;
+            letter-spacing: 1px;
             @media #{$mobile-screen} {
                 font-size: 12px;
                 line-height: 28px;
@@ -100,7 +108,7 @@ $color-text-dark: #000;
             color: #fff !important;
         }
         &__hr__short-blue {
-            width: 50px;
+            width: 74px;
             height: 3px;
             display: block;
             background-color: #2760b6;
@@ -133,6 +141,8 @@ $color-text-dark: #000;
         max-width: 730px;
         padding-top: 20px;
         padding-bottom: 50px;
+        padding-left: 0;
+        padding-right: 0;
         @media #{$mobile-screen} {
             padding-left: 10px;
             padding-right: 10px;
@@ -233,7 +243,7 @@ $color-text-dark: #000;
 
                 left: 110px; // calc(95px + 15px)
                 @media #{$mobile-screen} {
-                    left: 0;
+                    left: 15px;
                 }
             }
 
@@ -242,7 +252,7 @@ $color-text-dark: #000;
                 padding-left: 143px; // calc(95px + 18px + 15px + 15px);
                 max-width: 643px; // calc(500px + 95px + 18px + 15px + 15px);
                 @media #{$mobile-screen} {
-                    padding-left: 33px; // calc(18px + 15px;
+                    padding-left: 48px; // calc(18px + 15px + 15px);
                     max-width: 100%;
                 }
                 position: relative;
@@ -467,10 +477,14 @@ $color-text-dark: #000;
         &__header {
             font-family: "Avenir Book", Arial, sans-serif !important;
             font-weight: normal;
-            font-size: 24px !important;
-            line-height: 33px !important;
-            padding-top: 30px;
             border-top: 1px solid #ddd;
+            padding-top: 30px;
+            font-size: 24px !important;
+            line-height: initial !important;
+            @media #{$mobile-screen} {
+                font-size: 21px !important;
+                line-height: initial;
+            }
         }
         &__details {
             display: flex;
@@ -482,11 +496,19 @@ $color-text-dark: #000;
                 color: #2760b6;
                 font-family: "Avenir Heavy", Arial, sans-serif;
                 font-size: 18px;
+                line-height: 21px;
+                @media #{$mobile-screen} {
+                    font-size: 16px;
+                }
             }
             &__title {
                 display: inline-block;
                 font-family: "Avenir Book", Arial, sans-serif;
                 font-size: 18px;
+                line-height: 21px;
+                @media #{$mobile-screen} {
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -499,9 +521,12 @@ $color-text-dark: #000;
         }
         h4 {
             font-family: "Avenir Book", Arial, sans-serif;
-            font-size: 24px;
-            margin-bottom: 15px;
             font-weight: normal;
+            margin-bottom: 15px;
+            font-size: 24px;
+            @media #{$mobile-screen} {
+                font-size: 21px;
+            }
         }
         a {
             display: inline-block;
