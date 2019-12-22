@@ -1,6 +1,4 @@
-<?php get_header('blog'); 
-
-?>
+<?php get_header('blog'); ?>
 
 <div class="l-body blog-post">
 
@@ -37,8 +35,8 @@
 					<?php $post_date = get_the_date( 'F j, Y' ); echo $post_date; ?>
 				</p>
 				<h1 class="blog-post__header__title"><?php the_title(); ?></h1>
-				<hr class="blog-post__header__hr__short-blue" />
 				<?php if(!$marketing_page): ?>
+					<hr class="blog-post__header__hr__short-blue" />
 					<p class="blog-post__header__byline">
 						<?php if($byline_authors != NULL): ?>
 							<span class="blog-post__header__byline__by">By</span> <?php foreach( $byline_authors as $a ): ?>
@@ -58,15 +56,15 @@
 		<div class="l-container blog-content">
 			<?php if(!$marketing_page): ?>
 				<ul class="blog-post__blog-content__categories">
-					<li><?php foreach((get_the_category()) as $category) { 
-						echo $category->cat_name . ' '; 
-					}  ?></li>
+					<?php foreach((get_the_category()) as $category) { 
+						echo "<li>{$category->cat_name}</li>";
+					} ?>
 				</ul>
 			<?php endif; ?>
 			<?php if($subtitle): ?>
-				<h3 class="blog-post__subtitle">
+				<h2 class="blog-post__subtitle">
 					<?php echo $subtitle; ?>
-				</h3>
+				</h2>
 			<?php endif; ?>
 			<?php
 				if ( in_array_any($privilege_levels, (array) $user->roles) || empty($privilege_levels) || in_array('administrator', $user->roles)) {
@@ -102,7 +100,7 @@
 			<?php endif ?>
 			<div class="blog-post__contact <?= $marketing_page == true ? 'blog-post__contact__no-border' : '' ?>">
 				<h4>Got Questions?</h4>
-				<a href="javascript:;" class="contact-button">Reach Out to Us</a>
+				<a href="#contact" class="contact-button">Reach Out to Us</a>
 			</div>
 			<?php if(!$marketing_page): ?>
 				<?php if(get_field('blog_post_about_go', 2) != NULL) : ?>
