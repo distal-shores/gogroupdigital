@@ -451,6 +451,9 @@ $color-text-dark: #000;
                     margin-top: 10px !important;
                 }
             }
+            img {
+                max-width: 100% !important;
+            }
         }
     }
     &__about {
