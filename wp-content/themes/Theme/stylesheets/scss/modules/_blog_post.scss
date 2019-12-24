@@ -323,17 +323,18 @@ $color-text-dark: #000;
         > h2 + p,
         > h4 + p {
             margin-top: 20px;
-            margin-bottom: 0;
         }
+        > p + figure.alignright,
+        > p + figure.alignleft,
+        > p + figure.alignright + p,
+        > p + figure.alignleft + p,
         > figure.alignright + p,
         > figure.alignleft + p {
-            margin-top: 25px;
-            margin-bottom: 0;
+            margin-top: 25px !important;
         }
         > h2 + p,
         > h3 + p {
-            margin-top: 30px;
-            margin-bottom: 0;
+            margin-top: 30px !important;
         }
         > h3,
         > h4,
@@ -349,15 +350,22 @@ $color-text-dark: #000;
         > figure,
         > figure:not(.alignleft):not(.alignright) + p,
         > .social-shares {
-            margin-top: 50px;
-            margin-bottom: 0;
+            margin-top: 50px !important;
         }
         img.alignright {
             height: auto;
             max-width: 100%;
             @media #{$mobile-screen} {
                 margin-right: calc(50% - 50vw);
-                max-width: calc(100% + 50px);
+                max-width: calc(100% + 25px);
+            }
+        }
+        img.alignleft {
+            height: auto;
+            max-width: 100%;
+            @media #{$mobile-screen} {
+                margin-left: calc(50% - 50vw);
+                max-width: calc(100% + 25px);
             }
         }
         .alignright {
@@ -530,7 +538,7 @@ $color-text-dark: #000;
             margin-bottom: 15px;
             font-size: 24px;
             @media #{$mobile-screen} {
-                font-size: 21px; 
+                font-size: 21px;
             }
         }
         a {
@@ -613,8 +621,18 @@ $color-text-dark: #000;
             padding-bottom: 0;
             border-bottom: none;
             li {
-                max-width: none;
+                margin: initial;
+                display: flex;
+                flex-direction: column;
+                max-width: 33%;
+                @media #{$mobile-screen} {
+                    max-width: 100%;
+                }
                 .blog-tile__content-container {
+                    flex-grow: 1;
+                    min-height: 160px;
+                    height: initial;
+
                     h2 {
                         margin-bottom: 20px;
                     }
