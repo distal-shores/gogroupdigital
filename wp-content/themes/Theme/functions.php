@@ -38,32 +38,33 @@ function usc_filter_post_types($types)
     return $types;
 }
 
-// Simple function to return a user's role
-function get_user_role($user_id = 0)
+// check if the user is one of the `Go Members`
+function is_go_member()
 {
-    $user = ($user_id) ? get_userdata($user_id) : wp_get_current_user();
-    return current($user->roles);
+    $user = wp_get_current_user();
+    $role = current($user->roles);
+    $is_go_member = in_array($role, ['managing_partner', 'strategic_partner', 'associate_partner']);
+    return $is_go_member;
 }
 
 // Prevent 'Go Members' from accessing the WP dashboard
-add_action('init', 'blockusers_init');
-
 function blockusers_init()
 {
-    if (is_admin() && get_user_role() != 'administrator' && !(defined('DOING_AJAX') && DOING_AJAX)) {
+    if (is_admin() && is_go_member() && !(defined('DOING_AJAX') && DOING_AJAX)) {
         wp_redirect(home_url());
         exit;
     }
 }
+add_action('init', 'blockusers_init');
 
-add_action('after_setup_theme', 'remove_admin_bar');
-
+// remove admin bar for 'Go Members'
 function remove_admin_bar()
 {
-    if (!current_user_can('administrator') && !is_admin()) {
+    if (is_go_member()) {
         show_admin_bar(false);
     }
 }
+add_action('after_setup_theme', 'remove_admin_bar');
 
 // Simple function for checking multiple user role types at once
 function in_array_any($needles, $haystack)
