@@ -5,13 +5,19 @@ function generate_sidebar_topic( $atts, $content = null ) {
 		'title' => '',
 	), $atts );
 
-	$content = strip_tags($content, '<ul><li>');
+	// $content = trim($content);
+	$content = strip_tags($content, '<ul><li><p><img><br><strong>');
+	$content = force_balance_tags($content);
+	$content = preg_replace("#<p>\s*</p>#i", '', $content);
+	// strip empty p tags
 
 	ob_start();
 	?>
 		<div class="sidebar-topic">
+			<div class="sidebar-topic__divider"></div>
 			<h1><?php echo $a['title']; ?></h1>
 			<?php echo $content ?>
+			<div class="sidebar-topic__divider"></div>
 		</div>
 	<?php
 	return ob_get_clean();

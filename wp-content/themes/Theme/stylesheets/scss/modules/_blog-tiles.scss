@@ -16,15 +16,6 @@
 			margin: auto 0 0;
 		}
 	}
-	@media screen and (max-width: 800px) {
-	.blog-tile:last-of-type {
-		margin-bottom: 50px;
-
-		& .blog-tile__content__read-more {
-			margin-bottom: 50px;
-		}
-	}
-	}
 	&#featured-post-list {
 		margin-top: 0;
 		position: absolute;
@@ -101,23 +92,24 @@
 		background-size: cover;
 		background-position: center;
 		bottom: 0;
+		height: 355px;
+		@media screen and (max-width: 800px) {
+			&:nth-of-type(n+2) {
+				border-top: 1px solid #DDDDDD;
+				padding-top: 30px;
+			}
+		}
 		@media screen and (min-width: 800px) {
 			margin: 0 auto;
+			border-top: none;
+			height: 500px;
+			width: 100%;
+			padding-top: 0;
 		}
-		height: 355px;
-		border-bottom: 1px solid #DDDDDD;
-		margin-bottom: 30px;
 		> a {
 			width: 100%;
 			height: 100%;
 			display: block;
-		}
-		@media screen and (min-width: 800px) {
-			border-bottom: none;
-		}
-		@media screen and (min-width: 800px) {
-			height: 500px;
-			width: 100%;
 		}
 		&--featured {
 			&--overlay {

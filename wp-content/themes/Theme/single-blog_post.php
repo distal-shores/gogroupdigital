@@ -1,6 +1,4 @@
-<?php get_header('blog'); 
-
-?>
+<?php get_header('blog'); ?>
 
 <div class="l-body blog-post">
 
@@ -37,8 +35,8 @@
 					<?php $post_date = get_the_date( 'F j, Y' ); echo $post_date; ?>
 				</p>
 				<h1 class="blog-post__header__title"><?php the_title(); ?></h1>
-				<hr class="blog-post__header__hr__short-blue" />
 				<?php if(!$marketing_page): ?>
+					<hr class="blog-post__header__hr__short-blue" />
 					<p class="blog-post__header__byline">
 						<?php if($byline_authors != NULL): ?>
 							<span class="blog-post__header__byline__by">By</span> <?php foreach( $byline_authors as $a ): ?>
@@ -57,16 +55,16 @@
 	<div class="page-content">
 		<div class="l-container blog-content">
 			<?php if(!$marketing_page): ?>
-				<ul class="blog-post__blog-content__categories">
-					<li><?php foreach((get_the_category()) as $category) { 
-						echo $category->cat_name . ' '; 
-					}  ?></li>
-				</ul>
+				<div class="blog-post__blog-content__categories">
+					<?php foreach((get_the_category()) as $category) { 
+						echo "<span>{$category->cat_name}</span>";
+					} ?>
+				</div>
 			<?php endif; ?>
 			<?php if($subtitle): ?>
-				<h3 class="blog-post__subtitle">
+				<h2 class="blog-post__subtitle">
 					<?php echo $subtitle; ?>
-				</h3>
+				</h2>
 			<?php endif; ?>
 			<?php
 				if ( in_array_any($privilege_levels, (array) $user->roles) || empty($privilege_levels) || in_array('administrator', $user->roles)) {
@@ -102,7 +100,7 @@
 			<?php endif ?>
 			<div class="blog-post__contact <?= $marketing_page == true ? 'blog-post__contact__no-border' : '' ?>">
 				<h4>Got Questions?</h4>
-				<a href="javascript:;" class="contact-button">Reach Out to Us</a>
+				<a href="#contact" class="contact-button">Reach Out to Us</a>
 			</div>
 			<?php if(!$marketing_page): ?>
 				<?php if(get_field('blog_post_about_go', 2) != NULL) : ?>
@@ -118,40 +116,38 @@
 			?>
 		</div>
 	</div>
-	<div class="related-articles">
-		<div class="related-articles__wrapper">
-			<?php 
-				$args = array(
-					'post_type' => 'blog_post',
-					'post_status' => 'publish',
-					'orderby'=> 'date',
-					'order' => 'DESC',
-					'posts_per_page' => 3,
-					'post__not_in' => $excluded_posts,
-					'tax_query' => array(
-						array(
-	                        'taxonomy' => 'category',
-	                        'field' => 'slug',
-	                        'terms' => $categories,
-	                    )
-	                ),
-				);
-				$loop = new WP_Query( $args );
-			?>
-			<?php if ( $loop->have_posts() ): ?>
-			<h2>Related Articles</h2>
-			<ul id="recent-articles-list" class="blog-tiles">
-				<?php while ( $loop->have_posts() ) : $loop->the_post();
+	<?php 
+		$args = array(
+			'post_type' => 'blog_post',
+			'post_status' => 'publish',
+			'orderby'=> 'date',
+			'order' => 'DESC',
+			'posts_per_page' => 3,
+			'post__not_in' => $excluded_posts,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'slug',
+					'terms' => $categories,
+				)
+			),
+		);
+		$loop = new WP_Query( $args );
+	?>
+	<?php if ( $loop->have_posts() ): ?>
+		<div class="related-articles">
+			<div class="related-articles__wrapper">
+				<h2>Related Articles</h2>
+				<ul id="recent-articles-list" class="blog-tiles">
+					<?php
+					while ( $loop->have_posts() ) : $loop->the_post();
 						include(locate_template('partials/listing-index.php', false, false));
 					endwhile;
-				endif;
-				wp_reset_postdata();
-				?>
-			</ul>
+					?>
+				</ul>
+			</div>
 		</div>
-	</div>
-
-
+	<?php endif; wp_reset_postdata(); ?>
 </div>
 
 <?php get_footer(); ?>

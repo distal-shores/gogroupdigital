@@ -153,6 +153,12 @@ button,
 } // button
 
 figure {
+  display: flex;
+  flex-direction: column;
 	margin: 0px;
 	max-width: 100%;
+
+  figcaption {
+    margin-top: 20px;
+  }
 }
