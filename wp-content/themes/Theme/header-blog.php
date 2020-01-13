@@ -3,16 +3,13 @@
 <!--[if gt IE 9]><!-->
 <html class="no-js" lang="<?php bloginfo('language') ?>"><!--<![endif]-->
 <head>
-	<?php 
-    global $post;
-    wp_head(); ?>
+	<?php global $post; wp_head(); ?>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93234307-1"></script>
 	<script>
   		window.dataLayer = window.dataLayer || [];
   		function gtag(){dataLayer.push(arguments);}
   		gtag('js', new Date());
-
   		gtag('config', 'UA-93234307-1');
 	</script>
 	<meta name="description" content="<?php bloginfo('description') ?>">
@@ -40,35 +37,8 @@
 </head>
 <body <?php body_class(); ?>>
 
-<header class="header blog-header">
-    <!-- Logo -->
-    <a href="<?php bloginfo('url'); ?>" class="header__logo">GO Group</a>
-
-    <!-- Menu Button -->
-    <span class="header__nav-button">
-        <i class="fas fa-bars"></i>
-        <span class="header__nav-button__button">Menu</span>
-    </span>
-
-    <!-- Menu -->
-    <div class="header__menu">
-        <?php
-            wp_nav_menu( array(
-                'container' => 'nav',
-                'container_class' => 'primary-nav',
-                'theme_location' => 'primary',
-                'menu_class' => 'primary-nav__items',
-                'items_wrap' => '<h2 class="u-screen-reader">Main menu</h2><ul class="%2$s">%3$s</ul>',
-                'depth' => 1
-                )
-            );
-        ?>
-        <span class="header__menu__close">Close</span>
-    </div>
-
-</header>
+<?php get_template_part('header', 'nav'); ?>
 
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=670426330032456&autoLogAppEvents=1"></script>
-

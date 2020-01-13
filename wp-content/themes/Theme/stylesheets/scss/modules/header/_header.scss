@@ -1,211 +1,194 @@
 .header {
-	text-align: left;
-	padding: 50px 0px 10px 0px;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	z-index: 1000;
-	max-width: 100vw;
-	@include transition(all .3s ease-in-out);
-	@include clearfix;
-	&.blog-header {
-		display: flex;
-		align-items: center;
-		padding: 15px 0;
-		z-index: 1000;
-		.header__logo {
-			@include sprite-background('logo-white');
-			display: block;
-			padding: $column-padding;
-			text-indent: -9000px;
-			margin-left: 15px;
-			margin-top: 7px;
-			@include transition(all 0s ease-in-out);
-			margin: 0 auto;
-			order: 2;
-		}
-		&.active {
-			.header__nav-button {
-				&__button {
-					@media screen and (min-width: 800px) {
-						background-color: $color-brand;
-						color: #fff;
-					}
-				}
-			}
-		}
-		.header__nav-button {
-			display: inline-block;
-			order: 1;
-			font-family: FontAwesome;
-			cursor: pointer;
-			color: $color-base-alt;
-			text-decoration: underline;
-			font-style: initial;
-			text-decoration: none;
-			padding-left: 10px;
-			margin: 0;
-			position: absolute;
-			margin-left: 1.2rem;
-			i {
-				font-style: initial;
-				font-size: 24px;
-				@media screen and (min-width: 800px) {
-					display: none;
-				}
-			}
-			&__button {
-				display: none;
-				@media screen and (min-width: 800px) {
-					display: block;
-					background-color: #fff;
-					box-shadow: 0px 2px 4px 0 rgba(0,0,0,1);
-					color: $color-brand;
-					font-family: 'Avenir Black', Arial, sans-serif;
-					text-transform: uppercase;
-					font-weight: 700;
-					font-size: 18px;
-					max-height: 50px;
-					padding: 11px 20px;
-					font-size: 14px;
-					border-radius: 5px;
-				}
-			}
-		}
-	}
-		&.active {
-			background: $color-canvas;
-			padding: 20px 0px;
-			@include transition(all .3s ease-in-out);
-			& .header__logo {
-				@include background-logo('logo.svg');
-				display: inline-block;
-				@include transition(all 0s ease-in-out);
-			}
-			& .header__contact,
-			& .header__login {
-				color: $color-base-highlight;
-				border-color: $color-base-highlight;
-				&:hover {
-					color: $color-base-alt;
-					background: $color-base-highlight;
-				}
-			}
-			& .header__nav-button {
-				color: $color-base-highlight;
-			}
-		}
-	&__logo {
-		@include sprite-background('logo-white');
-		display: inline-block;
-		padding: $column-padding;
-		text-indent: -9000px;
-		margin-left: 15px;
-		margin-top: 7px;
-		@include transition(all 0s ease-in-out);
-	}
+  text-align: left;
+  padding-top: 15px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 1000;
+  max-width: 100vw;
+  @include transition(all 0.3s ease-in-out);
+  @include clearfix;
 
-	&__contact,
-	&__login {
-		font-size: 15px;
-		letter-spacing: 2.72px;
-		margin: 0px;
-		float: right;
-		text-transform: uppercase;
-		color: $color-base-alt;
-		border: 1px solid #fff;
-		padding: 6px 15px 8px 15px;
+  @media (min-width: 800px) {
+    padding-top: 30px;
+  }
+
+  &__logo {
+    @include sprite-background("logo");
+    @include center-sprite-background("logo");
+    text-indent: -9000px;
+    @include transition(all 0s ease-in-out);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    .spacer {
+      flex-grow: 1;
+    }
+  }
+
+  &__contact,
+  &__login {
+    font-size: 15px;
+    letter-spacing: 2.72px;
+    margin: 0px;
+    text-transform: uppercase;
+    color: $color-base-alt;
+    border: 1px solid #fff;
+    padding: 6px 15px 8px 15px;
+    &:hover {
+      color: $color-base;
+      background: #fff;
+    }
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  &__login {
+    margin-right: 15px;
+  }
+
+  &__nav-button {
+		display: inherit;
+    font-family: FontAwesome;
+    background-color: inherit;
+    color: $color-base-alt;
+    font-style: initial;
+    margin: 0;
+    i {
+      font-style: initial;
+			font-size: 24px;
+			padding: 10px;
+      @media screen and (min-width: 800px) {
+        display: none;
+      }
+    }
+    &__button {
+      display: none;
+      @media screen and (min-width: 800px) {
+        display: block;
+        background-color: #fff;
+        box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 1);
+        color: $color-brand;
+        font-family: "Avenir Black", Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 18px;
+        max-height: 50px;
+        padding: 11px 20px;
+        font-size: 14px;
+        border-radius: 5px;
+      }
+		}
+		
 		&:hover {
-			color: $color-base;
-			background: #fff;
-		}
-		@media (max-width: 600px) {
-			display: none;
-		}
-	}
-
-	&__login {
-		margin-right: 15px;
-	}
-
-	&__nav-button {
-		display: inline-block;
-		float: right;
-		margin: 0px 15px 0px 60px;
-		font-size: 20px;
-		line-height: 30px;
-		cursor: pointer;
-		color: $color-base-alt;
-		text-decoration: underline;
-	}
-
-	&__menu {
-		pointer-events: none;
-		position: fixed;
-		top: 0px;
-		left: 0px;
-		width: 100%;
-		height: 100%;
-		z-index: 100;
-		background: $color-canvas;
-		opacity: 0;
-		@include transition(all .3s ease-in-out);
-		&.active {
-			opacity: 1;
-			pointer-events: visible;
-			@include transition(all .3s ease-in-out);
-		}
-		&__close {
-			@include sprite-background('icon-close');
-			position: fixed;
-			top: 30px;
-			left: 1.2rem;
-			z-index: 4;
 			cursor: pointer;
-			text-indent: -9000px;
 		}
-	}
+  }
+
+  &__menu {
+    pointer-events: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: $color-canvas;
+    opacity: 0;
+    @include transition(all 0.3s ease-in-out);
+    &.active {
+      opacity: 1;
+      pointer-events: visible;
+      @include transition(all 0.3s ease-in-out);
+    }
+    &__close {
+      @include sprite-background("icon-close");
+      position: fixed;
+      top: 30px;
+      left: 1.2rem;
+      z-index: 4;
+      cursor: pointer;
+      text-indent: -9000px;
+    }
+  }
+
+  &.active {
+    background: $color-canvas;
+		padding: 7.5px 0;
+    @media screen and (min-width: 800px) {
+			padding: 15px 0;
+		}
+
+    @include transition(all 0.3s ease-in-out);
+    & .header__logo {
+      @include background-logo("logo.svg");
+      display: inline-block;
+      @include transition(all 0s ease-in-out);
+    }
+    & .header__contact,
+    & .header__login {
+      color: $color-base-highlight;
+      border-color: $color-base-highlight;
+      &:hover {
+        color: $color-base-alt;
+        background: $color-base-highlight;
+      }
+    }
+    & .header__nav-button {
+			i {
+				color: $color-base-highlight;
+			}
+			.header__nav-button__button {
+	      color: $color-base-alt;
+	      background: $color-base-highlight;
+			}
+    }
+  }
 }
 
 .primary-nav {
-	position: absolute;
-	width: 100%;
-	padding: 0px 20px;
-	top: 50%;
-	left: 50%;
-	@include transform(translate(-50%, -50%));
-	&__items {
-		list-style-type: none;
-		margin: 0px;
-		padding: 0px;
-		text-align: center;
-	}
-	&__item {
-		font-size: 52px;
-		line-height: 73px;
-		color: $color-brand;
-		@media (max-width: 800px) {
-			font-size: 42px;
-			line-height: 65px;
-		}
-		@media (max-width: 650px) {
-			font-size: 30px;
-			line-height: 50px;
-		}
-		@media (max-width: 650px) {
-			font-size: 30px;
-			line-height: 35px;
-			color: #2760B6;
-			margin-bottom: 25px;
-		}
-		& a {
-			color: $color-brand;
-			font-family: $font-accent;
-			&:hover {
-				text-decoration: underline;
-				cursor: pointer;
-			}
-		}	
-	}
+  position: absolute;
+  width: 100%;
+  padding: 0px 20px;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+  &__items {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+  &__item {
+    font-size: 52px;
+    line-height: 73px;
+    color: $color-brand;
+    @media (max-width: 800px) {
+      font-size: 42px;
+      line-height: 65px;
+    }
+    @media (max-width: 650px) {
+      font-size: 30px;
+      line-height: 50px;
+    }
+    @media (max-width: 650px) {
+      font-size: 30px;
+      line-height: 35px;
+      color: #2760b6;
+      margin-bottom: 25px;
+    }
+    & a {
+      color: $color-brand;
+      font-family: $font-accent;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
 }

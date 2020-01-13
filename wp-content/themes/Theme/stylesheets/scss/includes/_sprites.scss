@@ -28,6 +28,14 @@ $sprites-retina: sprite-map("sprites/common-2x/*.png", $layout: smart);
   }
 }
 
+@mixin center-sprite-background($name) {
+  position: absolute;
+  left: 50%;
+  margin-left: image-width(sprite-file($sprites, $name)) / -2;
+  top: 50%;
+  margin-top: image-height(sprite-file($sprites, $name)) / -2;
+}
+
 
 /* Compatibility sprites. Uncomment to use.
 
