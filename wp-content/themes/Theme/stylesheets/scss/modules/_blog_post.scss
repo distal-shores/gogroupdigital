@@ -438,6 +438,7 @@ $color-text-dark: #000;
                 }
             }
             ul li,
+            figure,
             p {
                 background: white;
                 border: 1px solid #dddddd;
@@ -446,10 +447,11 @@ $color-text-dark: #000;
                 padding: 15px;
                 color: $color-text;
             }
-            ul {
-                li + li {
-                    margin-top: 10px !important;
-                }
+            ul,
+            ul li + li,
+            figure,
+            p {
+                margin-top: 10px !important;
             }
             img {
                 max-width: 100% !important;

@@ -1,22 +1,41 @@
 <?php
 
+// Wordpress sometimes adds a bunch of random <p>'s with no content. This will remove them.
+if( !function_exists('jdm_fix_shortcodes') ) {
+	function jdm_fix_shortcodes($content)
+	{
+		$array = array (
+			'<p>[' => '[', 
+			']</p>' => ']', 
+			']<br />' => ']',
+			'<p></p>' => ''
+		);
+		$content = strtr($content, $array);
+		return $content;
+	}
+	add_filter('the_content', 'jdm_fix_shortcodes');
+}
+
 function generate_sidebar_topic( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'title' => '',
 	), $atts );
 
-	// $content = trim($content);
-	$content = strip_tags($content, '<ul><li><p><img><br><strong>');
+	$content = strip_tags($content, '<ul><li><p><img><br><span><b><strong><caption><figure>');
+	// Place images in <p>, so they're styled correctly
+	$content = preg_replace("/(<img[^>]*>)/i", '<p>$1</p>', $content);
+	// Handle nested shortcodes
+	$content = do_shortcode($content);
 	$content = force_balance_tags($content);
-	$content = preg_replace("#<p>\s*</p>#i", '', $content);
-	// strip empty p tags
+
+	$test = $content;
 
 	ob_start();
 	?>
 		<div class="sidebar-topic">
 			<div class="sidebar-topic__divider"></div>
 			<h1><?php echo $a['title']; ?></h1>
-			<?php echo $content ?>
+			<?php echo $content; ?>
 			<div class="sidebar-topic__divider"></div>
 		</div>
 	<?php
