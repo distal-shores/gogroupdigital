@@ -26,8 +26,8 @@
 		$banner_background = get_sub_field('banner_background'); ?>
 		<div class="banner banner--first banner--home" id="begin" style="background-image: url(<?php echo $banner_background['sizes']['banner']; ?>);">
 			<span class="banner__content">
-				<p class="banner__content--first"><?php echo $banner_title; ?></p>
-				<p class="banner__content--second"><?php echo $banner_subtitle; ?></p>
+				<h1 class="banner__content--first"><?php echo $banner_title; ?></h1>
+				<h2 class="banner__content--second"><?php echo $banner_subtitle; ?></h2>
 			</span>
 		</div>
 	<?php endwhile;
@@ -69,8 +69,8 @@
 		<div class="banner banner--second banner--home" style="background-image: url(<?php echo $banner_background['sizes']['banner']; ?>);">
 			<div class="l-container">
 				<span class="banner__content">
-					<p class="banner__content--first"><?php echo $banner_title; ?></p>
-					<p class="banner__content--second"><?php echo $banner_content; ?></p>
+					<h1 class="banner__content--first"><?php echo $banner_title; ?></h1>
+					<h2 class="banner__content--second"><?php echo $banner_content; ?></h2>
 				</span>
 				<span class="banner__cta">
 					<?php  

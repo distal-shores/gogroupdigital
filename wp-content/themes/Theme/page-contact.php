@@ -24,10 +24,10 @@
 	<div class="banner" style="background-image: url(<?php echo $banner_background; ?>);">
 		<span class="banner__content">
 			<?php if($banner_title): ?>
-				<p class="banner__content--first"><?php echo $banner_title; ?></p>
+				<h1 class="banner__content--first"><?php echo $banner_title; ?></h1>
 			<?php endif; ?>
 			<?php if($banner_subtitle): ?>
-				<p class="banner__content--second"><?php echo $banner_subtitle; ?></p>
+				<h2 class="banner__content--second"><?php echo $banner_subtitle; ?></h2>
 			<?php endif; ?>
 		</span>
 	</div>

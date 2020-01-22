@@ -28,11 +28,11 @@
 <div class="banner" id="banner--insights" style="background-image: linear-gradient(to bottom, rgba(113, 76, 182, 0.7), rgba(39, 96, 182, 0.7)), url(<?php echo $banner_background; ?>);">
 	<span class="banner__content">
 		<?php if($banner_title): ?>
-			<p class="banner__content--first"><?php echo $banner_title; ?></p>
+			<h1 class="banner__content--first"><?php echo $banner_title; ?></h1>
 		<?php endif; ?>
 		<?php if($banner_subtitle): ?>
 			<hr class="banner__content__hr__short-blue"/>
-			<p class="banner__content--second">The world’s first publication dedicated to revealing how the power of <strong>experimentation unlocks epic business growth.</strong></p>
+			<h2 class="banner__content--second">The world’s first publication dedicated to revealing how the power of <strong>experimentation unlocks epic business growth.</strong></h2>
 		<?php endif; ?>
 	</span>
 </div>

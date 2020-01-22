@@ -40,15 +40,16 @@
 		@include transform(translate(-50%, -50%));
 		@include clearfix;
 		&--first {
-			font-family: 'Calluna', Arial, sans-serif;
+			font-family: $font-calluna;
 			font-size: 36px;
-			// line-height: 82px;
+			line-height: 43px;
 			color: $color-base-alt;
 			font-weight: 400;
 			margin: 0px auto;
 			@media (min-width: 800px) {
 				font-size: 48px;
 				margin-bottom: 25px;
+				line-height: 52px;
 			}
 		}
 		&__hr__short-blue {
@@ -59,12 +60,13 @@
 			width: 50px;
 		}
 		&--second {
-			font-family: 'Avenir', Arial, sans-serif;
+			font-family: $font-avenir;
+			font-weight: initial;
 			font-size: 21px;
-			// line-height: 28px;
+			line-height: 29px;
 			color: $color-base-alt;
 			max-width: 620px;
-			margin: 25px auto 0px auto;
+			margin: 25px auto 0 auto;
 			@media (max-width: 400px) {
 				font-size: 16px;
 				line-height: 26px;
@@ -72,7 +74,12 @@
 			}
 			@media (min-width: 800px) {
 				font-size: 24px;
+				line-height: 28px;
 				max-width: 500px;
+			}
+
+			strong {
+				font-family: $font-avenir-heavy;
 			}
 		}
 		// Home first banner
