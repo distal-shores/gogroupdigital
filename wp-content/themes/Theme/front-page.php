@@ -185,7 +185,7 @@
 					wp_reset_postdata();
 				?>
 			</ul>
-			<a href="<?php // bloginfo('url'); ?>/insights" class="blog__button">See More</a>
+			<a href="<?php // bloginfo('url'); ?>/insights/" class="blog__button">See More</a>
 		</div>
 		<span class="helix helix--three"></span>
 	</div>
