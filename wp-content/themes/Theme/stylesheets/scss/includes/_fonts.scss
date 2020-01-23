@@ -10,19 +10,23 @@
   font-weight: normal;
   font-style: normal;
   src: font-url("Calluna-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Avenir";
   src: font-url("Avenir-Book-01.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Avenir Black";
   src: font-url("Avenir-Black-03.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Avenir Heavy";
   src: font-url("Avenir-Heavy-05.ttf") format("truetype");
+  font-display: swap;
 }

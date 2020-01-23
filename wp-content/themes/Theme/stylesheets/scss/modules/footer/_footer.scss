@@ -8,14 +8,14 @@
 		@include clearfix;
 		&__title {
 			.numeral {
-				font-family: 'Calluna', Arial, sans-serif;
+				font-family: $font-calluna;
 				font-size: 32px;
 				font-weight: 400;
 				display: inline-block;
 				margin-bottom: 45px;
 			}
 			.text {
-				font-family: 'Avenir Heavy', Arial, sans-serif;
+				font-family: $font-avenir-heavy;
 				display: inline-block;
 				margin-bottom: 15px;
 				font-size: 14px;
@@ -28,7 +28,7 @@
 					font-size: 18px;
 				}
 			}
-			font-family: 'Avenir', Arial, sans-serif;
+			font-family: $font-avenir;
 			font-size: 14px;
 			text-transform: uppercase;
 			font-weight: 700;
@@ -67,7 +67,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				font-family: 'Avenir', Arial, sans-serif;
+				font-family: $font-avenir;
 				font-size: 14px;
 				text-transform: uppercase;
 				font-weight: 700;

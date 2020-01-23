@@ -127,7 +127,7 @@
 			padding: 0; 
 		}
 		&__category {
-			font-family: 'Avenir Heavy', Arial, sans-serif;
+			font-family: $font-avenir-heavy;
 			color: #2760B6;
 			font-size: 14px;
 			text-transform: uppercase;
@@ -167,7 +167,7 @@
 
 			h2 {
 				color: #fff;
-				font-family: 'Calluna', Arial, sans-serif;
+				font-family: $font-calluna;
 				font-size: 24px;
 				margin: 0;
 				margin-top: 5px;
@@ -180,7 +180,7 @@
 			&__read-more {
 				display: inline-block;
 				color: $color-gradient-start;
-				font-family: 'Avenir Heavy', Arial, sans-serif;
+				font-family: $font-avenir-heavy;
 				font-size: 14px;
 				margin-bottom: 30px;
 				padding: 0 !important;
@@ -202,7 +202,7 @@
 				}
 			}
 			&__title {
-				font-family: 'Calluna', Arial, sans-serif;
+				font-family: $font-calluna;
 				font-size: 24px;
 				font-weight: 400;
 				margin-top: 5px;
@@ -216,7 +216,7 @@
 				background-position: center;
 				border-radius: 3px;
 				display: inline-block;
-				font-family: 'Avenir Heavy', Arial, sans-serif;
+				font-family: $font-avenir-heavy;
 				font-size: 14px;
 				padding: 4px 10px;
 				letter-spacing: 1px;
