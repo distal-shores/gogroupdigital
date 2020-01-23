@@ -417,7 +417,7 @@ $color-text-dark: #000;
             & > * {
                 max-width: 635px;
             }
-            h1 {
+            &__title {
                 font-family: "Avenir Heavy", Arial, sans-serif;
                 margin-bottom: 30px;
                 font-size: 21px;
@@ -427,7 +427,7 @@ $color-text-dark: #000;
                     line-height: initial;
                 }
                 &:before {
-                    content: "Sidebar Topic";
+                    content: attr(data-heading);
                     font-family: "Avenir Heavy", Arial, sans-serif;
                     color: #2760b6;
                     display: block;

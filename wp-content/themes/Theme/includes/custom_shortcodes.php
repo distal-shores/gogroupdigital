@@ -19,6 +19,7 @@ if( !function_exists('jdm_fix_shortcodes') ) {
 function generate_sidebar_topic( $atts, $content = null ) {
 	$a = shortcode_atts( array(
 		'title' => '',
+		'heading' => 'Sidebar Topic'
 	), $atts );
 
 	$content = strip_tags($content, '<ul><li><p><img><br><span><b><strong><caption><figure>');
@@ -34,7 +35,7 @@ function generate_sidebar_topic( $atts, $content = null ) {
 	?>
 		<div class="sidebar-topic">
 			<div class="sidebar-topic__divider"></div>
-			<h1><?php echo $a['title']; ?></h1>
+			<h2 class="sidebar-topic__title" data-heading="<?php echo $a['heading']; ?>"><?php echo $a['title']; ?></h2>
 			<?php echo $content; ?>
 			<div class="sidebar-topic__divider"></div>
 		</div>
