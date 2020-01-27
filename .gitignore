@@ -5,3 +5,4 @@ wp-content/debug.log
 *.swp
 launch.json
 .idea/
+wp-content/ewww/debug.log
