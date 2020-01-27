@@ -7,16 +7,14 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93234307-1"></script>
 	<script>
-  		window.dataLayer = window.dataLayer || [];
-  		function gtag(){dataLayer.push(arguments);}
-  		gtag('js', new Date());
-  		gtag('config', 'UA-93234307-1');
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-93234307-1');
 	</script>
 	<meta name="description" content="<?php bloginfo('description') ?>">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	<meta http-equiv="content-type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600|Muli:400,700" rel="stylesheet">
 	<!-- FAVICONS -->
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_directory'); ?>/favicons/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_directory'); ?>/favicons/favicon-32x32.png">
@@ -26,17 +24,14 @@
 	<meta name="msapplication-TileColor" content="#2760b6">
 	<meta name="theme-color" content="#ffffff">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="<?php echo get_the_title($post->ID);?>"/>
-    <!-- <meta property="og:image" content="https://davidwalsh.name/wp-content/themes/klass/img/facebooklogo.png"/> -->
-    <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
-    <!-- <meta property="og:description" content="<"/> -->
-    <!--[if IE 8]>
-        <style>html.ie-force-pseudo-refresh :before,html.ie-force-pseudo-refresh :after {content : none !important;}</style>
-        <script>window.attachEvent&&!window.addEventListener&&window.attachEvent("onload",function(){var a=document.documentElement,b=a.className;a.className=b+" ie-force-pseudo-refresh",setTimeout(function(){a.className=b},10)});</script>
-    <![endif]-->
+	<meta property="og:title" content="<?php echo get_the_title($post->ID);?>"/>
+	<meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+	<!--[if IE 8]>
+		<style>html.ie-force-pseudo-refresh :before,html.ie-force-pseudo-refresh :after {content : none !important;}</style>
+		<script>window.attachEvent&&!window.addEventListener&&window.attachEvent("onload",function(){var a=document.documentElement,b=a.className;a.className=b+" ie-force-pseudo-refresh",setTimeout(function(){a.className=b},10)});</script>
+	<![endif]-->
 </head>
 <body <?php body_class(); ?>>
-
 <?php get_template_part('header', 'nav'); ?>
 
 <!-- Load Facebook SDK for JavaScript -->
