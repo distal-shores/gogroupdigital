@@ -22,7 +22,7 @@ function generate_sidebar_topic( $atts, $content = null ) {
 		'heading' => 'Sidebar Topic'
 	), $atts );
 
-	$content = strip_tags($content, '<ul><li><p><img><br><span><b><strong><caption><figure>');
+	$content = strip_tags($content, '<ul><ol><li><p><img><br><span><b><strong><caption><figure>');
 	// Place images in <p>, so they're styled correctly
 	$content = preg_replace("/(<img[^>]*>)/i", '<p>$1</p>', $content);
 	// Handle nested shortcodes

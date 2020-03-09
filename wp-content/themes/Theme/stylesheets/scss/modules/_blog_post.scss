@@ -276,29 +276,29 @@ $color-text-dark: #000;
         ol {
             list-style-position: inside;
         }
-        ul,
-        ol {
-            margin: 0;
-            padding: 0;
-            &:not(.blog-post__blog-content__categories):not(.blog-post__authors):not(.social-shares__icons) {
-                margin-top: 20px;
+        ul, ol {
+          margin: 0;
+          padding: 0;
 
-                li {
-                    font-family: "Avenir Book", Arial, sans-serif;
-                    font-size: 18px;
-                    line-height: 26px;
-                    @media #{$mobile-screen} {
-                        font-size: 16px;
-                        line-height: 24px;
-                    }
-                }
-                li + li {
-                    margin-top: 26px;
-                    @media #{$mobile-screen} {
-                        margin-top: 24px;
-                    }
-                }
-            }
+          &:not(.blog-post__blog-content__categories):not(.blog-post__authors):not(.social-shares__icons) {
+              margin-top: 20px;
+
+              li {
+                  font-family: "Avenir Book", Arial, sans-serif;
+                  font-size: 18px;
+                  line-height: 26px;
+                  @media #{$mobile-screen} {
+                      font-size: 16px;
+                      line-height: 24px;
+                  }
+              }
+              li + li {
+                  margin-top: 26px;
+                  @media #{$mobile-screen} {
+                      margin-top: 24px;
+                  }
+              }
+          }
         }
         ul:not(.blog-post__blog-content__categories):not(.blog-post__authors):not(.social-shares__icons) {
             li:before {
@@ -437,6 +437,7 @@ $color-text-dark: #000;
                     letter-spacing: 1px;
                 }
             }
+            ol li,
             ul li,
             figure,
             p {
@@ -448,6 +449,8 @@ $color-text-dark: #000;
                 color: $color-text;
             }
             ul,
+            ol,
+            ol li + li,
             ul li + li,
             figure,
             p {
