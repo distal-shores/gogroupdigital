@@ -8,7 +8,7 @@
 		max-width: 1000px;
 		margin: 0px auto;
 	}
-	& * {
+	& *:not(a) {
 		color: white;
 		text-align: left;
 		padding: 0px;
@@ -77,6 +77,10 @@
 				@include transition(all .3s ease-in-out);
 			}
 		}
+	}
+	& .vfb-fieldType-checkbox {
+		margin: 0px auto 25px auto;
+		padding: $column-padding;
 	}
 	& .vfb-form-group {
 		margin: 0px;

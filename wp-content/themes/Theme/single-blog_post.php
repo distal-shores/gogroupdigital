@@ -25,6 +25,9 @@
 		foreach((get_the_category()) as $category) { 
 			array_push($categories, $category->category_nicename);
 		}
+
+		$showForm = get_field('show_vfb_form') == true ? true : false;
+		$vfbFormId = $showForm ? get_field('vfb_form') : null;
 	?>
 
 	<?php if($featured_image): ?>
@@ -52,8 +55,9 @@
 	<?php endif; ?>
 	
 
-	<div class="page-content">
+	<div class="page-content <?= $showForm ? 'has-form' : '' ?>">
 		<div class="l-container blog-content">
+
 			<?php if(!$marketing_page): ?>
 				<div class="blog-post__blog-content__categories">
 					<?php foreach((get_the_category()) as $category) { 
@@ -61,11 +65,13 @@
 					} ?>
 				</div>
 			<?php endif; ?>
+
 			<?php if($subtitle): ?>
 				<h2 class="blog-post__subtitle">
 					<?php echo $subtitle; ?>
 				</h2>
 			<?php endif; ?>
+
 			<?php
 				if ( in_array_any($privilege_levels, (array) $user->roles) || empty($privilege_levels) || in_array('administrator', $user->roles)) {
 					the_content();
@@ -74,7 +80,9 @@
 					echo "<p style=\"text-align:left\">This content is reserved for GO Partners. Please <a href=\"#contact\">contact us</a> to learn about exclusive access.</p>";
 				}
 			?>
+
 			<?php echo !$marketing_page ? do_shortcode('[social-shares]') : '' ?>
+
 			<?php if(!$marketing_page && ($contributing_authors || $byline_authors)): ?>
 				<h4 class="blog-post__authors__header">Contributing Author(s)</h4>
 				<?php
@@ -98,10 +106,12 @@
 					<?php endforeach; ?>
 				</ul> <!-- /.blog-post__author -->
 			<?php endif ?>
+
 			<div class="blog-post__contact <?= $marketing_page == true ? 'blog-post__contact__no-border' : '' ?>">
 				<h4>Got Questions?</h4>
 				<a href="#contact" class="contact-button">Reach Out to Us</a>
 			</div>
+
 			<?php if(!$marketing_page): ?>
 				<?php if(get_field('blog_post_about_go', 2) != NULL) : ?>
 					<div class="blog-post__about">
@@ -109,13 +119,25 @@
 					</div>
 				<?php endif; ?>
 			<?php endif; ?>
-			<div class="blog-post__footnotes">
+
+			<div class="blog-post__footnotes"></div>
+
+			<?php endwhile; endif; ?>
+
+		</div><!-- .blog-content -->
+
+	<?php if($showForm): ?>
+		<div class="form-overlay-wrapper">
+			<div class="form-overlay">
+				<?php
+					echo do_shortcode("[vfb id=$vfbFormId]");
+				?>
 			</div>
-			<?php endwhile;
-				endif;
-			?>
 		</div>
-	</div>
+	<?php endif; ?>
+
+	</div><!-- .page-content -->
+
 	<?php 
 		$args = array(
 			'post_type' => 'blog_post',

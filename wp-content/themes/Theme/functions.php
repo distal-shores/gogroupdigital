@@ -133,3 +133,25 @@ function my_ajax_fetch()
     }
     die();
 }
+
+function acf_load_form_field_choices( $field )
+{
+    // reset the choices
+    $field['choices'] = array();
+
+	global $wpdb;
+	$forms = $wpdb->get_results("
+			SELECT id, title
+			FROM wp_vfbp_forms
+			WHERE status = 'publish'
+    ");
+    
+    if (is_array($forms)) {
+        foreach ($forms as $form) {
+            $field['choices'][$form->id] = $form->title;
+        }
+    }
+
+    return $field;
+} 
+add_filter( 'acf/load_field/name=vfb_form', 'acf_load_form_field_choices' );
