@@ -533,6 +533,31 @@ $color-text-dark: #000;
                 height: auto;
             }
         }
+        .presenter {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+
+            @media #{$screen-desktop} {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            &__profile-image {
+                flex-shrink: 0;
+                height: 150px !important;
+                width: 150px !important;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+                margin: 8px 20px 10px 0px;
+            }
+
+            &__title-description {
+                display: flex;
+                flex-direction: column;
+            }
+        }
     }
     &__about {
         padding: 50px 0;

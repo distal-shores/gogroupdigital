@@ -98,3 +98,42 @@ function generate_social_shares( $atts ) {
 
 add_shortcode( 'social-shares', 'generate_social_shares' );
 
+function generate_go_presenter( $attrs ) {
+	$a = shortcode_atts( array('id' => ''), $attrs );
+
+	if (!isset($a['id']) || !($a['id'] !== '')) {
+		return '<h1 style="background-color: black; color: red;">[go_presenter id=""] Missing id</h1>';
+	}
+
+	$args = array(
+		'post_type' => 'member',
+		'name' => $a['id']
+	);
+	$query = new WP_Query($args);
+
+	ob_start();
+	if ( $query->have_posts() ) {
+		while ( $query->have_posts() ) {
+			$query->the_post();
+
+			$name = get_the_title();
+			$profileImage = get_field('profile_image');
+			$title = get_field('title');
+			$description = get_field('profile_description');
+			?>
+				<section class="presenter">
+					<?php if($profileImage): ?><img class="presenter__profile-image" src="<?= $profileImage['url'] ?>"><?php endif; ?>
+					<div class="presenter__title-description">
+						<strong class="presenter__title"><?= $name ?>, <?= $title ?></strong>
+						<?= $description ?>
+					</div>
+				</section>
+			<?php
+		}
+	} else {
+		echo '<h1 style="background-color: black; color: red;">[go_presenter id="' . $a['id'] . '"] Could not find member</h1>';
+	}
+	wp_reset_postdata();
+	return ob_get_clean();
+}
+add_shortcode( 'go_presenter', 'generate_go_presenter' );
