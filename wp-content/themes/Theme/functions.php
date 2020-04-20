@@ -83,6 +83,7 @@ add_filter('login_redirect', 'admin_default_page');
 function my_enqueue_scripts()
 {
     wp_enqueue_script('footnote-append',  get_stylesheet_directory_uri() . '/js/footnote-append.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('accept-cookies',  get_stylesheet_directory_uri() . '/js/accept-cookies.js', array(), '1.0', true);
 
     if (is_page('insights')) {
         wp_enqueue_script('ajax-fetch',  get_stylesheet_directory_uri() . '/js/ajax-fetch.js', array('jquery'), '1.0', true);
