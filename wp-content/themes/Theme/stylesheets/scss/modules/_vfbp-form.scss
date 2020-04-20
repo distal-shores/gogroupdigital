@@ -7,12 +7,21 @@
 	&#vfbp-form-1 {
 		max-width: 1000px;
 		margin: 0px auto;
+
+		.parsley-required {
+			display: none;
+		}
+		.vfb-help-block {
+			display: none;
+		}
 	}
-	& *:not(a) {
-		color: white;
-		text-align: left;
-		padding: 0px;
-	}
+
+	// * {
+	// 	color: white;
+	// 	text-align: left;
+	// 	padding: 0px;
+	// }
+
 	& .vfb-fieldType-text {
 		display: inline-block;
 		float: left;
@@ -88,10 +97,6 @@
 	& .vfb-clearfix {
 		display: none;
 	}
-	& .vfb-help-block {
-		display: none;
-	}
-
 	& .vfb-fieldType-instructions {
 		max-width: 350px;
 	}
@@ -104,9 +109,6 @@
 		padding: 8px 12px 6px 12px;
 		height: 38px;
 		color: $color-base;
-	}
-	& .parsley-required {
-		display: none;
 	}
 
 	& .vfb-has-error .vfb-form-control {
