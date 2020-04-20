@@ -32,6 +32,7 @@
 	<![endif]-->
 </head>
 <body <?php body_class(); ?>>
+<?php get_template_part('cookie-banner'); ?>
 <?php get_template_part('header', 'nav'); ?>
 
 <!-- Load Facebook SDK for JavaScript -->
