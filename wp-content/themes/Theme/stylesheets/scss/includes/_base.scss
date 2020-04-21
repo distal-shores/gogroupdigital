@@ -35,8 +35,11 @@ body {
 } // body
 
 .site-message {
+	$background-color: #000;
+	$foreground-color: #fff;
+
 	display: none;
-	background: #000;
+	background: $background-color;
 	position: relative;
 	z-index: 9994;
 
@@ -47,21 +50,30 @@ body {
 		align-items: center;
 
 		p {
-			color: white;
+			color: $foreground-color;
 			text-align: left;
 			margin: 0;
+
+			a {
+				color: $foreground-color;
+				text-decoration: underline;
+			}
 		}
 
 		#accept-cookies-button {
-			color: $color-brand;
 			font-size: 15px;
+			letter-spacing: 2.72px;
 			margin: 0px;
-			border: 1px solid $color-brand;
+			text-transform: uppercase;
+			color: $foreground-color;
+			border: 1px solid $foreground-color;
 			padding: 10px 20px;
-			margin-left: 20px;
+
+			margin-left: 1rem;
+
 	    &:hover {
-	      color: $color-base;
-	      background: #fff;
+	      color: $background-color;
+	      background: $foreground-color;
 	    }
 		}
 	}
