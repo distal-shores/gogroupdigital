@@ -537,10 +537,15 @@ $color-text-dark: #000;
             display: flex;
             flex-direction: column;
             margin-top: 20px;
+            align-items: flex-start;
 
             @media #{$screen-desktop} {
                 flex-direction: row;
                 flex-wrap: wrap;
+            }
+
+            &__image-container {
+                position: relative;
             }
 
             &__profile-image {
@@ -550,12 +555,40 @@ $color-text-dark: #000;
                 object-fit: cover;
                 object-position: center;
                 border-radius: 50%;
-                margin: 8px 20px 10px 0px;
+                margin-right: 20px;
+                margin-bottom: 10px;
+            }
+
+            $logo-size: 50px;
+            &__logo-container {
+                position: absolute;
+                background-color: #fff;
+                bottom: 10px;
+                right: 20px;
+                border-radius: 50%;
+                width: $logo-size;
+                height: $logo-size;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 0 20px 3px rgba(0,0,0,0.26);
+            }
+
+            &__logo-image {
+                max-width: $logo-size;
+                max-height: $logo-size;
             }
 
             &__title-description {
                 display: flex;
                 flex-direction: column;
+                flex-grow: 1;
+                flex-basis: 0;
+
+                p {
+                    margin-top: 10px;
+                }
             }
         }
     }

@@ -98,12 +98,14 @@ function generate_social_shares( $atts ) {
 
 add_shortcode( 'social-shares', 'generate_social_shares' );
 
-function generate_go_presenter( $attrs ) {
+function generate_go_presenter( $attrs, $content = null ) {
 	$a = shortcode_atts( array('id' => ''), $attrs );
 
 	if (!isset($a['id']) || !($a['id'] !== '')) {
 		return '<h1 style="background-color: black; color: red;">[go_presenter id=""] Missing id</h1>';
 	}
+
+	$content = strip_tags($content, '');
 
 	$args = array(
 		'post_type' => 'member',
@@ -120,12 +122,26 @@ function generate_go_presenter( $attrs ) {
 			$profileImage = get_field('profile_image');
 			$title = get_field('title');
 			$description = get_field('profile_description');
+			$logoImage = null;
+			$locations = get_field('location');
+			if ($locations && count($locations) > 0) {
+				$logoImage = get_field('logo', $locations[0]->ID)['url'];
+			}
 			?>
 				<section class="presenter">
-					<?php if($profileImage): ?><img class="presenter__profile-image" src="<?= $profileImage['url'] ?>"><?php endif; ?>
+					<?php if($profileImage): ?>
+					<div class="presenter__image-container">
+						<img class="presenter__profile-image" src="<?= $profileImage['url'] ?>">
+						<?php if($logoImage): ?>
+						<div class="presenter__logo-container">
+							<img class="presenter__logo-image" src="<?= $logoImage ?>">
+						</div>
+						<?php endif; ?>
+					</div>
+					<?php endif; ?>
 					<div class="presenter__title-description">
 						<strong class="presenter__title"><?= $name ?>, <?= $title ?></strong>
-						<?= $description ?>
+						<p><?= $content ?></p>
 					</div>
 				</section>
 			<?php
