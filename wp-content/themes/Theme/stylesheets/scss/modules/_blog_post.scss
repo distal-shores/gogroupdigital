@@ -157,12 +157,14 @@ $color-text-dark: #000;
 
             .blog-content {
                 padding-top: 20px;
+
                 order: 3;
                 width: calc(100% - 1.25rem);
                 margin-right: .625rem;
                 margin-left: .625rem;
 
                 @media #{$screen-desktop} {
+                    padding-top: unset;
                     order: 2;
                     width: calc(58.33333% - 1.25rem);
                 }
@@ -199,11 +201,11 @@ $color-text-dark: #000;
 
                     @media #{$screen-desktop} {
                         max-width: 500px;
-                        margin: -150px auto 0;
                     }
 
                     form {
                         padding: 0;
+                        padding-top: 15px;
 
                         .vfb-fieldType-text {
                             width: 100%;
@@ -556,15 +558,15 @@ $color-text-dark: #000;
                 object-position: center;
                 border-radius: 50%;
                 margin-right: 20px;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
             }
 
-            $logo-size: 50px;
+            $logo-size: 70px;
             &__logo-container {
                 position: absolute;
                 background-color: #fff;
                 bottom: 10px;
-                right: 20px;
+                right: 10px;
                 border-radius: 50%;
                 width: $logo-size;
                 height: $logo-size;
@@ -578,6 +580,8 @@ $color-text-dark: #000;
             &__logo-image {
                 max-width: $logo-size;
                 max-height: $logo-size;
+                object-fit: cover;
+                object-position: center;
             }
 
             &__title-description {
