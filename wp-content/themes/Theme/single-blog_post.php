@@ -129,9 +129,7 @@
 	<?php if($showForm): ?>
 		<div class="form-overlay-wrapper">
 			<div class="form-overlay">
-				<?php
-					echo do_shortcode("[vfb id=$vfbFormId]");
-				?>
+				<?php echo do_shortcode("[vfb id=$vfbFormId]"); ?>
 			</div>
 		</div>
 	<?php endif; ?>
