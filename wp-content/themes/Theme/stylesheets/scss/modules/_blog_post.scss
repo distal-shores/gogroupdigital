@@ -540,6 +540,7 @@ $color-text-dark: #000;
             flex-direction: column;
             margin-top: 20px;
             align-items: flex-start;
+            max-width: 643px;
 
             @media #{$screen-desktop} {
                 flex-direction: row;
