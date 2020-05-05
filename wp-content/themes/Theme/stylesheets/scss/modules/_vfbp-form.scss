@@ -33,10 +33,13 @@ $border-color: $background-color;
 
   & .vfb-fieldType-select {
     padding: $column-padding;
-    margin: 0px auto 25px auto;
+		margin: 0px auto 25px auto;
 
     & select {
 			@include background;
+			padding-top: 0;
+			padding-bottom: 0;
+			height: 53px;
 			
 			option {
 				font-size: 18px;
