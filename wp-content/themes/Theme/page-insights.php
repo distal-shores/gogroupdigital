@@ -28,7 +28,7 @@
 	$excluded_categories = array();
 	foreach ($terms as $term) {
 		$slug = $term->slug;
-		if ($slug === 'live-sessions' || $slug === 'roundtable') {
+		if ($slug === 'webinars' || $slug === 'roundtable') {
 			$excluded_categories[] = $term->term_id;
 		} else {
 			$categories[] = $term->name;
