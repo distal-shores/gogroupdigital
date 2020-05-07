@@ -3,7 +3,15 @@
 <!--[if gt IE 9]><!-->
 <html class="no-js" lang="<?php bloginfo('language') ?>"><!--<![endif]-->
 <head>
-	<?php global $post; wp_head(); ?>
+	<?php
+		global $post;
+		$show_form = get_field('show_gravity_form', $post->ID) == true ? true : false;
+		if ($show_form) {
+			$form_id = $show_form ? get_field('gravity_form', $post->ID) : null;
+			gravity_form_enqueue_scripts( $form_id );
+		}
+		wp_head();
+	?>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93234307-1"></script>
 	<script>
