@@ -23,6 +23,18 @@
 		'taxonomy' => 'category',
 		'hide_empty' => 'false'
 	));
+
+	// Exclude categories
+	$categories = array();
+	$excluded_categories = array();
+	foreach ($terms as $term) {
+		$slug = $term->slug;
+		if ($slug === 'live-sessions' || $slug === 'roundtable') {
+			$excluded_categories[] = $term->term_id;
+		} else {
+			$categories[] = $term->name;
+		}
+	}
 ?>
 
 <div class="banner" id="banner--insights" style="background-image: linear-gradient(to bottom, rgba(113, 76, 182, 0.7), rgba(39, 96, 182, 0.7)), url(<?php echo $banner_background; ?>);">
@@ -61,16 +73,17 @@
 		<h3 class="blog-index-headline">Recent Articles</h3>
 		<ul id="recent-articles-list" class="blog-tiles">
 			<?php
+				$excluded_posts = array($featured_post->ID);
 				$args = array(
 					'post_type' => 'blog_post',
 					'post_status' => 'publish',
 					'orderby'=> 'date',
 					'order' => 'DESC',
 					'posts_per_page' => 3,
-					'post__not_in' => array($featured_post->ID),
+					'post__not_in' => $excluded_posts,
+					'category__not_in' => $excluded_categories
 				);
 				$loop = new WP_Query( $args );
-				$excluded_posts = array($featured_post->ID);
 				if ( $loop->have_posts() ): 
 					while ( $loop->have_posts() ) : $loop->the_post();
 						include(locate_template('partials/listing-index.php', false, false));
@@ -85,8 +98,8 @@
 		<div id="blog-categories-select-wrapper">
 			<select id="blog-categories-select">
 				<option>View All</option>
-				<?php foreach($terms as $term) : ?>
-				<option><?= $term->name ?></option>
+				<?php foreach($categories as $category) : ?>
+				<option><?= $category ?></option>
 				<?php endforeach ?>
 			</select>
 		</div>
@@ -98,6 +111,7 @@
 				'order' => 'DESC',
 				'posts_per_page' => 3,
 				'post__not_in' => $excluded_posts,
+				'category__not_in' => $excluded_categories
 			);
 			$loop = new WP_Query( $args );
 		?>
