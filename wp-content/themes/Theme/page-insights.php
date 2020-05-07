@@ -23,7 +23,6 @@
 		'taxonomy' => 'category',
 		'hide_empty' => 'false'
 	));
-
 	// Exclude categories
 	$categories = array();
 	$excluded_categories = array();

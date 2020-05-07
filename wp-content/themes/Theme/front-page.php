@@ -137,15 +137,29 @@
 					wp_reset_postdata();
 				?>
 				<?php
+					// Get Categories
+					$terms = get_terms( array(
+						'taxonomy' => 'category',
+						'hide_empty' => 'false'
+					));
+					// Exclude categories
+					$excluded_categories = array();
+					foreach ($terms as $term) {
+						$slug = $term->slug;
+						if ($slug === 'live-sessions' || $slug === 'roundtable') {
+							$excluded_categories[] = $term->term_id;
+						}
+					}
+
 					$user = wp_get_current_user();
 					if(!in_array('administrator', $user->roles)) {
-
 						$args = array(
 							'post_type' => 'blog_post',
 							'posts_per_page' => 3,
 							'orderby'=> 'date',
 							'order' => 'DESC',
 							'post__not_in' => array($featured_post->ID),
+							'category__not_in' => $excluded_categories
 							// 'tax_query' => array(
 							// 	'relation' => 'OR',
 							// 	array(
@@ -163,15 +177,14 @@
 						);
 						
 					} else {
-
 						$args = array(
 							'post_type' => 'blog_post',
 							'posts_per_page' => 3,
 							'orderby'=> 'date',
 							'order' => 'DESC',
 							'post__not_in' => array($featured_post->ID),
+							'category__not_in' => $excluded_categories
 						);
-
 					}
 
 					$loop = new WP_Query( $args );
