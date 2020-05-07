@@ -135,7 +135,7 @@ function my_ajax_fetch()
     die();
 }
 
-function acf_load_form_field_choices( $field )
+function acf_load_vfb_form_field_choices( $field )
 {
     // reset the choices
     $field['choices'] = array();
@@ -155,4 +155,19 @@ function acf_load_form_field_choices( $field )
 
     return $field;
 } 
-add_filter( 'acf/load_field/name=vfb_form', 'acf_load_form_field_choices' );
+add_filter( 'acf/load_field/name=vfb_form', 'acf_load_vfb_form_field_choices' );
+
+function acf_load_gravity_form_field_choices( $field )
+{
+    $field['choices'] = array();
+
+    $forms = GFAPI::get_forms();
+    if ( count( $forms ) > 0 ) {
+        foreach ( $forms as $form ) {
+            $field['choices'][$form['id']] = $form['title'];
+        }
+    }
+
+    return $field;
+}
+add_filter( 'acf/load_field/name=gravity_form', 'acf_load_gravity_form_field_choices' );

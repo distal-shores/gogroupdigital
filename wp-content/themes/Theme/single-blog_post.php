@@ -26,8 +26,8 @@
 			array_push($categories, $category->category_nicename);
 		}
 
-		$showForm = get_field('show_vfb_form') == true ? true : false;
-		$vfbFormId = $showForm ? get_field('vfb_form') : null;
+		$show_form = get_field('show_gravity_form') == true ? true : false;
+		$form_id = $show_form ? get_field('gravity_form') : null;
 	?>
 
 	<?php if($featured_image): ?>
@@ -55,7 +55,7 @@
 	<?php endif; ?>
 	
 
-	<div class="page-content <?= $showForm ? 'has-form' : '' ?>">
+	<div class="page-content <?= $show_form ? 'has-form' : '' ?>">
 		<div class="l-container blog-content">
 
 			<?php if(!$marketing_page): ?>
@@ -126,10 +126,10 @@
 
 		</div><!-- .blog-content -->
 
-	<?php if($showForm): ?>
+	<?php if($show_form): ?>
 		<div class="form-overlay-wrapper">
 			<div class="form-overlay">
-				<?php echo do_shortcode("[vfb id=$vfbFormId]"); ?>
+				<?php gravity_form($form_id, false, false) ?>
 			</div>
 		</div>
 	<?php endif; ?>
