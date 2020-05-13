@@ -56,7 +56,6 @@
 		</div>
 	<?php endif; ?>
 	
-
 	<div class="page-content <?= $show_form ? 'has-form' : '' ?>">
 		<div class="l-container blog-content">
 
@@ -83,7 +82,7 @@
 				}
 			?>
 
-			<?php echo !$marketing_page ? do_shortcode('[social-shares]') : '' ?>
+			<?php echo (!$marketing_page && !$show_form) ? do_shortcode('[social-shares]') : '' ?>
 
 			<?php if(!$marketing_page && ($contributing_authors || $byline_authors)): ?>
 				<h4 class="blog-post__authors__header">Contributing Author(s)</h4>
@@ -133,6 +132,7 @@
 			<div class="form-overlay">
 				<?php gravity_form($form_id, false, false) ?>
 			</div>
+			<?php echo do_shortcode('[social-shares]') ?>
 		</div>
 	<?php endif; ?>
 
