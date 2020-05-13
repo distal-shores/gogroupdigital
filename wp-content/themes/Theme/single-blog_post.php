@@ -34,9 +34,11 @@
 		<div class="blog-post__image" style="background-image:url(<?php echo $featured_image['sizes']['blog_large']; ?>)">
 			<div class="overlay"></div>
 			<div class="blog-post__header">
+				<?php if(!$show_form): ?>
 				<p class="blog-post__header__date">
 					<?php $post_date = get_the_date( 'F j, Y' ); echo $post_date; ?>
 				</p>
+				<?php endif; ?>
 				<h1 class="blog-post__header__title"><?php the_title(); ?></h1>
 				<?php if(!$marketing_page): ?>
 					<hr class="blog-post__header__hr__short-blue" />
