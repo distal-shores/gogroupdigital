@@ -23,6 +23,15 @@ $border-color: $background-color;
     padding-top: 15px !important;
   }
 
+  .gform_heading .gform_title {
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: $font-calluna;
+    font-size: 30px;
+    color: $color-brand;
+  }
+
   .gform_body {
 
     .gform_fields .gfield {

@@ -130,7 +130,7 @@
 	<?php if($show_form): ?>
 		<div class="form-overlay-wrapper">
 			<div class="form-overlay">
-				<?php gravity_form($form_id, false, false) ?>
+				<?php gravity_form($form_id, true, false) ?>
 			</div>
 			<?php echo do_shortcode('[social-shares]') ?>
 		</div>
