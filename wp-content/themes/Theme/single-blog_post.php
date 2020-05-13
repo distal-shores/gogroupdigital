@@ -1,34 +1,35 @@
 <?php get_header('blog'); ?>
 
-<div class="l-body blog-post">
+<?php
+if ( have_posts() ) :
+while ( have_posts() ) : the_post();
+?>
 
-	<?php
-	if ( have_posts() ) :
-	while ( have_posts() ) : the_post(); ?>
+<?php
+	$marketing_page = get_field('marketing_page') == true ? true : false;
+	$featured_image = get_field('featured_image'); 
+	$subtitle = get_field('subtitle'); 
+	$content = get_the_content();
+	$contributing_authors = get_field('contributing_authors');
+	$byline_authors = get_field('byline_authors');
+	$go_content = get_field('go_content_switch');
+	$user = wp_get_current_user();
+	$privilege_level = wp_get_post_terms(get_the_ID(), 'privilege_level');
+	$privilege_levels = array();
+	$excluded_posts = array(get_the_ID());
+	foreach($privilege_level as $level) {
+		$privilege_levels[] = $level->slug;
+	}
+	$categories = array();
+	foreach((get_the_category()) as $category) { 
+		array_push($categories, $category->category_nicename);
+	}
 
-	<?php
-		$marketing_page = get_field('marketing_page') == true ? true : false;
-		$featured_image = get_field('featured_image'); 
-		$subtitle = get_field('subtitle'); 
-		$content = get_the_content();
-		$contributing_authors = get_field('contributing_authors');
-		$byline_authors = get_field('byline_authors');
-		$go_content = get_field('go_content_switch');
-		$user = wp_get_current_user();
-		$privilege_level = wp_get_post_terms(get_the_ID(), 'privilege_level');
-		$privilege_levels = array();
-		$excluded_posts = array(get_the_ID());
-		foreach($privilege_level as $level) {
-			$privilege_levels[] = $level->slug;
-		}
-		$categories = array();
-		foreach((get_the_category()) as $category) { 
-			array_push($categories, $category->category_nicename);
-		}
+	$show_form = get_field('show_gravity_form') == true ? true : false;
+	$form_id = $show_form ? get_field('gravity_form') : null;
+?>
 
-		$show_form = get_field('show_gravity_form') == true ? true : false;
-		$form_id = $show_form ? get_field('gravity_form') : null;
-	?>
+<div class="l-body blog-post  <?= $show_form ? 'has-form' : '' ?>">
 
 	<?php if($featured_image): ?>
 		<div class="blog-post__image" style="background-image:url(<?php echo $featured_image['sizes']['blog_large']; ?>)">
@@ -54,9 +55,10 @@
 				<?php endif; ?>
 			</div> 
 		</div>
-	<?php endif; ?>
+	<?php endif; ?><!-- featured-image -->
 	
-	<div class="page-content <?= $show_form ? 'has-form' : '' ?>">
+	<div class="page-content">
+
 		<div class="l-container blog-content">
 
 			<?php if(!$marketing_page): ?>
@@ -108,35 +110,35 @@
 				</ul> <!-- /.blog-post__author -->
 			<?php endif ?>
 
-			<div class="blog-post__contact <?= $marketing_page == true ? 'blog-post__contact__no-border' : '' ?>">
-				<h4>Got Questions?</h4>
-				<a href="#contact" class="contact-button">Reach Out to Us</a>
-			</div>
-
-			<?php if(!$marketing_page): ?>
-				<?php if(get_field('blog_post_about_go', 2) != NULL) : ?>
-					<div class="blog-post__about">
-						<?php echo get_field('blog_post_about_go', 2); ?>
-					</div>
-				<?php endif; ?>
-			<?php endif; ?>
-
-			<div class="blog-post__footnotes"></div>
-
-			<?php endwhile; endif; ?>
-
 		</div><!-- .blog-content -->
 
-	<?php if($show_form): ?>
-		<div class="form-overlay-wrapper">
-			<div class="form-overlay">
-				<?php gravity_form($form_id, true, false) ?>
+		<?php if($show_form): ?>
+			<div class="form-overlay-wrapper">
+				<div class="form-overlay">
+					<?php gravity_form($form_id, true, false) ?>
+				</div>
+				<?php echo do_shortcode('[social-shares]') ?>
 			</div>
-			<?php echo do_shortcode('[social-shares]') ?>
+		<?php endif; ?>
+
+		<div class="blog-post__contact <?= $marketing_page == true ? 'blog-post__contact__no-border' : '' ?>">
+			<h4>Got Questions?</h4>
+			<a href="#contact" class="contact-button">Reach Out to Us</a>
 		</div>
-	<?php endif; ?>
+
+		<?php if(!$marketing_page): ?>
+			<?php if(get_field('blog_post_about_go', 2) != NULL) : ?>
+				<div class="blog-post__about">
+					<?php echo get_field('blog_post_about_go', 2); ?>
+				</div>
+			<?php endif; ?>
+		<?php endif; ?>
+
+		<div class="blog-post__footnotes"></div>
 
 	</div><!-- .page-content -->
+
+	<?php endwhile; endif; ?>
 
 	<?php 
 		$args = array(
