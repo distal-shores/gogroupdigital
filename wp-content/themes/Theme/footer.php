@@ -33,10 +33,8 @@
 			
 			<span class="footer-bottom__social">
 				<ul class="social">
-					<li><a href="https://www.linkedin.com/company/global-optimization-group/" target="_blank" class="social__item social__item--linkedin">LinkedIn</a></li>
-					<li><a href="https://twitter.com/gogroupdigital" target="_blank" class="social__item social__item--twitter">Twitter</a></li>
-					<li><a href="https://www.facebook.com/globaloptimizationgroup/" target="_blank" class="social__item social__item--facebook">Facebook</a></li>
-					<li><a href="https://www.instagram.com/gogroupdigital/" target="_blank" class="social__item social__item--instagram">Instagram</a></li>
+					<li><a href="https://www.linkedin.com/company/go-group-digital/" target="_blank" class="social__item social__item--linkedin">LinkedIn</a></li>
+					<li><a href="https://twitter.com/thegogroup" target="_blank" class="social__item social__item--twitter">Twitter</a></li>
 				</ul>
 				<p class="footer-bottom__copyright">&copy;GO GROUP DIGITAL <?php echo date('Y'); ?> ALL RIGHTS RESERVED.</p>
 			</span>
