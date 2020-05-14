@@ -586,7 +586,10 @@ $color-text-dark: #000;
                 display: flex;
                 flex-direction: column;
                 flex-grow: 1;
-                flex-basis: 0;
+
+                @media #{$screen-desktop} {
+                    flex-basis: 0;
+                }
 
                 p {
                     margin-top: 10px;
