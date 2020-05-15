@@ -160,5 +160,121 @@
 			letter-spacing: 1.17px;
 			margin-top: 10px;
 		}
+
+		&__partners {
+			padding: 0 30px;
+			margin-top: 50px;
+
+			h4 {
+				color: black;
+				font-family: $font-avenir-heavy;
+				margin: 0;
+				text-align: left;
+			}
+			.divider {
+				width: 100%;
+				height: 1px;
+				background-color: $color-base-sub;
+				margin-top: 10px;
+				margin-bottom: 25px;
+			}
+			.logos {
+				position: relative;
+				a {
+					position: absolute;
+				}
+
+				#conversion {
+					top: 0%;
+					left: 5%;
+					right: 61%;
+					bottom: 80%;
+				}
+				#conversionista {
+					top: 0%;
+					left: 51%;
+					right: 4%;
+					bottom: 80%;
+				}
+				#konversionkraft {
+					top: 32%;
+					left: 7%;
+					right: 43%;
+					bottom: 42%;
+				}
+				#newrepublique {
+					top: 30%;
+					left: 69%;
+					right: 8%;
+					bottom: 36%;
+				}
+				#optiphoenix {
+					top: 74%;
+					left: 0%;
+					right: 73%;
+					bottom: 5%;
+				}
+				#uptilab {
+					top: 74%;
+					left: 38%;
+					right: 45%;
+					bottom: 6%;
+				}
+				#widerfunnel {
+					top: 70%;
+					left: 67%;
+					right: 0%;
+					bottom: 4%;
+				}
+
+				@media screen and (min-width: 800px) {
+					#conversion {
+						top: 0;
+						left: 0;
+						right: 76%;
+						bottom: 70%;
+					}
+					#conversionista {
+						top: 0;
+						left: 29%;
+						right: 39%;
+						bottom: 69%;
+					}
+					#konversionkraft {
+						top: 0;
+						left: 65%;
+						right: 0;
+						bottom: 65%;
+					}
+					#newrepublique {
+						top: 46%;
+						left: 0%;
+						right: 84%;
+						bottom: 0%;
+					}
+					#optiphoenix {
+						top: 55%;
+						left: 21%;
+						right: 60%;
+						bottom: 13%;
+					}
+					#uptilab {
+						top: 54%;
+						left: 45%;
+						right: 43%;
+						bottom: 14%;
+					}
+					#widerfunnel {
+						top: 46%;
+						left: 63%;
+						right: 14%;
+						bottom: 16%;
+					}
+				}
+			}
+			img {
+				width: 100%;
+			}
+		}
 	}
 }

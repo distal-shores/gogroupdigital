@@ -39,6 +39,24 @@
 				<p class="footer-bottom__copyright">&copy;GO GROUP DIGITAL <?php echo date('Y'); ?> ALL RIGHTS RESERVED.</p>
 			</span>
 		</div>
+		<div class="l-container footer-bottom__partners">
+			<h4>GLOBAL PARTNERS</h4>
+			<div class="divider"></div>
+			<div class="logos">
+				<picture>
+					<source media="(max-width: 801px)" srcset="<?php bloginfo('template_directory')?>/images/global-partners-mobile.png">
+					<source media="(min-width: 801px)" srcset="<?php bloginfo('template_directory')?>/images/global-partners-desktop.png">
+					<img src="<?php bloginfo('template_directory')?>/images/global-partners-desktop.png">
+				</picture>
+				<a id="conversion" href="https://conversion.com/" target="_blank" alt="CONVERSION" title="CONVERSION" /></a>
+				<a id="conversionista" href="https://conversionista.com/" target="_blank" alt="CONVERSIONISTA!" title="CONVERSIONISTA!" /></a>
+				<a id="konversionkraft" href="https://www.konversionskraft.de/" target="_blank" alt="konversionKRAFT" title="konversionKRAFT" /></a>
+				<a id="newrepublique" href="https://newrepublique.com/" target="_blank" alt="new Republique" title="new Republique" /></a>
+				<a id="optiphoenix" href="http://www.optiphoenix.com/" target="_blank" alt="OptiPhoenix" title="OptiPhoenix" /></a>
+				<a id="uptilab" href="https://www.uptilab.com/en/welcome/" target="_blank" alt="uptilab" title="uptilab" /></a>
+				<a id="widerfunnel" href="https://www.widerfunnel.com/" target="_blank" alt="widerfunnel" title="widerfunnel" /></a>
+			</div>
+		</div>
 	</div>
 </footer>
 
