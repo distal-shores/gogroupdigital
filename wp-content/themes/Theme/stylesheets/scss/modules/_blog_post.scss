@@ -1,16 +1,46 @@
 $mobile-screen: "screen and (max-width: 800px)";
 $screen-desktop: "screen and (min-width: 800px)";
-$color-text: #333333;
+$color-text: #333;
 $color-text-dark: #000;
 
 .blog-post {
+
     background-color: #f3f3f3;
     text-align: initial;
     font-family: "Avenir", Arial, sans-serif;
+
     color: $color-text;
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: $color-text-dark;
+    }
+
+    &.has-form { 
+        .blog-content,
+        .blog-post__contact,
+        .blog-post__about,
+        .blog-post__footnotes {
+            color: #ddd;
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                color: #fff;
+            }
+        }
+
+        .blog-content .sidebar-topic__title::before {
+            width: max-content;
+            background-color: rgb(255, 255, 255);
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+    }
 
     h1 {
-        color: $color-text-dark;
         font-family: "Calluna", Arial, sans-serif;
         font-weight: normal;
         margin: 0;
@@ -22,7 +52,6 @@ $color-text-dark: #000;
         }
     }
     h2 {
-        color: $color-text-dark;
         font-family: "Calluna", Arial, sans-serif;
         font-weight: normal;
         margin: 0;
@@ -34,7 +63,6 @@ $color-text-dark: #000;
         }
     }
     h3 {
-        color: $color-text-dark;
         font-family: "Calluna", Arial, sans-serif;
         font-weight: normal;
         margin-bottom: 0;
@@ -46,7 +74,6 @@ $color-text-dark: #000;
         }
     }
     h4 {
-        color: $color-text-dark;
         font-family: "Avenir Heavy", Arial, sans-serif;
         font-weight: normal;
         margin: 0;
@@ -139,40 +166,73 @@ $color-text-dark: #000;
         }
     }
     &.has-form {
+        $form-padding: .625rem;
+        $form-gutter: 2.5 * $form-padding;
+        $form-padding-width-shrink: $form-gutter + $form-padding;
+
+        .landing-background {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            &.scrim {
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        .blog-post__header {
+            @media #{$screen-desktop} {
+                padding-top: 100px;
+            }
+        }
+
+        .blog-post__image .overlay {
+            background-color: transparent !important;
+        }
+
         .page-content {
             max-width: 1200px;
             display: flex;
             flex-flow: row wrap;
+            position: relative;
         }
         .blog-content,
         .blog-post__contact,
         .blog-post__about {
-            width: calc(100% - 1.25rem);
+            width: calc(100% - #{$form-padding-width-shrink});
             @media #{$screen-desktop} {
-                width: calc(58.33333% - 1.25rem);
+                width: calc(58.33333% - #{$form-padding-width-shrink});
             }
         }
+
+        .blog-post h2 {
+            color: white;
+        }
+
+
         .blog-content {
             padding-top: 20px;
-            margin-right: .625rem;
-            margin-left: .625rem;
+            margin-right: $form-padding;
+            margin-left: $form-padding;
+
+            @media #{$screen-desktop} {
+                margin-right: $form-gutter;
+            }
 
             .size-full,
             .sidebar-topic__divider {
                 width: 100vw;
-                max-width: calc(100% - 1.25rem) !important;
-
-                @media #{$screen-desktop} {
-                    max-width: calc(58.33333% - 1.25rem) !important;
-                }
+                max-width: calc(100% - #{$form-padding * 2}) !important;
             }
         }
 
         .form-overlay-wrapper {
-            width: calc(100% - 1.25rem);
+            width: calc(100% - #{$form-padding-width-shrink});
             margin-top: 25px;
-            margin-right: .625rem;
-            margin-left: .625rem;
+            margin-right: $form-padding;
+            margin-left: $form-padding;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -180,7 +240,8 @@ $color-text-dark: #000;
             @media #{$screen-desktop} {
                 margin-top: 0;
                 z-index: 200;
-                width: calc(41.333% - 1.875rem);
+                width: calc(41.333% - #{$form-padding-width-shrink});
+                margin-left: $form-gutter;
             }
 
             .form-overlay {
@@ -201,9 +262,15 @@ $color-text-dark: #000;
             }
 
             .social-shares {
+                color: $color-text;
                 margin-top: 25px;
                 margin-bottom: 25px;
             }
+        }
+
+        .related-articles {
+            background-color: white;
+            position: relative;
         }
     }
 

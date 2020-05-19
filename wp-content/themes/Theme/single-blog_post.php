@@ -31,8 +31,17 @@ while ( have_posts() ) : the_post();
 
 <div class="l-body blog-post  <?= $show_form ? 'has-form' : '' ?>">
 
+	<?php if($show_form): ?>
+	<div class="landing-background" style="background-image:url(<?php echo $featured_image['sizes']['blog_large']; ?>)"></div>
+	<div class="landing-background scrim"></div>
+	<?php endif; ?>
+
 	<?php if($featured_image): ?>
+		<?php if($show_form): ?>
+		<div class="blog-post__image">
+		<?php else: ?>
 		<div class="blog-post__image" style="background-image:url(<?php echo $featured_image['sizes']['blog_large']; ?>)">
+		<?php endif; ?>
 			<div class="overlay"></div>
 			<div class="blog-post__header">
 				<?php if(!$show_form): ?>
