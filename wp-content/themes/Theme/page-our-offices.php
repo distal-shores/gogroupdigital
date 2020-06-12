@@ -92,10 +92,12 @@
 			<ul class="locations">
 				<?php
 					$args = array(
-						'post_type' => 'office',
+						'post_type'      => 'office',
 						'posts_per_page' => -1,
-						'orderby'=> 'date',
-						'order' => 'DESC',
+						'orderby'        => 'date',
+						'order'          => 'DESC',
+						'meta_key'       => 'go_partner',
+						'meta_value'     => '1'
 					);
 					$loop = new WP_Query( $args );
 					if ( $loop->have_posts() ): 
