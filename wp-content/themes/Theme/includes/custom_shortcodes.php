@@ -105,7 +105,7 @@ function generate_go_presenter( $attrs, $content = null ) {
 		return '<h1 style="background-color: black; color: red;">[go_presenter id=""] Missing id</h1>';
 	}
 
-	$content = strip_tags($content, '');
+	$content = strip_tags($content, '<a>');
 
 	$args = array(
 		'post_type' => 'member',
