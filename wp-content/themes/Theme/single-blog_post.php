@@ -89,7 +89,12 @@ while ( have_posts() ) : the_post();
 					the_content();
 				} else {
 					$mailtoSubject = str_replace(' ', '%20', the_title('', ' Access', false));
-					echo "<p style=\"text-align:left\">This content is reserved for GO Partners. Please <a href=\"#contact\">contact us</a> to learn about exclusive access.</p>";
+					?>
+						<p style="text-align:left">
+							This content is reserved for Go Partners. As a GO Partner, please <a href="<?= wp_login_url(); ?>">log in</a> to gain access.<br>
+							Not a partner? Please <a href="#contact">contact us</a> to learn about exclusive access to the GO Group Digital Platform.
+						</p>
+					<?php
 				}
 			?>
 
