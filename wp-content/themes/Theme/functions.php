@@ -77,7 +77,6 @@ function admin_default_page()
     $url = home_url() . '/insights';
     return $url;
 }
-
 add_filter('login_redirect', 'admin_default_page');
 
 function my_enqueue_scripts()
