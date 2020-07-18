@@ -42,6 +42,9 @@ function theme_custom_login_logo()
 			function onSignIn(googleUser) {
 				// POST to login url with Google id_token to handle Google login
 				var id_token = googleUser.getAuthResponse().id_token;
+				// NOTE: We only want the id_token, so sign the user out so the don't auto-login later.
+				var auth2 = gapi.auth2.getAuthInstance();
+		    auth2.signOut();
 
 				// NOTE: Apparently to make a POST request, it has to be done through a form
 				//  element. So we create a hidden one and submit it.
