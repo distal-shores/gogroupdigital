@@ -1,9 +1,92 @@
 (function ($) {
     var globalSelect = '';
-    var acceptableInputs = ['digital', 'epic outcomes', 'groupx', 'business development', 'knowledge exchange', 'news', 'operations', 'posits', 'vantages'];
+    var acceptableInputs = ['briefing report', 'digest', 'digital', 'epic outcomes', 'evolutionary to epic', 'groupx', 'knowledge exchange', 'news', 'operations', 'posits', 'vantages'];
     var queryVars = new Object();
     var taxQuery = false;
     var postsNotIn = [];
+    var scroll = 0;
+
+    function onBlogTileCategoryClick(el) {
+        const category = el.target.innerText;
+        updateSelection(category);
+    }
+
+    const attachCategoryClickListeners = function () {
+        document.querySelectorAll('.blog .blog-tile__category span').forEach(function (el) {
+            el.removeEventListener('click', onBlogTileCategoryClick, false);
+            el.addEventListener('click', onBlogTileCategoryClick, false);
+        });
+    };
+
+    const doSearch = function (loadingMore) {
+        if (taxQuery === true) {
+            queryVars = {
+                "post_type": "blog_post",
+                "post_status": "publish",
+                "orderby": "date",
+                "order": "DESC",
+                "posts_per_page": 3,
+                "tax_query": [{
+                    "taxonomy": "category",
+                    "field": "slug",
+                    "terms": globalSelect
+                }]
+            };
+        } else {
+            queryVars = {
+                "post_type": "blog_post",
+                "post_status": "publish",
+                "orderby": "date",
+                "order": "DESC",
+                "posts_per_page": 3,
+            };
+        }
+        if (loadingMore) {
+            queryVars['post__not_in'] = postsNotIn;
+        }
+        queryVars = JSON.stringify(queryVars);
+        $.ajax({
+            url: ajaxfetch.ajaxurl,
+            type: 'post',
+            data: {
+                action: 'ajax_fetch',
+                query_vars: queryVars,
+            },
+            success: function (html, status) {
+                if (html != '') {
+                    if (!loadingMore) {
+                        $('#more-go-content').empty();
+                    }
+                    $('#more-go-content').append(html);
+                    $('#more-go-content .blog-tile').each(function (index) {
+                        postsNotIn.push($(this).attr('data-post-id'));
+                    });
+                    attachCategoryClickListeners();
+                } else {
+                    $('.blog__view-more').addClass('disabled');
+                }
+            },
+            error: function (response) {
+                console.error(response);
+            }
+        });
+    };
+
+    const doTheFilter = function (category) {
+        $('html, body').animate({ scrollTop: scroll });
+        const newCategory = category.toLowerCase();
+        if (globalSelect != newCategory) {
+            globalSelect = newCategory;
+            $('.blog__view-more').removeClass('disabled');
+            for (x = 0; x < acceptableInputs.length; x++) {
+                if (globalSelect === acceptableInputs[x]) {
+                    taxQuery = true;
+                    break;
+                }
+            }
+            doSearch(false);
+        }
+    };
 
     /* A function that will close all select boxes in the document, except the current select box: */
     function closeAllSelect(elmnt) {
@@ -42,6 +125,13 @@
                     const innerText = el.innerText.toLowerCase();
                     if (innerText == selectionToLower) {
                         el.setAttribute('class', 'same-as-selected');
+                        postsNotIn = [];
+                        taxQuery = false;
+                        // var children = $(this).children(".same-as-selected");
+                        // console.dir(children);
+                        // var selectVal = children.text().toLowerCase();
+                        doTheFilter(selectionToLower)//selectVal);
+
                     } else {
                         el.removeAttribute('class');
                     }
@@ -99,99 +189,7 @@
 
         // save the bottom of the recent articles list so we can scroll to it when selecting a new category
         const recentArticlesList = $('#recent-articles-list');
-        const scroll = recentArticlesList.offset().top + recentArticlesList.height();
-
-        function onBlogTileCategoryClick(el) {
-            const category = el.target.innerText;
-            updateSelection(category);
-        }
-
-        const attachCategoryClickListeners = function () {
-            document.querySelectorAll('.blog .blog-tile__category span').forEach(function (el) {
-                el.removeEventListener('click', onBlogTileCategoryClick, false);
-                el.addEventListener('click', onBlogTileCategoryClick, false);
-            });
-        };
-
-        const doSearch = function (loadingMore) {
-            if (taxQuery === true) {
-                queryVars = {
-                    "post_type": "blog_post",
-                    "post_status": "publish",
-                    "orderby": "date",
-                    "order": "DESC",
-                    "posts_per_page": 3,
-                    "tax_query": [{
-                        "taxonomy": "category",
-                        "field": "slug",
-                        "terms": globalSelect
-                    }]
-                };
-            } else {
-                queryVars = {
-                    "post_type": "blog_post",
-                    "post_status": "publish",
-                    "orderby": "date",
-                    "order": "DESC",
-                    "posts_per_page": 3,
-                };
-            }
-            if (loadingMore) {
-                queryVars['post__not_in'] = postsNotIn;
-            }
-            queryVars = JSON.stringify(queryVars);
-            $.ajax({
-                url: ajaxfetch.ajaxurl,
-                type: 'post',
-                data: {
-                    action: 'ajax_fetch',
-                    query_vars: queryVars,
-                },
-                success: function (html, status) {
-                    if (html != '') {
-                        if (!loadingMore) {
-                            $('#more-go-content').empty();
-                        }
-                        $('#more-go-content').append(html);
-                        $('#more-go-content .blog-tile').each(function (index) {
-                            postsNotIn.push($(this).attr('data-post-id'));
-                        });
-                        attachCategoryClickListeners();
-                    } else {
-                        $('.blog__view-more').addClass('disabled');
-                    }
-                },
-                error: function (response) {
-                    console.error(response);
-                }
-            });
-        }
-
-        const doTheFilter = function (category) {
-            $('html, body').animate({ scrollTop: scroll });
-            const newCategory = category.toLowerCase();
-            if (globalSelect != newCategory) {
-                globalSelect = newCategory;
-                $('.blog__view-more').removeClass('disabled');
-                for (x = 0; x < acceptableInputs.length; x++) {
-                    if (globalSelect === acceptableInputs[x]) {
-                        taxQuery = true;
-                        break;
-                    }
-                }
-                doSearch(false);
-            }
-        };
-
-        // Use $() inside of this function
-        $('#blog-categories-select-wrapper .select-items').on('DOMSubtreeModified', function (e) {
-            if (e.target.className === 'same-as-selected') {
-                postsNotIn = [];
-                taxQuery = false;
-                var selectVal = $(this).children(".same-as-selected").text().toLowerCase();
-                doTheFilter(selectVal);
-            }
-        });
+        scroll = recentArticlesList.offset().top + recentArticlesList.height();
 
         $('.blog__view-more').on('click', function (e) {
             e.preventDefault();

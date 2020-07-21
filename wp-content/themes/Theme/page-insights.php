@@ -30,7 +30,7 @@
 		$slug = $term->slug;
 		if ($slug === 'webinars' || $slug === 'roundtable') {
 			$excluded_categories[] = $term->term_id;
-		} else {
+		} else if ($term->count !== 0) {
 			$categories[] = $term->name;
 		}
 	}
