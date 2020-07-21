@@ -86,6 +86,9 @@ function theme_custom_login_logo()
 				justify-content: center;
 				margin-bottom: 20px;
 			}
+			.g-signin2 > div {
+				width: 100% !important;
+			}
 			.failure {
 				text-align: center;
 				background-color: #f55;
@@ -131,7 +134,7 @@ function do_login_form()
 {
 	ob_start();
 	?>
-		<div class="g-signin2" data-onsuccess="onSignIn"></div>
+		<div class="g-signin2" data-theme="dark" data-height="40" data-longtitle="true" data-onsuccess="onSignIn"></div>
 	<?php
 	$google_failure = isset($_GET['google_failure']) ? $_GET['google_failure'] : null;
 	if ($google_failure) {
