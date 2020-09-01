@@ -127,11 +127,7 @@
                         el.setAttribute('class', 'same-as-selected');
                         postsNotIn = [];
                         taxQuery = false;
-                        // var children = $(this).children(".same-as-selected");
-                        // console.dir(children);
-                        // var selectVal = children.text().toLowerCase();
-                        doTheFilter(selectionToLower)//selectVal);
-
+                        doTheFilter(selectionToLower);
                     } else {
                         el.removeAttribute('class');
                     }
@@ -185,7 +181,7 @@
 
         $('#more-go-content .blog-tile').each(function (index) {
             postsNotIn.push($(this).attr('data-post-id'));
-        })
+        });
 
         // save the bottom of the recent articles list so we can scroll to it when selecting a new category
         const recentArticlesList = $('#recent-articles-list');
