@@ -1,5 +1,5 @@
 # Require any additional compass plugins here.
-require 'susy'
+# require 'susy'
 require 'sass-globbing'
 require 'ceaser-easing'
 

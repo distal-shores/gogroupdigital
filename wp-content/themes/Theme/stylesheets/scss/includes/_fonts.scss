@@ -20,6 +20,18 @@
 }
 
 @font-face {
+  font-family: "Avenir Roman";
+  src: font-url("AvenirLTProRoman.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir Demi';
+  src: font-url('AvenirNextLTPro-Demi.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Avenir Black";
   src: font-url("Avenir-Black-03.ttf") format("truetype");
   font-display: swap;
