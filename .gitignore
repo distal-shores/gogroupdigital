@@ -7,3 +7,4 @@ launch.json
 .idea/
 wp-content/ewww/debug.log
 wp-content/plugins/gravityforms
+wp-content/plugins/classic-editor
