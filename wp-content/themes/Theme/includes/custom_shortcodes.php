@@ -150,7 +150,7 @@ function generate_go_presenter($attrs, $content = null)
 					<p><?= $content ?></p>
 				</div>
 			</section>
-<?php
+	<?php
 		}
 	} else {
 		echo '<h1 style="background-color: black; color: red;">[go_presenter id="' . $a['id'] . '"] Could not find member</h1>';
@@ -164,21 +164,28 @@ function generate_go_feature($attrs, $content = null)
 {
 	$a = shortcode_atts(array(
 		'title' => '',
-		'author' => ''
+		'author' => '',
+		'url' => null,
 	), $attrs);
 
 	$content = strip_tags($content, '<img>');
 
 	ob_start();
 	?>
-	<div class="go-feature">
-		<?= $content ?>
-		<div class="go-feature__content">
-			<span class="go-feature__author"><?= $a['author'] ?></span>
-			<span class="go-feature__title"><?= $a['title'] ?></span>
+	<?php if ($a['url']) : ?>
+		<a href="<?= $a['url'] ?>" target="_blank">
+		<?php endif; ?>
+		<div class="go-feature">
+			<?= $content ?>
+			<div class="go-feature__content">
+				<span class="go-feature__author"><?= $a['author'] ?></span>
+				<span class="go-feature__title"><?= $a['title'] ?></span>
+			</div>
 		</div>
-	</div>
-	<?php
+		<?php if ($a['url']) : ?>
+		</a>
+	<?php endif; ?>
+<?php
 	return ob_get_clean();
 }
 add_shortcode('go_feature', 'generate_go_feature');
@@ -188,9 +195,9 @@ function generate_go_button($attrs, $content)
 	$a = shortcode_atts(array('url' => null), $attrs);
 	$content = strip_tags($content);
 	ob_start();
-	?>
+?>
 	<a class="go-button" href="<?= $a['url'] ?>" target="_blank"><?= $content ?></a>
-	<?php
+<?php
 	return ob_get_clean();
 }
 add_shortcode('go_button', 'generate_go_button');
