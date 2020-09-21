@@ -24,27 +24,27 @@ function theme_custom_login_logo()
 	);
 
 	// Find the logo!
-	foreach ( $possible_logos as $option ) {
-		if ( file_exists( get_template_directory() . $option ) ) {
+	foreach ($possible_logos as $option) {
+		if (file_exists(get_template_directory() . $option)) {
 			$logo = $option;
 			break;
 		}
 	}
 
 	// If the logo exists, do some admin CSS
-	if ( $logo ):
+	if ($logo) :
 		// Get the image dimensions
 		$logo_dimensions = getimagesize(get_template_directory() . $logo);
 		$logo_height = isset($logo_dimensions[1]) ? $logo_dimensions[1] : '92';
 		$logo_height = $logo_height . 'px';
-	?>
+?>
 		<script>
 			function onSignIn(googleUser) {
 				// POST to login url with Google id_token to handle Google login
 				var id_token = googleUser.getAuthResponse().id_token;
 				// NOTE: We only want the id_token, so sign the user out so the don't auto-login later.
 				var auth2 = gapi.auth2.getAuthInstance();
-		    auth2.signOut();
+				auth2.signOut();
 
 				// NOTE: Apparently to make a POST request, it has to be done through a form
 				//  element. So we create a hidden one and submit it.
@@ -67,7 +67,7 @@ function theme_custom_login_logo()
 		<meta name="google-signin-client_id" content="<?= GOOGLE_CLIENT_ID ?>">
 		<style type="text/css">
 			.login h1 a {
-				background-image:url('<?php echo get_template_directory_uri() . $logo; ?>');
+				background-image: url('<?php echo get_template_directory_uri() . $logo; ?>');
 				height: <?php echo $logo_height; ?>;
 				width: auto;
 				margin-bottom: 0;
@@ -78,17 +78,23 @@ function theme_custom_login_logo()
 			body.login {
 				background-color: #fff;
 			}
-			#nav,#backtoblog,#notapartner {
+
+			#nav,
+			#backtoblog,
+			#notapartner {
 				text-align: center;
 			}
+
 			.g-signin2 {
 				display: flex;
 				justify-content: center;
 				margin-bottom: 20px;
 			}
-			.g-signin2 > div {
+
+			.g-signin2>div {
 				width: 100% !important;
 			}
+
 			.failure {
 				text-align: center;
 				background-color: #f55;
@@ -101,7 +107,7 @@ function theme_custom_login_logo()
 
 	<?php endif;
 }
-add_filter( 'login_head', 'theme_custom_login_logo' );
+add_filter('login_head', 'theme_custom_login_logo');
 
 /**
  * Change the url when clicking login logo
@@ -111,7 +117,8 @@ add_filter( 'login_head', 'theme_custom_login_logo' );
  * @internal called by login_headerurl filter
  *
  */
-function theme_custom_login_url(){
+function theme_custom_login_url()
+{
 	return get_bloginfo('url');
 }
 add_filter('login_headerurl', 'theme_custom_login_url');
@@ -124,17 +131,18 @@ add_filter('login_headerurl', 'theme_custom_login_url');
  * @internal called by login_headertitle filter
  *
  */
-function theme_custom_login_title() {
+function theme_custom_login_title()
+{
 	return get_bloginfo('name');
 }
-add_filter('login_headertitle', 'theme_custom_login_title');
+add_filter('login_headertext', 'theme_custom_login_title');
 
 add_action('login_form', 'do_login_form');
 function do_login_form()
 {
 	ob_start();
 	?>
-		<div class="g-signin2" data-theme="dark" data-height="40" data-longtitle="true" data-onsuccess="onSignIn"></div>
+	<div class="g-signin2" data-theme="dark" data-height="40" data-longtitle="true" data-onsuccess="onSignIn"></div>
 	<?php
 	$google_failure = isset($_GET['google_failure']) ? $_GET['google_failure'] : null;
 	if ($google_failure) {
@@ -144,9 +152,9 @@ function do_login_form()
 			'no_payload' => 'Failed to get account information'
 		);
 		$failureMessage = isset($valid_errors[$google_failure]) ? $valid_errors[$google_failure] : 'Failed to login';
-		?>
-			<p class="failure"><?= $failureMessage ?></p>
-		<?php
+	?>
+		<p class="failure"><?= $failureMessage ?></p>
+<?php
 	}
 	ob_flush();
 	return ob_get_clean();

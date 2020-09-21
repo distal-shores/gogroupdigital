@@ -1,3 +1,0 @@
-[07-Feb-2020 02:44:03 America/Toronto] PHP Fatal error:  Class 'getid3_handler' not found in /home3/gogroupd/public_html/wp-includes/ID3/module.audio.ac3.php on line 18
-[09-Mar-2020 07:56:32 America/Toronto] PHP Fatal error:  Class 'getid3_handler' not found in /home3/gogroupd/public_html/wp-includes/ID3/module.audio.ac3.php on line 18
-[12-Mar-2020 04:52:54 America/Toronto] PHP Fatal error:  Class 'getid3_handler' not found in /home3/gogroupd/public_html/wp-includes/ID3/module.audio.ac3.php on line 18
