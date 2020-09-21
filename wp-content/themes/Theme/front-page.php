@@ -47,9 +47,13 @@
 				</span>
 				<ul class="client-home__logo-farm">
 					<?php if( $client_logos ):
-	        		foreach( $client_logos as $client_logo ): ?>
+							foreach( $client_logos as $client_logo ): 
+								$src = wp_get_attachment_url($client_logo);
+								if ($src === false) continue;
+								$alt = wp_get_attachment_caption($client_logo) ?: '';
+							?>
 						<li class="client-home__logo-farm__logo">
-							<img src="<?php echo $client_logo['sizes']['client_logo']; ?>" alt="<?php echo $client_logo['alt']; ?>" />
+							<img src="<?= $src ?>" alt="<?= $alt ?>" />
 						</li>
 		        	<?php endforeach;
 		        	endif; ?>
