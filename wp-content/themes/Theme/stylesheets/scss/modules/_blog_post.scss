@@ -105,6 +105,10 @@ $color-text-dark: #000;
             & > p:first-child {
                 margin-top: 0;
             }
+            & > p + h2,
+            & > ul + h2 {
+                margin-top: 40px !important;
+            }
 
             & > h1 + h2 {
                 margin-top: 10px;
