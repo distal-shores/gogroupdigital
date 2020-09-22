@@ -173,7 +173,7 @@ function generate_go_feature($attrs, $content = null)
 	ob_start();
 	?>
 	<?php if ($a['url']) : ?>
-		<a href="<?= $a['url'] ?>" target="_blank">
+		<a href="<?= $a['url'] ?>" target="_blank" class="go-feature-link">
 		<?php endif; ?>
 		<div class="go-feature">
 			<?= $content ?>
