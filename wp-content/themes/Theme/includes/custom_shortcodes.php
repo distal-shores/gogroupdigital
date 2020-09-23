@@ -51,12 +51,12 @@ function generate_blockquote($atts, $content = null)
 
 	$attribution = $a['attribution'];
 
-	$content = strip_tags($content, '');
+	$content = trim(strip_tags($content, '<strong><b><br>'));
 
 	ob_start();
 ?>
 	<div class="blockquote-wrapper">
-		<blockquote>“<?php echo $content ?>”</blockquote>
+		<blockquote><p><?= $content ?><p></blockquote>
 		<?php if ($attribution) : ?>
 			<span class="attribution">- <?= $attribution ?></span>
 		<?php endif; ?>

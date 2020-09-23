@@ -256,11 +256,6 @@ $color-text-dark: #000;
             }
 
             blockquote {
-                font-family: $font-calluna !important;
-                font-size: 28px;
-                line-height: 36px;
-                letter-spacing: -0.175px;
-
                 &:before {
                     top: 6px;
                     left: 0;
@@ -268,14 +263,21 @@ $color-text-dark: #000;
                     height: 30px;
                 }
 
-                p {
-                    padding-left: 27px;
+                p:first-child {
+                    padding-left: 43px;
+                    font-family: $font-calluna !important;
+                    font-size: 28px;
+                    line-height: 36px;
+                    letter-spacing: -0.175px;
                 }
             }
 
             .blockquote-wrapper {
+                &:before {
+                    left: 0;
+                }
+
                 margin-top: 30px;
-                padding-left: 27px;
 
                 blockquote {
                     margin: 0 !important;
@@ -286,13 +288,7 @@ $color-text-dark: #000;
                 }
 
                 .attribution {
-                    font-family: $font-avenir-roman;
-                    font-size: 13px;
-                    line-height: 23px;
-                    color: #2760B6;
-                    display: inline-block;
-                    letter-spacing: -0.112036px;
-                    margin-top: 13px;
+                    padding-left: 43px;
                 }
             }
         }
@@ -622,11 +618,8 @@ $color-text-dark: #000;
                 margin-top: 50px;
             }
         }
-        blockquote {
-            margin-left: 0;
-            margin-right: 0;
-            position: relative;
-
+        > .blockquote-wrapper,
+        > blockquote {
             &:before {
                 content: "";
                 display: inline-block;
@@ -642,13 +635,17 @@ $color-text-dark: #000;
                     left: 15px;
                 }
             }
+        }
+        .blockquote-wrapper,
+        blockquote {
+            margin-left: 0;
+            margin-right: 0;
+            position: relative;
 
-            p {
+            p:first-child {
                 color: $color-text-dark;
-                padding-left: 143px; // calc(95px + 18px + 15px + 15px);
                 max-width: 643px; // calc(500px + 95px + 18px + 15px + 15px);
                 @media #{$mobile-screen} {
-                    padding-left: 48px; // calc(18px + 15px + 15px);
                     max-width: 100%;
                 }
                 position: relative;
@@ -664,6 +661,28 @@ $color-text-dark: #000;
                 &:after {
                     content: close-quote;
                 }
+            }
+        }
+        .blockquote-wrapper { 
+            blockquote {
+                margin-bottom: 0;
+            }
+            .attribution {
+                font-family: $font-avenir-roman;
+                font-size: 13px;
+                line-height: 23px;
+                color: #2760B6;
+                display: inline-block;
+                letter-spacing: -0.112036px;
+                margin-top: 13px;
+            }
+        }
+        & > blockquote,
+        & .blockquote-wrapper .attribution,
+        & .blockquote-wrapper p:first-child {
+            padding-left: 143px; // calc(95px + 18px + 15px + 15px);
+            @media #{$mobile-screen} {
+                padding-left: 48px; // calc(18px + 15px + 15px);
             }
         }
         ul {
@@ -726,6 +745,9 @@ $color-text-dark: #000;
             }
         }
         p {
+            margin: 0;
+        }
+        > p {
             font-family: "Avenir Book", Arial, sans-serif;
             margin-bottom: 0;
             margin-top: 26px;
@@ -759,6 +781,8 @@ $color-text-dark: #000;
         > p + h2,
         > blockquote,
         > blockquote + p,
+        > .blockquote-wrapper,
+        > .blockquote-wrapper + p,
         > .pullquote,
         > .pullquote + p,
         > .sidebar-topic,
