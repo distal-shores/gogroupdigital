@@ -95,12 +95,15 @@ $color-text-dark: #000;
                 }
             }
 
-            & > p,
-            & > p a {
-                font-family: $font-avenir-roman;
-                font-size: 15px;
-                line-height: 23px;
-                letter-spacing: -0.129272px;
+            & > p:first-child,
+            & > h5 + p,
+            & > h2 + p {
+                &, & a {
+                    font-family: $font-avenir-roman;
+                    font-size: 15px;
+                    line-height: 23px;
+                    letter-spacing: -0.129272px;
+                }
             }
             & > p:first-child {
                 margin-top: 0;
@@ -223,11 +226,16 @@ $color-text-dark: #000;
                     position: relative;
 
                     &,
-                    & a {
+                    & a,
+                    & p {
                         font-family: $font-avenir-roman !important;
                         font-size: 15px !important;
                         line-height: 22px !important;
                         letter-spacing: -0.129272px;
+                    }
+
+                    & p {
+                        margin-top: 10px !important;
                     }
 
                     &:before {
