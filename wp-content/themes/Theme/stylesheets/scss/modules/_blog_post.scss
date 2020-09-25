@@ -706,6 +706,10 @@ $color-text-dark: #000;
                       font-size: 16px;
                       line-height: 24px;
                   }
+
+                  ul, ol {
+                      margin-left: 20px;
+                  }
               }
               li + li {
                   margin-top: 26px;
@@ -713,6 +717,7 @@ $color-text-dark: #000;
                       margin-top: 24px;
                   }
               }
+
           }
         }
         ul:not(.blog-post__blog-content__categories):not(.blog-post__authors):not(.social-shares__icons) {
