@@ -888,12 +888,14 @@ $color-text-dark: #000;
             ul li,
             figure,
             p {
-                background: white;
-                border: 1px solid #dddddd;
-                border-radius: 5px;
-                box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-                padding: 15px;
+                &:not(.no-background) {
+                    background: white;
+                    border: 1px solid #dddddd;
+                    border-radius: 5px;
+                    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+                }
                 color: $color-text;
+                padding: 15px;
             }
             ul,
             ol,
